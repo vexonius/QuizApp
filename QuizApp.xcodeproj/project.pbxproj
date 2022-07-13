@@ -12,6 +12,11 @@
 		F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */; };
 		F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82F287DB34700E0375D /* UIColor+Extensions.swift */; };
 		F088E832287DBEC800E0375D /* LoginViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E831287DBEC800E0375D /* LoginViewController+Design.swift */; };
+		F088E834287DD0A500E0375D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E833287DD0A500E0375D /* String+Extensions.swift */; };
+		F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E835287EB2D700E0375D /* UIFont+Extensions.swift */; };
+		F088E83B287EB8A700E0375D /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E838287EB8A600E0375D /* SourceSansPro-Bold.ttf */; };
+		F088E83C287EB8A700E0375D /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */; };
+		F088E83D287EB8A700E0375D /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */; };
 		F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */; };
 		F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */; };
 		F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A97A287C74CA007BF1D4 /* LoginViewController.swift */; };
@@ -24,6 +29,11 @@
 		F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		F088E82F287DB34700E0375D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F088E831287DBEC800E0375D /* LoginViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Design.swift"; sourceTree = "<group>"; };
+		F088E833287DD0A500E0375D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F088E835287EB2D700E0375D /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		F088E838287EB8A600E0375D /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		F0E6A973287C74CA007BF1D4 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,8 +86,20 @@
 			isa = PBXGroup;
 			children = (
 				F088E82F287DB34700E0375D /* UIColor+Extensions.swift */,
+				F088E833287DD0A500E0375D /* String+Extensions.swift */,
+				F088E835287EB2D700E0375D /* UIFont+Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F088E837287EB88C00E0375D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F088E838287EB8A600E0375D /* SourceSansPro-Bold.ttf */,
+				F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */,
+				F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F0E6A96A287C74CA007BF1D4 = {
@@ -99,6 +121,7 @@
 		F0E6A975287C74CA007BF1D4 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				F088E837287EB88C00E0375D /* Fonts */,
 				F088E82D287DAF1400E0375D /* Application */,
 				F088E82A287DAE2000E0375D /* Common */,
 				F0749188287DABDE005A7A55 /* Login */,
@@ -175,9 +198,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F088E83C287EB8A700E0375D /* SourceSansPro-Regular.ttf in Resources */,
 				F0513299287DA252003E8D90 /* .swiftlint.yml in Resources */,
 				F0E6A983287C74CB007BF1D4 /* LaunchScreen.storyboard in Resources */,
+				F088E83D287EB8A700E0375D /* SourceSansPro-SemiBold.ttf in Resources */,
 				F0E6A980287C74CB007BF1D4 /* Assets.xcassets in Resources */,
+				F088E83B287EB8A700E0375D /* SourceSansPro-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +237,9 @@
 			files = (
 				F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */,
 				F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */,
+				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
+				F088E834287DD0A500E0375D /* String+Extensions.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
 				F088E832287DBEC800E0375D /* LoginViewController+Design.swift in Sources */,
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
