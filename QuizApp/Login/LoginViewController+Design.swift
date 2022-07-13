@@ -10,6 +10,12 @@ extension LoginViewController: ConstructViewsProtocol {
 
         logoLabel = UILabel()
         view.addSubview(logoLabel)
+
+        usernameInput = CoreUI.RoundedTextInput(type: .username)
+        view.addSubview(usernameInput)
+
+        passwordInput = CoreUI.RoundedTextInput(type: .password)
+        view.addSubview(passwordInput)
     }
 
     func styleViews() {
@@ -29,6 +35,20 @@ extension LoginViewController: ConstructViewsProtocol {
             make.width.equalToSuperview()
             make.height.equalTo(40)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(76)
+        }
+
+        usernameInput.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(32)
+            make.height.equalTo(44)
+            make.top.equalTo(logoLabel.snp.bottom).offset(144)
+            make.centerX.equalToSuperview()
+        }
+
+        passwordInput.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(32)
+            make.height.equalTo(44)
+            make.top.equalTo(usernameInput.snp.bottom).offset(18)
+            make.centerX.equalToSuperview()
         }
     }
 

@@ -18,6 +18,7 @@
 		F088E83C287EB8A700E0375D /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */; };
 		F088E83D287EB8A700E0375D /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */; };
 		F088E83F287EBC4900E0375D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E83E287EBC4900E0375D /* BaseViewController.swift */; };
+		F088E841287EC1DD00E0375D /* CoreUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E840287EC1DD00E0375D /* CoreUI.swift */; };
 		F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */; };
 		F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */; };
 		F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A97A287C74CA007BF1D4 /* LoginViewController.swift */; };
@@ -36,6 +37,7 @@
 		F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		F088E83E287EBC4900E0375D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F088E840287EC1DD00E0375D /* CoreUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreUI.swift; sourceTree = "<group>"; };
 		F0E6A973287C74CA007BF1D4 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				F088E82E287DB31B00E0375D /* Helpers */,
 				F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */,
 				F088E83E287EBC4900E0375D /* BaseViewController.swift */,
+				F088E840287EC1DD00E0375D /* CoreUI.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				F088E83F287EBC4900E0375D /* BaseViewController.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
 				F088E832287DBEC800E0375D /* LoginViewController+Design.swift in Sources */,
+				F088E841287EC1DD00E0375D /* CoreUI.swift in Sources */,
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
