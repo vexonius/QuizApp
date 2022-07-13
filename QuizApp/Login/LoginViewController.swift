@@ -13,4 +13,10 @@ class LoginViewController: BaseViewController {
         defineLayoutForViews()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        gradientLayer.frame = view.bounds
+    }
+
 }
