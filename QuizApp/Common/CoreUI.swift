@@ -48,16 +48,16 @@ class CoreUI {
 
         override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
             var rightViewRect = super.rightViewRect(forBounds: bounds)
-            rightViewRect.origin.x -= CGFloat(DesignConstants.Insets.thumbnailRightInset)
+            rightViewRect.origin.x -= DesignConstants.Insets.thumbnailRightInset.asCGFloat()
             return rightViewRect
         }
 
         func styleForInFocus() {
-            layer.borderWidth = CGFloat(DesignConstants.InputComponents.borderWidth)
+            layer.borderWidth = DesignConstants.InputComponents.borderWidth.asCGFloat()
         }
 
         func styleForOutOfFocus() {
-            layer.borderWidth = CGFloat(DesignConstants.InputComponents.noBorder)
+            layer.borderWidth = DesignConstants.InputComponents.noBorder.asCGFloat()
         }
 
         private func style() {
@@ -66,7 +66,7 @@ class CoreUI {
             textColor = .white
 
             layer.borderColor = UIColor.white.cgColor
-            layer.cornerRadius = CGFloat(DesignConstants.InputComponents.cornerRadius)
+            layer.cornerRadius = DesignConstants.InputComponents.cornerRadius.asCGFloat()
             layer.cornerCurve = .continuous
 
             attributedPlaceholder = NSAttributedString(
@@ -74,8 +74,8 @@ class CoreUI {
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
 
             font = self.isFocused ?
-                .sourceSansPro(ofSize: CGFloat(DesignConstants.FontSize.regular), ofWeight: .regular) :
-                .sourceSansPro(ofSize: CGFloat(DesignConstants.FontSize.regular), ofWeight: .semibold)
+                .sourceSansPro(ofSize: DesignConstants.FontSize.regular.asCGFloat(), ofWeight: .regular) :
+                .sourceSansPro(ofSize: DesignConstants.FontSize.regular.asCGFloat(), ofWeight: .semibold)
         }
 
         private func setContentType() {
@@ -103,8 +103,8 @@ class CoreUI {
 
         private func setBorder() {
             layer.borderWidth = self.isEditing ?
-                CGFloat(DesignConstants.InputComponents.borderWidth) :
-                CGFloat(DesignConstants.InputComponents.noBorder)
+                DesignConstants.InputComponents.borderWidth.asCGFloat() :
+                DesignConstants.InputComponents.noBorder.asCGFloat()
         }
 
         private func setImage() {

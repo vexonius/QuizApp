@@ -64,7 +64,7 @@ extension LoginViewController: ConstructViewsProtocol {
         logoLabel.textAlignment = .center
         logoLabel.textColor = .white
         logoLabel.font = .sourceSansPro(
-            ofSize: CGFloat(DesignConstants.FontSize.heading),
+            ofSize: DesignConstants.FontSize.heading.asCGFloat(),
             ofWeight: SourceSansProWeight.bold)
     }
 
