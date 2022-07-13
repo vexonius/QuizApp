@@ -1,6 +1,6 @@
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     var gradientLayer: CAGradientLayer!
     var logoLabel: UILabel!
