@@ -1,0 +1,28 @@
+import Foundation
+
+struct DesignConstants {
+
+    struct Insets {
+        static let componentsInset: Float = 32.0
+        static let thumbnailRightInset: Float = 18
+        static let componentSpacing: Float = 18
+        static let none = 0
+    }
+
+    struct InputComponents {
+        static let height: Float = 44.0
+        static let cornerRadius: Float = 22
+        static let borderWidth = 1
+        static let noBorder = 0
+        static let thumbnailWidth = 20
+        static let thumbnailHeight = 20
+    }
+
+    struct FontSize {
+        static let regular: Float = 16
+        static let subtitle: Float = 20
+        static let title: Float = 24
+        static let heading: Float = 32
+    }
+
+}

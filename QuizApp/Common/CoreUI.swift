@@ -16,7 +16,7 @@ class CoreUI {
     class RoundedTextInput: UITextField {
 
         private var type: RoundedTextInputType = .default
-        private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        private let containerPadding = UIEdgeInsets(top: .zero, left: 10, bottom: .zero, right: 10)
 
         init(type: RoundedTextInputType) {
             super.init(frame: .zero)
@@ -35,29 +35,29 @@ class CoreUI {
         }
 
         override func textRect(forBounds bounds: CGRect) -> CGRect {
-            bounds.inset(by: padding)
+            bounds.inset(by: containerPadding)
         }
 
         override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-            bounds.inset(by: padding)
+            bounds.inset(by: containerPadding)
         }
 
         override func editingRect(forBounds bounds: CGRect) -> CGRect {
-            bounds.inset(by: padding)
+            bounds.inset(by: containerPadding)
         }
 
         override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
             var rightViewRect = super.rightViewRect(forBounds: bounds)
-            rightViewRect.origin.x -= 18
+            rightViewRect.origin.x -= CGFloat(DesignConstants.Insets.thumbnailRightInset)
             return rightViewRect
         }
 
         func styleForInFocus() {
-            layer.borderWidth = 1
+            layer.borderWidth = CGFloat(DesignConstants.InputComponents.borderWidth)
         }
 
         func styleForOutOfFocus() {
-            layer.borderWidth = 0
+            layer.borderWidth = CGFloat(DesignConstants.InputComponents.noBorder)
         }
 
         private func style() {
@@ -66,7 +66,7 @@ class CoreUI {
             textColor = .white
 
             layer.borderColor = UIColor.white.cgColor
-            layer.cornerRadius = 22
+            layer.cornerRadius = CGFloat(DesignConstants.InputComponents.cornerRadius)
             layer.cornerCurve = .continuous
 
             attributedPlaceholder = NSAttributedString(
@@ -74,8 +74,8 @@ class CoreUI {
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
 
             font = self.isFocused ?
-                UIFont.sourceSansPro(ofSize: 16, ofWeight: .semibold) :
-                UIFont.sourceSansPro(ofSize: 16, ofWeight: .semibold)
+                .sourceSansPro(ofSize: CGFloat(DesignConstants.FontSize.regular), ofWeight: .regular) :
+                .sourceSansPro(ofSize: CGFloat(DesignConstants.FontSize.regular), ofWeight: .semibold)
         }
 
         private func setContentType() {
@@ -93,16 +93,18 @@ class CoreUI {
         private func setPlaceholder() {
             switch type {
             case .username:
-                placeholder = String.emailPlaceholder
+                placeholder = LocalizedStrings.emailPlaceholder.localizedString
             case .password:
-                placeholder = String.passwordPlaceholder
+                placeholder = LocalizedStrings.passwordPlaceholder.localizedString
             case .default:
                 return
             }
         }
 
         private func setBorder() {
-            layer.borderWidth = self.isEditing ? 1 : 0
+            layer.borderWidth = self.isEditing ?
+                CGFloat(DesignConstants.InputComponents.borderWidth) :
+                CGFloat(DesignConstants.InputComponents.noBorder)
         }
 
         private func setImage() {
@@ -110,7 +112,11 @@ class CoreUI {
 
             self.rightView = UIImageView(image: UIImage.hidetext)
             self.rightViewMode = .always
-            self.rightView?.frame = CGRect(x: 0, y: 0, width: 40, height: 20)
+            self.rightView?.frame = CGRect(
+                x: .zero,
+                y: .zero,
+                width: DesignConstants.InputComponents.thumbnailWidth,
+                height: DesignConstants.InputComponents.thumbnailHeight)
         }
 
     }
