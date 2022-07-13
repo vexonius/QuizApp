@@ -27,6 +27,7 @@ class CoreUI {
             setContentType()
             setBorder()
             setPlaceholder()
+            setImage()
         }
 
         required init?(coder: NSCoder) {
@@ -43,6 +44,12 @@ class CoreUI {
 
         override func editingRect(forBounds bounds: CGRect) -> CGRect {
             bounds.inset(by: padding)
+        }
+
+        override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+            var rightViewRect = super.rightViewRect(forBounds: bounds)
+            rightViewRect.origin.x -= 18
+            return rightViewRect
         }
 
         func styleForInFocus() {
@@ -96,6 +103,14 @@ class CoreUI {
 
         private func setBorder() {
             layer.borderWidth = self.isEditing ? 1 : 0
+        }
+
+        private func setImage() {
+            guard type == .password else { return }
+
+            self.rightView = UIImageView(image: UIImage.hidetext)
+            self.rightViewMode = .always
+            self.rightView?.frame = CGRect(x: 0, y: 0, width: 40, height: 20)
         }
 
     }

@@ -35,6 +35,7 @@ extension LoginViewController: ConstructViewsProtocol {
             make.width.equalToSuperview()
             make.height.equalTo(40)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(76)
+            make.centerX.equalToSuperview()
         }
 
         usernameInput.snp.makeConstraints { make in
