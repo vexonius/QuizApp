@@ -3,6 +3,6 @@ import UIKit
 
 extension UIImage {
 
-    static let hidetext = UIImage(named: "hide-text")!
+    static let hideText = UIImage(named: "hide-text")!
 
 }

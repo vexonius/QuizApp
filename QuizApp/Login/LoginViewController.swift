@@ -5,8 +5,8 @@ class LoginViewController: BaseViewController {
 
     private var gradientLayer: CAGradientLayer!
     private var logoLabel: UILabel!
-    private var usernameInput: CoreUI.RoundedTextInput!
-    private var passwordInput: CoreUI.RoundedTextInput!
+    private var usernameInput: RoundedTextInput!
+    private var passwordInput: RoundedTextInput!
 
     private let gradientStartPoint = CGPoint(x: 0.5, y: 1)
     private let gradientEndPoint = CGPoint(x: 0.5, y: 0)
@@ -47,10 +47,10 @@ extension LoginViewController: ConstructViewsProtocol {
         logoLabel = UILabel()
         view.addSubview(logoLabel)
 
-        usernameInput = CoreUI.RoundedTextInput(type: .username)
+        usernameInput = RoundedTextInput(type: .username)
         view.addSubview(usernameInput)
 
-        passwordInput = CoreUI.RoundedTextInput(type: .password)
+        passwordInput = RoundedTextInput(type: .password)
         view.addSubview(passwordInput)
     }
 
@@ -64,7 +64,7 @@ extension LoginViewController: ConstructViewsProtocol {
         logoLabel.textAlignment = .center
         logoLabel.textColor = .white
         logoLabel.font = .sourceSansPro(
-            ofSize: DesignConstants.FontSize.heading.asCGFloat(),
+            ofSize: DesignConstants.FontSize.heading.cgFloat,
             ofWeight: SourceSansProWeight.bold)
     }
 
@@ -98,15 +98,15 @@ extension LoginViewController: ConstructViewsProtocol {
 extension LoginViewController: UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let textField = textField as? CoreUI.RoundedTextInput {
-            textField.styleForInFocus()
-        }
+        guard let textField = textField as? RoundedTextInput else { return }
+
+        textField.styleForInFocus()
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let textField = textField as? CoreUI.RoundedTextInput {
-            textField.styleForOutOfFocus()
-        }
+        guard let textField = textField as? RoundedTextInput else { return }
+
+        textField.styleForOutOfFocus()
     }
 
 }
