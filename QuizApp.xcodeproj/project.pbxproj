@@ -65,6 +65,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0242FAA28815B5B00927148 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F088E82A287DAE2000E0375D /* Common */,
+				F0749188287DABDE005A7A55 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F0242FAB28815B6600927148 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F0242FAC28815B6F00927148 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F0242FAD28815B7700927148 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				F0E6A97F287C74CB007BF1D4 /* Assets.xcassets */,
+				F0E6A981287C74CB007BF1D4 /* LaunchScreen.storyboard */,
+				F088E837287EB88C00E0375D /* Fonts */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F0242FAE28815BDA00927148 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				F088E83E287EBC4900E0375D /* BaseViewController.swift */,
+				F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 		F0749188287DABDE005A7A55 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +118,9 @@
 		F088E82A287DAE2000E0375D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F0242FAE28815BDA00927148 /* Interfaces */,
 				F0918417288038A800CB7550 /* UIComponents */,
 				F088E82E287DB31B00E0375D /* Helpers */,
-				F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */,
-				F088E83E287EBC4900E0375D /* BaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -144,14 +185,13 @@
 		F0E6A975287C74CA007BF1D4 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				F088E837287EB88C00E0375D /* Fonts */,
 				F088E82D287DAF1400E0375D /* Application */,
-				F088E82A287DAE2000E0375D /* Common */,
-				F0749188287DABDE005A7A55 /* Login */,
-				F0E6A97F287C74CB007BF1D4 /* Assets.xcassets */,
-				F0E6A981287C74CB007BF1D4 /* LaunchScreen.storyboard */,
-				F0E6A984287C74CB007BF1D4 /* Info.plist */,
+				F0242FAC28815B6F00927148 /* Data */,
+				F0242FAB28815B6600927148 /* Domain */,
+				F0242FAA28815B5B00927148 /* Presentation */,
+				F0242FAD28815B7700927148 /* Supporting files */,
 				F0513298287DA252003E8D90 /* .swiftlint.yml */,
+				F0E6A984287C74CB007BF1D4 /* Info.plist */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";

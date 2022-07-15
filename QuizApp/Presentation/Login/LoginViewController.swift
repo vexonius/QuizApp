@@ -1,6 +1,5 @@
 import UIKit
 import SnapKit
-import Combine
 
 class LoginViewController: BaseViewController {
 
@@ -91,7 +90,6 @@ extension LoginViewController: ConstructViewsProtocol {
         logoLabel.text = LocalizedStrings.appName.localizedString
         logoLabel.textAlignment = .center
         logoLabel.textColor = .white
-        logoLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         logoLabel.font = .sourceSansPro(
             ofSize: DesignConstants.FontSize.heading.cgFloat,
             ofWeight: SourceSansProWeight.bold)
@@ -100,8 +98,6 @@ extension LoginViewController: ConstructViewsProtocol {
         componentsStackView.axis = .vertical
         componentsStackView.alignment = .center
         componentsStackView.distribution = .fill
-
-        componentsContainerView.setContentHuggingPriority(.defaultHigh, for: .vertical)
     }
 
     func defineLayoutForViews() {
