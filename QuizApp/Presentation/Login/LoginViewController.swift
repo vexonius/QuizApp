@@ -26,6 +26,7 @@ class LoginViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+        adaptComponentsForOrientationChanges()
 
         usernameInput.delegate = self
         passwordInput.delegate = self
@@ -35,13 +36,18 @@ class LoginViewController: BaseViewController {
         super.viewDidLayoutSubviews()
 
         gradientLayer.frame = view.bounds
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
         adaptComponentsForOrientationChanges()
     }
 
     private func adaptComponentsForOrientationChanges() {
-        let spacing = UIDevice.current.orientation.isLandscape ?
-            CustomConstants.usernameInputLandscapeOffset :
-            CustomConstants.usernameInputOffset
+        let spacing = view.traitCollection.verticalSizeClass == .regular ?
+            CustomConstants.usernameInputOffset :
+            CustomConstants.usernameInputLandscapeOffset
         componentsStackView.setCustomSpacing(spacing, after: logoLabel)
     }
 
