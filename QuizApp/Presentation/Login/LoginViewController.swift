@@ -18,6 +18,7 @@ class LoginViewController: BaseViewController {
         static let logoLabelTopOffset = 76
         static let usernameInputOffset = 144.0
         static let usernameInputLandscapeOffset = 30.0
+        static let componentsSpacing = 18
     }
 
     override func viewDidLoad() {
@@ -94,7 +95,7 @@ extension LoginViewController: ConstructViewsProtocol {
             ofSize: DesignConstants.FontSize.heading.cgFloat,
             ofWeight: SourceSansProWeight.bold)
 
-        componentsStackView.spacing = 18
+        componentsStackView.spacing = CustomConstants.componentsSpacing.cgFloat
         componentsStackView.axis = .vertical
         componentsStackView.alignment = .center
         componentsStackView.distribution = .fill
@@ -103,7 +104,7 @@ extension LoginViewController: ConstructViewsProtocol {
     func defineLayoutForViews() {
         componentsStackView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.componentsInset)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.centerX.equalToSuperview()
         }
 
@@ -114,7 +115,6 @@ extension LoginViewController: ConstructViewsProtocol {
 
         componentsContainerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.greaterThanOrEqualToSuperview()
             make.bottom.lessThanOrEqualToSuperview()
         }
 
