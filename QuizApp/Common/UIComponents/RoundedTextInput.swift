@@ -47,6 +47,7 @@ class RoundedTextInput: UITextField {
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         var rightViewRect = super.rightViewRect(forBounds: bounds)
         rightViewRect.origin.x -= DesignConstants.Insets.thumbnailRightInset.cgFloat
+
         return rightViewRect
     }
 

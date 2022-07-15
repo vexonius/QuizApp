@@ -3,10 +3,15 @@ import Foundation
 struct DesignConstants {
 
     struct Insets {
+        static let none = 0
+
         static let componentsInset: Float = 32.0
+        static let inputComponentEditRectTopInset: Float = 10
+        static let inputComponentEditRectRightInset: Float = 21
+        static let inputComponentEditRectLeftInset: Float = 21
+        static let inputComponentEditRectBottomInset: Float = 10
         static let thumbnailRightInset: Float = 18
         static let componentSpacing: Float = 18
-        static let none = 0
     }
 
     struct InputComponents {
@@ -16,6 +21,7 @@ struct DesignConstants {
         static let noBorder = 0
         static let thumbnailWidth = 20
         static let thumbnailHeight = 20
+        static let thumbnailPadding = 44
     }
 
     struct FontSize {
