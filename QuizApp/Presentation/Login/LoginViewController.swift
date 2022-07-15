@@ -26,7 +26,6 @@ class LoginViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
-        adaptComponentsForOrientationChanges()
 
         usernameInput.delegate = self
         passwordInput.delegate = self
@@ -36,11 +35,6 @@ class LoginViewController: BaseViewController {
         super.viewDidLayoutSubviews()
 
         gradientLayer.frame = view.bounds
-    }
-
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-
         adaptComponentsForOrientationChanges()
     }
 
@@ -156,6 +150,12 @@ extension LoginViewController: UITextFieldDelegate {
         guard let textField = textField as? RoundedTextInput else { return }
 
         textField.styleForOutOfFocus()
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
     }
 
 }
