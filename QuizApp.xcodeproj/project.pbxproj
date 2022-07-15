@@ -21,6 +21,7 @@
 		F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E840287EC1DD00E0375D /* RoundedTextInput.swift */; };
 		F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E845287EF72500E0375D /* UIImage+Extensions.swift */; };
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
+		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */; };
 		F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */; };
 		F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A97A287C74CA007BF1D4 /* LoginViewController.swift */; };
@@ -42,6 +43,7 @@
 		F088E840287EC1DD00E0375D /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
 		F088E845287EF72500E0375D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
+		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0E6A973287C74CA007BF1D4 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0242FAA28815B5B00927148 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F088E82A287DAE2000E0375D /* Common */,
+				F0749188287DABDE005A7A55 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F0242FAB28815B6600927148 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F0242FAC28815B6F00927148 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F0242FAD28815B7700927148 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				F0E6A97F287C74CB007BF1D4 /* Assets.xcassets */,
+				F0E6A981287C74CB007BF1D4 /* LaunchScreen.storyboard */,
+				F088E837287EB88C00E0375D /* Fonts */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F0242FAE28815BDA00927148 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				F088E83E287EBC4900E0375D /* BaseViewController.swift */,
+				F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 		F0749188287DABDE005A7A55 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,10 +118,9 @@
 		F088E82A287DAE2000E0375D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F0242FAE28815BDA00927148 /* Interfaces */,
 				F0918417288038A800CB7550 /* UIComponents */,
 				F088E82E287DB31B00E0375D /* Helpers */,
-				F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */,
-				F088E83E287EBC4900E0375D /* BaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -118,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F088E840287EC1DD00E0375D /* RoundedTextInput.swift */,
+				F0A70876288041D20077A678 /* RoundedButton.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -141,14 +185,13 @@
 		F0E6A975287C74CA007BF1D4 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				F088E837287EB88C00E0375D /* Fonts */,
 				F088E82D287DAF1400E0375D /* Application */,
-				F088E82A287DAE2000E0375D /* Common */,
-				F0749188287DABDE005A7A55 /* Login */,
-				F0E6A97F287C74CB007BF1D4 /* Assets.xcassets */,
-				F0E6A981287C74CB007BF1D4 /* LaunchScreen.storyboard */,
-				F0E6A984287C74CB007BF1D4 /* Info.plist */,
+				F0242FAC28815B6F00927148 /* Data */,
+				F0242FAB28815B6600927148 /* Domain */,
+				F0242FAA28815B5B00927148 /* Presentation */,
+				F0242FAD28815B7700927148 /* Supporting files */,
 				F0513298287DA252003E8D90 /* .swiftlint.yml */,
+				F0E6A984287C74CB007BF1D4 /* Info.plist */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -267,6 +310,7 @@
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
 				F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */,
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
+				F0A70877288041D20077A678 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
