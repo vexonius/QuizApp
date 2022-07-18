@@ -14,7 +14,7 @@ class RoundedTextInput: UITextField {
     }
 
     private var type: RoundedTextInputType = .default
-    private let containerPadding = UIEdgeInsets(top: .zero, left: 10, bottom: .zero, right: 10)
+    private let containerPadding = UIEdgeInsets(top: 10, left: 21, bottom: 10, right: 40)
 
     init(type: RoundedTextInputType) {
         super.init(frame: .zero)
@@ -102,14 +102,15 @@ class RoundedTextInput: UITextField {
 
     private func setBorder() {
         layer.borderWidth = self.isEditing ?
-        DesignConstants.InputComponents.borderWidth.cgFloat :
-        DesignConstants.InputComponents.noBorder.cgFloat
+            DesignConstants.InputComponents.borderWidth.cgFloat :
+            DesignConstants.InputComponents.noBorder.cgFloat
     }
 
     private func setImage() {
         guard type == .password else { return }
 
         self.rightView = UIImageView(image: .hideText)
+        self.rightView?.isUserInteractionEnabled = true
         self.rightViewMode = .always
         self.rightView?.frame = CGRect(
             x: .zero,
