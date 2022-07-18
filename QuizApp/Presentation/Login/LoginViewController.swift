@@ -1,7 +1,12 @@
+import Combine
 import UIKit
 import SnapKit
 
 class LoginViewController: BaseViewController {
+
+    private var viewModel: LoginViewModel!
+
+    private var cancellables: Set<AnyCancellable> = []
 
     private var gradientLayer: CAGradientLayer!
     private var logoLabel: UILabel!
@@ -19,6 +24,19 @@ class LoginViewController: BaseViewController {
         static let usernameInputOffset = 144.0
         static let usernameInputLandscapeOffset = 30.0
         static let componentsSpacing = 18
+
+        static let buttonDisabledOpacity = 0.6
+        static let buttonEnabledOpacity = 1.0
+    }
+
+    init(viewModel: LoginViewModel) {
+        super.init(nibName: nil, bundle: nil)
+
+        self.viewModel = viewModel
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -27,6 +45,8 @@ class LoginViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+        bindViews()
+
         adaptComponentsForOrientationChanges()
 
         usernameInput.delegate = self
@@ -138,6 +158,62 @@ extension LoginViewController: ConstructViewsProtocol {
             make.top.equalTo(passwordInput.snp.bottom).offset(DesignConstants.Insets.componentSpacing)
             make.centerX.equalToSuperview()
         }
+    }
+
+}
+
+// MARK: View Bindings
+
+extension LoginViewController: BindViewsProtocol {
+
+    func bindViews() {
+        viewModel
+            .$isLoginButtonEnabled
+            .assign(to: \.isEnabled, on: loginButton)
+            .store(in: &cancellables)
+
+        viewModel
+            .$isLoginButtonEnabled
+            .sink { [weak self] isEnabled in
+                self?.loginButton.alpha = isEnabled ?
+                    CustomConstants.buttonEnabledOpacity :
+                    CustomConstants.buttonDisabledOpacity
+            }
+            .store(in: &cancellables)
+
+        viewModel
+            .$isPasswordHidden
+            .assign(to: \.isSecureTextEntry, on: passwordInput)
+            .store(in: &cancellables)
+
+        loginButton
+            .gesture(.tap())
+            .sink { [weak self] _ in
+                self?.viewModel.login()
+            }
+            .store(in: &cancellables)
+
+        usernameInput
+            .textDidChange
+            .sink { [weak self] email in
+                self?.viewModel.onEmailChanged(email)
+            }
+            .store(in: &cancellables)
+
+        passwordInput
+            .textDidChange
+            .sink { [weak self] password in
+                self?.viewModel.onPasswordChanged(password)
+            }
+            .store(in: &cancellables)
+
+        passwordInput
+            .rightView?
+            .tap
+            .sink { [weak self] _ in
+                self?.viewModel.togglePasswordVisibility()
+            }
+            .store(in: &cancellables)
     }
 
 }
