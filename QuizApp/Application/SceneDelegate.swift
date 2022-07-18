@@ -15,8 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let window = window else { return }
 
-        let loginViewModel = LoginViewModel()
-        window.rootViewController = LoginViewController(viewModel: loginViewModel)
+        let mainNavigationController = UINavigationController()
+        window.rootViewController = mainNavigationController
+
+        let appCoordinator: AppCoordinatorProvider = AppCoordinator(navigationController: mainNavigationController)
+        appCoordinator.routeToLogin()
+
         window.makeKeyAndVisible()
     }
 
