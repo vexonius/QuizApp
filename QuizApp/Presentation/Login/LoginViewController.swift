@@ -1,10 +1,12 @@
+import Combine
 import UIKit
 import SnapKit
-import Combine
 
 class LoginViewController: BaseViewController {
 
     private var viewModel: LoginViewModel!
+
+    private var cancellables: Set<AnyCancellable> = []
 
     private var gradientLayer: CAGradientLayer!
     private var logoLabel: UILabel!

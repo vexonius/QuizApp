@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = mainNavigationController
 
         let dependenciesContainer: ContainerProvider = Container()
-
         let appCoordinator: AppCoordinatorProvider = AppCoordinator(
             navigationController: mainNavigationController,
             container: dependenciesContainer)

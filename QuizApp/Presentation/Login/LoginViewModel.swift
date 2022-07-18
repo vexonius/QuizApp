@@ -3,24 +3,18 @@ import Combine
 
 class LoginViewModel {
 
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var isLoginButtonEnabled: Bool = true
-    @Published var isPasswordHidden: Bool = true
+    @Published private (set) var isLoginButtonEnabled: Bool = false
+    @Published private (set) var isPasswordHidden: Bool = true
+
+    private var email: String = ""
+    private var password: String = ""
 
     init() {
         validateInputs()
     }
 
     private func validateInputs() {
-        guard
-            !email.isEmpty,
-            !password.isEmpty
-        else {
-            return isLoginButtonEnabled = false
-        }
-
-        isLoginButtonEnabled = true
+        isLoginButtonEnabled = !email.isEmpty && !password.isEmpty
     }
 
     func login() {
