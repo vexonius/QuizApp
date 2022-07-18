@@ -3,17 +3,18 @@ import UIKit
 
 protocol AppCoordinatorProvider {
 
-    var navigationController: UINavigationController { get set }
-
     func routeToLogin()
+
 }
 
 class AppCoordinator: AppCoordinatorProvider {
 
-    var navigationController: UINavigationController
+    private var navigationController: UINavigationController
+    private var container: ContainerProvider
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, container: ContainerProvider) {
         self.navigationController = navigationController
+        self.container = container
     }
 
     func routeToLogin() {
