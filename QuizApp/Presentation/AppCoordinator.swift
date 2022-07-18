@@ -19,7 +19,7 @@ class AppCoordinator: AppCoordinatorProvider {
 
     func routeToLogin() {
         let loginViewController: UIViewController = LoginViewController(viewModel: LoginViewModel())
-        navigationController.pushViewController(loginViewController, animated: true)
+        navigationController.setViewControllers([loginViewController], animated: true)
     }
 
 }

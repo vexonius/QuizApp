@@ -3,6 +3,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var dependenciesContainer: ContainerProvider?
 
     func scene(
         _ scene: UIScene,
@@ -18,7 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainNavigationController = UINavigationController()
         window.rootViewController = mainNavigationController
 
-        let dependenciesContainer: ContainerProvider = Container()
+        dependenciesContainer = Container()
+
+        guard let dependenciesContainer = dependenciesContainer else { return }
+
         let appCoordinator: AppCoordinatorProvider = AppCoordinator(
             navigationController: mainNavigationController,
             container: dependenciesContainer)

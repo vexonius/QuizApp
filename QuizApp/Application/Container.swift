@@ -1,5 +1,3 @@
-import Foundation
-
 protocol ContainerProvider {
 
     func resolveLoginViewController() -> LoginViewController
