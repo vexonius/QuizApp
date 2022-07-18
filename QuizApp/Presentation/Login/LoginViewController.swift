@@ -235,4 +235,10 @@ extension LoginViewController: UITextFieldDelegate {
         textField.styleForOutOfFocus()
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
+    }
+
 }
