@@ -172,11 +172,11 @@ extension LoginViewController: BindViewsProtocol {
 
         viewModel
             .$isLoginButtonEnabled
-            .sink(receiveValue: { [weak self] isEnabled in
+            .sink { [weak self] isEnabled in
                 self?.loginButton.alpha = isEnabled ?
                     CustomConstants.buttonEnabledOpacity :
                     CustomConstants.buttonDisabledOpacity
-            })
+            }
             .store(in: &cancellables)
 
         viewModel
@@ -186,34 +186,31 @@ extension LoginViewController: BindViewsProtocol {
 
         loginButton
             .gesture(.tap())
-            .sink(receiveValue: { [weak self] _ in
+            .sink { [weak self] _ in
                 self?.viewModel.login()
-            })
+            }
             .store(in: &cancellables)
 
         usernameInput
             .textDidChange
-            .assign(to: \.username, on: viewModel)
+            .sink { [weak self] email in
+                self?.viewModel.onEmailChanged(email)
+            }
             .store(in: &cancellables)
 
         passwordInput
             .textDidChange
-            .assign(to: \.password, on: viewModel)
-            .store(in: &cancellables)
-
-        Publishers
-            .Merge(usernameInput.textDidChange, passwordInput.textDidChange)
-            .sink { [weak self] _ in
-                self?.viewModel.observeInputs()
+            .sink { [weak self] password in
+                self?.viewModel.onPasswordChanged(password)
             }
             .store(in: &cancellables)
 
         passwordInput
             .rightView?
             .tap
-            .sink(receiveValue: { [weak self] _ in
+            .sink { [weak self] _ in
                 self?.viewModel.togglePasswordVisibility()
-            })
+            }
             .store(in: &cancellables)
     }
 
