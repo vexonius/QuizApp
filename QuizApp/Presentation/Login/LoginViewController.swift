@@ -1,7 +1,10 @@
 import UIKit
 import SnapKit
+import Combine
 
 class LoginViewController: BaseViewController {
+
+    private var viewModel: LoginViewModel!
 
     private var gradientLayer: CAGradientLayer!
     private var logoLabel: UILabel!
@@ -19,6 +22,14 @@ class LoginViewController: BaseViewController {
         static let usernameInputOffset = 144.0
         static let usernameInputLandscapeOffset = 30.0
         static let componentsSpacing = 18
+    init(viewModel: LoginViewModel) {
+        super.init(nibName: nil, bundle: nil)
+
+        self.viewModel = viewModel
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -27,6 +38,7 @@ class LoginViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+        bindViews()
         adaptComponentsForOrientationChanges()
 
         usernameInput.delegate = self
@@ -138,6 +150,15 @@ extension LoginViewController: ConstructViewsProtocol {
             make.top.equalTo(passwordInput.snp.bottom).offset(DesignConstants.Insets.componentSpacing)
             make.centerX.equalToSuperview()
         }
+    }
+
+}
+
+// MARK: View Bindings
+
+extension LoginViewController: BindViewsProtocol {
+
+    func bindViews() {
     }
 
 }
