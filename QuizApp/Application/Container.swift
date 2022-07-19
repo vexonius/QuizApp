@@ -1,10 +1,10 @@
-protocol ContainerProvider {
+protocol ContainerProtocol {
 
     func resolveLoginViewController() -> LoginViewController
 
 }
 
-class Container: ContainerProvider {
+class Container: ContainerProtocol {
 
     func resolveLoginViewController() -> LoginViewController {
         let viewModel: LoginViewModel = LoginViewModel()

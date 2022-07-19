@@ -3,8 +3,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private var container: ContainerProvider?
-    private var appCoordinator: AppCoordinatorProvider?
+    private var container: ContainerProtocol?
+    private var appCoordinator: AppCoordinatorProtocol?
 
     func scene(
         _ scene: UIScene,

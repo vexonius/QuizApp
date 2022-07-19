@@ -1,21 +1,25 @@
 import Foundation
 import UIKit
 
-protocol AppCoordinatorProvider {
+protocol AppCoordinatorProtocol {
 
     func routeToLogin()
 
 }
 
-class AppCoordinator: AppCoordinatorProvider {
+class AppCoordinator {
 
     private var navigationController: UINavigationController
-    private var container: ContainerProvider
+    private var container: ContainerProtocol
 
-    init(navigationController: UINavigationController, container: ContainerProvider) {
+    init(navigationController: UINavigationController, container: ContainerProtocol) {
         self.navigationController = navigationController
         self.container = container
     }
+
+}
+
+extension AppCoordinator: AppCoordinatorProtocol {
 
     func routeToLogin() {
         let loginViewController: UIViewController = container.resolveLoginViewController()
