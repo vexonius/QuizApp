@@ -3,7 +3,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private var dependenciesContainer: ContainerProvider?
+    private var container: ContainerProvider?
+    private var appCoordinator: AppCoordinatorProvider?
 
     func scene(
         _ scene: UIScene,
@@ -19,13 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainNavigationController = UINavigationController()
         window.rootViewController = mainNavigationController
 
-        dependenciesContainer = Container()
+        container = Container()
 
-        guard let dependenciesContainer = dependenciesContainer else { return }
+        guard let container = container else { return }
 
-        let appCoordinator: AppCoordinatorProvider = AppCoordinator(
-            navigationController: mainNavigationController,
-            container: dependenciesContainer)
+        appCoordinator = AppCoordinator(navigationController: mainNavigationController, container: container)
+
+        guard let appCoordinator = appCoordinator else { return }
+
         appCoordinator.routeToLogin()
 
         window.makeKeyAndVisible()
