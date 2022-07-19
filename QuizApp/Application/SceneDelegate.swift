@@ -3,6 +3,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var container: ContainerProtocol?
+    private var appCoordinator: AppCoordinatorProtocol?
 
     func scene(
         _ scene: UIScene,
@@ -15,8 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let window = window else { return }
 
-        let loginViewModel = LoginViewModel()
-        window.rootViewController = LoginViewController(viewModel: loginViewModel)
+        let mainNavigationController = UINavigationController()
+        window.rootViewController = mainNavigationController
+
+        container = Container()
+
+        guard let container = container else { return }
+
+        appCoordinator = AppCoordinator(navigationController: mainNavigationController, container: container)
+
+        guard let appCoordinator = appCoordinator else { return }
+
+        appCoordinator.routeToLogin()
+
         window.makeKeyAndVisible()
     }
 
