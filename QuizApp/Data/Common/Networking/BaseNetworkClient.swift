@@ -40,6 +40,16 @@ enum ClientError: Error {
 
 }
 
+enum HeaderField: String {
+
+    case authorization = "Authorization"
+
+    var key: String {
+        self.rawValue
+    }
+
+}
+
 protocol BaseNetworkClientProvider {
 
     func get<T: Codable>(
@@ -60,11 +70,11 @@ protocol BaseNetworkClientProvider {
 
 class BaseNetworkClient {
 
-    static let baseApiUrl = URL(string: "https://five-ios-quiz-app.herokuapp.com/api/v1/")!
+    static let baseApiUrl = URL(string: Api.baseUrl + Api.currentApiVersion)!
 
     private var urlSession: URLSession = {
         var config = URLSessionConfiguration.default
-        config.protocolClasses = []
+        config.protocolClasses = [Interceptor.self]
 
         return URLSession(configuration: config)
     }()
@@ -89,16 +99,16 @@ class BaseNetworkClient {
         guard let response = response as? HTTPURLResponse else { throw NetworkError.responseCorrupted }
 
         switch response.statusCode {
-        case 200...300:
+        case 200..<300:
             return
         case 400:
             throw ClientError.badRequest
         case 401:
-            throw ClientError.serverError
+            throw ClientError.unauthorized
         case 403:
-            throw ClientError.serverError
+            throw ClientError.forbiden
         case 404:
-            throw ClientError.serverError
+            throw ClientError.notFound
         case 500...:
             throw ClientError.serverError
         default:
