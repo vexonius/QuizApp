@@ -13,12 +13,12 @@
 		F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FAF28815C6100927148 /* BindViewsProtocol.swift */; };
 		F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FB128816A2500927148 /* LoginViewModel.swift */; };
 		F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E13362885F063001F2ABB /* URLSession+Extension.swift */; };
-		F04E133A288693DF001F2ABB /* LoginNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E1339288693DF001F2ABB /* LoginNetworkModel.swift */; };
 		F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */; };
 		F04E133F28869615001F2ABB /* LoginBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133E28869615001F2ABB /* LoginBodyModel.swift */; };
 		F0513299287DA252003E8D90 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
 		F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C8AA5288172FA00D8FC5A /* Gesture+Extensions.swift */; };
 		F05C8AA828817BBB00D8FC5A /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */; };
+		F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
 		F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */; };
 		F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82F287DB34700E0375D /* UIColor+Extensions.swift */; };
@@ -41,6 +41,8 @@
 		F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A97A287C74CA007BF1D4 /* LoginViewController.swift */; };
 		F0E6A980287C74CB007BF1D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E6A97F287C74CB007BF1D4 /* Assets.xcassets */; };
 		F0E6A983287C74CB007BF1D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E6A981287C74CB007BF1D4 /* LaunchScreen.storyboard */; };
+		F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */; };
+		F0EA48212886E0B80042BD52 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA48202886E0B80042BD52 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,12 +52,12 @@
 		F0242FAF28815C6100927148 /* BindViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewsProtocol.swift; sourceTree = "<group>"; };
 		F0242FB128816A2500927148 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F04E13362885F063001F2ABB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
-		F04E1339288693DF001F2ABB /* LoginNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkModel.swift; sourceTree = "<group>"; };
 		F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseNetworkModel.swift; sourceTree = "<group>"; };
 		F04E133E28869615001F2ABB /* LoginBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBodyModel.swift; sourceTree = "<group>"; };
 		F0513298287DA252003E8D90 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F05C8AA5288172FA00D8FC5A /* Gesture+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gesture+Extensions.swift"; sourceTree = "<group>"; };
 		F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
+		F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyNetworkModel.swift; sourceTree = "<group>"; };
 		F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		F088E82F287DB34700E0375D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F088E833287DD0A500E0375D /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		F0E6A97F287C74CB007BF1D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E6A982287C74CB007BF1D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E6A984287C74CB007BF1D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLProtocol+Interceptor.swift"; sourceTree = "<group>"; };
+		F0EA48202886E0B80042BD52 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,15 +162,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		F04E1338288693CE001F2ABB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F04E1339288693DF001F2ABB /* LoginNetworkModel.swift */,
-				F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		F04E133D28869608001F2ABB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,8 +175,36 @@
 			isa = PBXGroup;
 			children = (
 				F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */,
+				F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */,
+				F0EA48202886E0B80042BD52 /* Api.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		F069A7422886F26400F8DB81 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F069A74A2887F27D00F8DB81 /* Models */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F069A7472886F7F000F8DB81 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */,
+				F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F069A74A2887F27D00F8DB81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F069A7432886F28700F8DB81 /* LoginRequestBodyRepoModel.swift */,
+				F069A7452886F38600F8DB81 /* LoginResponseRepoModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F0749188287DABDE005A7A55 /* Login */ = {
