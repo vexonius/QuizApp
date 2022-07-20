@@ -8,6 +8,10 @@ enum HttpMethod: String {
     case patch = "PATCH"
     case delete = "DELETE"
 
+    var string: String {
+        return self.rawValue
+    }
+
 }
 
 enum NetworkError: Error {
@@ -41,7 +45,7 @@ enum ClientError: Error {
 
 }
 
-protocol BaseNetworkClientProvider {
+protocol BaseNetworkClientProtocol {
 
     func get<T: Codable>(
         url: URL,
@@ -116,7 +120,7 @@ class BaseNetworkClient {
     ) async throws -> URLRequest {
 
         var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
+        request.httpMethod = method.string
 
         headers?.forEach { (key, value) in
             request.setValue(value, forHTTPHeaderField: key)
@@ -135,7 +139,7 @@ class BaseNetworkClient {
 
 }
 
-extension BaseNetworkClient: BaseNetworkClientProvider {
+extension BaseNetworkClient: BaseNetworkClientProtocol {
 
     func get<T: Codable>(
         url: URL,

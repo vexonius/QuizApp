@@ -8,8 +8,6 @@ class Interceptor: URLProtocol, URLSessionDelegate {
             lastPathComponent != LoginEndpoints.login.rawValue
         else { return false }
 
-        dump(request)
-
         return request.value(forHTTPHeaderField: HeaderField.authorization.key) == nil
     }
 
@@ -17,11 +15,13 @@ class Interceptor: URLProtocol, URLSessionDelegate {
         request
     }
 
+    // Unfortunately, this is the only way to create global interceptor for all requests
     override func startLoading() {
 
         var newRequest = request
 
         if newRequest.value(forHTTPHeaderField: HeaderField.authorization.key) == nil {
+            // TODO: receive token from keychain, in progress
             let token = "token"
 
             newRequest.setValue(

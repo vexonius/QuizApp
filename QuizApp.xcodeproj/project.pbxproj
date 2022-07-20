@@ -14,7 +14,6 @@
 		F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FB128816A2500927148 /* LoginViewModel.swift */; };
 		F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E13362885F063001F2ABB /* URLSession+Extension.swift */; };
 		F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */; };
-		F04E133F28869615001F2ABB /* LoginBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133E28869615001F2ABB /* LoginBodyModel.swift */; };
 		F0513299287DA252003E8D90 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
 		F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C8AA5288172FA00D8FC5A /* Gesture+Extensions.swift */; };
 		F05C8AA828817BBB00D8FC5A /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */; };
@@ -22,7 +21,6 @@
 		F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7452886F38600F8DB81 /* LoginResponseRepoModel.swift */; };
 		F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */; };
 		F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */; };
-		F069A74E2887FEFC00F8DB81 /* LoginBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74D2887FEFC00F8DB81 /* LoginBodyModel.swift */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
 		F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */; };
 		F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82F287DB34700E0375D /* UIColor+Extensions.swift */; };
@@ -47,6 +45,7 @@
 		F0E6A983287C74CB007BF1D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E6A981287C74CB007BF1D4 /* LaunchScreen.storyboard */; };
 		F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */; };
 		F0EA48212886E0B80042BD52 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA48202886E0B80042BD52 /* Api.swift */; };
+		F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		F0242FB128816A2500927148 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F04E13362885F063001F2ABB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseNetworkModel.swift; sourceTree = "<group>"; };
-		F04E133E28869615001F2ABB /* LoginBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBodyModel.swift; sourceTree = "<group>"; };
 		F0513298287DA252003E8D90 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F05C8AA5288172FA00D8FC5A /* Gesture+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gesture+Extensions.swift"; sourceTree = "<group>"; };
 		F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 		F069A7452886F38600F8DB81 /* LoginResponseRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseRepoModel.swift; sourceTree = "<group>"; };
 		F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyNetworkModel.swift; sourceTree = "<group>"; };
 		F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderConstants.swift; sourceTree = "<group>"; };
-		F069A74D2887FEFC00F8DB81 /* LoginBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginBodyModel.swift; sourceTree = "<group>"; };
 		F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		F088E82F287DB34700E0375D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F088E833287DD0A500E0375D /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
@@ -91,6 +88,7 @@
 		F0E6A984287C74CB007BF1D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLProtocol+Interceptor.swift"; sourceTree = "<group>"; };
 		F0EA48202886E0B80042BD52 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +106,7 @@
 		F015E1EF2885972700BC7AE4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F0EA82FD288801BC007EB115 /* Models */,
 				F015E1F02885973400BC7AE4 /* LoginUseCase.swift */,
 			);
 			path = Login;
@@ -126,7 +125,6 @@
 		F0242FAB28815B6600927148 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				F04E133D28869608001F2ABB /* Models */,
 				F015E1EF2885972700BC7AE4 /* Login */,
 			);
 			path = Domain;
@@ -169,16 +167,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		F04E133D28869608001F2ABB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F069A74D2887FEFC00F8DB81 /* LoginBodyModel.swift */,
-				F04E133E28869615001F2ABB /* LoginBodyModel.swift */,
-			);
-			name = Models;
-			path = ../Presentation/Models;
-			sourceTree = "<group>";
-		};
 		F04E1343288697A1001F2ABB /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +181,7 @@
 		F069A7422886F26400F8DB81 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				F015E1F32885983600BC7AE4 /* LoginRepository.swift */,
 				F069A74A2887F27D00F8DB81 /* Models */,
 			);
 			path = Repository;
@@ -201,8 +190,8 @@
 		F069A7472886F7F000F8DB81 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */,
-				F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */,
+				F09458162885BB140015F1C7 /* LoginNetworkClient.swift */,
+				F0EA82FE288805D5007EB115 /* Models */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -284,8 +273,6 @@
 			children = (
 				F069A7472886F7F000F8DB81 /* Network */,
 				F069A7422886F26400F8DB81 /* Repository */,
-				F015E1F32885983600BC7AE4 /* LoginRepository.swift */,
-				F09458162885BB140015F1C7 /* LoginNetworkClient.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -327,6 +314,23 @@
 				F0E6A984287C74CB007BF1D4 /* Info.plist */,
 			);
 			path = QuizApp;
+			sourceTree = "<group>";
+		};
+		F0EA82FD288801BC007EB115 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0EA82FE288805D5007EB115 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */,
+				F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +440,8 @@
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* Container.swift in Sources */,
+				F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */,
 				F0EA48212886E0B80042BD52 /* Api.swift in Sources */,
-				F04E133F28869615001F2ABB /* LoginBodyModel.swift in Sources */,
 				F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */,
 				F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */,
 				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
@@ -457,7 +461,6 @@
 				F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
 				F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */,
-				F069A74E2887FEFC00F8DB81 /* LoginBodyModel.swift in Sources */,
 				F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */,
 				F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */,
 				F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */,

@@ -21,9 +21,9 @@ protocol LoginNetworkClientProtocol {
 
 class LoginNetworkClient {
 
-    private let baseNetworkClient: BaseNetworkClientProvider
+    private let baseNetworkClient: BaseNetworkClientProtocol
 
-    init(baseNetworkClient: BaseNetworkClientProvider) {
+    init(baseNetworkClient: BaseNetworkClientProtocol) {
         self.baseNetworkClient = baseNetworkClient
     }
 
