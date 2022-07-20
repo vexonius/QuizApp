@@ -1,4 +1,4 @@
-struct Api {
+enum Api {
 
     static let baseUrl = "https://five-ios-quiz-app.herokuapp.com/api/"
     static let currentApiVersion = "v1"
