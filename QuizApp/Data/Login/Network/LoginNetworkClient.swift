@@ -1,4 +1,5 @@
 import Foundation
+import Resolver
 
 enum LoginEndpoints: String {
 
