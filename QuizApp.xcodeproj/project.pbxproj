@@ -18,7 +18,11 @@
 		F0513299287DA252003E8D90 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
 		F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C8AA5288172FA00D8FC5A /* Gesture+Extensions.swift */; };
 		F05C8AA828817BBB00D8FC5A /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */; };
+		F069A7442886F28700F8DB81 /* LoginRequestBodyRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7432886F28700F8DB81 /* LoginRequestBodyRepoModel.swift */; };
+		F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7452886F38600F8DB81 /* LoginResponseRepoModel.swift */; };
 		F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */; };
+		F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */; };
+		F069A74E2887FEFC00F8DB81 /* LoginBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74D2887FEFC00F8DB81 /* LoginBodyModel.swift */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
 		F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */; };
 		F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82F287DB34700E0375D /* UIColor+Extensions.swift */; };
@@ -57,7 +61,11 @@
 		F0513298287DA252003E8D90 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F05C8AA5288172FA00D8FC5A /* Gesture+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gesture+Extensions.swift"; sourceTree = "<group>"; };
 		F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
+		F069A7432886F28700F8DB81 /* LoginRequestBodyRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyRepoModel.swift; sourceTree = "<group>"; };
+		F069A7452886F38600F8DB81 /* LoginResponseRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseRepoModel.swift; sourceTree = "<group>"; };
 		F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyNetworkModel.swift; sourceTree = "<group>"; };
+		F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderConstants.swift; sourceTree = "<group>"; };
+		F069A74D2887FEFC00F8DB81 /* LoginBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginBodyModel.swift; sourceTree = "<group>"; };
 		F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		F088E82F287DB34700E0375D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F088E833287DD0A500E0375D /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		F0242FAA28815B5B00927148 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0749188287DABDE005A7A55 /* Login */,
 				F088E82A287DAE2000E0375D /* Common */,
 				F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */,
 			);
@@ -126,8 +135,6 @@
 		F0242FAC28815B6F00927148 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F04E1343288697A1001F2ABB /* Networking */,
-				F04E1338288693CE001F2ABB /* Models */,
 				F09458182885BC440015F1C7 /* Common */,
 				F09458152885BAFC0015F1C7 /* Login */,
 			);
@@ -165,6 +172,7 @@
 		F04E133D28869608001F2ABB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F069A74D2887FEFC00F8DB81 /* LoginBodyModel.swift */,
 				F04E133E28869615001F2ABB /* LoginBodyModel.swift */,
 			);
 			name = Models;
@@ -177,6 +185,7 @@
 				F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */,
 				F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */,
 				F0EA48202886E0B80042BD52 /* Api.swift */,
+				F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -219,7 +228,6 @@
 		F088E82A287DAE2000E0375D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F0749188287DABDE005A7A55 /* Login */,
 				F0242FAE28815BDA00927148 /* Interfaces */,
 				F0918417288038A800CB7550 /* UIComponents */,
 				F088E82E287DB31B00E0375D /* Helpers */,
@@ -274,6 +282,8 @@
 		F09458152885BAFC0015F1C7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F069A7472886F7F000F8DB81 /* Network */,
+				F069A7422886F26400F8DB81 /* Repository */,
 				F015E1F32885983600BC7AE4 /* LoginRepository.swift */,
 				F09458162885BB140015F1C7 /* LoginNetworkClient.swift */,
 			);
@@ -283,6 +293,7 @@
 		F09458182885BC440015F1C7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F04E1343288697A1001F2ABB /* Networking */,
 				F04E13352885F050001F2ABB /* Helpers */,
 			);
 			path = Common;
@@ -425,10 +436,16 @@
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* Container.swift in Sources */,
+				F0EA48212886E0B80042BD52 /* Api.swift in Sources */,
 				F04E133F28869615001F2ABB /* LoginBodyModel.swift in Sources */,
 				F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */,
+				F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */,
+				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
+				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
 				F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */,
+				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
+				F069A7442886F28700F8DB81 /* LoginRequestBodyRepoModel.swift in Sources */,
 				F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */,
 				F088E834287DD0A500E0375D /* LocalizedStrings.swift in Sources */,
 				F088E83F287EBC4900E0375D /* BaseViewController.swift in Sources */,
@@ -440,10 +457,10 @@
 				F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
 				F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */,
+				F069A74E2887FEFC00F8DB81 /* LoginBodyModel.swift in Sources */,
 				F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */,
 				F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */,
 				F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */,
-				F04E133A288693DF001F2ABB /* LoginNetworkModel.swift in Sources */,
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
 				F0A70877288041D20077A678 /* RoundedButton.swift in Sources */,
 				F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */,
