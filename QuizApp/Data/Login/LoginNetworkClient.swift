@@ -7,7 +7,7 @@ enum LoginEndpoints: String {
     var path: URL {
         switch self {
         case .login:
-            return BaseNetworkClient.baseApiUrl.appendingPathComponent(self.rawValue)
+            return Api.apiURL.appendingPathComponent(self.rawValue)
         }
     }
 
@@ -35,7 +35,7 @@ extension LoginNetworkClient: LoginNetworkClientProtocol {
         try await baseNetworkClient.post(
             url: LoginEndpoints.login.path,
             params: [:],
-            headers: ["Content-Type": "application/json"],
+            headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value],
             requestBody: requestBody)
     }
 

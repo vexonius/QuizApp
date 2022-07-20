@@ -15,6 +15,7 @@ enum NetworkError: Error {
     case badURL
     case bodyFormatError
     case responseCorrupted
+    case serverError
 
 }
 
@@ -40,16 +41,6 @@ enum ClientError: Error {
 
 }
 
-enum HeaderField: String {
-
-    case authorization = "Authorization"
-
-    var key: String {
-        self.rawValue
-    }
-
-}
-
 protocol BaseNetworkClientProvider {
 
     func get<T: Codable>(
@@ -70,7 +61,7 @@ protocol BaseNetworkClientProvider {
 
 class BaseNetworkClient {
 
-    static let baseApiUrl = URL(string: Api.baseUrl + Api.currentApiVersion)!
+    static let baseApiUrl = Api.apiURL
 
     private var urlSession: URLSession = {
         var config = URLSessionConfiguration.default

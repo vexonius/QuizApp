@@ -10,7 +10,7 @@ class Interceptor: URLProtocol, URLSessionDelegate {
 
         dump(request)
 
-        return request.value(forHTTPHeaderField: HeaderField.authorization.rawValue) == nil
+        return request.value(forHTTPHeaderField: HeaderField.authorization.key) == nil
     }
 
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
@@ -21,11 +21,11 @@ class Interceptor: URLProtocol, URLSessionDelegate {
 
         var newRequest = request
 
-        if newRequest.value(forHTTPHeaderField: HeaderField.authorization.rawValue) == nil {
+        if newRequest.value(forHTTPHeaderField: HeaderField.authorization.key) == nil {
             let token = "token"
 
             newRequest.setValue(
-                String(format: Api.JWTtokenFormat, token), forHTTPHeaderField: HeaderField.authorization.rawValue)
+                String(format: Api.JWTtokenFormat, token), forHTTPHeaderField: HeaderField.authorization.key)
         }
 
         URLSession.shared.dataTask(with: newRequest as URLRequest) { [weak self] data, response, error in
