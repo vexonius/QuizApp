@@ -1,6 +1,15 @@
 import Foundation
 
-class Interceptor: URLProtocol, URLSessionDelegate {
+class Interceptor: URLProtocol {
+
+    weak var currentTask: URLSessionDataTask?
+
+    lazy var session: URLSession = {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+
+        return session
+    }()
 
     override class func canInit(with request: URLRequest) -> Bool {
         guard
@@ -28,30 +37,35 @@ class Interceptor: URLProtocol, URLSessionDelegate {
                 String(format: Api.JWTtokenFormat, token), forHTTPHeaderField: HeaderField.authorization.key)
         }
 
-        URLSession.shared.dataTask(with: newRequest as URLRequest) { [weak self] data, response, error in
-            guard
-                let self = self,
-                let client = self.client
-            else { return }
+        currentTask = session.dataTask(with: newRequest)
+        currentTask?.resume()
+    }
 
+    override func stopLoading() {
+        currentTask?.cancel()
+    }
+
+}
+
+extension Interceptor: URLSessionDataDelegate {
+
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        client?.urlProtocol(self, didLoad: data)
+    }
+
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        guard let client = client else { return }
+
+        guard let response = task.response else {
             if let error = error {
                 client.urlProtocol(self, didFailWithError: error)
             }
 
-            if let response = response {
-                client.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-            }
+            return client.urlProtocolDidFinishLoading(self)
+        }
 
-            if let data = data {
-                client.urlProtocol(self, didLoad: data)
-            }
-
-            client.urlProtocolDidFinishLoading(self)
-        }.resume()
-    }
-
-    override func stopLoading() {
-
+        client.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        client.urlProtocolDidFinishLoading(self)
     }
 
 }
