@@ -2,7 +2,7 @@ import Resolver
 
 protocol ContainerProtocol {
 
-    func resolveLoginViewController() -> LoginViewController
+    func resolveLoginViewModel() -> LoginViewModel
 
 }
 
@@ -14,10 +14,6 @@ class Container {
         resolver = Resolver.main
         registerDependencies()
     }
-
-}
-
-extension Container: ContainerProtocol {
 
     private func registerDependencies() {
         registerBaseNetworkClient()
@@ -69,11 +65,14 @@ extension Container: ContainerProtocol {
             .scope(.unique)
     }
 
-    func resolveLoginViewController() -> LoginViewController {
-        let viewModel: LoginViewModel = resolver.resolve()
-        let viewController: LoginViewController = LoginViewController(viewModel: viewModel)
+}
 
-        return viewController
+extension Container: ContainerProtocol {
+
+    func resolveLoginViewModel() -> LoginViewModel {
+        let viewModel: LoginViewModel = resolver.resolve()
+
+        return viewModel
     }
 
 }
