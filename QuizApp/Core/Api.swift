@@ -1,6 +1,6 @@
 import Foundation
 
-enum Api {
+struct Api {
 
     static let baseURL = "https://five-ios-quiz-app.herokuapp.com/api/"
     static let currentApiVersion = "v1"
