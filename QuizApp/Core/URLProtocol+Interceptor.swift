@@ -30,11 +30,10 @@ class Interceptor: URLProtocol {
         var newRequest = request
 
         if newRequest.value(forHTTPHeaderField: HeaderField.authorization.key) == nil {
-            // TODO: receive token from keychain, in progress
-            let token = "token"
-
-            newRequest.setValue(
-                String(format: Api.JWTtokenFormat, token), forHTTPHeaderField: HeaderField.authorization.key)
+            if let token = SecureStorage.shared.get(SecureStorageKey.accessToken) {
+                newRequest.setValue(
+                    String(format: Api.JWTtokenFormat, token), forHTTPHeaderField: HeaderField.authorization.key)
+            }
         }
 
         currentTask = session.dataTask(with: newRequest)
