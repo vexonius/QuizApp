@@ -22,6 +22,7 @@
 		F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */; };
 		F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
+		F07D86512888289C000F5D99 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F07D86502888289C000F5D99 /* Resolver */; };
 		F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */; };
 		F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82F287DB34700E0375D /* UIColor+Extensions.swift */; };
 		F088E834287DD0A500E0375D /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E833287DD0A500E0375D /* LocalizedStrings.swift */; };
@@ -108,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F07D86512888289C000F5D99 /* Resolver in Frameworks */,
 				F0749187287DAB62005A7A55 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +364,7 @@
 			name = QuizApp;
 			packageProductDependencies = (
 				F0749186287DAB62005A7A55 /* SnapKit */,
+				F07D86502888289C000F5D99 /* Resolver */,
 			);
 			productName = QuizApp;
 			productReference = F0E6A973287C74CA007BF1D4 /* QuizApp.app */;
@@ -393,6 +396,7 @@
 			mainGroup = F0E6A96A287C74CA007BF1D4;
 			packageReferences = (
 				F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = F0E6A974287C74CA007BF1D4 /* Products */;
 			projectDirPath = "";
@@ -700,6 +704,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -707,6 +719,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F07D86502888289C000F5D99 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
