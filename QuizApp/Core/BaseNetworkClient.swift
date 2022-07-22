@@ -54,6 +54,18 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
         return responseModel
     }
 
+    func head(url: URL, params: [String: String], headers: [String: String]) async throws {
+        let request = try await createRequest(
+            method: .head,
+            url: url,
+            headers: headers,
+            params: params)
+
+        let (_, response) = try await URLSession.shared.data(with: request)
+
+        try validateResponse(response: response)
+    }
+
     private func createRequest<T: Encodable>(
         method: HttpMethod,
         url: URL,
@@ -74,6 +86,22 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
             }
 
             request.httpBody = encodedBody
+        }
+
+        return request
+    }
+
+    private func createRequest(
+        method: HttpMethod,
+        url: URL,
+        headers: [String: String]?,
+        params: [String: String]?
+    ) async throws -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = method.string
+
+        headers?.forEach { (key, value) in
+            request.setValue(value, forHTTPHeaderField: key)
         }
 
         return request
