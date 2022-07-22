@@ -22,8 +22,23 @@ class AppCoordinator {
 extension AppCoordinator: AppCoordinatorProtocol {
 
     func routeToLogin() {
-        let loginViewController: UIViewController = container.resolveLoginViewController()
+        let loginViewController = createViewController(of: LoginViewController.self)
         navigationController.setViewControllers([loginViewController], animated: true)
     }
 
+}
+
+// MARK: Viewcontroller factories
+
+extension AppCoordinator {
+
+    private func createViewController<T: UIViewController>(of type: T.Type) -> UIViewController {
+
+        switch type.self {
+        case is LoginViewController.Type:
+            return LoginViewController(viewModel: container.resolveLoginViewModel())
+        default:
+            fatalError("ViewController class not found, terminating...")
+        }
+    }
 }
