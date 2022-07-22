@@ -33,7 +33,6 @@ extension AppCoordinator: AppCoordinatorProtocol {
 extension AppCoordinator {
 
     private func createViewController<T: UIViewController>(of type: T.Type) -> UIViewController {
-
         switch type.self {
         case is LoginViewController.Type:
             return LoginViewController(viewModel: container.resolveLoginViewModel())
@@ -41,4 +40,5 @@ extension AppCoordinator {
             fatalError("ViewController class not found, terminating...")
         }
     }
+
 }

@@ -130,9 +130,9 @@
 		F0242FAA28815B5B00927148 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0F05FD8288AE3F200E71282 /* Coordinators */,
 				F0749188287DABDE005A7A55 /* Login */,
 				F088E82A287DAE2000E0375D /* Common */,
-				F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -343,6 +343,14 @@
 				F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F0F05FD8288AE3F200E71282 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
