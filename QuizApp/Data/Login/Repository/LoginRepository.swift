@@ -27,4 +27,8 @@ class LoginRepository: LoginRepositoryProtocol {
         secureStorage.set(username, for: SecureStorageKey.username)
     }
 
+    func validateToken() async throws {
+        try await networkClient.validateToken()
+    }
+
 }

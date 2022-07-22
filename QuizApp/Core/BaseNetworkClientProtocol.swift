@@ -16,4 +16,6 @@ protocol BaseNetworkClientProtocol {
         requestBody: T
     ) async throws -> U
 
+    func head(url: URL, params: [String: String], headers: [String: String]) async throws
+
 }

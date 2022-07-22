@@ -3,10 +3,11 @@ import Foundation
 enum LoginEndpoints: String {
 
     case login
+    case validateToken = "check"
 
     var path: URL {
         switch self {
-        case .login:
+        default :
             return Api.apiURL.appendingPathComponent(self.rawValue)
         }
     }

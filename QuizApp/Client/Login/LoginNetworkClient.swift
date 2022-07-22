@@ -16,4 +16,11 @@ class LoginNetworkClient: LoginNetworkClientProtocol {
             requestBody: requestBody)
     }
 
+    func validateToken() async throws {
+        try await baseNetworkClient.head(
+            url: LoginEndpoints.validateToken.path,
+            params: [:],
+            headers: [:])
+    }
+
 }
