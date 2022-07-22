@@ -9,7 +9,7 @@ class LoginRepository: LoginRepositoryProtocol {
         self.networkClient = networkClient
     }
 
-    func login(data: LoginRequestBodyRepoModel) async throws -> LoginResponseRepoModel {
+    func login(data: LoginRequestBodyRepoModel) async throws -> Bool {
         let requestBody = LoginRequestBodyNetworkModel(from: data)
         let networkModel = try await networkClient.login(requestBody: requestBody)
 
@@ -17,7 +17,7 @@ class LoginRepository: LoginRepositoryProtocol {
 
         saveAccessToken(token: networkModel.accessToken)
 
-        return LoginResponseRepoModel(from: networkModel)
+        return true
     }
 
     private func saveAccessToken(token: String) {
