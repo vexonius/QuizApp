@@ -36,9 +36,15 @@
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
 		F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458162885BB140015F1C7 /* LoginNetworkClient.swift */; };
 		F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */; };
+		F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */; };
+		F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */; };
 		F0D9202E28858054004EC4F3 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202D28858054004EC4F3 /* Container.swift */; };
+		F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E450422889745800685E09 /* BaseNetworkModels.swift */; };
+		F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */; };
+		F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E450462889791C00685E09 /* LoginNetworkClientProtocol.swift */; };
+		F0E450492889794D00685E09 /* LoginEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E450482889794D00685E09 /* LoginEndpoints.swift */; };
 		F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */; };
 		F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */; };
 		F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A97A287C74CA007BF1D4 /* LoginViewController.swift */; };
@@ -77,9 +83,15 @@
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
 		F09458162885BB140015F1C7 /* LoginNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkClient.swift; sourceTree = "<group>"; };
 		F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkClient.swift; sourceTree = "<group>"; };
+		F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseProtocol.swift; sourceTree = "<group>"; };
+		F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F0D9202D28858054004EC4F3 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		F0E450422889745800685E09 /* BaseNetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkModels.swift; sourceTree = "<group>"; };
+		F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkClientProtocol.swift; sourceTree = "<group>"; };
+		F0E450462889791C00685E09 /* LoginNetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkClientProtocol.swift; sourceTree = "<group>"; };
+		F0E450482889794D00685E09 /* LoginEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoints.swift; sourceTree = "<group>"; };
 		F0E6A973287C74CA007BF1D4 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +122,7 @@
 			children = (
 				F0EA82FD288801BC007EB115 /* Models */,
 				F015E1F02885973400BC7AE4 /* LoginUseCase.swift */,
+				F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -135,7 +148,6 @@
 		F0242FAC28815B6F00927148 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F09458182885BC440015F1C7 /* Common */,
 				F09458152885BAFC0015F1C7 /* Login */,
 			);
 			path = Data;
@@ -161,41 +173,14 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
-		F04E13352885F050001F2ABB /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				F04E13362885F063001F2ABB /* URLSession+Extension.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		F04E1343288697A1001F2ABB /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */,
-				F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */,
-				F0EA48202886E0B80042BD52 /* Api.swift */,
-				F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		F069A7422886F26400F8DB81 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				F015E1F32885983600BC7AE4 /* LoginRepository.swift */,
+				F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */,
 				F069A74A2887F27D00F8DB81 /* Models */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		F069A7472886F7F000F8DB81 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				F09458162885BB140015F1C7 /* LoginNetworkClient.swift */,
-				F0EA82FE288805D5007EB115 /* Models */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		F069A74A2887F27D00F8DB81 /* Models */ = {
@@ -273,19 +258,42 @@
 		F09458152885BAFC0015F1C7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F069A7472886F7F000F8DB81 /* Network */,
 				F069A7422886F26400F8DB81 /* Repository */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		F09458182885BC440015F1C7 /* Common */ = {
+		F0E450412889720400685E09 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F04E1343288697A1001F2ABB /* Networking */,
-				F04E13352885F050001F2ABB /* Helpers */,
+				F04E13362885F063001F2ABB /* URLSession+Extension.swift */,
+				F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */,
+				F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */,
+				F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */,
+				F0E450422889745800685E09 /* BaseNetworkModels.swift */,
+				F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */,
+				F0EA48202886E0B80042BD52 /* Api.swift */,
 			);
-			path = Common;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F0E4504A28897A9200685E09 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				F0E4504B28897A9F00685E09 /* Login */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		F0E4504B28897A9F00685E09 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F0EA82FE288805D5007EB115 /* Models */,
+				F09458162885BB140015F1C7 /* LoginNetworkClient.swift */,
+				F0E450462889791C00685E09 /* LoginNetworkClientProtocol.swift */,
+				F0E450482889794D00685E09 /* LoginEndpoints.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F0E6A96A287C74CA007BF1D4 = {
@@ -307,7 +315,9 @@
 		F0E6A975287C74CA007BF1D4 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				F0E4504A28897A9200685E09 /* Client */,
 				F088E82D287DAF1400E0375D /* Application */,
+				F0E450412889720400685E09 /* Core */,
 				F0242FAC28815B6F00927148 /* Data */,
 				F0242FAB28815B6600927148 /* Domain */,
 				F0242FAA28815B5B00927148 /* Presentation */,
@@ -441,6 +451,7 @@
 			files = (
 				F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */,
 				F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */,
+				F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* Container.swift in Sources */,
@@ -452,7 +463,10 @@
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
 				F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */,
+				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
+				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
 				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
+				F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */,
 				F069A7442886F28700F8DB81 /* LoginRequestBodyRepoModel.swift in Sources */,
 				F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */,
 				F088E834287DD0A500E0375D /* LocalizedStrings.swift in Sources */,
@@ -460,6 +474,7 @@
 				F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */,
 				F05C8AA828817BBB00D8FC5A /* UITextView+Extensions.swift in Sources */,
 				F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */,
+				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
 				F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */,
 				F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */,
 				F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */,
@@ -468,6 +483,7 @@
 				F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */,
 				F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */,
 				F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */,
+				F0E450492889794D00685E09 /* LoginEndpoints.swift in Sources */,
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
 				F0A70877288041D20077A678 /* RoundedButton.swift in Sources */,
 				F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */,

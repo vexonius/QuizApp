@@ -1,11 +1,5 @@
 import Foundation
 
-protocol LoginRepositoryProtocol {
-
-    func login(data: LoginRequestBodyRepoModel) async throws -> LoginResponseRepoModel
-
-}
-
 class LoginRepository: LoginRepositoryProtocol {
 
     private let networkClient: LoginNetworkClientProtocol
