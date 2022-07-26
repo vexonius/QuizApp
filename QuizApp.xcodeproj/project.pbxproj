@@ -54,6 +54,7 @@
 		F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */; };
 		F0EA48212886E0B80042BD52 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA48202886E0B80042BD52 /* Api.swift */; };
 		F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */; };
+		F0FCE2B6288FDF6100C66235 /* SecureStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLProtocol+Interceptor.swift"; sourceTree = "<group>"; };
 		F0EA48202886E0B80042BD52 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyModel.swift; sourceTree = "<group>"; };
+		F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				F0DA2D34288AE806000B8C70 /* SecureStorage.swift */,
+				F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */,
 				F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */,
 				F0E450492889794D00685E09 /* LoginEndpoints.swift in Sources */,
+				F0FCE2B6288FDF6100C66235 /* SecureStorageProtocol.swift in Sources */,
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
 				F0A70877288041D20077A678 /* RoundedButton.swift in Sources */,
 				F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */,

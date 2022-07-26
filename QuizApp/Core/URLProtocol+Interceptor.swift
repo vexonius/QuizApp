@@ -2,9 +2,9 @@ import Foundation
 
 class Interceptor: URLProtocol {
 
-    weak var currentTask: URLSessionDataTask?
+    private weak var currentTask: URLSessionDataTask?
 
-    lazy var session: URLSession = {
+    private lazy var session: URLSession = {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
 
@@ -30,7 +30,7 @@ class Interceptor: URLProtocol {
         var newRequest = request
 
         if newRequest.value(forHTTPHeaderField: HeaderField.authorization.key) == nil {
-            if let token = SecureStorage.shared.get(SecureStorageKey.accessToken) {
+            if let token: String = SecureStorage.shared.get(SecureStorageKey.accessToken) {
                 newRequest.setValue(
                     String(format: Api.JWTtokenFormat, token), forHTTPHeaderField: HeaderField.authorization.key)
             }

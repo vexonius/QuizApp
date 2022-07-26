@@ -21,7 +21,7 @@ class LoginRepository: LoginRepositoryProtocol {
     }
 
     private func saveAccessToken(token: String) {
-        secureStorage.set(token, forKey: SecureStorageKey.accessToken)
+        secureStorage.set(token, for: SecureStorageKey.accessToken)
     }
 
 }
