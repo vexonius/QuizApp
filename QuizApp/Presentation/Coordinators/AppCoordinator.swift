@@ -1,44 +1,26 @@
 import Foundation
 import UIKit
+import Resolver
 
-protocol AppCoordinatorProtocol {
+class AppCoordinator: AppCoordinatorProtocol {
 
-    func routeToLogin()
+    private let navigationController: UINavigationController
+    private let container: Resolver
 
-}
-
-class AppCoordinator {
-
-    private var navigationController: UINavigationController
-    private var container: ContainerProtocol
-
-    init(navigationController: UINavigationController, container: ContainerProtocol) {
-        self.navigationController = navigationController
+    init(container: Resolver) {
+        self.navigationController = UINavigationController()
         self.container = container
     }
 
-}
-
-extension AppCoordinator: AppCoordinatorProtocol {
-
     func routeToLogin() {
-        let loginViewController = createViewController(of: LoginViewController.self)
+        let loginViewController: LoginViewController = container.resolve()
         navigationController.setViewControllers([loginViewController], animated: true)
     }
 
-}
-
-// MARK: Viewcontroller factories
-
-extension AppCoordinator {
-
-    private func createViewController<T: UIViewController>(of type: T.Type) -> UIViewController {
-        switch type.self {
-        case is LoginViewController.Type:
-            return LoginViewController(viewModel: container.resolveLoginViewModel())
-        default:
-            fatalError("ViewController class not found, terminating...")
-        }
+    func setInitialScene(in window: UIWindow) {
+        window.rootViewController = navigationController
+        routeToLogin()
+        window.makeKeyAndVisible()
     }
 
 }
