@@ -7,12 +7,14 @@ class LoginViewModel {
     @Published private (set) var isPasswordHidden: Bool = true
 
     private let loginUseCase: LoginUseCaseProtocol
+    private let coordinator: AppCoordinatorProtocol
 
     private var email: String = ""
     private var password: String = ""
 
-    init(loginUseCase: LoginUseCaseProtocol) {
+    init(loginUseCase: LoginUseCaseProtocol, coordinator: AppCoordinatorProtocol) {
         self.loginUseCase = loginUseCase
+        self.coordinator = coordinator
 
         validateInputs()
     }
@@ -24,7 +26,15 @@ class LoginViewModel {
     func login() {
         guard !email.isEmpty && !password.isEmpty else { return }
 
-        // Login logic to be implemented
+        Task(priority: .high) {
+            do {
+                try await loginUseCase.login(email: email, password: password)
+                await MainActor.run { coordinator.routeToHomeScreen() }
+            } catch {
+
+            }
+
+        }
     }
 
     func togglePasswordVisibility() {

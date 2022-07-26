@@ -17,6 +17,11 @@ class AppCoordinator: AppCoordinatorProtocol {
         navigationController.setViewControllers([loginViewController], animated: true)
     }
 
+    func routeToHomeScreen() {
+        let homeViewController: HomeViewController = container.resolve()
+        navigationController.setViewControllers([homeViewController], animated: true)
+    }
+
     func setInitialScene(in window: UIWindow) {
         window.rootViewController = navigationController
         routeToLogin()
