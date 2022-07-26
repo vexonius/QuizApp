@@ -17,7 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         appModule = AppModule(container: container)
 
-        guard let window = window, let appModule = appModule else { return }
+        guard
+            let window = window,
+            let appModule = appModule
+        else { return }
 
         appModule.initRouter(in: window)
     }

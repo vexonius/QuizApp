@@ -17,16 +17,15 @@ class AppModule {
     }
 
     private func registerDependencies() {
-        registerCoordinator()
-        registerBaseNetworkClient()
-        registerLoginClient()
-        registerLoginRepository()
-        registerLoginUseCase()
-        registerLoginViewModel()
-        registerLoginViewController()
+        registerCoordinators()
+        registerkClients()
+        registerRepositories()
+        registerUseCases()
+        registerViewModels()
+        registerViewControllers()
     }
 
-    private func registerCoordinator() {
+    private func registerCoordinators() {
         container
             .register { container in
                 AppCoordinator(container: container)
@@ -35,14 +34,12 @@ class AppModule {
             .scope(.application)
     }
 
-    private func registerBaseNetworkClient() {
+    private func registerkClients() {
         container
             .register { BaseNetworkClient() }
             .implements(BaseNetworkClientProtocol.self)
             .scope(.application)
-    }
 
-    private func registerLoginClient() {
         container
             .register { container in
                 LoginNetworkClient(baseNetworkClient: container.resolve())
@@ -51,7 +48,7 @@ class AppModule {
             .scope(.application)
     }
 
-    private func registerLoginRepository() {
+    private func registerRepositories() {
         container
             .register { container in
                 LoginRepository(networkClient: container.resolve())
@@ -60,7 +57,7 @@ class AppModule {
             .scope(.application)
     }
 
-    private func registerLoginUseCase() {
+    private func registerUseCases() {
         container
             .register { container in
                 LoginUseCase(loginRepository: container.resolve())
@@ -69,7 +66,7 @@ class AppModule {
             .scope(.graph)
     }
 
-    private func registerLoginViewModel() {
+    private func registerViewModels() {
         container
             .register { container in
                 LoginViewModel(loginUseCase: container.resolve())
@@ -77,7 +74,7 @@ class AppModule {
             .scope(.unique)
     }
 
-    private func registerLoginViewController() {
+    private func registerViewControllers() {
         container
             .register { container in
                 LoginViewController(viewModel: container.resolve())
