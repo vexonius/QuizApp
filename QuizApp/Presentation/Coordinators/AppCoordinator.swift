@@ -4,8 +4,8 @@ import Resolver
 
 class AppCoordinator: AppCoordinatorProtocol {
 
-    private let navigationController: UINavigationController
-    private let container: Resolver
+    private (set) var navigationController: UINavigationController
+    private (set) var container: Resolver
 
     init(container: Resolver) {
         self.navigationController = UINavigationController()

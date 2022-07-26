@@ -48,7 +48,7 @@ class AppModule {
                 LoginNetworkClient(baseNetworkClient: container.resolve())
             }
             .implements(LoginNetworkClientProtocol.self)
-            .scope(.graph)
+            .scope(.application)
     }
 
     private func registerLoginRepository() {
@@ -57,7 +57,7 @@ class AppModule {
                 LoginRepository(networkClient: container.resolve())
             }
             .implements(LoginRepositoryProtocol.self)
-            .scope(.graph)
+            .scope(.application)
     }
 
     private func registerLoginUseCase() {
@@ -77,7 +77,7 @@ class AppModule {
             .scope(.unique)
     }
 
-    func registerLoginViewController() {
+    private func registerLoginViewController() {
         container
             .register { container in
                 LoginViewController(viewModel: container.resolve())
