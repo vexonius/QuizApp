@@ -3,6 +3,8 @@ import Combine
 
 class LoginViewModel {
 
+    @Published private(set) var isUsernameInputEnabled: Bool = true
+    @Published private(set) var isPasswordInputEnabled: Bool = true
     @Published private(set) var isLoginButtonEnabled: Bool = false
     @Published private(set) var isPasswordHidden: Bool = true
     @Published private(set) var errorMessage: String = ""
@@ -22,11 +24,16 @@ class LoginViewModel {
 
     func login() {
         Task(priority: .high) {
+            toggleInputs()
+
             do {
                 try await loginUseCase.login(email: email, password: password)
                 await MainActor.run { coordinator.routeToHomeScreen() }
+                toggleInputs()
+
             } catch {
                 handleLoginResponseError(error: error)
+                toggleInputs()
             }
 
         }
@@ -57,6 +64,11 @@ class LoginViewModel {
         default:
             errorMessage = LocalizedStrings.serverErrorMessage.localizedString
         }
+    }
+
+    private func toggleInputs() {
+        isUsernameInputEnabled.toggle()
+        isPasswordInputEnabled.toggle()
     }
 
 }

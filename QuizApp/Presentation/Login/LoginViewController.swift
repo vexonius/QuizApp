@@ -166,14 +166,17 @@ extension LoginViewController: ConstructViewsProtocol {
 
 extension LoginViewController: BindViewsProtocol {
 
+    // swiftlint:disable:next function_body_length
     func bindViews() {
         viewModel
             .$isLoginButtonEnabled
+            .receive(on: RunLoop.main)
             .assign(to: \.isEnabled, on: loginButton)
             .store(in: &cancellables)
 
         viewModel
             .$isLoginButtonEnabled
+            .receive(on: RunLoop.main)
             .sink { [weak self] isEnabled in
                 self?.loginButton.alpha = isEnabled ?
                     CustomConstants.buttonEnabledOpacity :
@@ -183,7 +186,20 @@ extension LoginViewController: BindViewsProtocol {
 
         viewModel
             .$isPasswordHidden
+            .receive(on: RunLoop.main)
             .assign(to: \.isSecureTextEntry, on: passwordInput)
+            .store(in: &cancellables)
+
+        viewModel
+            .$isUsernameInputEnabled
+            .receive(on: RunLoop.main)
+            .assign(to: \.isEnabled, on: usernameInput)
+            .store(in: &cancellables)
+
+        viewModel
+            .$isPasswordInputEnabled
+            .receive(on: RunLoop.main)
+            .assign(to: \.isEnabled, on: passwordInput)
             .store(in: &cancellables)
 
         loginButton
