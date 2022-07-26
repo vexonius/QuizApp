@@ -7,6 +7,14 @@
       "state" : {
         "revision" : "97de0b0320036607564af4a60025b48f8d041221",
         "version" : "1.5.0"
+        }
+    },
+      "identity" : "keychain-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/keychain-swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "32a99b537d1c6f3529a08257c28a5feb70c0c5af"
       }
     },
     {

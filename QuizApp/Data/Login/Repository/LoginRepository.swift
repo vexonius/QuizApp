@@ -3,16 +3,25 @@ import Foundation
 class LoginRepository: LoginRepositoryProtocol {
 
     private let networkClient: LoginNetworkClientProtocol
+    private let secureStorage = SecureStorage.shared
 
     init(networkClient: LoginNetworkClientProtocol) {
         self.networkClient = networkClient
     }
 
-    func login(data: LoginRequestBodyRepoModel) async throws -> LoginResponseRepoModel {
+    func login(data: LoginRequestBodyRepoModel) async throws -> Bool {
         let requestBody = LoginRequestBodyNetworkModel(from: data)
         let networkModel = try await networkClient.login(requestBody: requestBody)
 
-        return LoginResponseRepoModel(from: networkModel)
+        guard !networkModel.accessToken.isEmpty else { throw NetworkError.responseCorrupted }
+
+        saveAccessToken(token: networkModel.accessToken)
+
+        return true
+    }
+
+    private func saveAccessToken(token: String) {
+        secureStorage.set(token, for: SecureStorageKey.accessToken)
     }
 
 }
