@@ -3,8 +3,9 @@ import Combine
 
 class LoginViewModel {
 
-    @Published private (set) var isLoginButtonEnabled: Bool = false
-    @Published private (set) var isPasswordHidden: Bool = true
+    @Published private(set) var isLoginButtonEnabled: Bool = false
+    @Published private(set) var isPasswordHidden: Bool = true
+    @Published private(set) var errorMessage: String = ""
 
     private let loginUseCase: LoginUseCaseProtocol
     private let coordinator: AppCoordinatorProtocol
@@ -19,19 +20,13 @@ class LoginViewModel {
         validateInputs()
     }
 
-    private func validateInputs() {
-        isLoginButtonEnabled = !email.isEmpty && !password.isEmpty
-    }
-
     func login() {
-        guard !email.isEmpty && !password.isEmpty else { return }
-
         Task(priority: .high) {
             do {
                 try await loginUseCase.login(email: email, password: password)
                 await MainActor.run { coordinator.routeToHomeScreen() }
             } catch {
-
+                handleLoginResponseError(error: error)
             }
 
         }
@@ -49,6 +44,19 @@ class LoginViewModel {
     func onPasswordChanged(_ password: String) {
         self.password = password
         validateInputs()
+    }
+
+    private func validateInputs() {
+        isLoginButtonEnabled = !email.isEmpty && email.isValid && !password.isEmpty
+    }
+
+    private func handleLoginResponseError(error: Error) {
+        switch error {
+        case ClientError.unauthorized:
+            errorMessage = LocalizedStrings.unauthorizedLoginErrorMessage.localizedString
+        default:
+            errorMessage = LocalizedStrings.serverErrorMessage.localizedString
+        }
     }
 
 }
