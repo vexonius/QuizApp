@@ -211,8 +211,7 @@ extension LoginViewController: BindViewsProtocol {
                     let errorMessage = errorMessage
                 else { return }
 
-                let toast = Snackbar(in: self.view, message: errorMessage)
-                toast.show()
+                Snackbar(in: self.view, message: errorMessage).show()
             }
             .store(in: &cancellables)
 

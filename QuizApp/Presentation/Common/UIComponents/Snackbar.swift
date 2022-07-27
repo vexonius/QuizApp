@@ -27,7 +27,7 @@ class Snackbar: UIView {
         return label
     }()
 
-    private var contextView: UIView
+    private let contextView: UIView
     private var height: CGFloat = CustomConstants.regularComponentHeight.cgFloat
     private let message: String
 
@@ -46,18 +46,91 @@ class Snackbar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    func show() {
+        superview?.layoutIfNeeded()
+        adaptComponentsForOrientationChanges()
+
+        UIView.animate(
+            withDuration: CustomConstants.animationDuration,
+            delay: CustomConstants.animationDelay,
+            usingSpringWithDamping: CustomConstants.animationSpringDamping,
+            initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
+            options: .curveEaseOut,
+            animations: {
+                self.snp.remakeConstraints { make in
+                    make.bottom.equalToSuperview()
+                    make.leading.trailing.equalToSuperview()
+                    make.height.equalTo(self.height)
+                }
+
+                self.superview?.layoutIfNeeded()
+            },
+            completion: { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + CustomConstants.messageDuration.cgFloat) {
+                    if self.superview != nil {
+                        self.dismiss()
+                    }
+                }
+            })
+    }
+
+    func dismiss() {
+        superview?.layoutIfNeeded()
+
+        UIView.animate(
+            withDuration: CustomConstants.animationDuration,
+            delay: CustomConstants.animationDelay,
+            usingSpringWithDamping: CustomConstants.animationSpringDamping,
+            initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
+            options: .curveEaseOut,
+            animations: {
+                self.snp.remakeConstraints { make in
+                    make.leading.trailing.equalToSuperview()
+                    make.height.equalTo(self.height)
+                    make.top.equalTo(self.contextView.snp.bottom)
+                }
+
+                self.superview?.layoutIfNeeded()
+            }, completion: { _ in
+                self.removeFromSuperview()
+            })
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        adaptComponentsForOrientationChanges()
+        updateLayoutConstraints()
+    }
+
+    private func adaptComponentsForOrientationChanges() {
         height = superview?.traitCollection.verticalSizeClass == .regular ?
-        CustomConstants.regularComponentHeight.cgFloat + contextView.safeAreaInsets.bottom :
-        CustomConstants.horizontalComponentHeight.cgFloat + contextView.safeAreaInsets.bottom
+            CustomConstants.regularComponentHeight.cgFloat + contextView.safeAreaInsets.bottom :
+            CustomConstants.horizontalComponentHeight.cgFloat + contextView.safeAreaInsets.bottom
 
-        if superview?.traitCollection.verticalSizeClass == .compact {
-            messageLabel.text = message.replacingOccurrences(of: "\n", with: "")
-        }
+        messageLabel.text = superview?.traitCollection.verticalSizeClass == .regular ?
+            message :
+            message.replacingOccurrences(of: "\n", with: "")
+    }
 
-        super.layoutSubviews()
+    private func updateLayoutConstraints() {
+        superview?.layoutIfNeeded()
 
-        updateFocusIfNeeded()
+        UIView.animate(
+            withDuration: CustomConstants.animationDuration,
+            delay: CustomConstants.animationDelay,
+            usingSpringWithDamping: CustomConstants.animationSpringDamping,
+            initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
+            options: .curveEaseOut,
+            animations: {
+                self.snp.remakeConstraints { make in
+                    make.bottom.equalToSuperview()
+                    make.leading.trailing.equalToSuperview()
+                    make.height.equalTo(self.height)
+                }
+
+                self.superview?.layoutIfNeeded()
+            })
     }
 
     private func constraintSuperView(with view: UIView) {
@@ -79,57 +152,8 @@ class Snackbar: UIView {
 
     private func removeOldViews(form view: UIView) {
         view.subviews
-            .filter({ $0 is Self })
-            .forEach({ $0.removeFromSuperview() })
-    }
-
-    func show() {
-        superview?.layoutIfNeeded()
-
-        UIView.animate(
-            withDuration: CustomConstants.animationDuration,
-            delay: CustomConstants.animationDelay,
-            usingSpringWithDamping: CustomConstants.animationSpringDamping,
-            initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
-            options: .curveEaseOut,
-        animations: {
-            self.snp.remakeConstraints { make in
-                make.bottom.equalToSuperview()
-                make.leading.trailing.equalToSuperview()
-                make.height.equalTo(self.height)
-            }
-
-            self.superview?.layoutIfNeeded()
-        },
-        completion: { _ in
-            DispatchQueue.main.asyncAfter(deadline: .now() + CustomConstants.messageDuration.cgFloat) {
-                if self.superview != nil {
-                    self.dismiss()
-                }
-            }
-        })
-    }
-
-    func dismiss() {
-        superview?.layoutIfNeeded()
-
-        UIView.animate(
-            withDuration: CustomConstants.animationDuration,
-            delay: CustomConstants.animationDelay,
-            usingSpringWithDamping: CustomConstants.animationSpringDamping,
-            initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
-            options: .curveEaseOut,
-        animations: {
-            self.snp.remakeConstraints { make in
-                make.leading.trailing.equalToSuperview()
-                make.height.equalTo(self.height)
-                make.top.equalTo(self.contextView.snp.bottom)
-            }
-
-            self.superview?.layoutIfNeeded()
-        }, completion: { _ in
-            self.removeFromSuperview()
-        })
+            .filter { $0 is Self }
+            .forEach { $0.removeFromSuperview() }
     }
 
 }
