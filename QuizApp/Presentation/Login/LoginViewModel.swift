@@ -6,10 +6,14 @@ class LoginViewModel {
     @Published private (set) var isLoginButtonEnabled: Bool = false
     @Published private (set) var isPasswordHidden: Bool = true
 
+    private let loginUseCase: LoginUseCaseProtocol
+
     private var email: String = ""
     private var password: String = ""
 
-    init() {
+    init(loginUseCase: LoginUseCaseProtocol) {
+        self.loginUseCase = loginUseCase
+
         validateInputs()
     }
 

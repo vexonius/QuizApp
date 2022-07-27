@@ -22,6 +22,8 @@
 		F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */; };
 		F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
+		F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */; };
+		F07D86512888289C000F5D99 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F07D86502888289C000F5D99 /* Resolver */; };
 		F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F07D8654288849FE000F5D99 /* KeychainSwift */; };
 		F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */; };
 		F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82F287DB34700E0375D /* UIColor+Extensions.swift */; };
@@ -40,7 +42,7 @@
 		F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */; };
-		F0D9202E28858054004EC4F3 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202D28858054004EC4F3 /* Container.swift */; };
+		F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202D28858054004EC4F3 /* AppModule.swift */; };
 		F0DA2D35288AE806000B8C70 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DA2D34288AE806000B8C70 /* SecureStorage.swift */; };
 		F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E450422889745800685E09 /* BaseNetworkModels.swift */; };
 		F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */; };
@@ -72,6 +74,7 @@
 		F069A7452886F38600F8DB81 /* LoginResponseRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseRepoModel.swift; sourceTree = "<group>"; };
 		F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyNetworkModel.swift; sourceTree = "<group>"; };
 		F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderConstants.swift; sourceTree = "<group>"; };
+		F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		F0809FF028884E0400142907 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		F088E82F287DB34700E0375D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -90,7 +93,7 @@
 		F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		F0D9202D28858054004EC4F3 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		F0D9202D28858054004EC4F3 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		F0DA2D34288AE806000B8C70 /* SecureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		F0E450422889745800685E09 /* BaseNetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkModels.swift; sourceTree = "<group>"; };
 		F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkClientProtocol.swift; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F07D86512888289C000F5D99 /* Resolver in Frameworks */,
 				F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */,
 				F0749187287DAB62005A7A55 /* SnapKit in Frameworks */,
 			);
@@ -135,9 +139,9 @@
 		F0242FAA28815B5B00927148 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0F05FD8288AE3F200E71282 /* Coordinators */,
 				F0749188287DABDE005A7A55 /* Login */,
 				F088E82A287DAE2000E0375D /* Common */,
-				F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -222,7 +226,7 @@
 			children = (
 				F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */,
 				F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */,
-				F0D9202D28858054004EC4F3 /* Container.swift */,
+				F0D9202D28858054004EC4F3 /* AppModule.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -369,6 +373,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F0F05FD8288AE3F200E71282 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */,
+				F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +401,7 @@
 			name = QuizApp;
 			packageProductDependencies = (
 				F0749186287DAB62005A7A55 /* SnapKit */,
+				F07D86502888289C000F5D99 /* Resolver */,
 				F07D8654288849FE000F5D99 /* KeychainSwift */,
 			);
 			productName = QuizApp;
@@ -420,6 +434,7 @@
 			mainGroup = F0E6A96A287C74CA007BF1D4;
 			packageReferences = (
 				F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */,
 				F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = F0E6A974287C74CA007BF1D4 /* Products */;
@@ -478,7 +493,7 @@
 				F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
-				F0D9202E28858054004EC4F3 /* Container.swift in Sources */,
+				F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */,
 				F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */,
 				F0EA48212886E0B80042BD52 /* Api.swift in Sources */,
 				F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */,
@@ -487,6 +502,7 @@
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
 				F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */,
+				F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */,
 				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
 				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
 				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
@@ -730,6 +746,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
@@ -745,6 +769,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F07D86502888289C000F5D99 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
 		};
 		F07D8654288849FE000F5D99 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;

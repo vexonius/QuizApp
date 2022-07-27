@@ -1,10 +1,11 @@
 import UIKit
+import Resolver
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private var container: ContainerProtocol?
-    private var appCoordinator: AppCoordinatorProtocol?
+    private var appModule: AppModule?
+    private let container = Resolver.main
 
     func scene(
         _ scene: UIScene,
@@ -14,23 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
+        appModule = AppModule(container: container)
 
-        guard let window = window else { return }
+        guard
+            let window = window,
+            let appModule = appModule
+        else { return }
 
-        let mainNavigationController = UINavigationController()
-        window.rootViewController = mainNavigationController
-
-        container = Container()
-
-        guard let container = container else { return }
-
-        appCoordinator = AppCoordinator(navigationController: mainNavigationController, container: container)
-
-        guard let appCoordinator = appCoordinator else { return }
-
-        appCoordinator.routeToLogin()
-
-        window.makeKeyAndVisible()
+        appModule.initRouter(in: window)
     }
 
 }
