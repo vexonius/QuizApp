@@ -202,6 +202,20 @@ extension LoginViewController: BindViewsProtocol {
             .assign(to: \.isEnabled, on: passwordInput)
             .store(in: &cancellables)
 
+        viewModel
+            .$errorMessage
+            .receive(on: RunLoop.main)
+            .sink { [weak self] errorMessage in
+                guard
+                    let self = self,
+                    let errorMessage = errorMessage
+                else { return }
+
+                let toast = Snackbar(in: self.view, message: errorMessage)
+                toast.show()
+            }
+            .store(in: &cancellables)
+
         loginButton
             .gesture(.tap())
             .sink { [weak self] _ in

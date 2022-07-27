@@ -22,6 +22,7 @@
 		F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */; };
 		F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
+		F07D305B288ED984000592F2 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305A288ED984000592F2 /* Snackbar.swift */; };
 		F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */; };
 		F07D86512888289C000F5D99 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F07D86502888289C000F5D99 /* Resolver */; };
 		F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F07D8654288849FE000F5D99 /* KeychainSwift */; };
@@ -76,6 +77,7 @@
 		F069A7452886F38600F8DB81 /* LoginResponseRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseRepoModel.swift; sourceTree = "<group>"; };
 		F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyNetworkModel.swift; sourceTree = "<group>"; };
 		F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderConstants.swift; sourceTree = "<group>"; };
+		F07D305A288ED984000592F2 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		F0809FF028884E0400142907 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				F088E840287EC1DD00E0375D /* RoundedTextInput.swift */,
 				F0A70876288041D20077A678 /* RoundedButton.swift */,
+				F07D305A288ED984000592F2 /* Snackbar.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
+				F07D305B288ED984000592F2 /* Snackbar.swift in Sources */,
 				F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */,
 				F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */,
 				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
