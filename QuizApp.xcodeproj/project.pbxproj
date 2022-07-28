@@ -151,8 +151,10 @@
 		F0242FAA28815B5B00927148 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F0F05FD8288AE3F200E71282 /* Coordinators */,
 				F0749188287DABDE005A7A55 /* Login */,
+				F095F8A92891A708007DEC4A /* Splash */,
+				F095F8A82891A670007DEC4A /* Home */,
+				F0F05FD8288AE3F200E71282 /* Coordinators */,
 				F088E82A287DAE2000E0375D /* Common */,
 			);
 			path = Presentation;
@@ -226,8 +228,6 @@
 		F088E82A287DAE2000E0375D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F095F8A92891A708007DEC4A /* Splash */,
-				F095F8A82891A670007DEC4A /* Home */,
 				F0242FAE28815BDA00927148 /* Interfaces */,
 				F0918417288038A800CB7550 /* UIComponents */,
 				F088E82E287DB31B00E0375D /* Helpers */,
