@@ -24,7 +24,8 @@ class AppCoordinator: AppCoordinatorProtocol {
 
     func setInitialScene(in window: UIWindow) {
         window.rootViewController = navigationController
-        routeToLogin()
+        let splashViewController: SplashViewController = container.resolve()
+        navigationController.setViewControllers([splashViewController], animated: true)
         window.makeKeyAndVisible()
     }
 

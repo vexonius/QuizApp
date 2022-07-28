@@ -39,6 +39,8 @@
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
 		F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458162885BB140015F1C7 /* LoginNetworkClient.swift */; };
 		F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */; };
+		F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095F8A62891A656007DEC4A /* SplashViewController.swift */; };
+		F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */; };
 		F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */; };
 		F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
@@ -93,6 +95,8 @@
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
 		F09458162885BB140015F1C7 /* LoginNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkClient.swift; sourceTree = "<group>"; };
 		F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkClient.swift; sourceTree = "<group>"; };
+		F095F8A62891A656007DEC4A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseProtocol.swift; sourceTree = "<group>"; };
 		F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -148,7 +152,6 @@
 				F0F05FD8288AE3F200E71282 /* Coordinators */,
 				F0749188287DABDE005A7A55 /* Login */,
 				F088E82A287DAE2000E0375D /* Common */,
-				F0F19CAD28901CBC002400CE /* HomeViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -221,6 +224,8 @@
 		F088E82A287DAE2000E0375D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F095F8A92891A708007DEC4A /* Splash */,
+				F095F8A82891A670007DEC4A /* Home */,
 				F0242FAE28815BDA00927148 /* Interfaces */,
 				F0918417288038A800CB7550 /* UIComponents */,
 				F088E82E287DB31B00E0375D /* Helpers */,
@@ -280,6 +285,23 @@
 				F069A7422886F26400F8DB81 /* Repository */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F095F8A82891A670007DEC4A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0F19CAD28901CBC002400CE /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F095F8A92891A708007DEC4A /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F095F8A62891A656007DEC4A /* SplashViewController.swift */,
+				F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		F0DA2D33288AE7D5000B8C70 /* Recovered References */ = {
@@ -501,6 +523,7 @@
 				F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */,
 				F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
+				F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
 				F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */,
@@ -517,6 +540,7 @@
 				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
 				F0F19CB028902343002400CE /* String+Extensions.swift in Sources */,
 				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
+				F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */,
 				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
 				F0DA2D35288AE806000B8C70 /* SecureStorage.swift in Sources */,
 				F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */,
