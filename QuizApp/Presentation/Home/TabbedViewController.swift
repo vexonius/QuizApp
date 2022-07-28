@@ -22,11 +22,6 @@ class TabbedViewController: UITabBarController {
         createViews()
         styleViews()
         defineLayoutForViews()
-
-        setupChildViewControllers()
-
-
-        //title = LocalizedStrings.appName.localizedString
     }
 
     private func setupChildViewControllers() {
@@ -46,12 +41,12 @@ class TabbedViewController: UITabBarController {
 extension TabbedViewController: ConstructViewsProtocol {
 
     func createViews() {
-
+        setupChildViewControllers()
     }
 
     func styleViews() {
         tabBar.backgroundColor = .white
-        tabBar.tintColor = .darkerPurple 
+        tabBar.tintColor = .darkerPurple
     }
 
     func defineLayoutForViews() {

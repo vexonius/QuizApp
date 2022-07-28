@@ -12,7 +12,10 @@ class PopGradient: CAGradientLayer {
         type = .axial
         startPoint = gradientStartPoint
         endPoint = gradientEndPoint
+    }
 
+    override init(layer: Any) {
+        super.init(layer: layer)
     }
 
     required init?(coder: NSCoder) {
