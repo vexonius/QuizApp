@@ -18,8 +18,8 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func routeToHomeScreen() {
-        let homeViewController: HomeViewController = container.resolve()
-        navigationController.setViewControllers([homeViewController], animated: true)
+        let tabbedViewController: TabbedViewController = container.resolve()
+        navigationController.setViewControllers([tabbedViewController], animated: true)
     }
 
     func setInitialScene(in window: UIWindow) {
