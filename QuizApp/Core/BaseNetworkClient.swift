@@ -61,7 +61,7 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
             headers: headers,
             params: params)
 
-        let (_, response) = try await URLSession.shared.data(with: request)
+        let (_, response) = try await urlSession.data(with: request)
 
         try validateResponse(response: response)
     }
