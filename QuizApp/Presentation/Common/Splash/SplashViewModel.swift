@@ -20,7 +20,6 @@ class SplashViewModel {
                     coordinator.routeToHomeScreen()
                 }
             } catch {
-                debugPrint(error)
                 await MainActor.run {
                     coordinator.routeToLogin()
                 }

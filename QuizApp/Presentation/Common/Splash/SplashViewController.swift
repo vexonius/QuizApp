@@ -8,9 +8,6 @@ class SplashViewController: UIViewController {
     private var logoLabel: UILabel!
     private var gradientLayer: CAGradientLayer!
 
-    private let gradientStartPoint = CGPoint(x: 0.5, y: 1)
-    private let gradientEndPoint = CGPoint(x: 0.5, y: 0)
-
     init(viewModel: SplashViewModel) {
         self.viewModel = viewModel
 
@@ -34,7 +31,7 @@ class SplashViewController: UIViewController {
 extension SplashViewController: ConstructViewsProtocol {
 
     func createViews() {
-        gradientLayer = CAGradientLayer()
+        gradientLayer = PopGradient()
         gradientLayer.frame = view.bounds
         view.layer.addSublayer(gradientLayer)
 
@@ -50,10 +47,6 @@ extension SplashViewController: ConstructViewsProtocol {
             ofSize: DesignConstants.FontSize.heading.cgFloat,
             ofWeight: SourceSansProWeight.bold)
 
-        gradientLayer.type = .axial
-        gradientLayer.startPoint = gradientStartPoint
-        gradientLayer.endPoint = gradientEndPoint
-        gradientLayer.colors = [UIColor.darkerPurple.cgColor, UIColor.lighterPurple.cgColor]
     }
 
     func defineLayoutForViews() {
