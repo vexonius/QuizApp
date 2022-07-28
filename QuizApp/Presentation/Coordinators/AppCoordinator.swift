@@ -10,6 +10,8 @@ class AppCoordinator: AppCoordinatorProtocol {
     init(container: Resolver) {
         self.navigationController = UINavigationController()
         self.container = container
+
+        styleNavigationBar()
     }
 
     func routeToLogin() {
@@ -27,6 +29,14 @@ class AppCoordinator: AppCoordinatorProtocol {
         let splashViewController: SplashViewController = container.resolve()
         navigationController.setViewControllers([splashViewController], animated: true)
         window.makeKeyAndVisible()
+    }
+
+    private func styleNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .clear
+        appearance.titleTextAttributes =
+            [NSAttributedString.Key.font: UIFont.sourceSansPro(ofSize: 24, ofWeight: .bold)]
+        UINavigationBar.appearance().standardAppearance = appearance
     }
 
 }
