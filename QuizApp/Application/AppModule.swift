@@ -55,6 +55,13 @@ class AppModule {
             }
             .implements(LoginRepositoryProtocol.self)
             .scope(.application)
+
+        container
+            .register { container in
+                AccountRespository()
+            }
+            .implements(AccountRespositoryProtocol.self)
+            .scope(.application)
     }
 
     private func registerUseCases() {
@@ -63,6 +70,13 @@ class AppModule {
                 LoginUseCase(loginRepository: container.resolve())
             }
             .implements(LoginUseCaseProtocol.self)
+            .scope(.graph)
+
+        container
+            .register { container in
+                AccountUseCase(accountRepository: container.resolve())
+            }
+            .implements(AccountUseCaseProtocol.self)
             .scope(.graph)
     }
 
@@ -81,7 +95,7 @@ class AppModule {
 
         container
             .register { container in
-                SettingsViewModel()
+                SettingsViewModel(accountUseCase: container.resolve())
             }
             .scope(.unique)
     }
