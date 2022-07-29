@@ -46,6 +46,13 @@ class AppModule {
             }
             .implements(LoginNetworkClientProtocol.self)
             .scope(.application)
+
+        container
+            .register { container in
+                AccountNetworkClient(baseNetworkClient: container.resolve())
+            }
+            .implements(AccountNetworkClientProtocol.self)
+            .scope(.application)
     }
 
     private func registerRepositories() {
@@ -58,9 +65,9 @@ class AppModule {
 
         container
             .register { container in
-                AccountRespository()
+                AccountRepository(accountNetworkClient: container.resolve())
             }
-            .implements(AccountRespositoryProtocol.self)
+            .implements(AccountRepositoryProtocol.self)
             .scope(.application)
     }
 
