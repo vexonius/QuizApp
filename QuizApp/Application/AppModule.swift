@@ -78,6 +78,12 @@ class AppModule {
                 LoginViewModel(loginUseCase: container.resolve(), coordinator: container.resolve())
             }
             .scope(.unique)
+
+        container
+            .register { container in
+                SettingsViewModel()
+            }
+            .scope(.unique)
     }
 
     private func registerViewControllers() {
@@ -106,7 +112,9 @@ class AppModule {
             .scope(.unique)
 
         container
-            .register { SettingsViewController() }
+            .register { container in
+                SettingsViewController(viewModel: container.resolve())
+            }
             .scope(.unique)
     }
 
