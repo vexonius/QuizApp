@@ -1,8 +1,8 @@
 class AccountUseCase: AccountUseCaseProtocol {
 
-    private let accountRepository: AccountRespositoryProtocol
+    private let accountRepository: AccountRepositoryProtocol
 
-    init(accountRepository: AccountRespositoryProtocol) {
+    init(accountRepository: AccountRepositoryProtocol) {
         self.accountRepository = accountRepository
     }
 
@@ -13,8 +13,8 @@ class AccountUseCase: AccountUseCaseProtocol {
     }
 
     func updateUsername(username: String) async throws -> Bool {
-        let requestData = UsernameUpdateRequestRepoModel(username: username)
-        let isUpdateSuccessful = accountRepository.updateUsername(data: requestData)
+        let requestData = UsernameUpdateRequestRepoModel(name: username)
+        let isUpdateSuccessful = try await accountRepository.updateUsername(data: requestData)
 
         return isUpdateSuccessful
     }

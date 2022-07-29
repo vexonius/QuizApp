@@ -1,14 +1,21 @@
-class AccountRespository: AccountRespositoryProtocol {
+class AccountRepository: AccountRepositoryProtocol {
 
-    init() {
+    private let accountNetworkClient: AccountNetworkClientProtocol
 
+    init(accountNetworkClient: AccountNetworkClientProtocol) {
+        self.accountNetworkClient = accountNetworkClient
     }
 
-    func getAccountDetails() -> AccountDetailsRepoModel {
-        AccountDetailsRepoModel(id: 1, usename: "etino", name: "Tino Emer", email: "hello@five.agency")
+    func getAccountDetails() async throws -> AccountDetailsRepoModel {
+        let networkModel = try await accountNetworkClient.getAccountDetails()
+
+        return AccountDetailsRepoModel(from: networkModel)
     }
 
-    func updateUsername(data: UsernameUpdateRequestRepoModel) -> Bool {
+    func updateUsername(data: UsernameUpdateRequestRepoModel) async throws -> Bool {
+        let requestBodyNetworkModel = UsernameUpdateRequestNetworkModel(from: data)
+        try await accountNetworkClient.updateUsername(requestBody: requestBodyNetworkModel)
+
         return true
     }
 
