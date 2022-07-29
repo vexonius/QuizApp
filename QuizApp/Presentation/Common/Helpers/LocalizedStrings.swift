@@ -4,6 +4,7 @@ enum LocalizedStrings: String {
 
     case appName = "PopQuiz"
     case emailPlaceholder = "Email"
+    case usernamePlaceholder = "Username"
     case passwordPlaceholder = "Password"
     case loginButtonTitle = "Login"
     case quiz = "Quiz"
