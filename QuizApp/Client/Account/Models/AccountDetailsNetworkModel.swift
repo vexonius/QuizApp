@@ -1,4 +1,4 @@
-struct AccountDetailsNetworkModel {
+struct AccountDetailsNetworkModel: Codable {
 
     let id: Int
     let usename: String?

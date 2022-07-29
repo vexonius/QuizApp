@@ -1,5 +1,5 @@
-struct UsernameUpdateRequestNetworkModel {
+struct UsernameUpdateRequestNetworkModel: Codable {
 
-    let username: String
+    let name: String
 
 }

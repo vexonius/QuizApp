@@ -1,5 +1,5 @@
 struct UsernameUpdateRequestRepoModel {
 
-    let username: String
+    let name: String
 
 }

@@ -75,6 +75,8 @@
 		F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */; };
 		F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAD28901CBC002400CE /* HomeViewController.swift */; };
 		F0F19CB028902343002400CE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAF28902343002400CE /* String+Extensions.swift */; };
+		F0F9DA2F28940EF800350C8F /* AccountDetailsNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D72893F48D004B40E1 /* AccountDetailsNetworkModel.swift */; };
+		F0F9DA3028940EFB00350C8F /* UsernameUpdateRequestNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D82893F48D004B40E1 /* UsernameUpdateRequestNetworkModel.swift */; };
 		F0FCE2B6288FDF6100C66235 /* SecureStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -670,8 +672,10 @@
 				F0C1A3AA289283A5000AF917 /* TabbedViewController.swift in Sources */,
 				F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */,
 				F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */,
+				F0F9DA3028940EFB00350C8F /* UsernameUpdateRequestNetworkModel.swift in Sources */,
 				F08D63CE2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift in Sources */,
 				F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */,
+				F0F9DA2F28940EF800350C8F /* AccountDetailsNetworkModel.swift in Sources */,
 				F08D63C42893E56B004B40E1 /* AccountDetailsModel.swift in Sources */,
 				F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */,
 				F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */,
