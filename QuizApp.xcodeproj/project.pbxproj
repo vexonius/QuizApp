@@ -46,6 +46,9 @@
 		F08D63CA2893ED38004B40E1 /* AccountDetailsRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C92893ED38004B40E1 /* AccountDetailsRepoModel.swift */; };
 		F08D63CC2893EE23004B40E1 /* AccountRespositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63CB2893EE23004B40E1 /* AccountRespositoryProtocol.swift */; };
 		F08D63CE2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63CD2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift */; };
+		F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */; };
+		F08D63D32893F3DC004B40E1 /* AccountEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */; };
+		F08D63D52893F43B004B40E1 /* AccountNetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D42893F43B004B40E1 /* AccountNetworkClientProtocol.swift */; };
 		F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458162885BB140015F1C7 /* LoginNetworkClient.swift */; };
 		F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */; };
 		F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095F8A62891A656007DEC4A /* SplashViewController.swift */; };
@@ -113,6 +116,11 @@
 		F08D63C92893ED38004B40E1 /* AccountDetailsRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsRepoModel.swift; sourceTree = "<group>"; };
 		F08D63CB2893EE23004B40E1 /* AccountRespositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRespositoryProtocol.swift; sourceTree = "<group>"; };
 		F08D63CD2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameUpdateRequestRepoModel.swift; sourceTree = "<group>"; };
+		F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNetworkClient.swift; sourceTree = "<group>"; };
+		F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEndpoints.swift; sourceTree = "<group>"; };
+		F08D63D42893F43B004B40E1 /* AccountNetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNetworkClientProtocol.swift; sourceTree = "<group>"; };
+		F08D63D72893F48D004B40E1 /* AccountDetailsNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsNetworkModel.swift; sourceTree = "<group>"; };
+		F08D63D82893F48D004B40E1 /* UsernameUpdateRequestNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameUpdateRequestNetworkModel.swift; sourceTree = "<group>"; };
 		F09458162885BB140015F1C7 /* LoginNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkClient.swift; sourceTree = "<group>"; };
 		F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkClient.swift; sourceTree = "<group>"; };
 		F095F8A62891A656007DEC4A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +348,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F08D63CF2893F2C3004B40E1 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63D62893F479004B40E1 /* Models */,
+				F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */,
+				F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */,
+				F08D63D42893F43B004B40E1 /* AccountNetworkClientProtocol.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		F08D63D62893F479004B40E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63D72893F48D004B40E1 /* AccountDetailsNetworkModel.swift */,
+				F08D63D82893F48D004B40E1 /* UsernameUpdateRequestNetworkModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F0918417288038A800CB7550 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +439,7 @@
 		F0E4504A28897A9200685E09 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				F08D63CF2893F2C3004B40E1 /* Account */,
 				F0E4504B28897A9F00685E09 /* Login */,
 			);
 			path = Client;
@@ -603,6 +632,7 @@
 				F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */,
 				F08D63C72893ECFF004B40E1 /* AccountRepository.swift in Sources */,
 				F0EA48212886E0B80042BD52 /* Api.swift in Sources */,
+				F08D63D32893F3DC004B40E1 /* AccountEndpoints.swift in Sources */,
 				F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */,
 				F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */,
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
@@ -624,10 +654,12 @@
 				F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */,
 				F088E834287DD0A500E0375D /* LocalizedStrings.swift in Sources */,
 				F088E83F287EBC4900E0375D /* BaseViewController.swift in Sources */,
+				F08D63D52893F43B004B40E1 /* AccountNetworkClientProtocol.swift in Sources */,
 				F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */,
 				F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */,
 				F05C8AA828817BBB00D8FC5A /* UITextView+Extensions.swift in Sources */,
 				F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */,
+				F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */,
 				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
 				F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */,
 				F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */,
