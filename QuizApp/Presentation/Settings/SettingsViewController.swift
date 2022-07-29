@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 import SnapKit
 
 class SettingsViewController: BaseViewController {
@@ -8,8 +9,22 @@ class SettingsViewController: BaseViewController {
         static let inputFieldInset = 4
     }
 
+    private let viewModel: SettingsViewModel
+
     private var usernameInputLabel: UILabel!
     private var usernameInputField: UITextField!
+
+    private var cancellables: Set<AnyCancellable> = []
+
+    init(viewModel: SettingsViewModel) {
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +32,9 @@ class SettingsViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+        bindViews()
+
+        usernameInputField.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +73,33 @@ extension SettingsViewController: ConstructViewsProtocol {
             make.leading.trailing.equalToSuperview().inset(DesignConstants.Insets.contentInset)
             make.leading.trailing.equalToSuperview().inset(DesignConstants.Insets.contentInset)
         }
+    }
+
+}
+
+extension SettingsViewController: BindViewsProtocol {
+
+    func bindViews() {
+        viewModel
+            .$currentUsername
+            .assign(to: \.text, on: usernameInputField)
+            .store(in: &cancellables)
+    }
+
+}
+
+// MARK: UITextFieldDelegate
+
+extension SettingsViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        guard let username = textField.text else { return true }
+
+        viewModel.usernameOnChange(username)
+
+        return true
     }
 
 }
