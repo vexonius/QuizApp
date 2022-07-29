@@ -45,7 +45,29 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
             params: params,
             requestBody: requestBody)
 
-        let (data, response) = try await URLSession.shared.data(with: request)
+        let (data, response) = try await urlSession.data(with: request)
+
+        try validateResponse(response: response)
+
+        let responseModel = try decodeResponseBody(type: U.self, data: data)
+
+        return responseModel
+    }
+
+    func patch<T: Codable, U: Codable>(
+        url: URL,
+        params: [String: String],
+        headers: [String: String],
+        requestBody: T
+    ) async throws -> U {
+        let request = try await createRequest(
+            method: .patch,
+            url: url,
+            headers: headers,
+            params: params,
+            requestBody: requestBody)
+
+        let (data, response) = try await urlSession.data(with: request)
 
         try validateResponse(response: response)
 

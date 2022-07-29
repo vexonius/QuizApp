@@ -16,6 +16,13 @@ protocol BaseNetworkClientProtocol {
         requestBody: T
     ) async throws -> U
 
+    func patch<T: Codable, U: Codable>(
+        url: URL,
+        params: [String: String],
+        headers: [String: String],
+        requestBody: T
+    ) async throws -> U
+
     func head(url: URL, params: [String: String], headers: [String: String]) async throws
 
 }
