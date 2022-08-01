@@ -40,6 +40,7 @@
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
 		F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */ = {isa = PBXBuildFile; productRef = F08D37012897FE2C005FFF1F /* CombineReachability */; };
 		F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */; };
+		F08D3706289813C0005FFF1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D3705289813C0005FFF1F /* HomeViewModel.swift */; };
 		F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */; };
 		F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */; };
 		F08D63C12893E508004B40E1 /* AccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */; };
@@ -113,6 +114,7 @@
 		F088E845287EF72500E0375D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
 		F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkPlaceholderView.swift; sourceTree = "<group>"; };
+		F08D3705289813C0005FFF1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCase.swift; sourceTree = "<group>"; };
 		F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			children = (
 				F0F19CAD28901CBC002400CE /* HomeViewController.swift */,
 				F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */,
+				F08D3705289813C0005FFF1F /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */,
 				F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */,
 				F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */,
+				F08D3706289813C0005FFF1F /* HomeViewModel.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,

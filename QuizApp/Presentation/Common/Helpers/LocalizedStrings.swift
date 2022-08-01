@@ -10,6 +10,9 @@ enum LocalizedStrings: String {
     case logoutButtonTitle = "Logout"
     case quiz = "Quiz"
     case settings = "Settings"
+    case error = "Error"
+    case networkError = "Network Error"
+    case networkErrorDescription = "Data can’t be reached. \nPlease try again"
 
     case unauthorizedLoginErrorMessage = "Invalid email/password entered. \nPlease try again"
     case serverErrorMessage = "Something went wrong. \n Please try again later"

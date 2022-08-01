@@ -108,6 +108,12 @@ class AppModule {
                     coordinator: container.resolve())
             }
             .scope(.unique)
+
+        container
+            .register {
+                HomeViewModel()
+            }
+            .scope(.unique)
     }
 
     private func registerViewControllers() {
@@ -132,7 +138,9 @@ class AppModule {
             .scope(.unique)
 
         container
-            .register { HomeViewController() }
+            .register { container in
+                HomeViewController(viewModel: container.resolve())
+            }
             .scope(.unique)
 
         container
