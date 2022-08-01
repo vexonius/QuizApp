@@ -113,7 +113,6 @@ extension SettingsViewController: BindViewsProtocol {
             .gesture(.tap())
             .sink { [weak self] _ in
                 self?.viewModel.logout()
-                debugPrint("logged out")
             }
             .store(in: &cancellables)
     }

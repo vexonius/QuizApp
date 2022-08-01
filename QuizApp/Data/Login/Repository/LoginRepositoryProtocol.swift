@@ -4,4 +4,6 @@ protocol LoginRepositoryProtocol {
 
     func validateToken() async throws
 
+    func logout() async
+
 }
