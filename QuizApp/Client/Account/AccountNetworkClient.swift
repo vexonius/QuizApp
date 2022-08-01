@@ -20,7 +20,7 @@ class AccountNetworkClient: AccountNetworkClientProtocol {
         try await baseNetworkClient.patch(
             url: AccountEndpoints.account.path,
             params: [:],
-            headers: [:],
+            headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value],
             requestBody: requestBody)
     }
 
