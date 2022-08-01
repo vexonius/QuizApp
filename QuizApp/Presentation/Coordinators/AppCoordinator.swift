@@ -4,8 +4,8 @@ import Resolver
 
 class AppCoordinator: AppCoordinatorProtocol {
 
-    private (set) var navigationController: UINavigationController
-    private (set) var container: Resolver
+    private(set) var navigationController: UINavigationController
+    private(set) var container: Resolver
 
     init(container: Resolver) {
         self.navigationController = UINavigationController()
@@ -15,6 +15,11 @@ class AppCoordinator: AppCoordinatorProtocol {
     func routeToLogin() {
         let loginViewController: LoginViewController = container.resolve()
         navigationController.setViewControllers([loginViewController], animated: true)
+    }
+
+    func routeToHomeScreen() {
+        let homeViewController: HomeViewController = container.resolve()
+        navigationController.setViewControllers([homeViewController], animated: true)
     }
 
     func setInitialScene(in window: UIWindow) {

@@ -9,6 +9,8 @@ protocol AppCoordinatorProtocol {
 
     func routeToLogin()
 
+    func routeToHomeScreen()
+
     func setInitialScene(in window: UIWindow)
 
 }

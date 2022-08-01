@@ -9,19 +9,22 @@ class LoginRepository: LoginRepositoryProtocol {
         self.networkClient = networkClient
     }
 
-    func login(data: LoginRequestBodyRepoModel) async throws -> Bool {
+    func login(data: LoginRequestBodyRepoModel) async throws {
         let requestBody = LoginRequestBodyNetworkModel(from: data)
         let networkModel = try await networkClient.login(requestBody: requestBody)
 
         guard !networkModel.accessToken.isEmpty else { throw NetworkError.responseCorrupted }
 
         saveAccessToken(token: networkModel.accessToken)
-
-        return true
+        saveUsername(username: data.username)
     }
 
     private func saveAccessToken(token: String) {
         secureStorage.set(token, for: SecureStorageKey.accessToken)
+    }
+
+    private func saveUsername(username: String) {
+        secureStorage.set(username, for: SecureStorageKey.username)
     }
 
 }

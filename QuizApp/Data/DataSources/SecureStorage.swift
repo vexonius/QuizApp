@@ -4,6 +4,7 @@ import KeychainSwift
 struct SecureStorageKey {
 
     static let accessToken = "access_token"
+    static let username = "username"
 
 }
 

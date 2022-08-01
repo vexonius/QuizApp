@@ -101,6 +101,8 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
             throw ClientError.forbiden
         case 404:
             throw ClientError.notFound
+        case 402, 405..<500:
+            throw ClientError.unknown
         case 500...:
             throw ClientError.serverError
         default:

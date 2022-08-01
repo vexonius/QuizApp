@@ -56,6 +56,8 @@
 		F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */; };
 		F0EA48212886E0B80042BD52 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA48202886E0B80042BD52 /* Api.swift */; };
 		F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */; };
+		F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAD28901CBC002400CE /* HomeViewController.swift */; };
+		F0F19CB028902343002400CE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAF28902343002400CE /* String+Extensions.swift */; };
 		F0FCE2B6288FDF6100C66235 /* SecureStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +111,8 @@
 		F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLProtocol+Interceptor.swift"; sourceTree = "<group>"; };
 		F0EA48202886E0B80042BD52 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyModel.swift; sourceTree = "<group>"; };
+		F0F19CAD28901CBC002400CE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F0F19CAF28902343002400CE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,7 @@
 				F0F05FD8288AE3F200E71282 /* Coordinators */,
 				F0749188287DABDE005A7A55 /* Login */,
 				F088E82A287DAE2000E0375D /* Common */,
+				F0F19CAD28901CBC002400CE /* HomeViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				F0138171287F154A001A0C2E /* Primitives+Extensions.swift */,
 				F05C8AA5288172FA00D8FC5A /* Gesture+Extensions.swift */,
 				F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */,
+				F0F19CAF28902343002400CE /* String+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
+				F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */,
 				F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */,
 				F0EA48212886E0B80042BD52 /* Api.swift in Sources */,
@@ -504,6 +511,7 @@
 				F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */,
 				F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */,
 				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
+				F0F19CB028902343002400CE /* String+Extensions.swift in Sources */,
 				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
 				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
 				F0DA2D35288AE806000B8C70 /* SecureStorage.swift in Sources */,

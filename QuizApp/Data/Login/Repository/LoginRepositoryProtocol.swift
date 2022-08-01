@@ -1,5 +1,5 @@
 protocol LoginRepositoryProtocol {
 
-    func login(data: LoginRequestBodyRepoModel) async throws -> Bool
+    func login(data: LoginRequestBodyRepoModel) async throws
 
 }
