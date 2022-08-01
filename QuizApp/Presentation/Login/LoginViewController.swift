@@ -147,8 +147,12 @@ extension LoginViewController: ConstructViewsProtocol {
 
 extension LoginViewController: BindViewsProtocol {
 
-    // swiftlint:disable:next function_body_length
     func bindViews() {
+        bindViewModel()
+        bindViewComponents()
+    }
+
+    func bindViewModel() {
         viewModel
             .$isLoginButtonEnabled
             .receive(on: RunLoop.main)
@@ -195,7 +199,9 @@ extension LoginViewController: BindViewsProtocol {
                 Snackbar(in: self.view, message: errorMessage).show()
             }
             .store(in: &cancellables)
+    }
 
+    func bindViewComponents() {
         loginButton
             .gesture(.tap())
             .sink { [weak self] _ in
