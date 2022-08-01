@@ -44,7 +44,7 @@
 		F08D63C42893E56B004B40E1 /* AccountDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C32893E56B004B40E1 /* AccountDetailsModel.swift */; };
 		F08D63C72893ECFF004B40E1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C62893ECFF004B40E1 /* AccountRepository.swift */; };
 		F08D63CA2893ED38004B40E1 /* AccountDetailsRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C92893ED38004B40E1 /* AccountDetailsRepoModel.swift */; };
-		F08D63CC2893EE23004B40E1 /* AccountRespositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63CB2893EE23004B40E1 /* AccountRespositoryProtocol.swift */; };
+		F08D63CC2893EE23004B40E1 /* AccountRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63CB2893EE23004B40E1 /* AccountRepositoryProtocol.swift */; };
 		F08D63CE2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63CD2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift */; };
 		F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */; };
 		F08D63D32893F3DC004B40E1 /* AccountEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */; };
@@ -116,7 +116,7 @@
 		F08D63C32893E56B004B40E1 /* AccountDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsModel.swift; sourceTree = "<group>"; };
 		F08D63C62893ECFF004B40E1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
 		F08D63C92893ED38004B40E1 /* AccountDetailsRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsRepoModel.swift; sourceTree = "<group>"; };
-		F08D63CB2893EE23004B40E1 /* AccountRespositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRespositoryProtocol.swift; sourceTree = "<group>"; };
+		F08D63CB2893EE23004B40E1 /* AccountRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F08D63CD2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameUpdateRequestRepoModel.swift; sourceTree = "<group>"; };
 		F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNetworkClient.swift; sourceTree = "<group>"; };
 		F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEndpoints.swift; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 			children = (
 				F08D63C82893ED17004B40E1 /* Models */,
 				F08D63C62893ECFF004B40E1 /* AccountRepository.swift */,
-				F08D63CB2893EE23004B40E1 /* AccountRespositoryProtocol.swift */,
+				F08D63CB2893EE23004B40E1 /* AccountRepositoryProtocol.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -668,7 +668,7 @@
 				F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */,
 				F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
-				F08D63CC2893EE23004B40E1 /* AccountRespositoryProtocol.swift in Sources */,
+				F08D63CC2893EE23004B40E1 /* AccountRepositoryProtocol.swift in Sources */,
 				F0C1A3AA289283A5000AF917 /* TabbedViewController.swift in Sources */,
 				F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */,
 				F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */,

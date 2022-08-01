@@ -16,7 +16,7 @@ class AccountNetworkClient: AccountNetworkClientProtocol {
             responseType: AccountDetailsNetworkModel.self)
     }
 
-    func updateUsername(requestBody: UsernameUpdateRequestNetworkModel) async throws -> Bool {
+    func updateUsername(requestBody: UsernameUpdateRequestNetworkModel) async throws -> AccountDetailsNetworkModel {
         try await baseNetworkClient.patch(
             url: AccountEndpoints.account.path,
             params: [:],

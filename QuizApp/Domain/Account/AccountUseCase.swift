@@ -12,11 +12,11 @@ class AccountUseCase: AccountUseCaseProtocol {
         return AccountDetailsModel(from: accountDetailsRepoResponse)
     }
 
-    func updateUsername(username: String) async throws -> Bool {
+    func updateUsername(username: String) async throws -> AccountDetailsModel {
         let requestData = UsernameUpdateRequestRepoModel(name: username)
-        let isUpdateSuccessful = try await accountRepository.updateUsername(data: requestData)
+        let accountDetailsRepoModel = try await accountRepository.updateUsername(data: requestData)
 
-        return isUpdateSuccessful
+        return AccountDetailsModel.init(from: accountDetailsRepoModel)
     }
 
 }

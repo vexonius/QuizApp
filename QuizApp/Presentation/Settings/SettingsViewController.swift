@@ -82,7 +82,21 @@ extension SettingsViewController: BindViewsProtocol {
     func bindViews() {
         viewModel
             .$currentUsername
+            .receive(on: RunLoop.main)
             .assign(to: \.text, on: usernameInputField)
+            .store(in: &cancellables)
+
+        viewModel
+            .$errorMessage
+            .receive(on: RunLoop.main)
+            .sink { [weak self] errorMessage in
+                guard
+                    let self = self,
+                    let errorMessage = errorMessage
+                else { return }
+
+                Snackbar(in: self.view, message: errorMessage).show()
+            }
             .store(in: &cancellables)
     }
 
