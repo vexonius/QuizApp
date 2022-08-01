@@ -1,12 +1,30 @@
 {
   "pins" : [
     {
+      "identity" : "combinereachability",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/istvan-kreisz/CombineReachability",
+      "state" : {
+        "revision" : "ba1cb2adeb111ee3ce475404ca1cdfb322505281",
+        "version" : "1.0.1"
+      }
+    },
+    {
       "identity" : "keychain-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/evgenyneu/keychain-swift",
       "state" : {
         "branch" : "master",
         "revision" : "32a99b537d1c6f3529a08257c28a5feb70c0c5af"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "revision" : "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
+        "version" : "5.1.0"
       }
     },
     {

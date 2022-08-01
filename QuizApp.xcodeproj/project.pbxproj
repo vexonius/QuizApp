@@ -38,6 +38,7 @@
 		F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E840287EC1DD00E0375D /* RoundedTextInput.swift */; };
 		F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E845287EF72500E0375D /* UIImage+Extensions.swift */; };
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
+		F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */ = {isa = PBXBuildFile; productRef = F08D37012897FE2C005FFF1F /* CombineReachability */; };
 		F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */; };
 		F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */; };
 		F08D63C12893E508004B40E1 /* AccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */; };
@@ -160,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F07D86512888289C000F5D99 /* Resolver in Frameworks */,
+				F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */,
 				F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */,
 				F0749187287DAB62005A7A55 /* SnapKit in Frameworks */,
 			);
@@ -538,6 +540,7 @@
 				F0749186287DAB62005A7A55 /* SnapKit */,
 				F07D86502888289C000F5D99 /* Resolver */,
 				F07D8654288849FE000F5D99 /* KeychainSwift */,
+				F08D37012897FE2C005FFF1F /* CombineReachability */,
 			);
 			productName = QuizApp;
 			productReference = F0E6A973287C74CA007BF1D4 /* QuizApp.app */;
@@ -571,6 +574,7 @@
 				F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */,
 				F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */,
 			);
 			productRefGroup = F0E6A974287C74CA007BF1D4 /* Products */;
 			projectDirPath = "";
@@ -920,6 +924,14 @@
 				kind = branch;
 			};
 		};
+		F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/istvan-kreisz/CombineReachability";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -937,6 +949,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		F08D37012897FE2C005FFF1F /* CombineReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */;
+			productName = CombineReachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
