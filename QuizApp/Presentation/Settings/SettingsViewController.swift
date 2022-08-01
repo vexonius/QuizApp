@@ -5,7 +5,7 @@ import SnapKit
 class SettingsViewController: BaseViewController {
 
     private struct CustomConstants {
-        static let insetTop = 114
+        static let insetTop = 20
         static let inputFieldInset = 4
     }
 
@@ -64,14 +64,13 @@ extension SettingsViewController: ConstructViewsProtocol {
 
     func defineLayoutForViews() {
         usernameInputLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(CustomConstants.insetTop)
-            make.leading.trailing.equalToSuperview().inset(DesignConstants.Insets.contentInset)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(CustomConstants.insetTop)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.contentInset)
         }
 
         usernameInputField.snp.makeConstraints { make in
             make.top.equalTo(usernameInputLabel.snp.bottom).offset(CustomConstants.inputFieldInset)
-            make.leading.trailing.equalToSuperview().inset(DesignConstants.Insets.contentInset)
-            make.leading.trailing.equalToSuperview().inset(DesignConstants.Insets.contentInset)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.contentInset)
         }
     }
 
