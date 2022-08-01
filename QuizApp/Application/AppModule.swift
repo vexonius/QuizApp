@@ -69,12 +69,24 @@ class AppModule {
     private func registerViewModels() {
         container
             .register { container in
+                SplashViewModel(loginUseCase: container.resolve(), coordinator: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container in
                 LoginViewModel(loginUseCase: container.resolve(), coordinator: container.resolve())
             }
             .scope(.unique)
     }
 
     private func registerViewControllers() {
+        container
+            .register { container in
+                SplashViewController(viewModel: container.resolve())
+            }
+            .scope(.unique)
+
         container
             .register { container in
                 LoginViewController(viewModel: container.resolve())

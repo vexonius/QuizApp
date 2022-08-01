@@ -14,4 +14,8 @@ class LoginUseCase: LoginUseCaseProtocol {
         try await loginRepository.login(data: LoginRequestBodyRepoModel(from: loginBodyModel))
     }
 
+    func validateToken() async throws {
+        try await loginRepository.validateToken()
+    }
+
 }

@@ -79,7 +79,7 @@ class LoginViewController: BaseViewController {
 extension LoginViewController: ConstructViewsProtocol {
 
     func createViews() {
-        gradientLayer = CAGradientLayer()
+        gradientLayer = PopGradient()
         gradientLayer.frame = view.bounds
         view.layer.addSublayer(gradientLayer)
 
@@ -103,11 +103,6 @@ extension LoginViewController: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        gradientLayer.type = .axial
-        gradientLayer.startPoint = gradientStartPoint
-        gradientLayer.endPoint = gradientEndPoint
-        gradientLayer.colors = [UIColor.darkerPurple.cgColor, UIColor.lighterPurple.cgColor]
-
         logoLabel.text = LocalizedStrings.appName.localizedString
         logoLabel.textAlignment = .center
         logoLabel.textColor = .white
@@ -166,6 +161,7 @@ extension LoginViewController: ConstructViewsProtocol {
 
 extension LoginViewController: BindViewsProtocol {
 
+    // swiftlint:disable:next function_body_length
     func bindViews() {
         bindViewModel()
         bindViewComponents()
