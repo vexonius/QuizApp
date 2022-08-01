@@ -3,7 +3,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    private var backGround = PopGradient()
+    private var backgroundLayer = PopGradient()
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -12,12 +12,12 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        backGround.frame = view.bounds
-        view.layer.addSublayer(backGround)
+        backgroundLayer.frame = view.bounds
+        view.layer.addSublayer(backgroundLayer)
     }
 
     override func viewDidLayoutSubviews() {
-        backGround.frame = view.bounds
+        backgroundLayer.frame = view.bounds
 
         super.viewDidLayoutSubviews()
     }

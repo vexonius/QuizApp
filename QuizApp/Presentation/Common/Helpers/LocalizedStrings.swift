@@ -12,9 +12,6 @@ enum LocalizedStrings: String {
     case unauthorizedLoginErrorMessage = "Invalid email/password entered. \nPlease try again"
     case serverErrorMessage = "Something went wrong. \n Please try again later"
 
-    case unauthorizedLoginErrorMessage = "Invalid email/password entered. \nPlease try again"
-    case serverErrorMessage = "Something went wrong. \n Please try again later"
-
     var localizedString: String {
         self.rawValue
     }
