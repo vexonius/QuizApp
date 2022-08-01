@@ -161,6 +161,7 @@
 				F095F8A82891A670007DEC4A /* Home */,
 				F0F05FD8288AE3F200E71282 /* Coordinators */,
 				F088E82A287DAE2000E0375D /* Common */,
+				F0F19CAD28901CBC002400CE /* HomeViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
