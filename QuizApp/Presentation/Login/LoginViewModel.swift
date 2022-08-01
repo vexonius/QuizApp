@@ -7,7 +7,7 @@ class LoginViewModel {
     @Published private(set) var isPasswordInputEnabled: Bool = true
     @Published private(set) var isLoginButtonEnabled: Bool = false
     @Published private(set) var isPasswordHidden: Bool = true
-    @Published private(set) var errorMessage: String = ""
+    @Published private(set) var errorMessage: String?
 
     private let loginUseCase: LoginUseCaseProtocol
     private let coordinator: AppCoordinatorProtocol
