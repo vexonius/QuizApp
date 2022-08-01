@@ -7,5 +7,6 @@ extension UIImage {
     static let quiz = UIImage(named: "quiz")!
     static let search = UIImage(named: "search")!
     static let settings = UIImage(named: "settings")!
+    static let error = UIImage(named: "error-icon")!
 
 }

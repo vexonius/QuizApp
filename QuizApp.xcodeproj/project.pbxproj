@@ -39,6 +39,7 @@
 		F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E845287EF72500E0375D /* UIImage+Extensions.swift */; };
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
 		F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */ = {isa = PBXBuildFile; productRef = F08D37012897FE2C005FFF1F /* CombineReachability */; };
+		F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */; };
 		F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */; };
 		F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */; };
 		F08D63C12893E508004B40E1 /* AccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */; };
@@ -111,6 +112,7 @@
 		F088E840287EC1DD00E0375D /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
 		F088E845287EF72500E0375D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
+		F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkPlaceholderView.swift; sourceTree = "<group>"; };
 		F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCase.swift; sourceTree = "<group>"; };
 		F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				F0A70876288041D20077A678 /* RoundedButton.swift */,
 				F07D305A288ED984000592F2 /* Snackbar.swift */,
 				F0B028CA289280000024DBFD /* PopGradient.swift */,
+				F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */,
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
 				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
+				F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */,
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
 				F07D305B288ED984000592F2 /* Snackbar.swift in Sources */,
