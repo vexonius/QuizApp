@@ -77,6 +77,12 @@ class Snackbar: UIView {
     func dismiss() {
         superview?.layoutIfNeeded()
 
+        self.messageLabel.snp.remakeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+
         UIView.animate(
             withDuration: CustomConstants.animationDuration,
             delay: CustomConstants.animationDelay,
@@ -84,6 +90,8 @@ class Snackbar: UIView {
             initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
             options: .curveEaseOut,
             animations: {
+                self.messageLabel.alpha = 0.0
+
                 self.snp.remakeConstraints { make in
                     make.leading.trailing.equalToSuperview()
                     make.height.equalTo(self.height)
@@ -145,8 +153,8 @@ class Snackbar: UIView {
         addSubview(messageLabel)
         messageLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(contextView.safeAreaInsets)
-            make.top.equalToSuperview().offset(CustomConstants.messageOffset)
+            make.bottom.equalTo(contextView.safeAreaLayoutGuide)
+            make.top.equalToSuperview()
         }
     }
 
@@ -166,7 +174,7 @@ extension Snackbar: ConstructViewsProtocol {
 
     func styleViews() {
         messageLabel.text = message
-        backgroundColor = .systemGray6
+        backgroundColor = .deepGray
     }
 
     func defineLayoutForViews() {
