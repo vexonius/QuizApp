@@ -15,12 +15,12 @@ class AccountNetworkClient: AccountNetworkClientProtocol {
             headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
     }
 
-    func updateUsername(requestBody: UsernameUpdateRequestModel) async throws -> AccountDetailsResponse {
+    func updateUsername(requestModel: UsernameUpdateRequestModel) async throws -> AccountDetailsResponse {
         try await baseNetworkClient.patch(
             url: AccountEndpoints.account.path,
             params: [:],
             headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value],
-            requestBody: requestBody)
+            requestBody: requestModel)
     }
 
 }
