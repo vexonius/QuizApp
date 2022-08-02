@@ -3,6 +3,13 @@ import UIKit
 
 class ErrorPlaceholderView: UIView {
 
+    private struct CustomConstants {
+        static let titleFontSize: Float = 28
+        static let descriptionFontSize: Float = 16
+        static let descriptionNumberOfLines = 0
+        static let iconSize: Float = 68
+    }
+
     var title: String? {
         didSet {
             titleView.text = title
@@ -24,7 +31,7 @@ class ErrorPlaceholderView: UIView {
 
     private lazy var titleView: UILabel = {
         let title = UILabel()
-        title.font = UIFont.sourceSansPro(ofSize: 28, ofWeight: .bold)
+        title.font = UIFont.sourceSansPro(ofSize: CustomConstants.titleFontSize.cgFloat, ofWeight: .bold)
         title.textAlignment = .center
 
         return title
@@ -32,9 +39,9 @@ class ErrorPlaceholderView: UIView {
 
     private lazy var errorDescriptionView: UILabel = {
         let description = UILabel()
-        description.font = UIFont.sourceSansPro(ofSize: 16, ofWeight: .regular)
+        description.font = UIFont.sourceSansPro(ofSize: CustomConstants.descriptionFontSize.cgFloat, ofWeight: .regular)
         description.textAlignment = .center
-        description.numberOfLines = 0
+        description.numberOfLines = CustomConstants.descriptionNumberOfLines
 
         return description
     }()
@@ -61,9 +68,7 @@ extension ErrorPlaceholderView: ConstructViewsProtocol {
         addSubview(errorDescriptionView)
     }
 
-    func styleViews() {
-
-    }
+    func styleViews() {}
 
     func defineLayoutForViews() {
         titleView.snp.makeConstraints { make in
@@ -72,7 +77,7 @@ extension ErrorPlaceholderView: ConstructViewsProtocol {
         }
 
         icon.snp.makeConstraints { make in
-            make.height.width.equalTo(68)
+            make.height.width.equalTo(CustomConstants.iconSize)
             make.bottom.equalTo(titleView.snp.top).offset(-DesignConstants.Insets.componentSpacing)
             make.centerX.equalToSuperview()
         }

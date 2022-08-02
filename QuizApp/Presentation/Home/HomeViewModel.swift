@@ -15,10 +15,9 @@ class HomeViewModel {
         switch connection {
         case .unavailable:
             showNoNetworkError()
-            debugPrint("Network unreachable")
         default:
-            debugPrint("Network reachable")
             isErrorPlaceholderVisible = false
+
             // load quizes
         }
     }
