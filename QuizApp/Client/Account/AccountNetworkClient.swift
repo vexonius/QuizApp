@@ -8,15 +8,14 @@ class AccountNetworkClient: AccountNetworkClientProtocol {
         self.baseNetworkClient = baseNetworkClient
     }
 
-    func getAccountDetails() async throws -> AccountDetailsNetworkModel {
+    func getAccountDetails() async throws -> AccountDetailsResponse {
         try await baseNetworkClient.get(
             url: AccountEndpoints.account.path,
             params: [:],
-            headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value],
-            responseType: AccountDetailsNetworkModel.self)
+            headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
     }
 
-    func updateUsername(requestBody: UsernameUpdateRequestNetworkModel) async throws -> AccountDetailsNetworkModel {
+    func updateUsername(requestBody: UsernameUpdateRequestModel) async throws -> AccountDetailsResponse {
         try await baseNetworkClient.patch(
             url: AccountEndpoints.account.path,
             params: [:],

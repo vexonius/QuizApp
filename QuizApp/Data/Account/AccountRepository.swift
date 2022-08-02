@@ -12,11 +12,11 @@ class AccountRepository: AccountRepositoryProtocol {
         return AccountDetailsRepoModel(from: networkModel)
     }
 
-    func updateUsername(data: UsernameUpdateRequestRepoModel) async throws -> AccountDetailsRepoModel {
-        let requestBodyNetworkModel = UsernameUpdateRequestNetworkModel(from: data)
+    func updateUsername(data: UsernameUpdateRepoModel) async throws -> AccountDetailsRepoModel {
+        let requestBodyNetworkModel = UsernameUpdateRequestModel(from: data)
         let accountDetailsResponse = try await accountNetworkClient.updateUsername(requestBody: requestBodyNetworkModel)
 
-        return AccountDetailsRepoModel.init(from: accountDetailsResponse)
+        return AccountDetailsRepoModel(from: accountDetailsResponse)
     }
 
 }
