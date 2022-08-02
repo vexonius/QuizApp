@@ -1,12 +1,11 @@
 import UIKit
 import SnapKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
 
     private var viewModel: SplashViewModel
 
     private var logoLabel: UILabel!
-    private var gradientLayer: CAGradientLayer!
 
     init(viewModel: SplashViewModel) {
         self.viewModel = viewModel
@@ -31,10 +30,6 @@ class SplashViewController: UIViewController {
 extension SplashViewController: ConstructViewsProtocol {
 
     func createViews() {
-        gradientLayer = PopGradient()
-        gradientLayer.frame = view.bounds
-        view.layer.addSublayer(gradientLayer)
-
         logoLabel = UILabel()
         view.addSubview(logoLabel)
     }

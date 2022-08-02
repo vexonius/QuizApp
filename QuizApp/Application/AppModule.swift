@@ -89,12 +89,24 @@ class AppModule {
 
         container
             .register { container in
+                TabbedViewController(
+                    homeViewController: container.resolve(),
+                    settingsViewController: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container in
                 LoginViewController(viewModel: container.resolve())
             }
             .scope(.unique)
 
         container
             .register { HomeViewController() }
+            .scope(.unique)
+
+        container
+            .register { SettingsViewController() }
             .scope(.unique)
     }
 

@@ -6,6 +6,8 @@ enum LocalizedStrings: String {
     case emailPlaceholder = "Email"
     case passwordPlaceholder = "Password"
     case loginButtonTitle = "Login"
+    case quiz = "Quiz"
+    case settings = "Settings"
 
     case unauthorizedLoginErrorMessage = "Invalid email/password entered. \nPlease try again"
     case serverErrorMessage = "Something went wrong. \n Please try again later"

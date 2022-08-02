@@ -8,16 +8,12 @@ class LoginViewController: BaseViewController {
 
     private var cancellables: Set<AnyCancellable> = []
 
-    private var gradientLayer: CAGradientLayer!
     private var logoLabel: UILabel!
     private var usernameInput: RoundedTextInput!
     private var passwordInput: RoundedTextInput!
     private var loginButton: RoundedButton!
     private var componentsStackView: UIStackView!
     private var componentsContainerView: UIView!
-
-    private let gradientStartPoint = CGPoint(x: 0.5, y: 1)
-    private let gradientEndPoint = CGPoint(x: 0.5, y: 0)
 
     private struct CustomConstants {
         static let logoLabelTopOffset = 76
@@ -53,12 +49,6 @@ class LoginViewController: BaseViewController {
         passwordInput.delegate = self
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        gradientLayer.frame = view.bounds
-    }
-
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
@@ -79,10 +69,6 @@ class LoginViewController: BaseViewController {
 extension LoginViewController: ConstructViewsProtocol {
 
     func createViews() {
-        gradientLayer = PopGradient()
-        gradientLayer.frame = view.bounds
-        view.layer.addSublayer(gradientLayer)
-
         componentsStackView = UIStackView()
         view.addSubview(componentsStackView)
 

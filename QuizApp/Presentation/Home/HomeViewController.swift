@@ -2,9 +2,10 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-        view.backgroundColor = .white
+        tabBarController?.title = LocalizedStrings.appName.localizedString
     }
+
 }
