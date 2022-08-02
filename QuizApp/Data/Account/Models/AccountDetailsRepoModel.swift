@@ -8,7 +8,7 @@ struct AccountDetailsRepoModel {
 
 extension AccountDetailsRepoModel {
 
-    init(from networkModel: AccountDetailsNetworkModel) {
-        self.init(id: networkModel.id, name: networkModel.name, email: networkModel.email)
+    init(from responseModel: AccountDetailsResponse) {
+        self.init(id: responseModel.id, name: responseModel.name, email: responseModel.email)
     }
 }

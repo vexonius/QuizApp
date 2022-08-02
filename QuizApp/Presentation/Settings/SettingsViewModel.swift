@@ -46,7 +46,8 @@ class SettingsViewModel {
         let lastUsername = currentUsername
 
         guard !newUsername.isEmpty else {
-            return currentUsername = lastUsername
+            currentUsername = lastUsername
+            return
         }
 
         updateUserName(with: newUsername)

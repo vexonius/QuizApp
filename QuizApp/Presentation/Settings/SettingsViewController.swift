@@ -7,6 +7,8 @@ class SettingsViewController: BaseViewController {
     private struct CustomConstants {
         static let insetTop = 20
         static let inputFieldInset = 4
+        static let inputFieldFontSize = 20
+        static let inputFieldLabelFontSize = 12
     }
 
     private let viewModel: SettingsViewModel
@@ -60,12 +62,11 @@ extension SettingsViewController: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        usernameInputLabel.font = .sourceSansPro(ofSize: 12)
+        usernameInputLabel.font = .sourceSansPro(ofSize: CustomConstants.inputFieldLabelFontSize.cgFloat)
         usernameInputLabel.text = LocalizedStrings.usernamePlaceholder.localizedString.uppercased()
 
-        usernameInputField.font = .sourceSansPro(ofSize: 20, ofWeight: .bold)
-
         logoutButton.setTitleColor(.accentRed, for: .normal)
+        usernameInputField.font = .sourceSansPro(ofSize: CustomConstants.inputFieldFontSize.cgFloat, ofWeight: .bold)
     }
 
     func defineLayoutForViews() {
