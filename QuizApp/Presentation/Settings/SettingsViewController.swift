@@ -111,7 +111,7 @@ extension SettingsViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         logoutButton
-            .gesture(.tap())
+            .throttledTap()
             .sink { [weak self] _ in
                 self?.viewModel.logout()
             }
