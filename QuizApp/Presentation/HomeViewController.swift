@@ -33,6 +33,15 @@ class HomeViewController: BaseViewController {
 
         bindReachability()
         bindViews()
+
+        let quizItem = QuizCell(
+            title: "Hello there",
+            summary: "Quiz description that can usually span over multiple lines")
+        view.addSubview(quizItem)
+        quizItem.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.height.equalTo(144)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

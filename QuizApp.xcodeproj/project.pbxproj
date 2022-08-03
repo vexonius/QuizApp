@@ -10,6 +10,7 @@
 		F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0138171287F154A001A0C2E /* Primitives+Extensions.swift */; };
 		F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F02885973400BC7AE4 /* LoginUseCase.swift */; };
 		F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F32885983600BC7AE4 /* LoginRepository.swift */; };
+		F020B7D7289971C400C9C3CA /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020B7D6289971C400C9C3CA /* QuizCell.swift */; };
 		F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FAF28815C6100927148 /* BindViewsProtocol.swift */; };
 		F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FB128816A2500927148 /* LoginViewModel.swift */; };
 		F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */; };
@@ -87,6 +88,7 @@
 		F0138171287F154A001A0C2E /* Primitives+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Primitives+Extensions.swift"; sourceTree = "<group>"; };
 		F015E1F02885973400BC7AE4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		F015E1F32885983600BC7AE4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		F020B7D6289971C400C9C3CA /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
 		F0242FAF28815C6100927148 /* BindViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewsProtocol.swift; sourceTree = "<group>"; };
 		F0242FB128816A2500927148 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				F0F19CAD28901CBC002400CE /* HomeViewController.swift */,
 				F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */,
 				F08D3705289813C0005FFF1F /* HomeViewModel.swift */,
+				F020B7D6289971C400C9C3CA /* QuizCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				F08D63C72893ECFF004B40E1 /* AccountRepository.swift in Sources */,
 				F0EA48212886E0B80042BD52 /* Api.swift in Sources */,
 				F08D63D32893F3DC004B40E1 /* AccountEndpoints.swift in Sources */,
+				F020B7D7289971C400C9C3CA /* QuizCell.swift in Sources */,
 				F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */,
 				F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */,
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
