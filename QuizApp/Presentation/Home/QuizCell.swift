@@ -11,11 +11,15 @@ class QuizCell: UICollectionViewCell {
         static let backgroundTransparency = 0.2
         static let titleTopOffset = 6
         static let summaryTopOffset = 6
+        static let difficultyIndicatorTrailingInset = 18
+        static let difficultyIndicatorTopOffset = 12
+        static let difficultyIndicatorWidth = 48
     }
 
     private var titleLabel: UILabel!
     private var summaryLabel: UILabel!
     private var icon: UIImageView!
+    private var difficultyIndicator: DifficultyIndicator!
 
     init(title: String, summary: String) {
         super.init(frame: .zero)
@@ -26,9 +30,6 @@ class QuizCell: UICollectionViewCell {
 
         titleLabel.text = title
         summaryLabel.text = summary
-
-        contentView.backgroundColor = .white.withAlphaComponent(CustomConstants.backgroundTransparency.cgFloat)
-        contentView.layer.cornerRadius = CustomConstants.contentCornerRadius.cgFloat
     }
 
     required init?(coder: NSCoder) {
@@ -50,6 +51,11 @@ class QuizCell: UICollectionViewCell {
         addSubview(summaryLabel)
     }
 
+    private func createDifficultyIndicator() {
+        difficultyIndicator = DifficultyIndicator(difficulty: .normal)
+        addSubview(difficultyIndicator)
+    }
+
 }
 
 extension QuizCell: ConstructViewsProtocol {
@@ -58,9 +64,13 @@ extension QuizCell: ConstructViewsProtocol {
         createTitleLabel()
         createSummaryLabel()
         createIcon()
+        createDifficultyIndicator()
     }
 
     func styleViews() {
+        contentView.backgroundColor = .white.withAlphaComponent(CustomConstants.backgroundTransparency.cgFloat)
+        contentView.layer.cornerRadius = CustomConstants.contentCornerRadius.cgFloat
+
         titleLabel.textAlignment = .left
         titleLabel.textColor = .white
         titleLabel.lineBreakMode = .byTruncatingTail
@@ -100,6 +110,12 @@ extension QuizCell: ConstructViewsProtocol {
             make.trailing.equalToSuperview().inset(DesignConstants.Insets.contentInset)
             make.top.equalTo(titleLabel.snp.bottom).offset(CustomConstants.summaryTopOffset)
             make.bottom.lessThanOrEqualTo(icon)
+        }
+
+        difficultyIndicator.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(CustomConstants.difficultyIndicatorTrailingInset)
+            make.top.equalToSuperview().offset(CustomConstants.difficultyIndicatorTopOffset)
+            make.width.equalTo(CustomConstants.difficultyIndicatorWidth)
         }
     }
 
