@@ -67,20 +67,20 @@ extension ErrorPlaceholderView: ConstructViewsProtocol {
     }
 
     func defineLayoutForViews() {
+        icon.snp.makeConstraints { make in
+            make.height.width.equalTo(CustomConstants.iconSize)
+            make.centerX.equalToSuperview()
+        }
+
         titleView.snp.makeConstraints { make in
+            make.top.equalTo(icon.snp.bottom).offset(DesignConstants.Insets.componentSpacing)
             make.width.equalToSuperview()
             make.center.equalToSuperview()
         }
 
-        icon.snp.makeConstraints { make in
-            make.height.width.equalTo(CustomConstants.iconSize)
-            make.bottom.equalTo(titleView.snp.top).offset(-DesignConstants.Insets.componentSpacing)
-            make.centerX.equalToSuperview()
-        }
-
         errorDescriptionView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
             make.top.equalTo(titleView.snp.bottom).offset(DesignConstants.Insets.textSpacing)
+            make.width.equalToSuperview()
             make.centerX.equalToSuperview()
         }
     }
