@@ -19,10 +19,12 @@ class DifficultyIndicator: UIView {
     }
 
     private let difficulty: Difficulty
+    private let accentColor: UIColor
     private let rectContainer: CGRect = CGRect(x: 0, y: 0, width: 10, height: 10)
 
-    init(difficulty: Difficulty = .easy) {
+    init(difficulty: Difficulty = .easy, accentColor: UIColor = .accentYellow) {
         self.difficulty = difficulty
+        self.accentColor = accentColor
 
         super.init(frame: .zero)
 
@@ -45,7 +47,7 @@ class DifficultyIndicator: UIView {
             rectangle.path = bezierPath.cgPath
             rectangle.fillColor = index >= difficulty.rawValue ?
                 UIColor.white.withAlphaComponent(CustomConstants.indicatorTransparency).cgColor :
-                UIColor.accentRed.cgColor
+                accentColor.cgColor
 
             self.layer.addSublayer(rectangle)
 
