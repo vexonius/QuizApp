@@ -18,14 +18,6 @@ class DifficultyIndicator: UIView {
         static let cornerRadius = 2
     }
 
-    enum Difficulty: Int {
-
-        case easy = 1
-        case normal = 2
-        case hard = 3
-
-    }
-
     private let difficulty: Difficulty
     private let rectContainer: CGRect = CGRect(x: 0, y: 0, width: 10, height: 10)
 

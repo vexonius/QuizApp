@@ -2,6 +2,8 @@ import UIKit
 
 class QuizCell: UICollectionViewCell {
 
+    static let reuseIdentifier = "QuizCellID"
+
     private struct CustomConstants {
         static let cornerRadius = 20
         static let textNumberOfLines = 0
