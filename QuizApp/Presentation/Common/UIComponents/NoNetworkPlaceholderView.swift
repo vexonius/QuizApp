@@ -22,29 +22,9 @@ class ErrorPlaceholderView: UIView {
         }
     }
 
-    private lazy var icon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage.error
-
-        return imageView
-    }()
-
-    private lazy var titleView: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.sourceSansPro(ofSize: CustomConstants.titleFontSize.cgFloat, ofWeight: .bold)
-        title.textAlignment = .center
-
-        return title
-    }()
-
-    private lazy var errorDescriptionView: UILabel = {
-        let description = UILabel()
-        description.font = UIFont.sourceSansPro(ofSize: CustomConstants.descriptionFontSize.cgFloat, ofWeight: .regular)
-        description.textAlignment = .center
-        description.numberOfLines = CustomConstants.descriptionNumberOfLines
-
-        return description
-    }()
+    private var icon: UIImageView!
+    private var titleView: UILabel!
+    private var errorDescriptionView: UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,12 +43,28 @@ class ErrorPlaceholderView: UIView {
 extension ErrorPlaceholderView: ConstructViewsProtocol {
 
     func createViews() {
+        icon = UIImageView()
         addSubview(icon)
+
+        titleView = UILabel()
         addSubview(titleView)
+
+        errorDescriptionView = UILabel()
         addSubview(errorDescriptionView)
     }
 
-    func styleViews() {}
+    func styleViews() {
+        icon.image = UIImage.error
+
+        titleView.font = UIFont.sourceSansPro(ofSize: CustomConstants.titleFontSize.cgFloat, ofWeight: .bold)
+        titleView.textAlignment = .center
+
+        errorDescriptionView.textAlignment = .center
+        errorDescriptionView.numberOfLines = CustomConstants.descriptionNumberOfLines
+        errorDescriptionView.font = UIFont.sourceSansPro(
+            ofSize: CustomConstants.descriptionFontSize.cgFloat,
+            ofWeight: .regular)
+    }
 
     func defineLayoutForViews() {
         titleView.snp.makeConstraints { make in
