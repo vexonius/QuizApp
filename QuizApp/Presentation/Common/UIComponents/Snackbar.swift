@@ -11,10 +11,14 @@ class Snackbar: UIView {
         static let horizontalComponentHeight = 60
         static let animationDuration = 0.6
         static let animationDelay = 0.0
+        static let revealAnimationDuration = 0.4
+        static let revealAnimationDelay = 0.15
         static let animationSpringDamping = 0.9
         static let animationInitialSpringVelocity = 0.7
         static let messageDuration = 3
         static let messageOffset = 8
+        static let alphaValueTransparent = 0.0
+        static let alphaValueVisible = 1.0
     }
 
     private lazy var messageLabel: UILabel = {
@@ -28,8 +32,8 @@ class Snackbar: UIView {
     }()
 
     private let contextView: UIView
-    private var height: CGFloat = CustomConstants.regularComponentHeight.cgFloat
     private let message: String
+    private var height: CGFloat = CustomConstants.regularComponentHeight.cgFloat
 
     init(in contextView: UIView, message: String) {
         self.contextView = contextView
@@ -48,7 +52,9 @@ class Snackbar: UIView {
 
     func show() {
         superview?.layoutIfNeeded()
-        adaptComponentsForOrientationChanges()
+
+        adaptToOrientationChanges()
+        updateMessageLabelConstraintsForDismiss()
 
         UIView.animate(
             withDuration: CustomConstants.animationDuration,
@@ -72,10 +78,23 @@ class Snackbar: UIView {
                     }
                 }
             })
+
+        UIView.animate(
+            withDuration: CustomConstants.revealAnimationDuration,
+            delay: CustomConstants.revealAnimationDelay
+        ) {
+            self.messageLabel.snp.makeConstraints { make in
+                make.top.leading.trailing.equalToSuperview()
+                make.bottom.equalTo(self.contextView.safeAreaLayoutGuide)
+            }
+
+            self.messageLabel.alpha = CustomConstants.alphaValueVisible
+        }
     }
 
     func dismiss() {
         superview?.layoutIfNeeded()
+        updateMessageLabelConstraintsForDismiss()
 
         UIView.animate(
             withDuration: CustomConstants.animationDuration,
@@ -84,12 +103,8 @@ class Snackbar: UIView {
             initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
             options: .curveEaseOut,
             animations: {
-                self.snp.remakeConstraints { make in
-                    make.leading.trailing.equalToSuperview()
-                    make.height.equalTo(self.height)
-                    make.top.equalTo(self.contextView.snp.bottom)
-                }
-
+                self.messageLabel.alpha = CustomConstants.alphaValueTransparent.cgFloat
+                self.updateConstraintsForDissmis()
                 self.superview?.layoutIfNeeded()
             }, completion: { _ in
                 self.removeFromSuperview()
@@ -99,11 +114,11 @@ class Snackbar: UIView {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
-        adaptComponentsForOrientationChanges()
+        adaptToOrientationChanges()
         updateLayoutConstraints()
     }
 
-    private func adaptComponentsForOrientationChanges() {
+    private func adaptToOrientationChanges() {
         height = superview?.traitCollection.verticalSizeClass == .regular ?
             CustomConstants.regularComponentHeight.cgFloat + contextView.safeAreaInsets.bottom :
             CustomConstants.horizontalComponentHeight.cgFloat + contextView.safeAreaInsets.bottom
@@ -123,17 +138,12 @@ class Snackbar: UIView {
             initialSpringVelocity: CustomConstants.animationInitialSpringVelocity,
             options: .curveEaseOut,
             animations: {
-                self.snp.remakeConstraints { make in
-                    make.bottom.equalToSuperview()
-                    make.leading.trailing.equalToSuperview()
-                    make.height.equalTo(self.height)
-                }
-
+                self.updateSnackBarConstraints()
                 self.superview?.layoutIfNeeded()
             })
     }
 
-    private func constraintSuperView(with view: UIView) {
+    private func constraintSnackBar(in view: UIView) {
         view.addSubview(self)
 
         self.snp.makeConstraints { make in
@@ -144,9 +154,29 @@ class Snackbar: UIView {
 
         addSubview(messageLabel)
         messageLabel.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(contextView.safeAreaLayoutGuide)
+        }
+    }
+
+    private func updateSnackBarConstraints() {
+        self.snp.remakeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(height)
+        }
+    }
+
+    private func updateMessageLabelConstraintsForDismiss() {
+        messageLabel.snp.remakeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+
+    private func updateConstraintsForDissmis() {
+        self.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(contextView.safeAreaInsets)
-            make.top.equalToSuperview().offset(CustomConstants.messageOffset)
+            make.height.equalTo(height)
+            make.top.equalTo(contextView.snp.bottom)
         }
     }
 
@@ -166,11 +196,12 @@ extension Snackbar: ConstructViewsProtocol {
 
     func styleViews() {
         messageLabel.text = message
-        backgroundColor = .systemGray6
+        messageLabel.alpha = CustomConstants.alphaValueTransparent
+        backgroundColor = .deepGray
     }
 
     func defineLayoutForViews() {
-        constraintSuperView(with: contextView)
+        constraintSnackBar(in: contextView)
     }
 
 }
