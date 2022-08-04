@@ -60,6 +60,8 @@
 		F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
+		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
+		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
 		F0C1A3AA289283A5000AF917 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */; };
 		F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */; };
 		F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202D28858054004EC4F3 /* AppModule.swift */; };
@@ -136,6 +138,8 @@
 		F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0B028CA289280000024DBFD /* PopGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopGradient.swift; sourceTree = "<group>"; };
+		F0BB5384289BB7D8003A0E3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
 		F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F0D9202D28858054004EC4F3 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 				F0E450422889745800685E09 /* BaseNetworkModels.swift */,
 				F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */,
 				F0EA48202886E0B80042BD52 /* Api.swift */,
+				F0BB5384289BB7D8003A0E3B /* NetworkService.swift */,
+				F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -655,6 +661,7 @@
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
 				F07D305B288ED984000592F2 /* Snackbar.swift in Sources */,
 				F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */,
+				F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */,
 				F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */,
 				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
 				F0F19CB028902343002400CE /* String+Extensions.swift in Sources */,
@@ -675,6 +682,7 @@
 				F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */,
 				F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */,
 				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
+				F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */,
 				F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */,
 				F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */,
 				F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */,
