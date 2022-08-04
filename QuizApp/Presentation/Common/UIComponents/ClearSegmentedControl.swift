@@ -27,7 +27,7 @@ class ClearSegmentedControll: UISegmentedControl {
             setTitleTextAttributes(
                 [.foregroundColor: UIColor.whiteTransparent30,
                 NSAttributedString.Key.font:
-                UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+                    UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
                 for: .normal)
         }
     }
@@ -37,20 +37,20 @@ class ClearSegmentedControll: UISegmentedControl {
             setTitleTextAttributes(
                 [.foregroundColor: UIColor.white,
                 NSAttributedString.Key.font:
-                UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+                    UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
                 for: .selected)
         }
     }
 
     func updateSegments(segments: [String]) {
-        self.removeAllSegments()
+        removeAllSegments()
 
         for segment in segments {
-            self.insertSegment(withTitle: segment, at: self.numberOfSegments, animated: false)
+            insertSegment(withTitle: segment, at: numberOfSegments, animated: false)
         }
 
         style()
-        self.selectedSegmentIndex = CustomConstants.defaultSelectedIndex
+        selectedSegmentIndex = CustomConstants.defaultSelectedIndex
     }
 
     private func style() {
@@ -68,13 +68,13 @@ class ClearSegmentedControll: UISegmentedControl {
         setTitleTextAttributes(
             [.foregroundColor: UIColor.whiteTransparent30,
             NSAttributedString.Key.font:
-            UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+                UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
             for: .normal)
 
         setTitleTextAttributes(
             [.foregroundColor: UIColor.white,
             NSAttributedString.Key.font:
-            UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+                UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
             for: .selected)
     }
 

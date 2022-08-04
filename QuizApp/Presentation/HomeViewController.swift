@@ -5,6 +5,10 @@ import Reachability
 
 class HomeViewController: BaseViewController {
 
+    private struct CustomConstants {
+        static let segmentedControlTopInset = 8
+    }
+
     private var filtersSegmentedControl: ClearSegmentedControll!
     private var errorPlaceholder: ErrorPlaceholderView!
 
@@ -93,7 +97,7 @@ extension HomeViewController: ConstructViewsProtocol {
 
         filtersSegmentedControl.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.componentsInset)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(8)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(CustomConstants.segmentedControlTopInset)
             make.height.equalTo(DesignConstants.ControlComponents.segmentedControlHeight)
         }
     }
