@@ -6,6 +6,7 @@ class HomeViewModel {
     @Published private(set) var isErrorPlaceholderVisible: Bool = false
     @Published private(set) var errorTitle: String?
     @Published private(set) var errorDescription: String?
+    @Published private(set) var filters: [String] = ["All", "Sports", "Oscars", "Music"]
 
     private let networkService: NetworkServiceProtocol
     private var cancellables = Set<AnyCancellable>()

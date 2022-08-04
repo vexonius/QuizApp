@@ -44,6 +44,7 @@ class ClearSegmentedControll: UISegmentedControl {
 
     func updateSegments(segments: [String]) {
         self.removeAllSegments()
+
         for segment in segments {
             self.insertSegment(withTitle: segment, at: self.numberOfSegments, animated: false)
         }
