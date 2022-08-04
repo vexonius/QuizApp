@@ -33,4 +33,8 @@ struct DesignConstants {
         static let heading: Float = 32
     }
 
+    struct ControlComponents {
+        static let segmentedControlHeight: Float = 32
+    }
+
 }

@@ -12,4 +12,6 @@ extension UIColor {
     static let primaryButtonBackground = UIColor(named: "primary-button-background")!
     static let primaryButtonDisabledBackground = UIColor(named: "primary-button-background-disabled")!
 
+    static let whiteTransparent30 = UIColor.white.withAlphaComponent(0.3)
+
 }
