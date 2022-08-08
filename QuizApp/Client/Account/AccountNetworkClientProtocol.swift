@@ -2,6 +2,6 @@ protocol AccountNetworkClientProtocol {
 
     var accountDetails: AccountDetailsResponse { get async throws }
 
-    func updateUsername(requestModel: UsernameUpdateRequestModel) async throws -> AccountDetailsResponse
+    func updateUsername(requestModel: AccountUpdateRequestModel) async throws -> AccountDetailsResponse
 
 }
