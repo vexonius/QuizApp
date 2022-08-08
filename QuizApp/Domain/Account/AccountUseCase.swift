@@ -14,9 +14,9 @@ class AccountUseCase: AccountUseCaseProtocol {
         }
     }
 
-    func updateUsername(username: String) async throws -> AccountDetailsModel {
-        let requestData = AccountUpdateRepoModel(name: username)
-        let accountDetailsRepoModel = try await accountRepository.updateUsername(data: requestData)
+    func update(name: String) async throws -> AccountDetailsModel {
+        let requestModel = AccountUpdateRepoModel(name: name)
+        let accountDetailsRepoModel = try await accountRepository.update(request: requestModel)
 
         return AccountDetailsModel(from: accountDetailsRepoModel)
     }
