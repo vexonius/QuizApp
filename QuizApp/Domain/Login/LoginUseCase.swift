@@ -18,4 +18,8 @@ class LoginUseCase: LoginUseCaseProtocol {
         try await loginRepository.validateToken()
     }
 
+    func logout() async {
+        await loginRepository.logout()
+    }
+
 }

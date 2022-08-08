@@ -7,6 +7,7 @@ enum LocalizedStrings: String {
     case usernamePlaceholder = "Username"
     case passwordPlaceholder = "Password"
     case loginButtonTitle = "Login"
+    case logoutButtonTitle = "Logout"
     case quiz = "Quiz"
     case settings = "Settings"
 

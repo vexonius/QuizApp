@@ -4,4 +4,6 @@ protocol LoginUseCaseProtocol {
 
     func validateToken() async throws
 
+    func logout() async
+
 }

@@ -102,7 +102,10 @@ class AppModule {
 
         container
             .register { container in
-                SettingsViewModel(accountUseCase: container.resolve())
+                SettingsViewModel(
+                    accountUseCase: container.resolve(),
+                    loginUsecase: container.resolve(),
+                    coordinator: container.resolve())
             }
             .scope(.unique)
     }

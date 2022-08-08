@@ -40,4 +40,8 @@ class SecureStorage: SecureStorageProtocol {
         storage.set(value, forKey: key)
     }
 
+    func delete(_ key: String) {
+        storage.delete(key)
+    }
+
 }

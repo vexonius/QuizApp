@@ -8,6 +8,13 @@ extension UIView {
         gesture(.tap())
     }
 
+    func throttledTap(for interval: Double = 0.5) -> AnyPublisher<Void, Never> {
+        tap
+            .throttle(for: .seconds(interval), scheduler: RunLoop.main, latest: true)
+            .mapToVoid()
+            .eraseToAnyPublisher()
+    }
+
     func gesture(_ gestureType: GestureType) -> GesturePublisher {
         GesturePublisher(view: self, gestureType: gestureType)
     }
@@ -147,6 +154,15 @@ struct BarItemGesturePublisher: Publisher {
                                          GesturePublisher.Output == S.Input {
         let subscription = BarItemGestureSubscription(subscriber: subscriber, barItem: barItem)
         subscriber.receive(subscription: subscription)
+    }
+
+}
+
+extension Publisher {
+
+    func mapToVoid() -> AnyPublisher<Void, Self.Failure> {
+        map { _ in () }
+            .eraseToAnyPublisher()
     }
 
 }

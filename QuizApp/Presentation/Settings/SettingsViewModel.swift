@@ -6,9 +6,17 @@ class SettingsViewModel {
     @Published private(set) var errorMessage: String?
 
     private let accountUseCase: AccountUseCaseProtocol
+    private let loginUseCase: LoginUseCaseProtocol
+    private let coordinator: AppCoordinatorProtocol
 
-    init(accountUseCase: AccountUseCaseProtocol) {
+    init(
+        accountUseCase: AccountUseCaseProtocol,
+        loginUsecase: LoginUseCaseProtocol,
+        coordinator: AppCoordinatorProtocol
+    ) {
         self.accountUseCase = accountUseCase
+        self.loginUseCase = loginUsecase
+        self.coordinator = coordinator
 
         fetchUserDetails()
     }
@@ -44,6 +52,13 @@ class SettingsViewModel {
         }
 
         update(name: newName)
+    }
+
+    func logout() {
+        Task {
+            await loginUseCase.logout()
+            await MainActor.run { coordinator.routeToLogin() }
+        }
     }
 
 }

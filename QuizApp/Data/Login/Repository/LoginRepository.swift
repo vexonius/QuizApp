@@ -19,6 +19,14 @@ class LoginRepository: LoginRepositoryProtocol {
         saveUsername(username: data.username)
     }
 
+    func validateToken() async throws {
+        try await networkClient.validateToken()
+    }
+
+    func logout() async {
+        deleteToken()
+    }
+
     private func saveAccessToken(token: String) {
         secureStorage.set(token, for: SecureStorageKey.accessToken)
     }
@@ -27,8 +35,8 @@ class LoginRepository: LoginRepositoryProtocol {
         secureStorage.set(username, for: SecureStorageKey.username)
     }
 
-    func validateToken() async throws {
-        try await networkClient.validateToken()
+    private func deleteToken() {
+        secureStorage.delete(SecureStorageKey.accessToken)
     }
 
 }

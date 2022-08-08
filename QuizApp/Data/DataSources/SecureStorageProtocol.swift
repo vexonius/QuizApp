@@ -14,4 +14,6 @@ protocol SecureStorageProtocol {
 
     func set(_ value: Data, for key: String)
 
+    func delete(_ key: String)
+
 }
