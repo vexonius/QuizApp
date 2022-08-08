@@ -44,8 +44,4 @@ class SecureStorage: SecureStorageProtocol {
         storage.delete(key)
     }
 
-    func clear() {
-        storage.clear()
-    }
-
 }
