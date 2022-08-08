@@ -35,7 +35,7 @@ class AppCoordinator: AppCoordinatorProtocol {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .clear
         appearance.titleTextAttributes =
-            [NSAttributedString.Key.font: UIFont.sourceSansPro(ofSize: 24, ofWeight: .bold)]
+            [NSAttributedString.Key.font: UIFont.sourceSansPro(ofSize: 24, ofWeight: .bold)!]
         UINavigationBar.appearance().standardAppearance = appearance
     }
 

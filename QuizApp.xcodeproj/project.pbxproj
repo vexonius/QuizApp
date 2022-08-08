@@ -38,6 +38,17 @@
 		F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E840287EC1DD00E0375D /* RoundedTextInput.swift */; };
 		F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E845287EF72500E0375D /* UIImage+Extensions.swift */; };
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
+		F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */; };
+		F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */; };
+		F08D63C12893E508004B40E1 /* AccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */; };
+		F08D63C42893E56B004B40E1 /* AccountDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C32893E56B004B40E1 /* AccountDetailsModel.swift */; };
+		F08D63C72893ECFF004B40E1 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C62893ECFF004B40E1 /* AccountRepository.swift */; };
+		F08D63CA2893ED38004B40E1 /* AccountDetailsRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C92893ED38004B40E1 /* AccountDetailsRepoModel.swift */; };
+		F08D63CC2893EE23004B40E1 /* AccountRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63CB2893EE23004B40E1 /* AccountRepositoryProtocol.swift */; };
+		F08D63CE2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63CD2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift */; };
+		F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */; };
+		F08D63D32893F3DC004B40E1 /* AccountEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */; };
+		F08D63D52893F43B004B40E1 /* AccountNetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D42893F43B004B40E1 /* AccountNetworkClientProtocol.swift */; };
 		F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458162885BB140015F1C7 /* LoginNetworkClient.swift */; };
 		F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */; };
 		F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095F8A62891A656007DEC4A /* SplashViewController.swift */; };
@@ -64,6 +75,8 @@
 		F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */; };
 		F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAD28901CBC002400CE /* HomeViewController.swift */; };
 		F0F19CB028902343002400CE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAF28902343002400CE /* String+Extensions.swift */; };
+		F0F9DA2F28940EF800350C8F /* AccountDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D72893F48D004B40E1 /* AccountDetailsResponse.swift */; };
+		F0F9DA3028940EFB00350C8F /* UsernameUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D82893F48D004B40E1 /* UsernameUpdateRequestModel.swift */; };
 		F0FCE2B6288FDF6100C66235 /* SecureStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +110,19 @@
 		F088E840287EC1DD00E0375D /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
 		F088E845287EF72500E0375D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
+		F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCase.swift; sourceTree = "<group>"; };
+		F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCaseProtocol.swift; sourceTree = "<group>"; };
+		F08D63C32893E56B004B40E1 /* AccountDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsModel.swift; sourceTree = "<group>"; };
+		F08D63C62893ECFF004B40E1 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		F08D63C92893ED38004B40E1 /* AccountDetailsRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsRepoModel.swift; sourceTree = "<group>"; };
+		F08D63CB2893EE23004B40E1 /* AccountRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepositoryProtocol.swift; sourceTree = "<group>"; };
+		F08D63CD2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameUpdateRequestRepoModel.swift; sourceTree = "<group>"; };
+		F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNetworkClient.swift; sourceTree = "<group>"; };
+		F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEndpoints.swift; sourceTree = "<group>"; };
+		F08D63D42893F43B004B40E1 /* AccountNetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNetworkClientProtocol.swift; sourceTree = "<group>"; };
+		F08D63D72893F48D004B40E1 /* AccountDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsResponse.swift; sourceTree = "<group>"; };
+		F08D63D82893F48D004B40E1 /* UsernameUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameUpdateRequestModel.swift; sourceTree = "<group>"; };
 		F09458162885BB140015F1C7 /* LoginNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkClient.swift; sourceTree = "<group>"; };
 		F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkClient.swift; sourceTree = "<group>"; };
 		F095F8A62891A656007DEC4A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +194,7 @@
 		F0242FAB28815B6600927148 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F08D63BD2893E4E8004B40E1 /* Account */,
 				F015E1EF2885972700BC7AE4 /* Login */,
 			);
 			path = Domain;
@@ -176,6 +203,7 @@
 		F0242FAC28815B6F00927148 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F08D63C52893ECE0004B40E1 /* Account */,
 				F0DA2D38288AE81A000B8C70 /* DataSources */,
 				F09458152885BAFC0015F1C7 /* Login */,
 			);
@@ -206,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */,
+				F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -284,6 +313,63 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F08D63BD2893E4E8004B40E1 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63C22893E55C004B40E1 /* Models */,
+				F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */,
+				F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		F08D63C22893E55C004B40E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63C32893E56B004B40E1 /* AccountDetailsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F08D63C52893ECE0004B40E1 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63C82893ED17004B40E1 /* Models */,
+				F08D63C62893ECFF004B40E1 /* AccountRepository.swift */,
+				F08D63CB2893EE23004B40E1 /* AccountRepositoryProtocol.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		F08D63C82893ED17004B40E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63C92893ED38004B40E1 /* AccountDetailsRepoModel.swift */,
+				F08D63CD2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F08D63CF2893F2C3004B40E1 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63D62893F479004B40E1 /* Models */,
+				F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */,
+				F08D63D22893F3DC004B40E1 /* AccountEndpoints.swift */,
+				F08D63D42893F43B004B40E1 /* AccountNetworkClientProtocol.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		F08D63D62893F479004B40E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F08D63D72893F48D004B40E1 /* AccountDetailsResponse.swift */,
+				F08D63D82893F48D004B40E1 /* UsernameUpdateRequestModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F0918417288038A800CB7550 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +441,7 @@
 		F0E4504A28897A9200685E09 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				F08D63CF2893F2C3004B40E1 /* Account */,
 				F0E4504B28897A9F00685E09 /* Login */,
 			);
 			path = Client;
@@ -545,7 +632,9 @@
 				F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */,
 				F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */,
+				F08D63C72893ECFF004B40E1 /* AccountRepository.swift in Sources */,
 				F0EA48212886E0B80042BD52 /* Api.swift in Sources */,
+				F08D63D32893F3DC004B40E1 /* AccountEndpoints.swift in Sources */,
 				F09458172885BB140015F1C7 /* LoginNetworkClient.swift in Sources */,
 				F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */,
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
@@ -560,24 +649,34 @@
 				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
 				F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */,
 				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
+				F08D63CA2893ED38004B40E1 /* AccountDetailsRepoModel.swift in Sources */,
 				F0DA2D35288AE806000B8C70 /* SecureStorage.swift in Sources */,
 				F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */,
 				F069A7442886F28700F8DB81 /* LoginRequestBodyRepoModel.swift in Sources */,
 				F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */,
 				F088E834287DD0A500E0375D /* LocalizedStrings.swift in Sources */,
 				F088E83F287EBC4900E0375D /* BaseViewController.swift in Sources */,
+				F08D63D52893F43B004B40E1 /* AccountNetworkClientProtocol.swift in Sources */,
 				F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */,
 				F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */,
 				F05C8AA828817BBB00D8FC5A /* UITextView+Extensions.swift in Sources */,
 				F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */,
+				F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */,
 				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
+				F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */,
 				F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */,
 				F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */,
 				F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
+				F08D63CC2893EE23004B40E1 /* AccountRepositoryProtocol.swift in Sources */,
 				F0C1A3AA289283A5000AF917 /* TabbedViewController.swift in Sources */,
+				F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */,
 				F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */,
+				F0F9DA3028940EFB00350C8F /* UsernameUpdateRequestModel.swift in Sources */,
+				F08D63CE2893EEBE004B40E1 /* UsernameUpdateRequestRepoModel.swift in Sources */,
 				F05C8AA6288172FA00D8FC5A /* Gesture+Extensions.swift in Sources */,
+				F0F9DA2F28940EF800350C8F /* AccountDetailsResponse.swift in Sources */,
+				F08D63C42893E56B004B40E1 /* AccountDetailsModel.swift in Sources */,
 				F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */,
 				F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */,
 				F0E450492889794D00685E09 /* LoginEndpoints.swift in Sources */,
@@ -585,6 +684,7 @@
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
 				F0A70877288041D20077A678 /* RoundedButton.swift in Sources */,
 				F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */,
+				F08D63C12893E508004B40E1 /* AccountUseCaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +823,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XW6PW584W6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuizApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -750,6 +851,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XW6PW584W6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuizApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

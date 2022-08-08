@@ -147,7 +147,6 @@ extension LoginViewController: ConstructViewsProtocol {
 
 extension LoginViewController: BindViewsProtocol {
 
-    // swiftlint:disable:next function_body_length
     func bindViews() {
         bindViewModel()
         bindViewComponents()

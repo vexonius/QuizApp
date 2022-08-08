@@ -2,14 +2,20 @@ import Foundation
 
 protocol BaseNetworkClientProtocol {
 
-    func get<T: Codable>(
+    func get<T: Decodable>(
+        url: URL,
+        params: [String: String],
+        headers: [String: String]
+    ) async throws -> T
+
+    func post<T: Encodable, U: Decodable>(
         url: URL,
         params: [String: String],
         headers: [String: String],
-        responseType: T.Type
-    ) async throws -> T
+        requestBody: T
+    ) async throws -> U
 
-    func post<T: Codable, U: Codable>(
+    func patch<T: Encodable, U: Decodable>(
         url: URL,
         params: [String: String],
         headers: [String: String],

@@ -46,6 +46,13 @@ class AppModule {
             }
             .implements(LoginNetworkClientProtocol.self)
             .scope(.application)
+
+        container
+            .register { container in
+                AccountNetworkClient(baseNetworkClient: container.resolve())
+            }
+            .implements(AccountNetworkClientProtocol.self)
+            .scope(.application)
     }
 
     private func registerRepositories() {
@@ -55,6 +62,13 @@ class AppModule {
             }
             .implements(LoginRepositoryProtocol.self)
             .scope(.application)
+
+        container
+            .register { container in
+                AccountRepository(accountNetworkClient: container.resolve())
+            }
+            .implements(AccountRepositoryProtocol.self)
+            .scope(.application)
     }
 
     private func registerUseCases() {
@@ -63,6 +77,13 @@ class AppModule {
                 LoginUseCase(loginRepository: container.resolve())
             }
             .implements(LoginUseCaseProtocol.self)
+            .scope(.graph)
+
+        container
+            .register { container in
+                AccountUseCase(accountRepository: container.resolve())
+            }
+            .implements(AccountUseCaseProtocol.self)
             .scope(.graph)
     }
 
@@ -76,6 +97,12 @@ class AppModule {
         container
             .register { container in
                 LoginViewModel(loginUseCase: container.resolve(), coordinator: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container in
+                SettingsViewModel(accountUseCase: container.resolve())
             }
             .scope(.unique)
     }
@@ -106,7 +133,9 @@ class AppModule {
             .scope(.unique)
 
         container
-            .register { SettingsViewController() }
+            .register { container in
+                SettingsViewController(viewModel: container.resolve())
+            }
             .scope(.unique)
     }
 

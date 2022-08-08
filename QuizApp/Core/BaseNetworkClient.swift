@@ -17,11 +17,10 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
         JSONDecoder()
     }()
 
-    func get<T: Codable>(
+    func get<T: Decodable>(
         url: URL,
         params: [String: String],
-        headers: [String: String],
-        responseType: T.Type
+        headers: [String: String]
     ) async throws -> T {
         let (data, response) = try await urlSession.data(from: url)
 
@@ -32,7 +31,7 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
         return responseModel
     }
 
-    func post<T: Codable, U: Codable>(
+    func post<T: Encodable, U: Decodable>(
         url: URL,
         params: [String: String],
         headers: [String: String],
@@ -45,7 +44,29 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
             params: params,
             requestBody: requestBody)
 
-        let (data, response) = try await URLSession.shared.data(with: request)
+        let (data, response) = try await urlSession.data(with: request)
+
+        try validateResponse(response: response)
+
+        let responseModel = try decodeResponseBody(type: U.self, data: data)
+
+        return responseModel
+    }
+
+    func patch<T: Encodable, U: Decodable>(
+        url: URL,
+        params: [String: String],
+        headers: [String: String],
+        requestBody: T
+    ) async throws -> U {
+        let request = try await createRequest(
+            method: .patch,
+            url: url,
+            headers: headers,
+            params: params,
+            requestBody: requestBody)
+
+        let (data, response) = try await urlSession.data(with: request)
 
         try validateResponse(response: response)
 
