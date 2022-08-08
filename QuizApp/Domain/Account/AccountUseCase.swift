@@ -6,15 +6,17 @@ class AccountUseCase: AccountUseCaseProtocol {
         self.accountRepository = accountRepository
     }
 
-    func getAccountDetails() async throws -> AccountDetailsModel {
-        let accountDetailsRepoModel = try await accountRepository.getAccountDetails()
+    var accountDetails: AccountDetailsModel {
+        get async throws {
+            let accountDetailsRepoModel = try await accountRepository.accountDetails
 
-        return AccountDetailsModel(from: accountDetailsRepoModel)
+            return AccountDetailsModel(from: accountDetailsRepoModel)
+        }
     }
 
-    func updateUsername(username: String) async throws -> AccountDetailsModel {
-        let requestData = UsernameUpdateRepoModel(name: username)
-        let accountDetailsRepoModel = try await accountRepository.updateUsername(data: requestData)
+    func update(name: String) async throws -> AccountDetailsModel {
+        let requestModel = AccountUpdateRepoModel(name: name)
+        let accountDetailsRepoModel = try await accountRepository.update(request: requestModel)
 
         return AccountDetailsModel(from: accountDetailsRepoModel)
     }

@@ -24,17 +24,18 @@ class SettingsViewModel {
     private func fetchUserDetails() {
         Task {
             do {
-                let userInfo = try await accountUseCase.getAccountDetails()
+                let userInfo = try await accountUseCase.accountDetails
                 currentUsername = userInfo.name
             } catch {
                 debugPrint(error)
             }
         }
     }
-    private func updateUserName(with name: String) {
+
+    private func update(name: String) {
         Task {
             do {
-                let accountDetails = try await accountUseCase.updateUsername(username: name)
+                let accountDetails = try await accountUseCase.update(name: name)
                 currentUsername = accountDetails.name
             } catch {
                 errorMessage = LocalizedStrings.serverErrorMessage.localizedString
@@ -42,15 +43,15 @@ class SettingsViewModel {
         }
     }
 
-    func usernameOnChange(_ newUsername: String) {
+    func nameOnChange(_ newName: String) {
         let lastUsername = currentUsername
 
-        guard !newUsername.isEmpty else {
+        guard !newName.isEmpty else {
             currentUsername = lastUsername
             return
         }
 
-        updateUserName(with: newUsername)
+        update(name: newName)
     }
 
     func logout() {

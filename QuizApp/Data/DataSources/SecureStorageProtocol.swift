@@ -16,6 +16,4 @@ protocol SecureStorageProtocol {
 
     func delete(_ key: String)
 
-    func clear()
-
 }

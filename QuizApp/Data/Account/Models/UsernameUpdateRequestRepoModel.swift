@@ -1,9 +1,9 @@
-struct UsernameUpdateRepoModel {
+struct AccountUpdateRepoModel {
 
     let name: String
 
-    func toClientModel() -> UsernameUpdateRequestModel {
-        UsernameUpdateRequestModel(name: name)
+    func toClientModel() -> AccountUpdateRequestModel {
+        AccountUpdateRequestModel(name: name)
     }
 
 }
