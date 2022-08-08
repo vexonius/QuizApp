@@ -1,6 +1,6 @@
 protocol AccountUseCaseProtocol {
 
-    func getAccountDetails() async throws -> AccountDetailsModel
+    var accountDetails: AccountDetailsModel { get async throws }
 
     func updateUsername(username: String) async throws -> AccountDetailsModel
 

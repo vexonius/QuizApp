@@ -16,7 +16,7 @@ class SettingsViewModel {
     private func fetchUserDetails() {
         Task {
             do {
-                let userInfo = try await accountUseCase.getAccountDetails()
+                let userInfo = try await accountUseCase.accountDetails
                 currentUsername = userInfo.name
             } catch {
                 debugPrint(error)

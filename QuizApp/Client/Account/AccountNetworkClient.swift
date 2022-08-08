@@ -8,11 +8,13 @@ class AccountNetworkClient: AccountNetworkClientProtocol {
         self.baseNetworkClient = baseNetworkClient
     }
 
-    func getAccountDetails() async throws -> AccountDetailsResponse {
-        try await baseNetworkClient.get(
-            url: AccountEndpoints.account.path,
-            params: [:],
-            headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
+    var accountDetails: AccountDetailsResponse {
+        get async throws {
+            try await baseNetworkClient.get(
+                url: AccountEndpoints.account.path,
+                params: [:],
+                headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
+        }
     }
 
     func updateUsername(requestModel: UsernameUpdateRequestModel) async throws -> AccountDetailsResponse {
