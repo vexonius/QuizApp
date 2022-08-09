@@ -188,6 +188,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0082B9328A2777000898984 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				F0EA48202886E0B80042BD52 /* Api.swift */,
+				F04E13362885F063001F2ABB /* URLSession+Extension.swift */,
+				F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */,
+				F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */,
+				F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		F0082B9428A2778400898984 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0E450422889745800685E09 /* BaseNetworkModels.swift */,
+				F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0082B9528A2779500898984 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0BB5384289BB7D8003A0E3B /* NetworkService.swift */,
+				F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F0082B9628A277B800898984 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 		F015E1EF2885972700BC7AE4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,15 +515,9 @@
 		F0E450412889720400685E09 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F04E13362885F063001F2ABB /* URLSession+Extension.swift */,
-				F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */,
-				F09458192885BC4E0015F1C7 /* BaseNetworkClient.swift */,
-				F0EA481E2886DCF30042BD52 /* URLProtocol+Interceptor.swift */,
-				F0E450422889745800685E09 /* BaseNetworkModels.swift */,
-				F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */,
-				F0EA48202886E0B80042BD52 /* Api.swift */,
-				F0BB5384289BB7D8003A0E3B /* NetworkService.swift */,
-				F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */,
+				F0082B9528A2779500898984 /* Services */,
+				F0082B9428A2778400898984 /* Models */,
+				F0082B9328A2777000898984 /* Client */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -494,6 +525,7 @@
 		F0E4504A28897A9200685E09 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				F0082B9628A277B800898984 /* Quiz */,
 				F08D63CF2893F2C3004B40E1 /* Account */,
 				F0E4504B28897A9F00685E09 /* Login */,
 			);
@@ -531,8 +563,8 @@
 		F0E6A975287C74CA007BF1D4 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				F0E4504A28897A9200685E09 /* Client */,
 				F088E82D287DAF1400E0375D /* Application */,
+				F0E4504A28897A9200685E09 /* Client */,
 				F0E450412889720400685E09 /* Core */,
 				F0242FAC28815B6F00927148 /* Data */,
 				F0242FAB28815B6600927148 /* Domain */,

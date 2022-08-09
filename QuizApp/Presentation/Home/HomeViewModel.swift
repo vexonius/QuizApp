@@ -30,8 +30,6 @@ class HomeViewModel {
                 self.showNoNetworkError()
             default:
                 self.isErrorPlaceholderVisible = false
-
-                // load quizes
             }
         }
         .store(in: &cancellables)
