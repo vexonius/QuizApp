@@ -96,16 +96,13 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
     private func createRequest<T: Encodable>(
         method: HttpMethod,
         url: URL,
-        headers: [String: String]?,
-        params: [String: String]?,
+        headers: [String: String],
+        params: [String: String],
         requestBody: T?
     ) async throws -> URLRequest {
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url.appending(queryItems: params))
         request.httpMethod = method.string
-
-        headers?.forEach { (key, value) in
-            request.setValue(value, forHTTPHeaderField: key)
-        }
+        request.append(headers: headers)
 
         if let requestBody = requestBody {
             guard let encodedBody = try? encodeRequestBody(model: requestBody) else {
@@ -126,10 +123,7 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
     ) async throws -> URLRequest {
         var request = URLRequest(url: url.appending(queryItems: params))
         request.httpMethod = method.string
-
-        headers.forEach { (key, value) in
-            request.setValue(value, forHTTPHeaderField: key)
-        }
+        request.append(headers: headers)
 
         return request
     }
