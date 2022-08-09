@@ -44,12 +44,18 @@ class HomeViewModel {
     }
 
     private func mockFilters() {
-        filters = mockedFilters
-            .enumerated()
-            .map { (index, filter) in
-                // will update colors when we get real data
-                QuizCategory(index: index, title: filter, tint: UIColor.accentBlue)
+        Task(priority: .background) {
+            let quizCategories = mockedFilters
+                .enumerated()
+                .map { (index, filter) in
+                    // will update colors when we get real data
+                    QuizCategory(index: index, title: filter, tint: UIColor.accentBlue)
+                }
+
+            await MainActor.run {
+                filters = quizCategories
             }
+        }
     }
 
 }

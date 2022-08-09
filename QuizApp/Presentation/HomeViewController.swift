@@ -68,7 +68,6 @@ extension HomeViewController: BindViewsProtocol {
 
         viewModel
             .$filters
-            .receive(on: RunLoop.main)
             .sink { [weak self] filters in
                 self?.filtersSegmentedControl.update(segments: filters)
             }
