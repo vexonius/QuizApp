@@ -18,7 +18,7 @@ class QuizNetworkClient: QuizNetworkClientProtocol {
     func getQuizes(for category: String)  async throws -> [QuizResponse] {
         try await networkClient.get(
             url: QuizEndpoints.quizes.path,
-            params: [QuizEndpointsParams.category.rawValue: category],
+            params: [QuizEndpointsParams.category.value: category],
             headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
     }
 
