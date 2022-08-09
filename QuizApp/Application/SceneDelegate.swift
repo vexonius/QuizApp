@@ -36,11 +36,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func startObservingNetwork() {
-        networkService?.startObservingNetwork()
+        networkService.startObservingNetwork()
     }
 
     func stopObservingNetwork() {
-        networkService?.stopObservingNetwork()
+        networkService.stopObservingNetwork()
     }
 
 }
