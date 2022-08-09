@@ -2,7 +2,7 @@ import UIKit
 
 class QuizCell: UICollectionViewCell {
 
-    static let reuseIdentifier = "QuizCellID"
+    static let reuseIdentifier = String(describing: QuizCell.self)
 
     private struct CustomConstants {
         static let cornerRadius = 20
