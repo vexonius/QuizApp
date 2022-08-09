@@ -30,6 +30,7 @@ class QuizCell: UICollectionViewCell {
         styleViews()
         defineLayoutForViews()
 
+        // temporary, will introduce model binding method later
         titleLabel.text = title
         summaryLabel.text = summary
     }
@@ -73,6 +74,11 @@ extension QuizCell: ConstructViewsProtocol {
         contentView.backgroundColor = .white.withAlphaComponent(CustomConstants.backgroundTransparency.cgFloat)
         contentView.layer.cornerRadius = CustomConstants.contentCornerRadius.cgFloat
 
+        icon.contentMode = .scaleAspectFill
+        icon.image = UIImage.placeholder
+        icon.clipsToBounds = true
+        icon.layer.cornerRadius = CustomConstants.iconCornerRadius.cgFloat
+
         titleLabel.textAlignment = .left
         titleLabel.textColor = .white
         titleLabel.lineBreakMode = .byTruncatingTail
@@ -80,11 +86,6 @@ extension QuizCell: ConstructViewsProtocol {
         titleLabel.font = .sourceSansPro(
             ofSize: DesignConstants.FontSize.title.cgFloat,
             ofWeight: SourceSansProWeight.bold)
-
-        icon.contentMode = .scaleAspectFill
-        icon.image = UIImage.placeholder
-        icon.clipsToBounds = true
-        icon.layer.cornerRadius = CustomConstants.iconCornerRadius.cgFloat
 
         summaryLabel.textAlignment = .left
         summaryLabel.textColor = .white
