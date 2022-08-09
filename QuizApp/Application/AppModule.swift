@@ -18,7 +18,7 @@ class AppModule {
 
     private func registerDependencies() {
         registerCoordinators()
-        registerkClients()
+        registerClients()
         registerServices()
         registerRepositories()
         registerUseCases()
@@ -35,7 +35,7 @@ class AppModule {
             .scope(.application)
     }
 
-    private func registerkClients() {
+    private func registerClients() {
         container
             .register { BaseNetworkClient() }
             .implements(BaseNetworkClientProtocol.self)
@@ -53,6 +53,13 @@ class AppModule {
                 AccountNetworkClient(baseNetworkClient: container.resolve())
             }
             .implements(AccountNetworkClientProtocol.self)
+            .scope(.application)
+
+        container
+            .register { container in
+                QuizNetworkClient(baseNetworkClient: container.resolve())
+            }
+            .implements(QuizNetworkClientProtocol.self)
             .scope(.application)
     }
 
@@ -77,6 +84,13 @@ class AppModule {
             }
             .implements(AccountRepositoryProtocol.self)
             .scope(.application)
+
+        container
+            .register { container in
+                QuizRepository(quizNetworkClient: container.resolve())
+            }
+            .implements(QuizRepositoryProtocol.self)
+            .scope(.application)
     }
 
     private func registerUseCases() {
@@ -92,6 +106,13 @@ class AppModule {
                 AccountUseCase(accountRepository: container.resolve())
             }
             .implements(AccountUseCaseProtocol.self)
+            .scope(.graph)
+
+        container
+            .register { container in
+                QuizUseCase(quizRepository: container.resolve())
+            }
+            .implements(QuizUseCaseProtocol.self)
             .scope(.graph)
     }
 
@@ -119,7 +140,7 @@ class AppModule {
 
         container
             .register { container in
-                HomeViewModel(networkService: container.resolve())
+                HomeViewModel(quizUseCase: container.resolve(), networkService: container.resolve())
             }
             .scope(.unique)
     }
