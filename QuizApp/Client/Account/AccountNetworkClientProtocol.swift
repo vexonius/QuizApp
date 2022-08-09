@@ -1,7 +1,7 @@
 protocol AccountNetworkClientProtocol {
 
-    func getAccountDetails() async throws -> AccountDetailsResponse
+    var accountDetails: AccountDetailsResponse { get async throws }
 
-    func updateUsername(requestModel: UsernameUpdateRequestModel) async throws -> AccountDetailsResponse
+    func update(request: AccountUpdateRequestModel) async throws -> AccountDetailsResponse
 
 }

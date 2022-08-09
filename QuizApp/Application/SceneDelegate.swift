@@ -6,7 +6,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     private var appModule: AppModule?
     private let container = Resolver.main
-    private var networkService: NetworkServiceProtocol?
+    private var networkService: NetworkServiceProtocol!
 
     func scene(
         _ scene: UIScene,
@@ -36,11 +36,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func startObservingNetwork() {
-        networkService?.startObservingNetwork()
+        networkService.startObservingNetwork()
     }
 
     func stopObservingNetwork() {
-        networkService?.stopObservingNetwork()
+        networkService.stopObservingNetwork()
     }
 
 }

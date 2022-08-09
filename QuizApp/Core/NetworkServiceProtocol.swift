@@ -3,7 +3,7 @@ import Reachability
 
 protocol NetworkServiceProtocol {
 
-    var networkState: CurrentValueSubject<Reachability.Connection, Never> { get }
+    var networkState: AnyPublisher<Reachability.Connection, Never> { get }
 
     func startObservingNetwork()
 

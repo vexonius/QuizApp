@@ -4,7 +4,11 @@ import Combine
 
 class NetworkService: NetworkServiceProtocol {
 
-    private(set) var networkState = CurrentValueSubject<Reachability.Connection, Never>(.unavailable)
+    var networkState: AnyPublisher<Reachability.Connection, Never> {
+        networkStateSubject.eraseToAnyPublisher()
+    }
+
+    private let networkStateSubject = CurrentValueSubject<Reachability.Connection, Never>(.unavailable)
 
     private var reachability: Reachability?
     private var cancellables = Set<AnyCancellable>()
@@ -25,7 +29,7 @@ class NetworkService: NetworkServiceProtocol {
     private func bindReachability() {
         reachability?.reachabilityChanged
             .sink(receiveValue: { [weak self] reachability in
-                self?.networkState.send(reachability.connection)
+                self?.networkStateSubject.send(reachability.connection)
             })
             .store(in: &cancellables)
     }

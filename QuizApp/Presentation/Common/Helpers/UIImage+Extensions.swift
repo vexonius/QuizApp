@@ -8,6 +8,7 @@ extension UIImage {
     static let search = UIImage(named: "search")!
     static let settings = UIImage(named: "settings")!
     static let error = UIImage(named: "error-icon")!
+    static let placeholder = UIImage(named: "placeholder")!
 
     convenience init(color: UIColor, size: CGSize) {
         UIGraphicsBeginImageContextWithOptions(size, false, 1)

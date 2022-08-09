@@ -111,7 +111,7 @@ extension SettingsViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         logoutButton
-            .gesture(.tap())
+            .throttledTap()
             .sink { [weak self] _ in
                 self?.viewModel.logout()
             }
@@ -127,9 +127,9 @@ extension SettingsViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
 
-        guard let username = textField.text else { return true }
+        guard let name = textField.text else { return true }
 
-        viewModel.usernameOnChange(username)
+        viewModel.nameOnChange(name)
 
         return true
     }
