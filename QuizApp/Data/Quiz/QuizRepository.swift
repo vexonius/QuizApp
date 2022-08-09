@@ -8,9 +8,9 @@ class QuizRepository: QuizRepositoryProtocol {
 
     var quizes: [QuizRepoModel] {
         get async throws {
-            let networkModel = try await quizNetworkClient.quizes
+            let quizesResponse = try await quizNetworkClient.quizes
 
-            return networkModel.map { QuizRepoModel(from: $0) }
+            return quizesResponse.map { QuizRepoModel(from: $0) }
         }
     }
 
