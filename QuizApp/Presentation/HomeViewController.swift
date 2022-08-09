@@ -5,6 +5,11 @@ import Reachability
 
 class HomeViewController: BaseViewController {
 
+    private struct CustomConstants {
+        static let segmentedControlTopInset = 8
+    }
+
+    private var filtersSegmentedControl: ClearSegmentedControll!
     private var errorPlaceholder: ErrorPlaceholderView!
 
     private var cancellables = Set<AnyCancellable>()
@@ -60,6 +65,13 @@ extension HomeViewController: BindViewsProtocol {
             .$errorDescription
             .assign(to: \.errorDescription, on: errorPlaceholder)
             .store(in: &cancellables)
+
+        viewModel
+            .$filters
+            .sink { [weak self] filters in
+                self?.filtersSegmentedControl.update(segments: filters)
+            }
+            .store(in: &cancellables)
     }
 
 }
@@ -69,15 +81,24 @@ extension HomeViewController: ConstructViewsProtocol {
     func createViews() {
         errorPlaceholder = ErrorPlaceholderView()
         view.addSubview(errorPlaceholder)
+
+        filtersSegmentedControl = ClearSegmentedControll()
+        view.addSubview(filtersSegmentedControl)
     }
 
     func styleViews() {
-
+        filtersSegmentedControl.selectedSegmentTintColor = .white
     }
 
     func defineLayoutForViews() {
         errorPlaceholder.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        filtersSegmentedControl.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.componentsInset)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(CustomConstants.segmentedControlTopInset)
+            make.height.equalTo(DesignConstants.ControlComponents.segmentedControlHeight)
         }
     }
 
