@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0052EB228A27DA8006515AE /* QuizEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0052EB128A27DA8006515AE /* QuizEndpoints.swift */; };
+		F0052EB528A27ED1006515AE /* QuizResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0052EB428A27ED1006515AE /* QuizResponse.swift */; };
 		F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0138171287F154A001A0C2E /* Primitives+Extensions.swift */; };
 		F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F02885973400BC7AE4 /* LoginUseCase.swift */; };
 		F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F32885983600BC7AE4 /* LoginRepository.swift */; };
@@ -91,6 +93,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0052EB128A27DA8006515AE /* QuizEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEndpoints.swift; sourceTree = "<group>"; };
+		F0052EB428A27ED1006515AE /* QuizResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResponse.swift; sourceTree = "<group>"; };
 		F0138171287F154A001A0C2E /* Primitives+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Primitives+Extensions.swift"; sourceTree = "<group>"; };
 		F015E1F02885973400BC7AE4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		F015E1F32885983600BC7AE4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
@@ -188,6 +192,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0052EB328A27EBB006515AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0052EB428A27ED1006515AE /* QuizResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F0082B9328A2777000898984 /* Client */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +233,8 @@
 		F0082B9628A277B800898984 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				F0052EB328A27EBB006515AE /* Models */,
+				F0052EB128A27DA8006515AE /* QuizEndpoints.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -737,8 +751,10 @@
 				F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */,
 				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
 				F0F19CB028902343002400CE /* String+Extensions.swift in Sources */,
+				F0052EB228A27DA8006515AE /* QuizEndpoints.swift in Sources */,
 				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
 				F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */,
+				F0052EB528A27ED1006515AE /* QuizResponse.swift in Sources */,
 				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
 				F0C6387B28A2628900354374 /* QuizCategory.swift in Sources */,
 				F08D63CA2893ED38004B40E1 /* AccountDetailsRepoModel.swift in Sources */,
