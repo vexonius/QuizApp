@@ -27,10 +27,15 @@ struct DesignConstants {
     }
 
     struct FontSize {
+        static let paragraph: Float = 14
         static let regular: Float = 16
         static let subtitle: Float = 20
         static let title: Float = 24
         static let heading: Float = 32
+    }
+
+    struct Decorator {
+        static let cornerSize: Float = 20
     }
 
 }

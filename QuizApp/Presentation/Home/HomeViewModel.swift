@@ -18,7 +18,6 @@ class HomeViewModel {
 
     private func observeNetworkChanges() {
         networkService.networkState.sink { [weak self] networkState in
-            debugPrint("state received \(networkState)")
             guard let self = self else { return }
 
             switch networkState {
