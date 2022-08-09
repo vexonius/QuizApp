@@ -38,6 +38,9 @@
 		F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E840287EC1DD00E0375D /* RoundedTextInput.swift */; };
 		F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E845287EF72500E0375D /* UIImage+Extensions.swift */; };
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
+		F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */ = {isa = PBXBuildFile; productRef = F08D37012897FE2C005FFF1F /* CombineReachability */; };
+		F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */; };
+		F08D3706289813C0005FFF1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D3705289813C0005FFF1F /* HomeViewModel.swift */; };
 		F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */; };
 		F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */; };
 		F08D63C12893E508004B40E1 /* AccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */; };
@@ -57,6 +60,8 @@
 		F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
+		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
+		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
 		F0C1A3AA289283A5000AF917 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */; };
 		F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */; };
 		F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202D28858054004EC4F3 /* AppModule.swift */; };
@@ -110,6 +115,8 @@
 		F088E840287EC1DD00E0375D /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
 		F088E845287EF72500E0375D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
+		F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkPlaceholderView.swift; sourceTree = "<group>"; };
+		F08D3705289813C0005FFF1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F08D63BE2893E4F4004B40E1 /* AccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCase.swift; sourceTree = "<group>"; };
 		F08D63C02893E508004B40E1 /* AccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -131,6 +138,8 @@
 		F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0B028CA289280000024DBFD /* PopGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopGradient.swift; sourceTree = "<group>"; };
+		F0BB5384289BB7D8003A0E3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
 		F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F0D9202D28858054004EC4F3 /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
@@ -160,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F07D86512888289C000F5D99 /* Resolver in Frameworks */,
+				F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */,
 				F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */,
 				F0749187287DAB62005A7A55 /* SnapKit in Frameworks */,
 			);
@@ -377,6 +387,7 @@
 				F0A70876288041D20077A678 /* RoundedButton.swift */,
 				F07D305A288ED984000592F2 /* Snackbar.swift */,
 				F0B028CA289280000024DBFD /* PopGradient.swift */,
+				F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -394,6 +405,7 @@
 			children = (
 				F0F19CAD28901CBC002400CE /* HomeViewController.swift */,
 				F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */,
+				F08D3705289813C0005FFF1F /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -434,6 +446,8 @@
 				F0E450422889745800685E09 /* BaseNetworkModels.swift */,
 				F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */,
 				F0EA48202886E0B80042BD52 /* Api.swift */,
+				F0BB5384289BB7D8003A0E3B /* NetworkService.swift */,
+				F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -538,6 +552,7 @@
 				F0749186287DAB62005A7A55 /* SnapKit */,
 				F07D86502888289C000F5D99 /* Resolver */,
 				F07D8654288849FE000F5D99 /* KeychainSwift */,
+				F08D37012897FE2C005FFF1F /* CombineReachability */,
 			);
 			productName = QuizApp;
 			productReference = F0E6A973287C74CA007BF1D4 /* QuizApp.app */;
@@ -571,6 +586,7 @@
 				F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */,
 				F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */,
 			);
 			productRefGroup = F0E6A974287C74CA007BF1D4 /* Products */;
 			projectDirPath = "";
@@ -626,6 +642,7 @@
 				F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */,
 				F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */,
 				F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */,
+				F08D3706289813C0005FFF1F /* HomeViewModel.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
@@ -639,10 +656,12 @@
 				F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */,
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
 				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
+				F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */,
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
 				F07D305B288ED984000592F2 /* Snackbar.swift in Sources */,
 				F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */,
+				F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */,
 				F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */,
 				F0E450432889745800685E09 /* BaseNetworkModels.swift in Sources */,
 				F0F19CB028902343002400CE /* String+Extensions.swift in Sources */,
@@ -663,6 +682,7 @@
 				F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */,
 				F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */,
 				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
+				F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */,
 				F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */,
 				F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */,
 				F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */,
@@ -920,6 +940,14 @@
 				kind = branch;
 			};
 		};
+		F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/istvan-kreisz/CombineReachability";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -937,6 +965,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		F08D37012897FE2C005FFF1F /* CombineReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */;
+			productName = CombineReachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

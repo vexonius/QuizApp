@@ -13,6 +13,7 @@ struct DesignConstants {
         static let thumbnailRightInset: Float = 18
         static let componentSpacing: Float = 18
         static let contentInset: Float = 20
+        static let textSpacing: Float = 8
     }
 
     struct InputComponents {

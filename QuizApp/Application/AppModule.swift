@@ -19,6 +19,7 @@ class AppModule {
     private func registerDependencies() {
         registerCoordinators()
         registerkClients()
+        registerServices()
         registerRepositories()
         registerUseCases()
         registerViewModels()
@@ -52,6 +53,13 @@ class AppModule {
                 AccountNetworkClient(baseNetworkClient: container.resolve())
             }
             .implements(AccountNetworkClientProtocol.self)
+            .scope(.application)
+    }
+
+    private func registerServices() {
+        container
+            .register { NetworkService() }
+            .implements(NetworkServiceProtocol.self)
             .scope(.application)
     }
 
@@ -108,6 +116,12 @@ class AppModule {
                     coordinator: container.resolve())
             }
             .scope(.unique)
+
+        container
+            .register { container in
+                HomeViewModel(networkService: container.resolve())
+            }
+            .scope(.unique)
     }
 
     private func registerViewControllers() {
@@ -132,7 +146,9 @@ class AppModule {
             .scope(.unique)
 
         container
-            .register { HomeViewController() }
+            .register { container in
+                HomeViewController(viewModel: container.resolve())
+            }
             .scope(.unique)
 
         container
