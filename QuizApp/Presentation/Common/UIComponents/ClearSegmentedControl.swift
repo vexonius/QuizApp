@@ -24,36 +24,40 @@ class ClearSegmentedControll: UISegmentedControl {
 
     override var tintColor: UIColor? {
         didSet {
-            setTitleTextAttributes(
-                [.foregroundColor: UIColor.whiteTransparent30,
-                NSAttributedString.Key.font:
-                    UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+            setTitleTextAttributes([
+                .foregroundColor: tintColor ?? UIColor.whiteTransparent30,
+                NSAttributedString.Key.font: UIFont.sourceSansPro(
+                    ofSize: DesignConstants.FontSize.subtitle.cgFloat,
+                    ofWeight: .semibold)!
+                ],
                 for: .normal)
         }
     }
 
     override var selectedSegmentTintColor: UIColor? {
         didSet {
-            setTitleTextAttributes(
-                [.foregroundColor: UIColor.white,
-                NSAttributedString.Key.font:
-                    UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+            setTitleTextAttributes([
+                .foregroundColor: selectedSegmentTintColor ?? UIColor.white,
+                NSAttributedString.Key.font: UIFont.sourceSansPro(
+                    ofSize: DesignConstants.FontSize.subtitle.cgFloat,
+                    ofWeight: .semibold)!
+                ],
                 for: .selected)
         }
     }
 
-    func updateSegments(segments: [String]) {
+    func update(segments: [QuizCategory]) {
         removeAllSegments()
 
         for segment in segments {
-            insertSegment(withTitle: segment, at: numberOfSegments, animated: false)
+            insertSegment(withTitle: segment.title, at: numberOfSegments, animated: false)
+            style(with: segment.tint)
         }
 
-        style()
         selectedSegmentIndex = CustomConstants.defaultSelectedIndex
     }
 
-    private func style() {
+    private func style(with color: UIColor = .white) {
         backgroundColor = .clear
 
         let tintColorImage = UIImage(
@@ -65,16 +69,20 @@ class ClearSegmentedControll: UISegmentedControl {
         setBackgroundImage(tintColorImage, for: .normal, barMetrics: .default)
         setDividerImage(tintColorImage, forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
 
-        setTitleTextAttributes(
-            [.foregroundColor: UIColor.whiteTransparent30,
-            NSAttributedString.Key.font:
-                UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+        setTitleTextAttributes([
+            .foregroundColor: UIColor.whiteTransparent30,
+            NSAttributedString.Key.font: UIFont.sourceSansPro(
+                ofSize: DesignConstants.FontSize.subtitle.cgFloat,
+                ofWeight: .semibold)!
+            ],
             for: .normal)
 
-        setTitleTextAttributes(
-            [.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font:
-                UIFont.sourceSansPro(ofSize: DesignConstants.FontSize.subtitle.cgFloat, ofWeight: .semibold)!],
+        setTitleTextAttributes([
+            .foregroundColor: color,
+            NSAttributedString.Key.font: UIFont.sourceSansPro(
+                ofSize: DesignConstants.FontSize.subtitle.cgFloat,
+                ofWeight: .semibold)!
+            ],
             for: .selected)
     }
 
