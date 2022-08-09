@@ -7,18 +7,36 @@ class HomeViewModel {
     @Published private(set) var isErrorPlaceholderVisible: Bool = false
     @Published private(set) var errorTitle: String?
     @Published private(set) var errorDescription: String?
-    @Published private(set) var filters: [QuizCategory] = []
 
-    private let mockedFilters = ["All", "Sports", "Oscars", "Music"]
+    @Published private(set) var categories: [QuizCategory] = []
+    @Published private(set) var filteredQuizes: [QuizModel] = []
+
+    private var quizes: [QuizModel] = []
+    private let defaultCategoryIndex = 0
 
     private let networkService: NetworkServiceProtocol
+    private let quizUseCase: QuizUseCaseProtocol
+
     private var cancellables = Set<AnyCancellable>()
 
-    init(networkService: NetworkServiceProtocol) {
+    init(quizUseCase: QuizUseCaseProtocol, networkService: NetworkServiceProtocol) {
         self.networkService = networkService
+        self.quizUseCase = quizUseCase
 
         observeNetworkChanges()
-        mockFilters()
+    }
+
+    func onCategoryChange(for index: Int) {
+        guard
+            let selectedCategory = categories.first(where: { $0.index == index }),
+            selectedCategory.index != defaultCategoryIndex
+        else {
+            filteredQuizes = quizes
+            dump(filteredQuizes)
+            return
+        }
+
+        filteredQuizes = quizes.filter { $0.category == selectedCategory.title }
     }
 
     private func observeNetworkChanges() {
@@ -30,6 +48,8 @@ class HomeViewModel {
                 self.showNoNetworkError()
             default:
                 self.isErrorPlaceholderVisible = false
+
+                self.fetchQuizes()
             }
         }
         .store(in: &cancellables)
@@ -41,19 +61,34 @@ class HomeViewModel {
         isErrorPlaceholderVisible = true
     }
 
-    private func mockFilters() {
-        Task(priority: .background) {
-            let quizCategories = mockedFilters
-                .enumerated()
-                .map { (index, filter) in
-                    // will update colors when we get real data
-                    QuizCategory(index: index, title: filter, tint: UIColor.accentBlue)
-                }
+    private func fetchQuizes() {
+        Task {
+            do {
+                let quizes = try await quizUseCase.quizes
+                let categories = await filterCategories(from: quizes)
 
-            await MainActor.run {
-                filters = quizCategories
+                await MainActor.run {
+                    self.quizes = quizes
+                    self.categories = categories
+                }
+            } catch {
+                showNoNetworkError()
             }
         }
+    }
+
+    private func filterCategories(from quizes: [QuizModel]) async -> [QuizCategory] {
+        var categories = quizes
+            .map { $0.category }
+            .unique()
+
+        categories.insert(QuizCategory.default, at: defaultCategoryIndex)
+
+        return categories
+            .enumerated()
+            .map { (index, category) in
+                QuizCategory(index: index, title: category, tint: UIColor.white)
+            }
     }
 
 }

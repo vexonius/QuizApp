@@ -67,9 +67,16 @@ extension HomeViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$filters
-            .sink { [weak self] filters in
-                self?.filtersSegmentedControl.update(segments: filters)
+            .$categories
+            .sink { [weak self] categories in
+                self?.filtersSegmentedControl.update(segments: categories)
+            }
+            .store(in: &cancellables)
+
+        filtersSegmentedControl
+            .publisher(for: \.selectedSegmentIndex)
+            .sink { [weak self] index in
+                self?.viewModel.onCategoryChange(for: index)
             }
             .store(in: &cancellables)
     }
