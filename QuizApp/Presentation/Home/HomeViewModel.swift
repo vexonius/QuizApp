@@ -3,23 +3,34 @@ import Reachability
 
 class HomeViewModel {
 
-    @Published private(set) var isErrorPlaceholderVisible: Bool = true
+    @Published private(set) var isErrorPlaceholderVisible: Bool = false
     @Published private(set) var errorTitle: String?
     @Published private(set) var errorDescription: String?
 
-    init() {
+    private let networkService: NetworkServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
 
+    init(networkService: NetworkServiceProtocol) {
+        self.networkService = networkService
+
+        observeNetworkChanges()
     }
 
-    func onNetworkStateChanged(_ connection: Reachability.Connection) {
-        switch connection {
-        case .unavailable:
-            showNoNetworkError()
-        default:
-            isErrorPlaceholderVisible = false
+    private func observeNetworkChanges() {
+        networkService.networkState.sink { [weak self] networkState in
+            debugPrint("state received \(networkState)")
+            guard let self = self else { return }
 
-            // load quizes
+            switch networkState {
+            case .unavailable:
+                self.showNoNetworkError()
+            default:
+                self.isErrorPlaceholderVisible = false
+
+                // load quizes
+            }
         }
+        .store(in: &cancellables)
     }
 
     private func showNoNetworkError() {

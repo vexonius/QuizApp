@@ -8,8 +8,6 @@ class HomeViewController: BaseViewController {
     private var errorPlaceholder: ErrorPlaceholderView!
 
     private var cancellables = Set<AnyCancellable>()
-    private var reachability: Reachability?
-
     private let viewModel: HomeViewModel
 
     init(viewModel: HomeViewModel) {
@@ -29,9 +27,6 @@ class HomeViewController: BaseViewController {
         styleViews()
         defineLayoutForViews()
 
-        reachability = try? Reachability()
-
-        bindReachability()
         bindViews()
     }
 
@@ -39,34 +34,10 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
 
         styleNavigationBar()
-        startObservingNetwork()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        stopObservingNetwork()
     }
 
     private func styleNavigationBar() {
         tabBarController?.title = LocalizedStrings.appName.localizedString
-    }
-
-    private func stopObservingNetwork() {
-        reachability?.stopNotifier()
-    }
-
-    private func startObservingNetwork() {
-        try? reachability?.startNotifier()
-    }
-
-    private func bindReachability() {
-        reachability?.reachabilityChanged
-            .sink { [weak self] reachability in
-                let connectionStatus = reachability.connection
-                self?.viewModel.onNetworkStateChanged(connectionStatus)
-            }
-            .store(in: &cancellables)
     }
 
 }

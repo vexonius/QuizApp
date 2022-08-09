@@ -1,4 +1,4 @@
-struct UsernameUpdateRequestModel: Encodable {
+struct AccountUpdateRequestModel: Encodable {
 
     let name: String
 

@@ -36,7 +36,7 @@ class LoginRepository: LoginRepositoryProtocol {
     }
 
     private func deleteToken() {
-        secureStorage.clear()
+        secureStorage.delete(SecureStorageKey.accessToken)
     }
 
 }

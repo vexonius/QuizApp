@@ -6,6 +6,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     private var appModule: AppModule?
     private let container = Resolver.main
+    private var networkService: NetworkServiceProtocol!
 
     func scene(
         _ scene: UIScene,
@@ -16,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
         appModule = AppModule(container: container)
+        networkService = container.optional()
 
         guard
             let window = window,
@@ -23,6 +25,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         else { return }
 
         appModule.initRouter(in: window)
+    }
+
+    func sceneWillEnterForeground(_ scene: UIScene) {
+        startObservingNetwork()
+    }
+
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        startObservingNetwork()
+    }
+
+    func startObservingNetwork() {
+        networkService.startObservingNetwork()
+    }
+
+    func stopObservingNetwork() {
+        networkService.stopObservingNetwork()
     }
 
 }
