@@ -1,12 +1,15 @@
 import Combine
 import Reachability
+import UIKit
 
 class HomeViewModel {
 
     @Published private(set) var isErrorPlaceholderVisible: Bool = false
     @Published private(set) var errorTitle: String?
     @Published private(set) var errorDescription: String?
-    @Published private(set) var filters: [String] = ["All", "Sports", "Oscars", "Music"]
+    @Published private(set) var filters: [QuizCategory] = []
+
+    private let mockedFilters = ["All", "Sports", "Oscars", "Music"]
 
     private let networkService: NetworkServiceProtocol
     private var cancellables = Set<AnyCancellable>()
@@ -15,6 +18,7 @@ class HomeViewModel {
         self.networkService = networkService
 
         observeNetworkChanges()
+        mockFilters()
     }
 
     private func observeNetworkChanges() {
@@ -37,6 +41,15 @@ class HomeViewModel {
         errorTitle = LocalizedStrings.networkError.localizedString
         errorDescription = LocalizedStrings.networkErrorDescription.localizedString
         isErrorPlaceholderVisible = true
+    }
+
+    private func mockFilters() {
+        filters = mockedFilters
+            .enumerated()
+            .map { (index, filter) in
+                // will update colors when we get real data
+                QuizCategory(index: index, title: filter, tint: UIColor.accentBlue)
+            }
     }
 
 }

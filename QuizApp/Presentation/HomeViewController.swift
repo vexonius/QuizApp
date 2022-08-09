@@ -68,8 +68,9 @@ extension HomeViewController: BindViewsProtocol {
 
         viewModel
             .$filters
+            .receive(on: RunLoop.main)
             .sink { [weak self] filters in
-                self?.filtersSegmentedControl.updateSegments(segments: filters)
+                self?.filtersSegmentedControl.update(segments: filters)
             }
             .store(in: &cancellables)
     }
