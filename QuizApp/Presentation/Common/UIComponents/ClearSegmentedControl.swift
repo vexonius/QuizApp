@@ -46,11 +46,11 @@ class ClearSegmentedControll: UISegmentedControl {
         }
     }
 
-    func update(segments: [QuizCategory]) {
+    func update(segments: [CategoryFilter]) {
         removeAllSegments()
 
         for segment in segments {
-            insertSegment(withTitle: segment.title, at: numberOfSegments, animated: false)
+            insertSegment(withTitle: segment.title.uppercased(), at: numberOfSegments, animated: false)
             style(with: segment.tint)
         }
 
