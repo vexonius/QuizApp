@@ -1,5 +1,3 @@
-import Foundation
-
 class AccountNetworkClient: AccountNetworkClientProtocol {
 
     private let baseNetworkClient: BaseNetworkClientProtocol

@@ -45,7 +45,7 @@ class DifficultyIndicator: UIView {
 
             let rectangle = CAShapeLayer()
             rectangle.path = bezierPath.cgPath
-            rectangle.fillColor = index >= difficulty.rawValue ?
+            rectangle.fillColor = index >= difficulty.enumerated ?
                 UIColor.white.withAlphaComponent(CustomConstants.indicatorTransparency).cgColor :
                 accentColor.cgColor
 

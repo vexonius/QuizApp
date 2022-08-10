@@ -22,7 +22,13 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
         params: [String: String],
         headers: [String: String]
     ) async throws -> T {
-        let (data, response) = try await urlSession.data(from: url)
+        let request = try await createRequest(
+            method: .get,
+            url: url,
+            headers: headers,
+            params: params)
+
+        let (data, response) = try await urlSession.data(with: request)
 
         try validateResponse(response: response)
 
@@ -90,16 +96,13 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
     private func createRequest<T: Encodable>(
         method: HttpMethod,
         url: URL,
-        headers: [String: String]?,
-        params: [String: String]?,
+        headers: [String: String],
+        params: [String: String],
         requestBody: T?
     ) async throws -> URLRequest {
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url.appending(queryItems: params))
         request.httpMethod = method.string
-
-        headers?.forEach { (key, value) in
-            request.setValue(value, forHTTPHeaderField: key)
-        }
+        request.append(headers: headers)
 
         if let requestBody = requestBody {
             guard let encodedBody = try? encodeRequestBody(model: requestBody) else {
@@ -115,15 +118,12 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
     private func createRequest(
         method: HttpMethod,
         url: URL,
-        headers: [String: String]?,
-        params: [String: String]?
+        headers: [String: String],
+        params: [String: String]
     ) async throws -> URLRequest {
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url.appending(queryItems: params))
         request.httpMethod = method.string
-
-        headers?.forEach { (key, value) in
-            request.setValue(value, forHTTPHeaderField: key)
-        }
+        request.append(headers: headers)
 
         return request
     }

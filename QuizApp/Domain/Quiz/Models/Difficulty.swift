@@ -1,7 +1,18 @@
-enum Difficulty: Int {
+enum Difficulty: String {
 
-    case easy = 1
-    case normal = 2
-    case hard = 3
+    case easy = "EASY"
+    case normal = "NORMAL"
+    case hard = "HARD"
+
+    var enumerated: Int {
+        switch self {
+        case .easy:
+            return 1
+        case .normal:
+            return 2
+        case .hard:
+            return 3
+        }
+    }
 
 }
