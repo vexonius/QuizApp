@@ -67,7 +67,7 @@ extension HomeViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$categories
+            .$filters
             .sink { [weak self] categories in
                 self?.filtersSegmentedControl.update(segments: categories)
             }
