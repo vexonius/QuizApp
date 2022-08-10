@@ -28,9 +28,9 @@ class NetworkService: NetworkServiceProtocol {
 
     private func bindReachability() {
         reachability?.reachabilityChanged
-            .sink(receiveValue: { [weak self] reachability in
+            .sink { [weak self] reachability in
                 self?.networkStateSubject.send(reachability.connection)
-            })
+            }
             .store(in: &cancellables)
     }
 

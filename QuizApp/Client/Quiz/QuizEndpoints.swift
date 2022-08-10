@@ -10,4 +10,5 @@ enum QuizEndpoints: String {
             return Api.apiURL.appendingPathComponent(self.rawValue)
         }
     }
+
 }
