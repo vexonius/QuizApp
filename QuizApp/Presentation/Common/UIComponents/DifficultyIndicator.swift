@@ -18,8 +18,8 @@ class DifficultyIndicator: UIView {
         static let cornerRadius = 2
     }
 
-    private let difficulty: Difficulty
-    private let accentColor: UIColor
+    private var difficulty: Difficulty
+    private var accentColor: UIColor
     private let rectContainer: CGRect = CGRect(x: 0, y: 0, width: 10, height: 10)
 
     init(difficulty: Difficulty = .easy, accentColor: UIColor = .accentYellow) {
@@ -35,10 +35,18 @@ class DifficultyIndicator: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func update(difficulty: Difficulty, accentColor: UIColor) {
+        self.accentColor = accentColor
+        self.difficulty = difficulty
+
+        drawRectangles()
+    }
+
     private func drawRectangles(spacing: Int = CustomConstants.defaultSpacing) {
+        self.layer.sublayers?.removeAll()
         var translate = CustomConstants.xTranslation
 
-        for index in 1...CustomConstants.numberOfRectangles {
+        for index in 0..<CustomConstants.numberOfRectangles {
             let bezierPath = UIBezierPath(
                 roundedRect: rectContainer,
                 cornerRadius: CustomConstants.cornerRadius.cgFloat)

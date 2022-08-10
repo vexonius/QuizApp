@@ -88,6 +88,8 @@
 		F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */; };
 		F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E450462889791C00685E09 /* LoginNetworkClientProtocol.swift */; };
 		F0E450492889794D00685E09 /* LoginEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E450482889794D00685E09 /* LoginEndpoints.swift */; };
+		F0E61B4E28A3C101004410DB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E61B4D28A3C101004410DB /* Category.swift */; };
+		F0E61B5028A3C14A004410DB /* Category+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E61B4F28A3C14A004410DB /* Category+Extension.swift */; };
 		F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */; };
 		F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */; };
 		F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A97A287C74CA007BF1D4 /* LoginViewController.swift */; };
@@ -185,6 +187,8 @@
 		F0E45044288975C200685E09 /* BaseNetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkClientProtocol.swift; sourceTree = "<group>"; };
 		F0E450462889791C00685E09 /* LoginNetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkClientProtocol.swift; sourceTree = "<group>"; };
 		F0E450482889794D00685E09 /* LoginEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoints.swift; sourceTree = "<group>"; };
+		F0E61B4D28A3C101004410DB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F0E61B4F28A3C14A004410DB /* Category+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Extension.swift"; sourceTree = "<group>"; };
 		F0E6A973287C74CA007BF1D4 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 			children = (
 				F0167D65289AB29E0016A58E /* Difficulty.swift */,
 				F012CACA28A2983F007592A5 /* QuizModel.swift */,
+				F0E61B4D28A3C101004410DB /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				F0C6387A28A2628900354374 /* QuizCategory.swift */,
+				F0E61B4F28A3C14A004410DB /* Category+Extension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -832,6 +838,7 @@
 				F08D63D12893F2D2004B40E1 /* AccountNetworkClient.swift in Sources */,
 				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
 				F0052EB928A285B9006515AE /* QuizNetworkClient.swift in Sources */,
+				F0E61B5028A3C14A004410DB /* Category+Extension.swift in Sources */,
 				F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */,
 				F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */,
 				F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */,
@@ -858,6 +865,7 @@
 				F0E99451289BEE8A00154A60 /* ClearSegmentedControl.swift in Sources */,
 				F0A70877288041D20077A678 /* RoundedButton.swift in Sources */,
 				F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */,
+				F0E61B4E28A3C101004410DB /* Category.swift in Sources */,
 				F0167D66289AB29E0016A58E /* Difficulty.swift in Sources */,
 				F08D63C12893E508004B40E1 /* AccountUseCaseProtocol.swift in Sources */,
 				F012CAC328A29409007592A5 /* QuizRepository.swift in Sources */,
