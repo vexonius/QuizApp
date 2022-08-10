@@ -1,4 +1,4 @@
-enum Category: String {
+enum Category: String, CaseIterable {
 
     case uncategorized
     case sport = "SPORT"
