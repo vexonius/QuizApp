@@ -11,6 +11,8 @@ class HomeViewController: BaseViewController {
 
     private var filtersSegmentedControl: ClearSegmentedControll!
     private var errorPlaceholder: ErrorPlaceholderView!
+    private var quizTableView: UITableView!
+    private var datasource: CombineTableViewDataSource<QuizModel>!
 
     private var cancellables = Set<AnyCancellable>()
     private let viewModel: HomeViewModel
@@ -32,6 +34,7 @@ class HomeViewController: BaseViewController {
         styleViews()
         defineLayoutForViews()
 
+        createQuizzesDataSource()
         bindViews()
     }
 
@@ -43,6 +46,19 @@ class HomeViewController: BaseViewController {
 
     private func styleNavigationBar() {
         tabBarController?.title = LocalizedStrings.appName.localizedString
+    }
+
+    private func createQuizTableView() {
+        quizTableView = UITableView()
+        quizTableView.delegate = self
+        quizTableView.register(QuizCell.self, forCellReuseIdentifier: QuizCell.reuseIdentifier)
+
+        view.addSubview(quizTableView)
+    }
+
+    private func createQuizzesDataSource() {
+        datasource = CombineTableViewDataSource<QuizModel>(cellFactory: quizCell)
+        quizTableView.dataSource = datasource
     }
 
 }
@@ -79,6 +95,15 @@ extension HomeViewController: BindViewsProtocol {
                 self?.viewModel.onCategoryChange(for: index)
             }
             .store(in: &cancellables)
+
+        viewModel
+            .$filteredQuizes
+            .sink { [weak self] items in
+                guard let self = self else { return }
+
+                self.quizTableView.push(items: items, to: self.datasource)
+            }
+            .store(in: &cancellables)
     }
 
 }
@@ -91,10 +116,15 @@ extension HomeViewController: ConstructViewsProtocol {
 
         filtersSegmentedControl = ClearSegmentedControll()
         view.addSubview(filtersSegmentedControl)
+
+        createQuizTableView()
     }
 
     func styleViews() {
         filtersSegmentedControl.selectedSegmentTintColor = .white
+
+        quizTableView.backgroundColor = .clear
+        quizTableView.showsVerticalScrollIndicator = false
     }
 
     func defineLayoutForViews() {
@@ -106,6 +136,37 @@ extension HomeViewController: ConstructViewsProtocol {
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.componentsInset)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(CustomConstants.segmentedControlTopInset)
             make.height.equalTo(DesignConstants.ControlComponents.segmentedControlHeight)
+        }
+
+        quizTableView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(filtersSegmentedControl.snp.bottom).offset(DesignConstants.Insets.componentSpacing)
+        }
+    }
+
+}
+
+extension HomeViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        DesignConstants.QuizCell.height.cgFloat
+    }
+
+}
+
+extension HomeViewController {
+
+    var quizCell: CombineTableViewDataSource<QuizModel>.CellFactory {
+        return { _, tableView, indexPath, model -> UITableViewCell in
+            guard
+                let cell = tableView.dequeueCell(for: indexPath, with: QuizCell.reuseIdentifier) as? QuizCell
+            else {
+                return UITableViewCell()
+            }
+
+            cell.bind(with: model)
+
+            return cell
         }
     }
 
