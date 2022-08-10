@@ -29,6 +29,7 @@
 		F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FAF28815C6100927148 /* BindViewsProtocol.swift */; };
 		F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FB128816A2500927148 /* LoginViewModel.swift */; };
 		F0290242289A9A16004E52D2 /* DifficultyIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0290241289A9A16004E52D2 /* DifficultyIndicator.swift */; };
+		F040029B28A3FA760012B2E4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = F040029A28A3FA760012B2E4 /* Nuke */; };
 		F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */; };
 		F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E13362885F063001F2ABB /* URLSession+Extension.swift */; };
 		F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */; };
@@ -214,6 +215,7 @@
 				F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */,
 				F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */,
 				F0749187287DAB62005A7A55 /* SnapKit in Frameworks */,
+				F040029B28A3FA760012B2E4 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +698,7 @@
 				F07D86502888289C000F5D99 /* Resolver */,
 				F07D8654288849FE000F5D99 /* KeychainSwift */,
 				F08D37012897FE2C005FFF1F /* CombineReachability */,
+				F040029A28A3FA760012B2E4 /* Nuke */,
 			);
 			productName = QuizApp;
 			productReference = F0E6A973287C74CA007BF1D4 /* QuizApp.app */;
@@ -730,6 +733,7 @@
 				F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */,
 				F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */,
+				F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = F0E6A974287C74CA007BF1D4 /* Products */;
 			projectDirPath = "";
@@ -1080,6 +1084,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1115,6 +1127,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F040029A28A3FA760012B2E4 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
 		F0749186287DAB62005A7A55 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
