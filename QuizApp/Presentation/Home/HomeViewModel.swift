@@ -8,11 +8,19 @@ class HomeViewModel {
     @Published private(set) var errorTitle: String?
     @Published private(set) var errorDescription: String?
 
-    @Published private(set) var categories: [CategoryFilter] = []
+    @Published private(set) var filters: [CategoryFilter] = []
     @Published private(set) var filteredQuizes: [QuizModel] = []
 
     private var quizes: [QuizModel] = []
-    private let defaultCategoryIndex = 0
+
+    private var categories: [CategoryFilter] {
+        Category
+            .allCases
+            .enumerated()
+            .map { (index, category) in
+                CategoryFilter(index: index, title: category.named, category: category, tint: category.color)
+            }
+    }
 
     private let networkService: NetworkServiceProtocol
     private let quizUseCase: QuizUseCaseProtocol
@@ -66,11 +74,10 @@ class HomeViewModel {
         Task {
             do {
                 let quizes = try await quizUseCase.quizzes
-                let categories = getCategories()
 
                 await MainActor.run {
                     self.quizes = quizes
-                    self.categories = categories
+                    self.filters = categories
                 }
             } catch {
                 showNoNetworkError()
