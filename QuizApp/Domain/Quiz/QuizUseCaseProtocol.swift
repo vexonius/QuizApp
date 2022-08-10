@@ -1,7 +1,7 @@
 protocol QuizUseCaseProtocol {
 
-    var quizes: [QuizModel] { get async throws }
+    var quizzes: [QuizModel] { get async throws }
 
-    func getQuizes(for category: String) async throws -> [QuizModel]
+    func getQuizzes(for category: String) async throws -> [QuizModel]
 
 }

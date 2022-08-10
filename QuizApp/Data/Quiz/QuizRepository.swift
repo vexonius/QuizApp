@@ -6,18 +6,18 @@ class QuizRepository: QuizRepositoryProtocol {
         self.quizNetworkClient = quizNetworkClient
     }
 
-    var quizes: [QuizRepoModel] {
+    var quizzes: [QuizRepoModel] {
         get async throws {
-            let quizesResponse = try await quizNetworkClient.quizes
-
-            return quizesResponse.map { QuizRepoModel(from: $0) }
+            try await quizNetworkClient
+                .quizzes
+                .map { QuizRepoModel(from: $0) }
         }
     }
 
-    func getQuizes(for category: String)  async throws -> [QuizRepoModel] {
-        let quizesResponse = try await quizNetworkClient.getQuizes(for: category)
-
-        return quizesResponse.map { QuizRepoModel(from: $0) }
+    func getQuizzes(for category: String)  async throws -> [QuizRepoModel] {
+        try await quizNetworkClient
+            .getQuizzes(for: category)
+            .map { QuizRepoModel(from: $0) }
     }
 
 }

@@ -6,18 +6,18 @@ class QuizNetworkClient: QuizNetworkClientProtocol {
         self.networkClient = networkClient
     }
 
-    var quizes: [QuizResponse] {
+    var quizzes: [QuizResponse] {
         get async throws {
             try await networkClient.get(
-                url: QuizEndpoints.quizes.path,
+                url: QuizEndpoints.quizzes.path,
                 params: [:],
                 headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
         }
     }
 
-    func getQuizes(for category: String)  async throws -> [QuizResponse] {
+    func getQuizzes(for category: String)  async throws -> [QuizResponse] {
         try await networkClient.get(
-            url: QuizEndpoints.quizes.path,
+            url: QuizEndpoints.quizzes.path,
             params: [QuizEndpointsParams.category.value: category],
             headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
     }

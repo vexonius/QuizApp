@@ -2,7 +2,7 @@ import Foundation
 
 enum QuizEndpoints: String {
 
-    case quizes = "quiz/list"
+    case quizzes = "quiz/list"
 
     var path: URL {
         switch self {
