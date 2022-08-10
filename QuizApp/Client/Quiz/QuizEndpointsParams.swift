@@ -5,4 +5,5 @@ enum QuizEndpointsParams: String {
     var value: String {
         self.rawValue
     }
+
 }

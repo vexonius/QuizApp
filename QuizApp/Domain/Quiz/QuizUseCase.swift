@@ -6,18 +6,18 @@ class QuizUseCase: QuizUseCaseProtocol {
         self.quizRepository = quizRepository
     }
 
-    var quizes: [QuizModel] {
+    var quizzes: [QuizModel] {
         get async throws {
-            let repoModel = try await quizRepository.quizes
-
-            return repoModel.map { QuizModel(from: $0) }
+            try await quizRepository
+                .quizzes
+                .map { QuizModel(from: $0) }
         }
     }
 
-    func getQuizes(for category: String)  async throws -> [QuizModel] {
-        let repoModel = try await quizRepository.getQuizes(for: category)
-
-        return repoModel.map { QuizModel(from: $0) }
+    func getQuizzes(for category: String)  async throws -> [QuizModel] {
+        try await quizRepository
+            .getQuizzes(for: category)
+            .map { QuizModel(from: $0) }
     }
 
 }

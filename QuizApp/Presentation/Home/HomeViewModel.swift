@@ -64,7 +64,7 @@ class HomeViewModel {
     private func fetchQuizes() {
         Task {
             do {
-                let quizes = try await quizUseCase.quizes
+                let quizes = try await quizUseCase.quizzes
                 let categories = await filterCategories(from: quizes)
 
                 await MainActor.run {
