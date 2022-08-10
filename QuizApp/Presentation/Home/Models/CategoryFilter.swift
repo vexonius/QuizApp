@@ -1,11 +1,10 @@
 import UIKit
 
-struct QuizCategory {
-
-    static let `default` = "ALL"
+struct CategoryFilter {
 
     let index: Int
     let title: String
+    let category: Category
     let tint: UIColor
 
 }

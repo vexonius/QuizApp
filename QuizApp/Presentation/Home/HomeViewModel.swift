@@ -8,7 +8,7 @@ class HomeViewModel {
     @Published private(set) var errorTitle: String?
     @Published private(set) var errorDescription: String?
 
-    @Published private(set) var categories: [QuizCategory] = []
+    @Published private(set) var categories: [CategoryFilter] = []
     @Published private(set) var filteredQuizes: [QuizModel] = []
 
     private var quizes: [QuizModel] = []
@@ -29,30 +29,32 @@ class HomeViewModel {
     func onCategoryChange(for index: Int) {
         guard
             let selectedCategory = categories.first(where: { $0.index == index }),
-            selectedCategory.index != defaultCategoryIndex
+            selectedCategory.category != .uncategorized
         else {
             filteredQuizes = quizes
-            dump(filteredQuizes)
+
             return
         }
 
-        filteredQuizes = quizes.filter { $0.category == selectedCategory.title }
+        filteredQuizes = quizes.filter { $0.category.rawValue == selectedCategory.title }
     }
 
     private func observeNetworkChanges() {
-        networkService.networkState.sink { [weak self] networkState in
-            guard let self = self else { return }
+        networkService
+            .networkState
+            .sink { [weak self] networkState in
+                guard let self = self else { return }
 
-            switch networkState {
-            case .unavailable:
-                self.showNoNetworkError()
-            default:
-                self.isErrorPlaceholderVisible = false
+                switch networkState {
+                case .unavailable:
+                    self.showNoNetworkError()
+                default:
+                    self.isErrorPlaceholderVisible = false
 
-                self.fetchQuizes()
+                    self.fetchQuizes()
+                }
             }
-        }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
     }
 
     private func showNoNetworkError() {
@@ -77,17 +79,17 @@ class HomeViewModel {
         }
     }
 
-    private func filterCategories(from quizes: [QuizModel]) async -> [QuizCategory] {
+    private func filterCategories(from quizes: [QuizModel]) async -> [CategoryFilter] {
         var categories = quizes
             .map { $0.category }
             .unique()
 
-        categories.insert(QuizCategory.default, at: defaultCategoryIndex)
+        categories.insert(Category.uncategorized, at: defaultCategoryIndex)
 
         return categories
             .enumerated()
             .map { (index, category) in
-                QuizCategory(index: index, title: category, tint: UIColor.white)
+                CategoryFilter(index: index, title: category.named, category: category, tint: category.color)
             }
     }
 
