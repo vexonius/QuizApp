@@ -82,6 +82,7 @@
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
 		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
+		F0BD7CC828A516BF00E8526D /* QuizDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD7CC728A516BF00E8526D /* QuizDetailsViewController.swift */; };
 		F0C1A3AA289283A5000AF917 /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1A3A9289283A5000AF917 /* TabbedViewController.swift */; };
 		F0C6387B28A2628900354374 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6387A28A2628900354374 /* CategoryFilter.swift */; };
 		F0D9202B28856A56004EC4F3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202A28856A56004EC4F3 /* AppCoordinator.swift */; };
@@ -329,6 +330,7 @@
 		F0242FAA28815B5B00927148 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0BD7CC628A516B300E8526D /* Quizzes */,
 				F04AD4D62892BE5F00F378C2 /* Settings */,
 				F0749188287DABDE005A7A55 /* Login */,
 				F095F8A92891A708007DEC4A /* Splash */,
@@ -564,6 +566,14 @@
 				F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		F0BD7CC628A516B300E8526D /* Quizzes */ = {
+			isa = PBXGroup;
+			children = (
+				F0BD7CC728A516BF00E8526D /* QuizDetailsViewController.swift */,
+			);
+			path = Quizzes;
 			sourceTree = "<group>";
 		};
 		F0C6387928A2626D00354374 /* Models */ = {

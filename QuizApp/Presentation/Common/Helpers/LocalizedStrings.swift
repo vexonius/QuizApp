@@ -18,6 +18,9 @@ enum LocalizedStrings: String {
     case serverErrorMessage = "Something went wrong. \n Please try again later"
 
     case all = "All"
+    case startQuizTitle = "Start Quiz"
+    case leaderboard = "Leaderboard"
+    case placeholderText = "Quiz description that can usually span over multiple lines"
 
     var localizedString: String {
         self.rawValue
