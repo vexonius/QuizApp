@@ -89,19 +89,21 @@ extension HomeViewController: BindViewsProtocol {
             }
             .store(in: &cancellables)
 
+        viewModel
+            .$filteredQuizes
+            .receive(subscriber: quizTableView.items(datasource))
+
+        quizTableView
+            .modelSelected(QuizModel.self)
+            .sink { [weak self] model in
+                self?.viewModel.onQuizSelected(model)
+            }
+            .store(in: &cancellables)
+
         filtersSegmentedControl
             .publisher(for: \.selectedSegmentIndex)
             .sink { [weak self] index in
                 self?.viewModel.onCategoryChange(for: index)
-            }
-            .store(in: &cancellables)
-
-        viewModel
-            .$filteredQuizes
-            .sink { [weak self] items in
-                guard let self = self else { return }
-
-                self.quizTableView.push(items: items, to: self.datasource)
             }
             .store(in: &cancellables)
     }
@@ -158,9 +160,7 @@ extension HomeViewController {
 
     var quizCell: CombineTableViewDataSource<QuizModel>.CellFactory {
         return { _, tableView, indexPath, model -> UITableViewCell in
-            guard
-                let cell = tableView.dequeueCell(for: indexPath, with: QuizCell.reuseIdentifier) as? QuizCell
-            else {
+            guard let cell: QuizCell = tableView.dequeueCell(for: indexPath, with: QuizCell.reuseIdentifier) else {
                 return UITableViewCell()
             }
 

@@ -77,6 +77,7 @@
 		F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */; };
 		F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */; };
 		F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */; };
+		F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
@@ -177,6 +178,7 @@
 		F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseProtocol.swift; sourceTree = "<group>"; };
 		F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
+		F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombineTableViewDataSource.swift; path = QuizApp/Presentation/CombineTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0B028CA289280000024DBFD /* PopGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopGradient.swift; sourceTree = "<group>"; };
 		F0BB5384289BB7D8003A0E3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				F0F19CAF28902343002400CE /* String+Extensions.swift */,
 				F012CAD028A2CC68007592A5 /* Sequence+Extensions.swift */,
 				F02C78DC28A301D200428A2A /* UITableView+Extensions.swift */,
+				F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				F08D3706289813C0005FFF1F /* HomeViewModel.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */,
+				F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
 				F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */,
