@@ -159,7 +159,7 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController {
 
     var quizCell: CombineTableViewDataSource<QuizModel>.CellFactory {
-        return { _, tableView, indexPath, model -> UITableViewCell in
+        { _, tableView, indexPath, model -> UITableViewCell in
             guard let cell: QuizCell = tableView.dequeueCell(for: indexPath, with: QuizCell.reuseIdentifier) else {
                 return UITableViewCell()
             }

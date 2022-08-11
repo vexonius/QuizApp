@@ -89,13 +89,4 @@ class HomeViewModel {
         }
     }
 
-    private func getCategories() -> [CategoryFilter] {
-        Category
-            .allCases
-            .enumerated()
-            .map { (index, category) in
-                CategoryFilter(index: index, title: category.named, category: category, tint: category.color)
-            }
-    }
-
 }
