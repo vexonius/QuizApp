@@ -35,6 +35,8 @@ class SettingsViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+
+        bindViewModel()
         bindViews()
 
         usernameInputField.delegate = self
@@ -109,7 +111,9 @@ extension SettingsViewController: BindViewsProtocol {
                 Snackbar(in: self.view, message: errorMessage).show()
             }
             .store(in: &cancellables)
+    }
 
+    func bindViewModel() {
         logoutButton
             .throttledTap()
             .sink { [weak self] _ in

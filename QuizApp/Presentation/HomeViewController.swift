@@ -35,6 +35,8 @@ class HomeViewController: BaseViewController {
         defineLayoutForViews()
 
         createQuizzesDataSource()
+
+        bindViewModel()
         bindViews()
     }
 
@@ -65,7 +67,7 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: BindViewsProtocol {
 
-    func bindViews() {
+    func bindViewModel() {
         viewModel
             .$isErrorPlaceholderVisible
             .map { !$0 }
@@ -92,7 +94,9 @@ extension HomeViewController: BindViewsProtocol {
         viewModel
             .$filteredQuizes
             .receive(subscriber: quizTableView.items(datasource))
+    }
 
+    func bindViews() {
         quizTableView
             .modelSelected(QuizModel.self)
             .sink { [weak self] model in

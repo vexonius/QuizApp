@@ -4,4 +4,6 @@ protocol BindViewsProtocol {
 
      func bindViews()
 
+    func bindViewModel()
+
 }

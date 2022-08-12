@@ -43,6 +43,8 @@ class QuizDetailsViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+
+        bindViewModel()
         bindViews()
     }
 
@@ -55,10 +57,10 @@ class QuizDetailsViewController: BaseViewController {
     override func updateViewConstraints() {
         super.updateViewConstraints()
 
-        adaptContainerViewForTaitCollectionChanges()
+        adaptContainerViewForTraitCollectionChanges()
     }
 
-    private func adaptContainerViewForTaitCollectionChanges() {
+    private func adaptContainerViewForTraitCollectionChanges() {
         containerView.snp.remakeConstraints { make in
             if view.traitCollection.verticalSizeClass == .regular {
                 make.height.lessThanOrEqualTo(CustomConstants.preferredContainerVerticalHeight)
@@ -80,7 +82,7 @@ class QuizDetailsViewController: BaseViewController {
 
 extension QuizDetailsViewController: BindViewsProtocol {
 
-    func bindViews() {
+    func bindViewModel() {
         viewModel
             .$quiz
             .map { $0.name }
@@ -105,7 +107,9 @@ extension QuizDetailsViewController: BindViewsProtocol {
                 Nuke.loadImage(with: url, into: self.cover)
             }
             .store(in: &cancellables)
+    }
 
+    func bindViews() {
         leaderBoardLabel
             .throttledTap()
             .sink { [weak self] in
