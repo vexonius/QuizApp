@@ -20,4 +20,10 @@ class QuizUseCase: QuizUseCaseProtocol {
             .map { QuizModel(from: $0) }
     }
 
+    func getLeaderboard(for quizId: Int)  async throws -> [UserRankingModel] {
+        try await quizRepository
+            .getLeaderboard(for: quizId)
+            .map { UserRankingModel(from: $0) }
+    }
+
 }

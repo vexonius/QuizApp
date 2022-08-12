@@ -81,6 +81,8 @@
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0ACC17C28A65C8F00C26208 /* UserRankingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */; };
 		F0ACC17E28A65E3F00C26208 /* UserRankingRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */; };
+		F0ACC18028A6604C00C26208 /* UserRankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17F28A6604C00C26208 /* UserRankingModel.swift */; };
+		F0ACC18228A6695100C26208 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC18128A6695100C26208 /* RankingCell.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
 		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
@@ -187,6 +189,8 @@
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingResponse.swift; sourceTree = "<group>"; };
 		F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingRepoModel.swift; sourceTree = "<group>"; };
+		F0ACC17F28A6604C00C26208 /* UserRankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingModel.swift; sourceTree = "<group>"; };
+		F0ACC18128A6695100C26208 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
 		F0B028CA289280000024DBFD /* PopGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopGradient.swift; sourceTree = "<group>"; };
 		F0BB5384289BB7D8003A0E3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				F0167D65289AB29E0016A58E /* Difficulty.swift */,
 				F012CACA28A2983F007592A5 /* QuizModel.swift */,
 				F0E61B4D28A3C101004410DB /* Category.swift */,
+				F0ACC17F28A6604C00C26208 /* UserRankingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 		F0ACC17528A654BD00C26208 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
+				F0ACC18128A6695100C26208 /* RankingCell.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -867,6 +873,7 @@
 				F0C6387B28A2628900354374 /* CategoryFilter.swift in Sources */,
 				F08D63CA2893ED38004B40E1 /* AccountDetailsRepoModel.swift in Sources */,
 				F0DA2D35288AE806000B8C70 /* SecureStorage.swift in Sources */,
+				F0ACC18028A6604C00C26208 /* UserRankingModel.swift in Sources */,
 				F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */,
 				F069A7442886F28700F8DB81 /* LoginRequestBodyRepoModel.swift in Sources */,
 				F012CACD28A29953007592A5 /* QuizUseCaseProtocol.swift in Sources */,
@@ -908,6 +915,7 @@
 				F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */,
 				F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */,
 				F0E450492889794D00685E09 /* LoginEndpoints.swift in Sources */,
+				F0ACC18228A6695100C26208 /* RankingCell.swift in Sources */,
 				F0FCE2B6288FDF6100C66235 /* SecureStorageProtocol.swift in Sources */,
 				F0E6A979287C74CA007BF1D4 /* SceneDelegate.swift in Sources */,
 				F0E99451289BEE8A00154A60 /* ClearSegmentedControl.swift in Sources */,

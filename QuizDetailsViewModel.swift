@@ -12,7 +12,7 @@ class QuizDetailsViewModel {
     }
 
     func onLeaderBoardLabelTap() {
-
+        
     }
 
     func onStartQuizButtonTap() {
