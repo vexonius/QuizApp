@@ -34,12 +34,27 @@ class AppCoordinator: AppCoordinatorProtocol {
     private func styleNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .clear
+        appearance.setBackIndicatorImage(UIImage.backArrow, transitionMaskImage: UIImage.backArrow)
         appearance.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.sourceSansPro(
                 ofSize: DesignConstants.FontSize.title.cgFloat,
                 ofWeight: .bold)!]
 
         UINavigationBar.appearance().standardAppearance = appearance
+        navigationController.navigationBar.tintColor = .white
+    }
+
+}
+
+extension AppCoordinator: QuizCoordinatorProtocol {
+
+    func routeToLeaderBoard() {
+        // routing logic
+    }
+
+    func routeToQuizDetails(quiz: QuizModel) {
+        let quizDetailsViewController: QuizDetailsViewController = container.resolve(args: quiz)
+        navigationController.pushViewController(quizDetailsViewController, animated: true)
     }
 
 }

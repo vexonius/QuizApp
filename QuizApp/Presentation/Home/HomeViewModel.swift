@@ -22,13 +22,19 @@ class HomeViewModel {
             }
     }
 
+    private let coordinator: QuizCoordinatorProtocol
     private let networkService: NetworkServiceProtocol
     private let quizUseCase: QuizUseCaseProtocol
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(quizUseCase: QuizUseCaseProtocol, networkService: NetworkServiceProtocol) {
+    init(
+        quizUseCase: QuizUseCaseProtocol,
+        coordinator: QuizCoordinatorProtocol,
+        networkService: NetworkServiceProtocol
+    ) {
         self.networkService = networkService
+        self.coordinator = coordinator
         self.quizUseCase = quizUseCase
 
         observeNetworkChanges()
@@ -48,7 +54,7 @@ class HomeViewModel {
     }
 
     func onQuizSelected(_ quiz: QuizModel) {
-        debugPrint(quiz)
+        coordinator.routeToQuizDetails(quiz: quiz)
     }
 
     private func observeNetworkChanges() {

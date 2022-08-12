@@ -26,6 +26,11 @@ struct DesignConstants {
         static let thumbnailPadding = 44
     }
 
+    struct Label {
+        static let headingHeight = 40
+        static let subtitleHeight = 24
+    }
+
     struct FontSize {
         static let paragraph: Float = 14
         static let regular: Float = 16
