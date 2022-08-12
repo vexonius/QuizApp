@@ -83,6 +83,7 @@
 		F0ACC17E28A65E3F00C26208 /* UserRankingRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */; };
 		F0ACC18028A6604C00C26208 /* UserRankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17F28A6604C00C26208 /* UserRankingModel.swift */; };
 		F0ACC18228A6695100C26208 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC18128A6695100C26208 /* RankingCell.swift */; };
+		F0ACC18A28A67C2400C26208 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC18928A67C2400C26208 /* HeaderView.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
 		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
