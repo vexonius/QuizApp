@@ -157,6 +157,7 @@ extension QuizDetailsViewController: ConstructViewsProtocol {
         leaderBoardLabel.font = .sourceSansPro(
             ofSize: DesignConstants.FontSize.subtitle.cgFloat,
             ofWeight: SourceSansProWeight.semibold)
+        leaderBoardLabel.isUserInteractionEnabled = true
         leaderBoardLabel.attributedText = NSAttributedString(
             string: LocalizedStrings.leaderboard.localizedString,
             attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
