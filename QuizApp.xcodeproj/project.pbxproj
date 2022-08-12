@@ -80,6 +80,7 @@
 		F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0ACC17C28A65C8F00C26208 /* UserRankingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */; };
+		F0ACC17E28A65E3F00C26208 /* UserRankingRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
 		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
@@ -185,6 +186,7 @@
 		F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombineTableViewDataSource.swift; path = QuizApp/Presentation/CombineTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingResponse.swift; sourceTree = "<group>"; };
+		F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingRepoModel.swift; sourceTree = "<group>"; };
 		F0B028CA289280000024DBFD /* PopGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopGradient.swift; sourceTree = "<group>"; };
 		F0BB5384289BB7D8003A0E3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				F012CAC728A295AB007592A5 /* QuizRepoModel.swift */,
+				F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */,
+				F0ACC17E28A65E3F00C26208 /* UserRankingRepoModel.swift in Sources */,
 				F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */,
 				F012CAC528A29504007592A5 /* QuizRepositoryProtocol.swift in Sources */,
 				F0E450472889791C00685E09 /* LoginNetworkClientProtocol.swift in Sources */,

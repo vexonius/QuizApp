@@ -4,6 +4,6 @@ protocol QuizNetworkClientProtocol {
 
     func getQuizzes(for category: String) async throws -> [QuizResponse]
 
-    func leaderboard(for quizId: Int) async throws -> [UserRankingResponse]
+    func getLeaderboard(for quizId: Int) async throws -> [UserRankingResponse]
 
 }
