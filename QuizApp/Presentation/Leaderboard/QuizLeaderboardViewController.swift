@@ -37,9 +37,6 @@ class QuizLeaderboardViewController: BaseViewController {
 
         bindViews()
         bindViewModel()
-
-        rankedTableView.delegate = self
-        rankedTableView.register(RankingCell.self, forCellReuseIdentifier: RankingCell.reuseIdentifier)
     }
 
     private func styleNavigationBar() {
@@ -79,6 +76,8 @@ extension QuizLeaderboardViewController: ConstructViewsProtocol {
 
     func createViews() {
         rankedTableView = UITableView()
+        rankedTableView.delegate = self
+        rankedTableView.register(RankingCell.self, forCellReuseIdentifier: RankingCell.reuseIdentifier)
         view.addSubview(rankedTableView)
 
         headerView = LeaderboardHeaderView()

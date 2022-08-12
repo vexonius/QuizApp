@@ -33,7 +33,7 @@ class QuizLeaderboardViewModel {
                         }
                 }
             } catch {
-                debugPrint(error)
+                // Error handling: TBI
             }
         }
     }
