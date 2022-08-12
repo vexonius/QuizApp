@@ -113,8 +113,8 @@ extension RankingCell: ConstructViewsProtocol {
 
 extension RankingCell {
 
-    func bind(with model: UserRankingModel) {
-        rankLabel.text = "1."
+    func bind(with model: UserRankingCellModel) {
+        rankLabel.text = model.position
         userLabel.text = model.name
         pointsLabel.text = String(model.points)
     }

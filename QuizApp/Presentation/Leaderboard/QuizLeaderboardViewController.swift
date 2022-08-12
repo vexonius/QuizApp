@@ -9,8 +9,8 @@ class QuizLeaderboardViewController: BaseViewController {
     }
 
     private var rankedTableView: UITableView!
-    private var headerView: HeaderView!
-    private var datasource: CombineTableViewDataSource<UserRankingModel>!
+    private var headerView: LeaderboardHeaderView!
+    private var datasource: CombineTableViewDataSource<UserRankingCellModel>!
 
     private let viewModel: QuizLeaderboardViewModel
     private var cancellables: Set<AnyCancellable> = []
@@ -33,7 +33,7 @@ class QuizLeaderboardViewController: BaseViewController {
         defineLayoutForViews()
         styleNavigationBar()
 
-       createDataSource()
+        createDataSource()
 
         bindViews()
         bindViewModel()
@@ -49,7 +49,7 @@ class QuizLeaderboardViewController: BaseViewController {
     }
 
     private func createDataSource() {
-        datasource = CombineTableViewDataSource<UserRankingModel>(cellFactory: rankingCell)
+        datasource = CombineTableViewDataSource<UserRankingCellModel>(cellFactory: rankingCell)
         rankedTableView.dataSource = datasource
     }
 
@@ -81,7 +81,7 @@ extension QuizLeaderboardViewController: ConstructViewsProtocol {
         rankedTableView = UITableView()
         view.addSubview(rankedTableView)
 
-        headerView = HeaderView()
+        headerView = LeaderboardHeaderView()
     }
 
     func styleViews() {
@@ -89,7 +89,7 @@ extension QuizLeaderboardViewController: ConstructViewsProtocol {
         rankedTableView.separatorColor = .white
         rankedTableView.separatorInset = .zero
 
-        // Weird inset for header view on ios 15
+        // Fix for Weird inset for header view on ios 15
         if #available(iOS 15.0, *) {
             rankedTableView.sectionHeaderTopPadding = 0
         }
@@ -121,9 +121,8 @@ extension QuizLeaderboardViewController: UITableViewDelegate {
 
 extension QuizLeaderboardViewController {
 
-    var rankingCell: CombineTableViewDataSource<UserRankingModel>.CellFactory {
+    var rankingCell: CombineTableViewDataSource<UserRankingCellModel>.CellFactory {
         { _, tableView, indexPath, model -> UITableViewCell in
-
             guard
                 let cell: RankingCell = tableView.dequeueCell(for: indexPath, with: RankingCell.reuseIdentifier)
             else {

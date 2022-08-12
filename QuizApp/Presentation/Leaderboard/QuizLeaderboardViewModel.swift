@@ -2,7 +2,7 @@ import Combine
 
 class QuizLeaderboardViewModel {
 
-    @Published var userRankings: [UserRankingModel] = []
+    @Published var userRankings: [UserRankingCellModel] = []
 
     private let quizUseCase: QuizUseCaseProtocol
     private let coordinator: QuizCoordinatorProtocol
@@ -25,6 +25,12 @@ class QuizLeaderboardViewModel {
 
                 await MainActor.run {
                     self.userRankings = rankingsModel
+                        .enumerated()
+                        .map { index, model in
+                            let position = index + 1
+
+                            return UserRankingCellModel(position: position, model: model)
+                        }
                 }
             } catch {
                 debugPrint(error)

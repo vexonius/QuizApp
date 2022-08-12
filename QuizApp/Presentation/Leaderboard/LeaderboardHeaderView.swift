@@ -1,6 +1,6 @@
 import UIKit
 
-class HeaderView: UIView {
+class LeaderboardHeaderView: UIView {
 
     private var playerLabel: UILabel!
     private var pointsLabel: UILabel!
@@ -19,7 +19,7 @@ class HeaderView: UIView {
 
 }
 
-extension HeaderView: ConstructViewsProtocol {
+extension LeaderboardHeaderView: ConstructViewsProtocol {
 
     func createViews() {
         playerLabel = UILabel()
