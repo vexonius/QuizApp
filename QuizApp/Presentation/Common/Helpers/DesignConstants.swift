@@ -42,4 +42,8 @@ struct DesignConstants {
         static let segmentedControlHeight: Float = 32
     }
 
+    struct QuizCell {
+        static let height = 154
+    }
+
 }

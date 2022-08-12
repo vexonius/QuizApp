@@ -28,10 +28,4 @@ extension UITextField {
             .eraseToAnyPublisher()
     }
 
-    func notifyTextChanged() {
-        NotificationCenter
-            .default
-            .post(name: UITextField.textDidChangeNotification, object: self)
-    }
-
 }

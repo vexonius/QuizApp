@@ -47,6 +47,10 @@ class HomeViewModel {
         filteredQuizes = quizes.filter { $0.category.rawValue == selectedCategory.title }
     }
 
+    func onQuizSelected(_ quiz: QuizModel) {
+        debugPrint(quiz)
+    }
+
     private func observeNetworkChanges() {
         networkService
             .networkState

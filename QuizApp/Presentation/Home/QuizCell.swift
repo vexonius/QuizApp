@@ -1,6 +1,7 @@
 import UIKit
+import Nuke
 
-class QuizCell: UICollectionViewCell {
+class QuizCell: UITableViewCell {
 
     static let reuseIdentifier = String(describing: QuizCell.self)
 
@@ -18,21 +19,21 @@ class QuizCell: UICollectionViewCell {
         static let difficultyIndicatorWidth = 48
     }
 
+    private var containerView: UIView!
     private var titleLabel: UILabel!
     private var summaryLabel: UILabel!
     private var icon: UIImageView!
     private var difficultyIndicator: DifficultyIndicator!
 
-    init(title: String, summary: String) {
-        super.init(frame: .zero)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        selectionStyle = .none
+        backgroundColor = .clear
 
         createViews()
         styleViews()
         defineLayoutForViews()
-
-        // temporary, will introduce model binding method later
-        titleLabel.text = title
-        summaryLabel.text = summary
     }
 
     required init?(coder: NSCoder) {
@@ -41,22 +42,27 @@ class QuizCell: UICollectionViewCell {
 
     private func createTitleLabel() {
         titleLabel = UILabel()
-        addSubview(titleLabel)
+        containerView.addSubview(titleLabel)
     }
 
     private func createIcon() {
         icon = UIImageView()
-        addSubview(icon)
+        containerView.addSubview(icon)
     }
 
     private func createSummaryLabel() {
         summaryLabel = UILabel()
-        addSubview(summaryLabel)
+        containerView.addSubview(summaryLabel)
     }
 
     private func createDifficultyIndicator() {
         difficultyIndicator = DifficultyIndicator(difficulty: .normal)
-        addSubview(difficultyIndicator)
+        containerView.addSubview(difficultyIndicator)
+    }
+
+    private func createContainerView() {
+        containerView = UIView()
+        addSubview(containerView)
     }
 
 }
@@ -64,6 +70,7 @@ class QuizCell: UICollectionViewCell {
 extension QuizCell: ConstructViewsProtocol {
 
     func createViews() {
+        createContainerView()
         createTitleLabel()
         createSummaryLabel()
         createIcon()
@@ -71,11 +78,10 @@ extension QuizCell: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        contentView.backgroundColor = .white.withAlphaComponent(CustomConstants.backgroundTransparency.cgFloat)
-        contentView.layer.cornerRadius = CustomConstants.contentCornerRadius.cgFloat
+        containerView.backgroundColor = .white.withAlphaComponent(CustomConstants.backgroundTransparency.cgFloat)
+        containerView.layer.cornerRadius = CustomConstants.contentCornerRadius.cgFloat
 
         icon.contentMode = .scaleAspectFill
-        icon.image = UIImage.placeholder
         icon.clipsToBounds = true
         icon.layer.cornerRadius = CustomConstants.iconCornerRadius.cgFloat
 
@@ -92,11 +98,16 @@ extension QuizCell: ConstructViewsProtocol {
         summaryLabel.numberOfLines = CustomConstants.textNumberOfLines
         summaryLabel.lineBreakMode = .byTruncatingTail
         summaryLabel.font = .sourceSansPro(
-            ofSize: DesignConstants.FontSize.paragraph.cgFloat,
+            ofSize: DesignConstants.FontSize.regular.cgFloat,
             ofWeight: SourceSansProWeight.semibold)
     }
 
     func defineLayoutForViews() {
+        containerView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(DesignConstants.Insets.contentInset)
+            make.top.bottom.equalTo(safeAreaLayoutGuide).inset(5)
+        }
+
         icon.snp.makeConstraints { make in
             make.leading.top.bottom.equalToSuperview().inset(DesignConstants.Insets.contentInset)
             make.size.equalTo(CustomConstants.iconSize)
@@ -119,6 +130,23 @@ extension QuizCell: ConstructViewsProtocol {
             make.trailing.equalToSuperview().inset(CustomConstants.difficultyIndicatorTrailingInset)
             make.top.equalToSuperview().offset(CustomConstants.difficultyIndicatorTopOffset)
             make.width.equalTo(CustomConstants.difficultyIndicatorWidth)
+        }
+    }
+
+}
+
+extension QuizCell {
+
+    func bind(with model: QuizModel) {
+        titleLabel.text = model.name
+        summaryLabel.text = model.description
+
+        if let difficulty = model.difficulty {
+            difficultyIndicator.update(difficulty: difficulty, accentColor: model.category.color)
+        }
+
+        if let url = URL(string: model.imageUrl) {
+            Nuke.loadImage(with: url, into: icon)
         }
     }
 

@@ -29,6 +29,8 @@
 		F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FAF28815C6100927148 /* BindViewsProtocol.swift */; };
 		F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FB128816A2500927148 /* LoginViewModel.swift */; };
 		F0290242289A9A16004E52D2 /* DifficultyIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0290241289A9A16004E52D2 /* DifficultyIndicator.swift */; };
+		F02C78DD28A301D200428A2A /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02C78DC28A301D200428A2A /* UITableView+Extensions.swift */; };
+		F040029B28A3FA760012B2E4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = F040029A28A3FA760012B2E4 /* Nuke */; };
 		F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */; };
 		F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E13362885F063001F2ABB /* URLSession+Extension.swift */; };
 		F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */; };
@@ -75,6 +77,7 @@
 		F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */; };
 		F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */; };
 		F0990A6C28897EAB00F72B44 /* LoginRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */; };
+		F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
@@ -129,6 +132,7 @@
 		F0242FAF28815C6100927148 /* BindViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewsProtocol.swift; sourceTree = "<group>"; };
 		F0242FB128816A2500927148 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F0290241289A9A16004E52D2 /* DifficultyIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyIndicator.swift; sourceTree = "<group>"; };
+		F02C78DC28A301D200428A2A /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F04E13362885F063001F2ABB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseNetworkModel.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 		F095F8AA2891A72F007DEC4A /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		F0990A6928897E6D00F72B44 /* LoginUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseProtocol.swift; sourceTree = "<group>"; };
 		F0990A6B28897EAB00F72B44 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
+		F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombineTableViewDataSource.swift; path = QuizApp/Presentation/CombineTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0B028CA289280000024DBFD /* PopGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopGradient.swift; sourceTree = "<group>"; };
 		F0BB5384289BB7D8003A0E3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 				F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */,
 				F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */,
 				F0749187287DAB62005A7A55 /* SnapKit in Frameworks */,
+				F040029B28A3FA760012B2E4 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +450,8 @@
 				F05C8AA728817BBB00D8FC5A /* UITextView+Extensions.swift */,
 				F0F19CAF28902343002400CE /* String+Extensions.swift */,
 				F012CAD028A2CC68007592A5 /* Sequence+Extensions.swift */,
+				F02C78DC28A301D200428A2A /* UITableView+Extensions.swift */,
+				F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -696,6 +704,7 @@
 				F07D86502888289C000F5D99 /* Resolver */,
 				F07D8654288849FE000F5D99 /* KeychainSwift */,
 				F08D37012897FE2C005FFF1F /* CombineReachability */,
+				F040029A28A3FA760012B2E4 /* Nuke */,
 			);
 			productName = QuizApp;
 			productReference = F0E6A973287C74CA007BF1D4 /* QuizApp.app */;
@@ -730,6 +739,7 @@
 				F07D864F2888289C000F5D99 /* XCRemoteSwiftPackageReference "Resolver" */,
 				F07D8653288849FE000F5D99 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */,
+				F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = F0E6A974287C74CA007BF1D4 /* Products */;
 			projectDirPath = "";
@@ -789,6 +799,7 @@
 				F08D3706289813C0005FFF1F /* HomeViewModel.swift in Sources */,
 				F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */,
 				F095F8A72891A656007DEC4A /* SplashViewController.swift in Sources */,
+				F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */,
 				F088E836287EB2D700E0375D /* UIFont+Extensions.swift in Sources */,
 				F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */,
 				F0D9202E28858054004EC4F3 /* AppModule.swift in Sources */,
@@ -817,6 +828,7 @@
 				F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */,
 				F0052EB528A27ED1006515AE /* QuizResponse.swift in Sources */,
 				F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */,
+				F02C78DD28A301D200428A2A /* UITableView+Extensions.swift in Sources */,
 				F0C6387B28A2628900354374 /* CategoryFilter.swift in Sources */,
 				F08D63CA2893ED38004B40E1 /* AccountDetailsRepoModel.swift in Sources */,
 				F0DA2D35288AE806000B8C70 /* SecureStorage.swift in Sources */,
@@ -1080,6 +1092,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1115,6 +1135,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F040029A28A3FA760012B2E4 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
 		F0749186287DAB62005A7A55 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
