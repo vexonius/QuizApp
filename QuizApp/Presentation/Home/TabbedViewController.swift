@@ -47,6 +47,7 @@ extension TabbedViewController: ConstructViewsProtocol {
     func styleViews() {
         tabBar.backgroundColor = .white
         tabBar.tintColor = .darkerPurple
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     func defineLayoutForViews() {
