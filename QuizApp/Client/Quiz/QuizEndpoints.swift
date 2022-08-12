@@ -1,13 +1,26 @@
 import Foundation
 
-enum QuizEndpoints: String {
+enum QuizEndpoints {
 
-    case quizzes = "quiz/list"
+    private static let baseSubpath = "quiz"
+    static let baseEndpoint = Api.apiURL.appendingPathComponent(QuizEndpoints.baseSubpath)
+
+    case quizzes
+    case leaderboard
+
+    private var subpath: String {
+        switch self {
+        case .quizzes:
+            return "list"
+        case .leaderboard:
+            return "leaderboard"
+        }
+    }
 
     var path: URL {
         switch self {
         default:
-            return Api.apiURL.appendingPathComponent(self.rawValue)
+            return QuizEndpoints.baseEndpoint.appendingPathComponent(self.subpath)
         }
     }
 
