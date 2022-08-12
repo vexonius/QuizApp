@@ -24,9 +24,12 @@ class QuizDetailsViewController: BaseViewController {
 
     private let placeHolderImage = UIImage.init(color: .whiteTransparent30, size: CGSize(width: 400, height: 400))
 
+    private let viewModel: QuizDetailsViewModel
     private var cancellables: Set<AnyCancellable> = []
 
-    init() {
+    init(viewModel: QuizDetailsViewModel) {
+        self.viewModel = viewModel
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -41,6 +44,8 @@ class QuizDetailsViewController: BaseViewController {
         styleViews()
         styleNavigationBar()
         defineLayoutForViews()
+
+        bindViews()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -60,14 +65,12 @@ class QuizDetailsViewController: BaseViewController {
             if view.traitCollection.verticalSizeClass == .regular {
                 make.height.lessThanOrEqualTo(CustomConstants.preferredContainerVerticalHeight)
                 make.width.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.contentInset)
-                make.center.equalToSuperview()
             } else {
                 make.height.equalToSuperview().inset(CustomConstants.containerVerticalInset)
                 make.width.equalTo(CustomConstants.preferredContainerHorizontalWidth)
-                make.bottom.equalToSuperview().inset(DesignConstants.Insets.componentSpacing)
             }
 
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.top.equalTo(leaderBoardLabel.snp.bottom)
         }
     }
@@ -76,6 +79,52 @@ class QuizDetailsViewController: BaseViewController {
         title = LocalizedStrings.appName.localizedString
     }
 }
+
+extension QuizDetailsViewController: BindViewsProtocol {
+
+    func bindViews() {
+        viewModel
+            .$quiz
+            .map { $0.name }
+            .assign(to: \.text, on: titleLabel)
+            .store(in: &cancellables)
+
+        viewModel
+            .$quiz
+            .map { $0.description }
+            .assign(to: \.text, on: summaryLabel)
+            .store(in: &cancellables)
+
+        viewModel
+            .$quiz
+            .map { $0.imageUrl }
+            .sink { [weak self] path in
+                guard
+                    let url = URL(string: path),
+                    let self = self
+                else { return }
+
+                Nuke.loadImage(with: url, into: self.cover)
+            }
+            .store(in: &cancellables)
+
+        leaderBoardLabel
+            .throttledTap()
+            .sink { [weak self] in
+                self?.viewModel.onLeaderBoardLabelTap()
+            }
+            .store(in: &cancellables)
+
+        startQuizButton
+            .throttledTap()
+            .sink { [weak self] in
+                self?.viewModel.onStartQuizButtonTap()
+            }
+            .store(in: &cancellables)
+    }
+
+}
+
 extension QuizDetailsViewController: ConstructViewsProtocol {
 
     func createViews() {
@@ -114,14 +163,12 @@ extension QuizDetailsViewController: ConstructViewsProtocol {
             string: LocalizedStrings.leaderboard.localizedString,
             attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
 
-        titleLabel.text = LocalizedStrings.appName.localizedString
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
         titleLabel.font = .sourceSansPro(
             ofSize: DesignConstants.FontSize.heading.cgFloat,
             ofWeight: SourceSansProWeight.bold)
 
-        summaryLabel.text = LocalizedStrings.placeholderText.localizedString
         summaryLabel.textAlignment = .center
         summaryLabel.textColor = .white
         summaryLabel.numberOfLines = CustomConstants.subtitleNumberOfLines
@@ -131,6 +178,7 @@ extension QuizDetailsViewController: ConstructViewsProtocol {
             ofWeight: SourceSansProWeight.semibold)
 
         cover.image = placeHolderImage
+        cover.contentMode = .scaleAspectFill
         cover.clipsToBounds = true
         cover.layer.cornerRadius = DesignConstants.Decorator.cornerSize.cgFloat
 
