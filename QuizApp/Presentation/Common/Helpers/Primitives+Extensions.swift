@@ -7,6 +7,10 @@ extension Float {
         CGFloat(self)
     }
 
+    var string: String {
+        String(self)
+    }
+
 }
 
 extension Int {
@@ -15,12 +19,20 @@ extension Int {
         CGFloat(self)
     }
 
+    var string: String {
+        String(self)
+    }
+
 }
 
 extension Double {
 
     var cgFloat: CGFloat {
         CGFloat(self)
+    }
+
+    var string: String {
+        String(self)
     }
 
 }
