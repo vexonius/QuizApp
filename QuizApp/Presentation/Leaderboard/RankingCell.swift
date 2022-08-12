@@ -60,7 +60,7 @@ extension RankingCell: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        rankLabel.textAlignment = .left
+        rankLabel.textAlignment = .right
         rankLabel.textColor = .white
         rankLabel.font = .sourceSansPro(
             ofSize: DesignConstants.FontSize.title.cgFloat,
@@ -104,9 +104,8 @@ extension RankingCell: ConstructViewsProtocol {
             make.trailing.equalToSuperview().inset(DesignConstants.Insets.contentInset)
             make.top.bottom.equalToSuperview()
             make.centerY.equalToSuperview()
-            make.leading.equalTo(userLabel.snp.trailing).offset(DesignConstants.Insets.contentInset)
+            make.leading.greaterThanOrEqualTo(userLabel.snp.trailing).offset(DesignConstants.Insets.contentInset)
         }
-
     }
 
 }

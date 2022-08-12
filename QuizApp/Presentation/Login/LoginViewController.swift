@@ -41,6 +41,8 @@ class LoginViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+
+        bindViewModel()
         bindViews()
 
         adaptComponentsForOrientationChanges()
@@ -147,11 +149,6 @@ extension LoginViewController: ConstructViewsProtocol {
 
 extension LoginViewController: BindViewsProtocol {
 
-    func bindViews() {
-        bindViewModel()
-        bindViewComponents()
-    }
-
     func bindViewModel() {
         viewModel
             .$isLoginButtonEnabled
@@ -201,7 +198,7 @@ extension LoginViewController: BindViewsProtocol {
             .store(in: &cancellables)
     }
 
-    func bindViewComponents() {
+    func bindViews() {
         loginButton
             .gesture(.tap())
             .sink { [weak self] _ in
