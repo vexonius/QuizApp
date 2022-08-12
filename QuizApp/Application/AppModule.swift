@@ -32,6 +32,7 @@ class AppModule {
                 AppCoordinator(container: container)
             }
             .implements(AppCoordinatorProtocol.self)
+            .implements(QuizCoordinatorProtocol.self)
             .scope(.application)
     }
 
@@ -140,7 +141,16 @@ class AppModule {
 
         container
             .register { container in
-                HomeViewModel(quizUseCase: container.resolve(), networkService: container.resolve())
+                HomeViewModel(
+                    quizUseCase: container.resolve(),
+                    coordinator: container.resolve(),
+                    networkService: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container, args in
+                QuizDetailsViewModel(quiz: args.get(), coordinator: container.resolve())
             }
             .scope(.unique)
     }
@@ -175,6 +185,14 @@ class AppModule {
         container
             .register { container in
                 SettingsViewController(viewModel: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container, args in
+                QuizDetailsViewController(
+                    viewModel: container.resolve(args: args)
+                )
             }
             .scope(.unique)
     }

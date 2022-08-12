@@ -43,3 +43,16 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
 }
+
+extension AppCoordinator: QuizCoordinatorProtocol {
+
+    func routeToLeaderBoard() {
+        // routing logic
+    }
+
+    func routeToQuizDetails(quiz: QuizModel) {
+        let quizDetailsViewController: QuizDetailsViewController = container.resolve(args: quiz)
+        navigationController.pushViewController(quizDetailsViewController, animated: true)
+    }
+
+}
