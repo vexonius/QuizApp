@@ -190,9 +190,7 @@ class AppModule {
 
         container
             .register { container, args in
-                QuizDetailsViewController(
-                    viewModel: container.resolve(args: args)
-                )
+                QuizDetailsViewController(viewModel: container.resolve(args: args))
             }
             .scope(.unique)
     }

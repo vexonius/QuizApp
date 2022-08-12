@@ -22,8 +22,6 @@ class QuizDetailsViewController: BaseViewController {
     private var cover: UIImageView!
     private var startQuizButton: RoundedButton!
 
-    private let placeHolderImage = UIImage.init(color: .whiteTransparent30, size: CGSize(width: 400, height: 400))
-
     private let viewModel: QuizDetailsViewModel
     private var cancellables: Set<AnyCancellable> = []
 
@@ -40,11 +38,11 @@ class QuizDetailsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        styleNavigationBar()
+
         createViews()
         styleViews()
-        styleNavigationBar()
         defineLayoutForViews()
-
         bindViews()
     }
 
@@ -177,7 +175,6 @@ extension QuizDetailsViewController: ConstructViewsProtocol {
             ofSize: DesignConstants.FontSize.subtitle.cgFloat,
             ofWeight: SourceSansProWeight.semibold)
 
-        cover.image = placeHolderImage
         cover.contentMode = .scaleAspectFill
         cover.clipsToBounds = true
         cover.layer.cornerRadius = DesignConstants.Decorator.cornerSize.cgFloat
