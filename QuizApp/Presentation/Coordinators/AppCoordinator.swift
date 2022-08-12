@@ -48,13 +48,18 @@ class AppCoordinator: AppCoordinatorProtocol {
 
 extension AppCoordinator: QuizCoordinatorProtocol {
 
-    func routeToLeaderBoard() {
-        // routing logic
+    func routeToLeaderBoard(for quizId: Int) {
+        let quizLeaderboardViewController: QuizLeaderboardViewController = container.resolve(args: quizId)
+        navigationController.pushViewController(quizLeaderboardViewController, animated: true)
     }
 
     func routeToQuizDetails(quiz: QuizModel) {
         let quizDetailsViewController: QuizDetailsViewController = container.resolve(args: quiz)
         navigationController.pushViewController(quizDetailsViewController, animated: true)
+    }
+
+    func routeBackFromLeaderBoard() {
+        navigationController.popViewController(animated: true)
     }
 
 }

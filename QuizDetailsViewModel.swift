@@ -12,7 +12,7 @@ class QuizDetailsViewModel {
     }
 
     func onLeaderBoardLabelTap() {
-        
+        coordinator.routeToLeaderBoard(for: quiz.id)
     }
 
     func onStartQuizButtonTap() {

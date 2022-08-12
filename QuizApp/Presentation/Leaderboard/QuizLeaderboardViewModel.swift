@@ -15,7 +15,7 @@ class QuizLeaderboardViewModel {
     }
 
     func onCloseItemTap() {
-        coordinator.dismiss()
+        coordinator.routeBackFromLeaderBoard()
     }
 
     private func getQuizLeaderBoard(for quizId: Int) {
