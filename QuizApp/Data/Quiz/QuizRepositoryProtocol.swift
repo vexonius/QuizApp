@@ -6,6 +6,6 @@ protocol QuizRepositoryProtocol {
 
     func getLeaderboard(for quizId: Int)  async throws -> [UserRankingRepoModel]
 
-    func startQuiz(with id: Int) async throws -> QuizQuestionsRepoModel
+    func startQuiz(with id: Int) async throws -> QuizSessionRepoModel
 
 }

@@ -6,6 +6,6 @@ protocol QuizNetworkClientProtocol {
 
     func getLeaderboard(for quizId: Int) async throws -> [UserRankingResponse]
 
-    func startQuiz(with id: Int) async throws -> QuizQuestionsResponse
+    func startQuiz(with id: Int) async throws -> QuizSessionResponse
 
 }
