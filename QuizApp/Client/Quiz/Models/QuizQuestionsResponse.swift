@@ -1,6 +1,6 @@
 struct QuizQuestionsResponse: Decodable {
 
-    let sessionId: Int
+    let sessionId: String
     let questions: [QuestionResponse]
 
 }

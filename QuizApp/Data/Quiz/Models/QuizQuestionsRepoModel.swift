@@ -1,6 +1,6 @@
 struct QuizQuestionsRepoModel: Decodable {
 
-    let sessionId: Int
+    let sessionId: String
     let questions: [QuestionRepoModel]
 
 }
