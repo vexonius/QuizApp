@@ -31,6 +31,10 @@ class AppCoordinator: AppCoordinatorProtocol {
         window.makeKeyAndVisible()
     }
 
+    func goBack() {
+        navigationController.popViewController(animated: true)
+    }
+
     private func styleNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .clear

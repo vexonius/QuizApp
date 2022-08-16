@@ -4,6 +4,6 @@ protocol QuizCoordinatorProtocol {
 
     func routeToLeaderBoard(for quizId: Int)
 
-    func routeBackFromLeaderBoard()
+    func goBack()
 
 }
