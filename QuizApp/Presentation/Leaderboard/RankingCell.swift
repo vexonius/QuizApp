@@ -28,35 +28,22 @@ class RankingCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func createContainerView() {
-        containerView = UIView()
-        addSubview(containerView)
-    }
-
-    private func createUserLabel() {
-        userLabel = UILabel()
-        containerView.addSubview(userLabel)
-    }
-
-    private func createRankLabel() {
-        rankLabel = UILabel()
-        containerView.addSubview(rankLabel)
-    }
-
-    private func createPointsLabel() {
-        pointsLabel = UILabel()
-        containerView.addSubview(pointsLabel)
-    }
-
 }
 
 extension RankingCell: ConstructViewsProtocol {
 
     func createViews() {
-        createContainerView()
-        createRankLabel()
-        createUserLabel()
-        createPointsLabel()
+        containerView = UIView()
+        addSubview(containerView)
+
+        userLabel = UILabel()
+        containerView.addSubview(userLabel)
+
+        rankLabel = UILabel()
+        containerView.addSubview(rankLabel)
+
+        pointsLabel = UILabel()
+        containerView.addSubview(pointsLabel)
     }
 
     func styleViews() {
