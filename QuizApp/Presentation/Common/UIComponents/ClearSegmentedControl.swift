@@ -57,13 +57,13 @@ class ClearSegmentedControll: UISegmentedControl {
 
         for segment in segments {
             insertSegment(withTitle: segment.title.capitalized, at: numberOfSegments, animated: false)
-            style(with: segment.category.color)
+            style()
         }
 
         selectedSegmentIndex = CustomConstants.defaultSelectedIndex
     }
 
-    private func style(with color: UIColor = .white) {
+    private func style() {
         backgroundColor = .clear
 
         let tintColorImage = UIImage(
