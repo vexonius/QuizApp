@@ -62,8 +62,4 @@ extension AppCoordinator: QuizCoordinatorProtocol {
         navigationController.pushViewController(quizDetailsViewController, animated: true)
     }
 
-    func routeBackFromLeaderBoard() {
-        navigationController.popViewController(animated: true)
-    }
-
 }
