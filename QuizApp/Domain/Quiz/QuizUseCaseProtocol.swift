@@ -4,4 +4,6 @@ protocol QuizUseCaseProtocol {
 
     func getQuizzes(for category: String) async throws -> [QuizModel]
 
+    func getLeaderboard(for quizId: Int) async throws -> [UserRankingModel]
+
 }

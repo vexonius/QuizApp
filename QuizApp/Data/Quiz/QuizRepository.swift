@@ -20,4 +20,10 @@ class QuizRepository: QuizRepositoryProtocol {
             .map { QuizRepoModel(from: $0) }
     }
 
+    func getLeaderboard(for quizId: Int)  async throws -> [UserRankingRepoModel] {
+        try await quizNetworkClient
+            .getLeaderboard(for: quizId)
+            .map { UserRankingRepoModel(from: $0) }
+    }
+
 }

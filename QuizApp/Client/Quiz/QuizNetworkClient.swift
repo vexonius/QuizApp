@@ -22,4 +22,11 @@ class QuizNetworkClient: QuizNetworkClientProtocol {
             headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
     }
 
+    func getLeaderboard(for quizId: Int) async throws -> [UserRankingResponse] {
+        try await baseNetworkClient.get(
+            url: QuizEndpoints.leaderboard.path,
+            params: [QuizEndpointsParams.quizId.value: String(quizId)],
+            headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
+    }
+
 }
