@@ -29,4 +29,12 @@ class QuizNetworkClient: QuizNetworkClientProtocol {
             headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
     }
 
+    func startQuiz(with id: Int) async throws -> QuizQuestionsResponse {
+        try await baseNetworkClient.post(
+            url: QuizEndpoints.startSession(id: id).path,
+            params: [:],
+            headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value],
+            requestBody: EmptyRequest())
+    }
+
 }
