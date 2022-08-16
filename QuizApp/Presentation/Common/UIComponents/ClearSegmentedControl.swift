@@ -9,7 +9,7 @@ class ClearSegmentedControll: UISegmentedControl {
         static let selectedSegmentIndexKey = "selectedSegmentIndex"
     }
 
-    private var _models: [CategoryFilter] = []
+    private var models: [CategoryFilter] = []
 
     init() {
         super.init(frame: .zero)
@@ -39,10 +39,10 @@ class ClearSegmentedControll: UISegmentedControl {
         super.didChangeValue(forKey: key)
 
         if key == CustomConstants.selectedSegmentIndexKey {
-            guard !_models.isEmpty else { return }
+            guard !models.isEmpty else { return }
 
             setTitleTextAttributes([
-                .foregroundColor: _models[selectedSegmentIndex].category.color,
+                .foregroundColor: models[selectedSegmentIndex].category.color,
                 NSAttributedString.Key.font: UIFont.sourceSansPro(
                     ofSize: DesignConstants.FontSize.subtitle.cgFloat,
                     ofWeight: .bold)!
@@ -52,7 +52,7 @@ class ClearSegmentedControll: UISegmentedControl {
     }
 
     func update(segments: [CategoryFilter]) {
-        _models = segments
+        models = segments
         removeAllSegments()
 
         for segment in segments {
