@@ -6,7 +6,10 @@ class ClearSegmentedControll: UISegmentedControl {
         static let backgroundTintImageHeight = 32
         static let backgroundTintImageWidth = 1
         static let defaultSelectedIndex = 0
+        static let selectedSegmentIndexKey = "selectedSegmentIndex"
     }
+
+    private var models: [CategoryFilter] = []
 
     init() {
         super.init(frame: .zero)
@@ -14,8 +17,6 @@ class ClearSegmentedControll: UISegmentedControl {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        style()
     }
 
     required init?(coder: NSCoder) {
@@ -34,30 +35,35 @@ class ClearSegmentedControll: UISegmentedControl {
         }
     }
 
-    override var selectedSegmentTintColor: UIColor? {
-        didSet {
+    override func didChangeValue(forKey key: String) {
+        super.didChangeValue(forKey: key)
+
+        if key == CustomConstants.selectedSegmentIndexKey {
+            guard !models.isEmpty else { return }
+
             setTitleTextAttributes([
-                .foregroundColor: selectedSegmentTintColor ?? UIColor.white,
+                .foregroundColor: models[selectedSegmentIndex].category.color,
                 NSAttributedString.Key.font: UIFont.sourceSansPro(
                     ofSize: DesignConstants.FontSize.subtitle.cgFloat,
-                    ofWeight: .semibold)!
+                    ofWeight: .bold)!
                 ],
                 for: .selected)
         }
     }
 
     func update(segments: [CategoryFilter]) {
+        models = segments
         removeAllSegments()
 
         for segment in segments {
-            insertSegment(withTitle: segment.title.uppercased(), at: numberOfSegments, animated: false)
-            style(with: segment.tint)
+            insertSegment(withTitle: segment.title.capitalized, at: numberOfSegments, animated: false)
+            style()
         }
 
         selectedSegmentIndex = CustomConstants.defaultSelectedIndex
     }
 
-    private func style(with color: UIColor = .white) {
+    private func style() {
         backgroundColor = .clear
 
         let tintColorImage = UIImage(
@@ -73,17 +79,9 @@ class ClearSegmentedControll: UISegmentedControl {
             .foregroundColor: UIColor.whiteTransparent30,
             NSAttributedString.Key.font: UIFont.sourceSansPro(
                 ofSize: DesignConstants.FontSize.subtitle.cgFloat,
-                ofWeight: .semibold)!
+                ofWeight: .bold)!
             ],
             for: .normal)
-
-        setTitleTextAttributes([
-            .foregroundColor: color,
-            NSAttributedString.Key.font: UIFont.sourceSansPro(
-                ofSize: DesignConstants.FontSize.subtitle.cgFloat,
-                ofWeight: .semibold)!
-            ],
-            for: .selected)
     }
 
 }
