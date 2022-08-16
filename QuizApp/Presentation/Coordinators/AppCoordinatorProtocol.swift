@@ -13,4 +13,6 @@ protocol AppCoordinatorProtocol {
 
     func setInitialScene(in window: UIWindow)
 
+    func goBack()
+
 }

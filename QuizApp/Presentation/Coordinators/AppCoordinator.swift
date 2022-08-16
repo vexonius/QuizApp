@@ -31,6 +31,10 @@ class AppCoordinator: AppCoordinatorProtocol {
         window.makeKeyAndVisible()
     }
 
+    func goBack() {
+        navigationController.popViewController(animated: true)
+    }
+
     private func styleNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .clear
@@ -56,10 +60,6 @@ extension AppCoordinator: QuizCoordinatorProtocol {
     func routeToQuizDetails(quiz: QuizModel) {
         let quizDetailsViewController: QuizDetailsViewController = container.resolve(args: quiz)
         navigationController.pushViewController(quizDetailsViewController, animated: true)
-    }
-
-    func routeBackFromLeaderBoard() {
-        navigationController.popViewController(animated: true)
     }
 
 }
