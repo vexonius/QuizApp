@@ -115,6 +115,7 @@
 		F0EA48212886E0B80042BD52 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA48202886E0B80042BD52 /* Api.swift */; };
 		F0EA82FC28880190007EB115 /* LoginRequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */; };
 		F0EFA20F28ABBB99005D84E6 /* EmptyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFA20E28ABBB99005D84E6 /* EmptyRequest.swift */; };
+		F0EFA21128ABBF75005D84E6 /* QuizQuestionsRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFA21028ABBF75005D84E6 /* QuizQuestionsRepoModel.swift */; };
 		F0F19CAE28901CBC002400CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAD28901CBC002400CE /* HomeViewController.swift */; };
 		F0F19CB028902343002400CE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F19CAF28902343002400CE /* String+Extensions.swift */; };
 		F0F9DA2F28940EF800350C8F /* AccountDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D72893F48D004B40E1 /* AccountDetailsResponse.swift */; };
@@ -231,6 +232,7 @@
 		F0EA48202886E0B80042BD52 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		F0EA82FB28880190007EB115 /* LoginRequestBodyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyModel.swift; sourceTree = "<group>"; };
 		F0EFA20E28ABBB99005D84E6 /* EmptyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRequest.swift; sourceTree = "<group>"; };
+		F0EFA21028ABBF75005D84E6 /* QuizQuestionsRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsRepoModel.swift; sourceTree = "<group>"; };
 		F0F19CAD28901CBC002400CE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = QuizApp/Presentation/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		F0F19CAF28902343002400CE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		F0FCE2B5288FDF6100C66235 /* SecureStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageProtocol.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				F012CAC728A295AB007592A5 /* QuizRepoModel.swift */,
 				F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */,
+				F0EFA21028ABBF75005D84E6 /* QuizQuestionsRepoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
 				F0052EB928A285B9006515AE /* QuizNetworkClient.swift in Sources */,
 				F0E61B5028A3C14A004410DB /* Category+Extension.swift in Sources */,
+				F0EFA21128ABBF75005D84E6 /* QuizQuestionsRepoModel.swift in Sources */,
 				F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */,
 				F08D63BC2893DBB4004B40E1 /* SettingsViewModel.swift in Sources */,
 				F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */,

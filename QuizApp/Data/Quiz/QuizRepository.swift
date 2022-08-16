@@ -26,4 +26,11 @@ class QuizRepository: QuizRepositoryProtocol {
             .map { UserRankingRepoModel(from: $0) }
     }
 
+    func startQuiz(with id: Int) async throws -> QuizQuestionsRepoModel {
+        let quizQuestionsResponse = try await quizNetworkClient
+            .startQuiz(with: id)
+
+        return QuizQuestionsRepoModel(from: quizQuestionsResponse)
+    }
+
 }
