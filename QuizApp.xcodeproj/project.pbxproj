@@ -24,6 +24,7 @@
 		F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0138171287F154A001A0C2E /* Primitives+Extensions.swift */; };
 		F014C93028ACE06E006DB507 /* QuizSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */; };
 		F014C93328ACE19D006DB507 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93228ACE19D006DB507 /* AnswerCell.swift */; };
+		F014C93528ACE203006DB507 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93428ACE203006DB507 /* QuestionCell.swift */; };
 		F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F02885973400BC7AE4 /* LoginUseCase.swift */; };
 		F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F32885983600BC7AE4 /* LoginRepository.swift */; };
 		F0167D66289AB29E0016A58E /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0167D65289AB29E0016A58E /* Difficulty.swift */; };
@@ -143,6 +144,7 @@
 		F0138171287F154A001A0C2E /* Primitives+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Primitives+Extensions.swift"; sourceTree = "<group>"; };
 		F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSessionModel.swift; sourceTree = "<group>"; };
 		F014C93228ACE19D006DB507 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
+		F014C93428ACE203006DB507 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		F015E1F02885973400BC7AE4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		F015E1F32885983600BC7AE4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		F0167D65289AB29E0016A58E /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
@@ -333,12 +335,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F014C93128ACE18F006DB507 /* Quiz Answering */ = {
+		F014C93128ACE18F006DB507 /* QuizAnswering */ = {
 			isa = PBXGroup;
 			children = (
 				F014C93228ACE19D006DB507 /* AnswerCell.swift */,
+				F014C93428ACE203006DB507 /* QuestionCell.swift */,
 			);
-			path = "Quiz Answering";
+			path = QuizAnswering;
 			sourceTree = "<group>";
 		};
 		F015E1EF2885972700BC7AE4 /* Login */ = {
@@ -376,7 +379,7 @@
 		F0242FAA28815B5B00927148 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F014C93128ACE18F006DB507 /* Quiz Answering */,
+				F014C93128ACE18F006DB507 /* QuizAnswering */,
 				F0ACC17528A654BD00C26208 /* Leaderboard */,
 				F0BD7CC628A516B300E8526D /* Quizzes */,
 				F04AD4D62892BE5F00F378C2 /* Settings */,
@@ -895,6 +898,7 @@
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
 				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
 				F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */,
+				F014C93528ACE203006DB507 /* QuestionCell.swift in Sources */,
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
 				F07D305B288ED984000592F2 /* Snackbar.swift in Sources */,

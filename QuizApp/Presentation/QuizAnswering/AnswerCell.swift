@@ -6,6 +6,8 @@ class AnswerCell: UITableViewCell {
 
     private struct CustomConstants {
         static let textNumberOfLines = 0
+        static let cellTopInset = 16
+        static let cellBottomInset = 20
     }
 
     private var containerView: UIView!
@@ -36,6 +38,9 @@ extension AnswerCell: ConstructViewsProtocol {
     }
 
     func styleViews() {
+        containerView.layer.cornerRadius = containerView.bounds.height / 2
+        containerView.backgroundColor = .whiteTransparent30
+
         answerLabel.textAlignment = .left
         answerLabel.textColor = .white
         answerLabel.lineBreakMode = .byTruncatingTail
@@ -45,7 +50,7 @@ extension AnswerCell: ConstructViewsProtocol {
             ofWeight: SourceSansProWeight.bold)
 
         selectionStyle = .default
-        backgroundColor = .whiteTransparent30
+        backgroundColor = .clear
     }
 
     func defineLayoutForViews() {
@@ -55,6 +60,8 @@ extension AnswerCell: ConstructViewsProtocol {
 
         answerLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(DesignConstants.Insets.componentsInset)
+            make.top.equalToSuperview().inset(CustomConstants.cellTopInset)
+            make.bottom.equalToSuperview().inset(CustomConstants.cellBottomInset)
         }
     }
 
