@@ -71,9 +71,9 @@ class QuizAnsweringViewModel {
         progressText = String(format: progressFormat, currentQuestionNumber, quiz.numberOfQuestions)
     }
 
-    private func loadQuizSession(_ quizSession: QuizSessionModel) {
-        self.quizSession = quizSession
-        questions = quizSession.questions
+    private func load(session: QuizSessionModel) {
+        self.quizSession = session
+        questions = session.questions
         progress = .init(repeating: .unanswered, count: quiz.numberOfQuestions)
         prepareCurrentAnswerModels()
     }
@@ -84,7 +84,7 @@ class QuizAnsweringViewModel {
                 let quizSession = try await quizUseCase.startQuiz(with: id)
 
                 await MainActor.run {
-                    loadQuizSession(quizSession)
+                    load(session: quizSession)
                 }
             } catch {
                 debugPrint(error)
