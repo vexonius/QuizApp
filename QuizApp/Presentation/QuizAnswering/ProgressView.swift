@@ -7,6 +7,12 @@ class ProgressView: UIView {
         static let textNumberOfLines = 0
     }
 
+    var progressText: String? {
+        didSet {
+            progressLabel.text = progressText
+        }
+    }
+
     private var progressLabel: UILabel!
     private var stackView: UIStackView!
 
@@ -22,14 +28,23 @@ class ProgressView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(progress: [Bool] = [true, false, true, true]) {
-        for item in progress {
-            debugPrint(item)
-            let cell = UIView()
-            cell.backgroundColor = .accentGreen
-            cell.layer.cornerRadius = 2
+    func update(currentIndex: Int, tiles: [AnsweredResult]) {
+        _ = stackView.arrangedSubviews.map { $0.removeFromSuperview() }
 
-            stackView.addArrangedSubview(cell)
+        for (index, tile) in tiles.enumerated() {
+            let view = UIView()
+
+            switch tile {
+            case .unanswered:
+                view.backgroundColor = currentIndex == index ? .white : .whiteTransparent30
+            case .correct:
+                view.backgroundColor = .accentGreen
+            case .false:
+                view.backgroundColor = .accentRed
+            }
+
+            view.layer.cornerRadius = 2
+            stackView.addArrangedSubview(view)
         }
     }
 
@@ -46,7 +61,6 @@ extension ProgressView: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        progressLabel.text = "0/0"
         progressLabel.textAlignment = .left
         progressLabel.textColor = .white
         progressLabel.lineBreakMode = .byTruncatingTail

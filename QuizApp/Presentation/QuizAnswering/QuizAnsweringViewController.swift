@@ -67,6 +67,22 @@ extension QuizAnsweringViewController: BindViewsProtocol {
             .$isTableViewInteractionEnabled
             .assign(to: \.isUserInteractionEnabled, on: tableView)
             .store(in: &cancellables)
+
+        viewModel
+            .$progress
+            .combineLatest(viewModel.$currentQuestionIndex)
+            .sink { [weak self] (tiles, index) in
+                guard let self = self else { return }
+
+                self.progressView.update(currentIndex: index, tiles: tiles)
+            }
+            .store(in: &cancellables)
+
+        viewModel
+            .$progressText
+            .compactMap { $0 }
+            .assign(to: \.progressText, on: progressView)
+            .store(in: &cancellables)
     }
 
     func bindViews() {
@@ -114,8 +130,6 @@ extension QuizAnsweringViewController: ConstructViewsProtocol {
         tableView.separatorColor = .clear
         tableView.separatorInset = .zero
         tableView.estimatedRowHeight = UITableView.automaticDimension
-
-        progressView.update()
     }
 
     func defineLayoutForViews() {
