@@ -37,13 +37,14 @@ class QuizAnsweringViewModel {
     }
 
     func onAnswerGuessed(_ answer: AnswerCellModel) {
-        isTableViewInteractionEnabled = false
+        guard !progress.isEmpty else { return }
 
+        isTableViewInteractionEnabled = false
         progress[currentQuestionIndex] = answer.isCorrect ? .correct : .false
 
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.answerUpdateDelay) {
-            self.prepareCurrentAnswerModels()
             self.currentQuestionIndex += 1
+            self.prepareCurrentAnswerModels()
         }
     }
 
@@ -70,18 +71,20 @@ class QuizAnsweringViewModel {
         progressText = String(format: progressFormat, currentQuestionNumber, quiz.numberOfQuestions)
     }
 
+    private func loadQuizSession(_ quizSession: QuizSessionModel) {
+        self.quizSession = quizSession
+        questions = quizSession.questions
+        progress = .init(repeating: .unanswered, count: quiz.numberOfQuestions)
+        prepareCurrentAnswerModels()
+    }
+
     private func getQuizSession(with id: Int) {
         Task {
             do {
                 let quizSession = try await quizUseCase.startQuiz(with: id)
 
                 await MainActor.run {
-                    self.quizSession = quizSession
-                    self.questions = quizSession.questions
-                    self.prepareCurrentAnswerModels()
-                    self.progress = .init(repeating: .unanswered, count: quiz.numberOfQuestions)
-                    self.updateProgress()
-
+                    loadQuizSession(quizSession)
                 }
             } catch {
                 debugPrint(error)
