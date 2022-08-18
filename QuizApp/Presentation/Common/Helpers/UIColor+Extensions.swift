@@ -8,6 +8,7 @@ extension UIColor {
     static let accentRed = UIColor(named: "quiz-red")!
     static let accentYellow = UIColor(named: "quiz-yellow")!
     static let accentBlue = UIColor(named: "quiz-blue")!
+    static let accentGreen = UIColor(named: "quiz-green")!
     static let deepGray = UIColor(named: "deep-grey")!
     static let textFieldBackground = UIColor(named: "text-field-background")!
     static let placeholderTextColor = UIColor(named: "placeholder-text")!
