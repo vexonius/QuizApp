@@ -5,6 +5,13 @@ class QuizAnsweringViewController: BaseViewController {
 
     private struct CustomConstants {
         static let progressHeaderHeight = 50
+        static let startTranslationX = 0
+        static let endTranslationX = 0
+        static let endTranslationY = 0
+        static let cellAnimaitonDelay = 0.1
+        static let animationDuration = 0.3
+        static let startAnimationAlpha = 0.0
+        static let endAnimationAlpha = 1.0
     }
 
     private var tableView: UITableView!
@@ -129,6 +136,24 @@ extension QuizAnsweringViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(
+            translationX: CustomConstants.startTranslationX.cgFloat,
+            y: cell.bounds.height / 3)
+        cell.alpha = CustomConstants.startAnimationAlpha
+
+        UIView.animate(
+            withDuration: CustomConstants.animationDuration,
+            delay: CustomConstants.cellAnimaitonDelay * Double(indexPath.row),
+            options: [.curveEaseInOut],
+            animations: {
+                cell.transform = CGAffineTransform(
+                    translationX: CustomConstants.endTranslationX.cgFloat,
+                    y: CustomConstants.endTranslationY.cgFloat)
+                cell.alpha = CustomConstants.endAnimationAlpha
+            })
     }
 
 }
