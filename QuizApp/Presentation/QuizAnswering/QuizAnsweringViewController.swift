@@ -3,7 +3,12 @@ import UIKit
 
 class QuizAnsweringViewController: BaseViewController {
 
+    private struct CustomConstants {
+        static let progressHeaderHeight = 50
+    }
+
     private var tableView: UITableView!
+    private var progressView: ProgressView!
     private var datasource: CombineTableViewDataSource<AnsweringCellProtocol>!
 
     private let viewModel: QuizAnsweringViewModel
@@ -92,6 +97,9 @@ extension QuizAnsweringViewController: ConstructViewsProtocol {
         tableView.register(QuestionCell.self, forCellReuseIdentifier: QuestionCell.reuseIdentifier)
         tableView.register(AnswerCell.self, forCellReuseIdentifier: AnswerCell.reuseIdentifier)
         view.addSubview(tableView)
+
+        progressView = ProgressView()
+        view.addSubview(progressView)
     }
 
     func styleViews() {
@@ -99,11 +107,19 @@ extension QuizAnsweringViewController: ConstructViewsProtocol {
         tableView.separatorColor = .clear
         tableView.separatorInset = .zero
         tableView.estimatedRowHeight = UITableView.automaticDimension
+
+        progressView.update()
     }
 
     func defineLayoutForViews() {
+        progressView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.contentInset)
+            make.height.equalTo(CustomConstants.progressHeaderHeight)
+        }
+
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(progressView.snp.bottom).offset(DesignConstants.Insets.contentInset)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 
