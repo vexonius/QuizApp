@@ -350,14 +350,9 @@
 		F014C93128ACE18F006DB507 /* QuizAnswering */ = {
 			isa = PBXGroup;
 			children = (
-				F014C93228ACE19D006DB507 /* AnswerCell.swift */,
-				F014C93428ACE203006DB507 /* QuestionCell.swift */,
+				F0BD397028AE55F20049A84D /* UITableView+Helpers */,
 				F014C93728ACE36E006DB507 /* QuizAnsweringViewController.swift */,
-				F014C93928ACE74B006DB507 /* AnsweringCellProtocol.swift */,
-				F0BD396E28AE4E010049A84D /* CellType.swift */,
 				F014C93B28ACE842006DB507 /* QuizAnsweringViewModel.swift */,
-				F014C93D28AD27C0006DB507 /* AnswerCellModel.swift */,
-				F09BB05528AD3151003353C5 /* QuestionCellModel.swift */,
 			);
 			path = QuizAnswering;
 			sourceTree = "<group>";
@@ -655,6 +650,35 @@
 				F0ACC18928A67C2400C26208 /* LeaderboardHeaderView.swift */,
 			);
 			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		F0BD397028AE55F20049A84D /* UITableView+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F0BD397228AE56500049A84D /* Cells */,
+				F0BD397128AE563E0049A84D /* Models */,
+			);
+			path = "UITableView+Helpers";
+			sourceTree = "<group>";
+		};
+		F0BD397128AE563E0049A84D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F014C93928ACE74B006DB507 /* AnsweringCellProtocol.swift */,
+				F0BD396E28AE4E010049A84D /* CellType.swift */,
+				F014C93D28AD27C0006DB507 /* AnswerCellModel.swift */,
+				F09BB05528AD3151003353C5 /* QuestionCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0BD397228AE56500049A84D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F014C93228ACE19D006DB507 /* AnswerCell.swift */,
+				F014C93428ACE203006DB507 /* QuestionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F0BD7CC628A516B300E8526D /* Quizzes */ = {

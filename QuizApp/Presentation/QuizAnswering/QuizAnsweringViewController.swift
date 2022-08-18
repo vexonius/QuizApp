@@ -61,7 +61,6 @@ extension QuizAnsweringViewController: BindViewsProtocol {
         tableView
             .modelSelected(AnsweringCellProtocol.self)
             .compactMap { $0 as? AnswerCellModel }
-            .print()
             .sink { [weak self] answer in
                 self?.viewModel.onAnswerGuessed(answer)
             }
@@ -90,7 +89,6 @@ extension QuizAnsweringViewController: ConstructViewsProtocol {
     func createViews() {
         tableView = UITableView()
         tableView.delegate = self
-        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(QuestionCell.self, forCellReuseIdentifier: QuestionCell.reuseIdentifier)
         tableView.register(AnswerCell.self, forCellReuseIdentifier: AnswerCell.reuseIdentifier)
         view.addSubview(tableView)
@@ -100,6 +98,7 @@ extension QuizAnsweringViewController: ConstructViewsProtocol {
         tableView.backgroundColor = .clear
         tableView.separatorColor = .clear
         tableView.separatorInset = .zero
+        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
 
     func defineLayoutForViews() {
@@ -122,8 +121,6 @@ extension QuizAnsweringViewController {
 
     var cellConfig: CombineTableViewDataSource<AnsweringCellProtocol>.CellFactory {
         { _, tableView, indexPath, model -> UITableViewCell in
-            var cell: UITableViewCell?
-
             switch model.cellType {
             case .answer:
                 let customCell: AnswerCell? = tableView.dequeueCell(for: indexPath, with: AnswerCell.reuseIdentifier)
@@ -141,7 +138,8 @@ extension QuizAnsweringViewController {
                 }
 
                 customCell.bind(with: model)
-                cell = customCell
+
+                return customCell
             case .question:
                 let customCell: QuestionCell? = tableView
                     .dequeueCell(for: indexPath, with: QuestionCell.reuseIdentifier)
@@ -155,12 +153,9 @@ extension QuizAnsweringViewController {
                 }
 
                 customCell.bind(with: model)
-                cell = customCell
+
+                return customCell
             }
-
-            guard let cell = cell else { return UITableViewCell() }
-
-            return cell
         }
     }
 

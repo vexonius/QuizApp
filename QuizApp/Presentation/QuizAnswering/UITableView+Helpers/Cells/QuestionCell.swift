@@ -17,16 +17,10 @@ class QuestionCell: UITableViewCell {
         createViews()
         styleViews()
         defineLayoutForViews()
-
-        self.isUserInteractionEnabled = false
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(false, animated: animated)
     }
 
 }
@@ -52,6 +46,7 @@ extension QuestionCell: ConstructViewsProtocol {
 
         selectionStyle = .none
         backgroundColor = .clear
+        isUserInteractionEnabled = false
     }
 
     func defineLayoutForViews() {
