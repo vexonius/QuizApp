@@ -16,7 +16,7 @@ class QuizDetailsViewModel {
     }
 
     func onStartQuizButtonTap() {
-        coordinator.routeToQuiz(with: quiz.id)
+        coordinator.play(quiz: quiz)
     }
 
 }

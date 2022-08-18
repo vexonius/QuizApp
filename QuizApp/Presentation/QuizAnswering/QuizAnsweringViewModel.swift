@@ -15,10 +15,10 @@ class QuizAnsweringViewModel {
     private var questions: [QuizQuestionModel] = []
     private var quizUseCase: QuizUseCaseProtocol
 
-    init(quizId: Int, quizUseCase: QuizUseCaseProtocol) {
+    init(quiz: QuizModel, quizUseCase: QuizUseCaseProtocol) {
         self.quizUseCase = quizUseCase
 
-        getQuizSession(with: quizId)
+        getQuizSession(with: quiz.id)
     }
 
     func onCorrectAnswerIndexPathChanged(indexPath: IndexPath) {

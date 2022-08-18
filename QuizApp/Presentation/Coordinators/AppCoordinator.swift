@@ -62,8 +62,8 @@ extension AppCoordinator: QuizCoordinatorProtocol {
         navigationController.pushViewController(quizDetailsViewController, animated: true)
     }
 
-    func routeToQuiz(with id: Int) {
-        let quizAnsweringViewController: QuizAnsweringViewController = container.resolve(args: id)
+    func play(quiz: QuizModel) {
+        let quizAnsweringViewController: QuizAnsweringViewController = container.resolve(args: quiz)
         navigationController.pushViewController(quizAnsweringViewController, animated: true)
     }
 
