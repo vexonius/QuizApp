@@ -77,6 +77,7 @@ class QuizDetailsViewController: BaseViewController {
 
     private func styleNavigationBar() {
         title = LocalizedStrings.appName.localizedString
+        navigationItem.backButtonTitle = ""
     }
 }
 
