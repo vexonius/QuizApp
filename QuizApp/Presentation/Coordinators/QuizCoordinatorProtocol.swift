@@ -6,6 +6,6 @@ protocol QuizCoordinatorProtocol {
 
     func goBack()
 
-    func routeToQuiz(with id: Int)
+    func play(quiz: QuizModel)
 
 }
