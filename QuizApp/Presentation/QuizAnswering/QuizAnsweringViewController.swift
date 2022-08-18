@@ -52,7 +52,7 @@ extension QuizAnsweringViewController: BindViewsProtocol {
             .receive(subscriber: tableView.items(datasource))
 
         viewModel
-            .$isTableViewIntercationEnabled
+            .$isTableViewInteractionEnabled
             .assign(to: \.isUserInteractionEnabled, on: tableView)
             .store(in: &cancellables)
     }

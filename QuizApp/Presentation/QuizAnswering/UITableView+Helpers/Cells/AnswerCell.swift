@@ -91,7 +91,6 @@ extension AnswerCell {
     func bind(with model: AnswerCellModel) {
         answerLabel.text = model.answerText
         isCorrect = model.isCorrect
-
         containerView.backgroundColor = .whiteTransparent30
     }
 

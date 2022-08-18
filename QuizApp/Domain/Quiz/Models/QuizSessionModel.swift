@@ -35,8 +35,8 @@ extension QuizQuestionModel {
                 .answers
                 .map { answer in
                     let isCorrect = answer.id == model.correctAnswerId
-
                     let answerModel = QuizAnswerModel(id: answer.id, isCorrect: isCorrect, answer: answer.answer)
+
                     return answerModel
                 })
     }

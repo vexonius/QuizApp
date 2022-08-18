@@ -8,7 +8,7 @@ class QuizAnsweringViewModel {
     }
 
     @Published var currentQuestionCellModels: [AnsweringCellProtocol] = []
-    @Published var isTableViewIntercationEnabled: Bool = true
+    @Published var isTableViewInteractionEnabled: Bool = true
     @Published var correctAnswerIndex: IndexPath?
 
     private var quizSession: QuizSessionModel?
@@ -26,11 +26,10 @@ class QuizAnsweringViewModel {
     }
 
     func onAnswerGuessed(_ answer: AnswerCellModel?) {
-        isTableViewIntercationEnabled = false
+        isTableViewInteractionEnabled = false
 
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.answerUpdateDelay) {
             self.prepareCurrentAnswerModels()
-
         }
     }
 
@@ -49,8 +48,7 @@ class QuizAnsweringViewModel {
         models.append(contentsOf: question.answers.map { AnswerCellModel(from: $0) })
 
         currentQuestionCellModels = models
-        isTableViewIntercationEnabled = true
-
+        isTableViewInteractionEnabled = true
     }
 
     private func getQuizSession(with id: Int) {
