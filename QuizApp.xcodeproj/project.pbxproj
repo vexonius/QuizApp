@@ -25,7 +25,9 @@
 		F014C93028ACE06E006DB507 /* QuizSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */; };
 		F014C93328ACE19D006DB507 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93228ACE19D006DB507 /* AnswerCell.swift */; };
 		F014C93528ACE203006DB507 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93428ACE203006DB507 /* QuestionCell.swift */; };
+		F014C93828ACE36E006DB507 /* QuizAnsweringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93728ACE36E006DB507 /* QuizAnsweringViewController.swift */; };
 		F014C93A28ACE74B006DB507 /* AnsweringCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93928ACE74B006DB507 /* AnsweringCellProtocol.swift */; };
+		F014C93C28ACE842006DB507 /* QuizAnsweringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93B28ACE842006DB507 /* QuizAnsweringViewModel.swift */; };
 		F014C93E28AD27C0006DB507 /* AnswerCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93D28AD27C0006DB507 /* AnswerCellModel.swift */; };
 		F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F02885973400BC7AE4 /* LoginUseCase.swift */; };
 		F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F32885983600BC7AE4 /* LoginRepository.swift */; };
@@ -149,7 +151,9 @@
 		F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSessionModel.swift; sourceTree = "<group>"; };
 		F014C93228ACE19D006DB507 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		F014C93428ACE203006DB507 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		F014C93728ACE36E006DB507 /* QuizAnsweringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnsweringViewController.swift; sourceTree = "<group>"; };
 		F014C93928ACE74B006DB507 /* AnsweringCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweringCellProtocol.swift; sourceTree = "<group>"; };
+		F014C93B28ACE842006DB507 /* QuizAnsweringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnsweringViewModel.swift; sourceTree = "<group>"; };
 		F014C93D28AD27C0006DB507 /* AnswerCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCellModel.swift; sourceTree = "<group>"; };
 		F015E1F02885973400BC7AE4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		F015E1F32885983600BC7AE4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
@@ -348,8 +352,10 @@
 			children = (
 				F014C93228ACE19D006DB507 /* AnswerCell.swift */,
 				F014C93428ACE203006DB507 /* QuestionCell.swift */,
+				F014C93728ACE36E006DB507 /* QuizAnsweringViewController.swift */,
 				F014C93928ACE74B006DB507 /* AnsweringCellProtocol.swift */,
 				F0BD396E28AE4E010049A84D /* CellType.swift */,
+				F014C93B28ACE842006DB507 /* QuizAnsweringViewModel.swift */,
 				F014C93D28AD27C0006DB507 /* AnswerCellModel.swift */,
 				F09BB05528AD3151003353C5 /* QuestionCellModel.swift */,
 			);
@@ -943,6 +949,7 @@
 				F012CAD128A2CC68007592A5 /* Sequence+Extensions.swift in Sources */,
 				F0052EBF28A29193006515AE /* URLRequest+Extensions.swift in Sources */,
 				F088E834287DD0A500E0375D /* LocalizedStrings.swift in Sources */,
+				F014C93828ACE36E006DB507 /* QuizAnsweringViewController.swift in Sources */,
 				F088E83F287EBC4900E0375D /* BaseViewController.swift in Sources */,
 				F08D63D52893F43B004B40E1 /* AccountNetworkClientProtocol.swift in Sources */,
 				F0052EBB28A28865006515AE /* QuizEndpointsParams.swift in Sources */,
@@ -964,6 +971,7 @@
 				F012CACB28A2983F007592A5 /* QuizModel.swift in Sources */,
 				F014C93A28ACE74B006DB507 /* AnsweringCellProtocol.swift in Sources */,
 				F094581A2885BC4E0015F1C7 /* BaseNetworkClient.swift in Sources */,
+				F014C93C28ACE842006DB507 /* QuizAnsweringViewModel.swift in Sources */,
 				F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
 				F09CDD2F28AB9D3D00EB2858 /* QuizSessionResponse.swift in Sources */,
