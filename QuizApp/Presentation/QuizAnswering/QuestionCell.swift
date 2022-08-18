@@ -17,10 +17,16 @@ class QuestionCell: UITableViewCell {
         createViews()
         styleViews()
         defineLayoutForViews()
+
+        self.isUserInteractionEnabled = false
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(false, animated: animated)
     }
 
 }
@@ -44,8 +50,8 @@ extension QuestionCell: ConstructViewsProtocol {
             ofSize: DesignConstants.FontSize.subtitle.cgFloat,
             ofWeight: SourceSansProWeight.bold)
 
-        selectionStyle = .default
-        backgroundColor = .whiteTransparent30
+        selectionStyle = .none
+        backgroundColor = .clear
     }
 
     func defineLayoutForViews() {
@@ -56,6 +62,14 @@ extension QuestionCell: ConstructViewsProtocol {
         questionLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(DesignConstants.Insets.contentInset)
         }
+    }
+
+}
+
+extension QuestionCell {
+
+    func bind(with model: QuestionCellModel) {
+        questionLabel.text = model.questionText
     }
 
 }
