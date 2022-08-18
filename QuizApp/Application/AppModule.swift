@@ -162,6 +162,14 @@ class AppModule {
                     coordinator: container.resolve())
             }
             .scope(.unique)
+
+        container
+            .register { container, args in
+                QuizAnsweringViewModel(
+                    quizId: args.get(),
+                    quizUseCase: container.resolve())
+            }
+            .scope(.unique)
     }
 
     private func registerViewControllers() {
@@ -206,6 +214,12 @@ class AppModule {
         container
             .register { container, args in
                 QuizLeaderboardViewController(viewModel: container.resolve(args: args))
+            }
+            .scope(.unique)
+
+        container
+            .register { container, args in
+                QuizAnsweringViewController(viewModel: container.resolve(args: args))
             }
             .scope(.unique)
     }
