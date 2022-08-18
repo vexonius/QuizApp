@@ -1,4 +1,4 @@
-struct QuizSessionModel: Decodable {
+struct QuizSessionModel {
 
     let sessionId: String
     let questions: [QuizQuestionModel]
@@ -17,10 +17,9 @@ extension QuizSessionModel {
 
 }
 
-struct QuizQuestionModel: Decodable {
+struct QuizQuestionModel {
 
     let id: Int
-    let correctAnswerId: Int
     let question: String
     let answers: [QuizAnswerModel]
 
@@ -31,26 +30,23 @@ extension QuizQuestionModel {
     init(from model: QuizQuestionRepoModel) {
         self.init(
             id: model.id,
-            correctAnswerId: model.correctAnswerId,
             question: model.question,
             answers: model
                 .answers
-                .map { QuizAnswerModel(from: $0) })
+                .map { answer in
+                    let isCorrect = answer.id == model.correctAnswerId
+
+                    let answerModel = QuizAnswerModel(id: answer.id, isCorrect: isCorrect, answer: answer.answer)
+                    return answerModel
+                })
     }
 
 }
 
-struct QuizAnswerModel: Decodable {
+struct QuizAnswerModel {
 
     let id: Int
+    let isCorrect: Bool
     let answer: String
-
-}
-
-extension QuizAnswerModel {
-
-    init(from model: QuizAnswerRepoModel) {
-        self.init(id: model.id, answer: model.answer)
-    }
 
 }
