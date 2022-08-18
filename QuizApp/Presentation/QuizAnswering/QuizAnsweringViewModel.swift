@@ -14,15 +14,16 @@ class QuizAnsweringViewModel {
     @Published var progress: [AnsweredResult] = []
     @Published var progressText: String = ""
 
-    private var quizSession: QuizSessionModel?
-    private var questions: [QuizQuestionModel] = []
     private var currentQuestionNumber: Int {
         currentQuestionIndex + 1
     }
 
+    private var quizSession: QuizSessionModel?
+    private var questions: [QuizQuestionModel] = []
+    private let progressFormat = "%d/%d"
+
     private let quizUseCase: QuizUseCaseProtocol
     private let quiz: QuizModel
-    private let progressFormat = "%d/%d"
 
     init(quiz: QuizModel, quizUseCase: QuizUseCaseProtocol) {
         self.quizUseCase = quizUseCase
