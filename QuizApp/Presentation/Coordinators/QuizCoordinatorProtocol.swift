@@ -10,4 +10,6 @@ protocol QuizCoordinatorProtocol {
 
     func end(with result: QuizResultModel)
 
+    func finish()
+
 }

@@ -28,4 +28,8 @@ class QuizResultViewModel {
         }
     }
 
+    func onFinishButtonTap() {
+        coordinator.finish()
+    }
+
 }

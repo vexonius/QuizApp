@@ -117,6 +117,7 @@ class AppModule {
             .scope(.graph)
     }
 
+    // swiftlint:disable:next function_body_length
     private func registerViewModels() {
         container
             .register { container in
