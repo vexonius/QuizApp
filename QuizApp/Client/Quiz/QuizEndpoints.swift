@@ -8,6 +8,7 @@ enum QuizEndpoints {
     case quizzes
     case leaderboard
     case startSession(id: Int)
+    case endSession(id: String)
 
     private var subpath: String {
         switch self {
@@ -17,6 +18,8 @@ enum QuizEndpoints {
             return "leaderboard"
         case let .startSession(id):
             return "\(id)/session/start"
+        case let .endSession(id):
+            return "session/\(id)/end"
         }
     }
 
