@@ -6,4 +6,6 @@ protocol QuizUseCaseProtocol {
 
     func getLeaderboard(for quizId: Int) async throws -> [UserRankingModel]
 
+    func startQuiz(with id: Int) async throws -> QuizSessionModel
+
 }

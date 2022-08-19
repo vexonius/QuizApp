@@ -26,4 +26,11 @@ class QuizUseCase: QuizUseCaseProtocol {
             .map { UserRankingModel(from: $0) }
     }
 
+    func startQuiz(with id: Int) async throws -> QuizSessionModel {
+        let sessionRepoModel = try await quizRepository
+            .startQuiz(with: id)
+
+        return QuizSessionModel(from: sessionRepoModel)
+    }
+
 }
