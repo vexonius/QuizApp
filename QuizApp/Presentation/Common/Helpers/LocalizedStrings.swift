@@ -24,6 +24,7 @@ enum LocalizedStrings: String {
     case leaderboard = "Leaderboard"
     case player = "Player"
     case points = "Points"
+    case finishQuiz = "Finish Quiz"
 
     var localizedString: String {
         self.rawValue
