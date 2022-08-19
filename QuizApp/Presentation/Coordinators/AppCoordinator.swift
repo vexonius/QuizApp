@@ -69,4 +69,8 @@ extension AppCoordinator: QuizCoordinatorProtocol {
         navigationController.pushViewController(quizAnsweringViewController, animated: true)
     }
 
+    func end(with result: QuizResultModel) {
+
+    }
+
 }
