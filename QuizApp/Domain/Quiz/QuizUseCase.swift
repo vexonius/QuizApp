@@ -33,4 +33,11 @@ class QuizUseCase: QuizUseCaseProtocol {
         return QuizSessionModel(from: sessionRepoModel)
     }
 
+    func endQuiz(with userResult: QuizResultModel) async throws -> QuizSessionResultModel {
+        let sessionResultModel = try await quizRepository
+            .endQuiz(for: userResult.sessionId, with: userResult.toModel())
+
+        return QuizSessionResultModel(from: sessionResultModel)
+    }
+
 }
