@@ -33,4 +33,11 @@ class QuizRepository: QuizRepositoryProtocol {
         return QuizSessionRepoModel(from: quizQuestionsResponse)
     }
 
+    func endQuiz(for sessionId: String, with result: QuizResultRepoModel) async throws -> QuizSessionResultRepoModel {
+        let quizSessionResultResponse = try await quizNetworkClient
+            .endQuiz(for: sessionId, with: result.toModel())
+
+        return QuizSessionResultRepoModel(from: quizSessionResultResponse)
+    }
+
 }
