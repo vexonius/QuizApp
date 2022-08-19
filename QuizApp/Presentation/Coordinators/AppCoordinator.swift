@@ -74,4 +74,8 @@ extension AppCoordinator: QuizCoordinatorProtocol {
         navigationController.pushViewController(resultViewController, animated: true)
     }
 
+    func finish() {
+        routeToHomeScreen()
+    }
+
 }

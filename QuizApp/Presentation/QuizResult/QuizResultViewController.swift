@@ -57,8 +57,8 @@ extension QuizResultViewController: BindViewsProtocol {
     func bindViews() {
         finishButton
             .throttledTap()
-            .sink { _ in
-
+            .sink { [weak self] _ in
+                self?.viewModel.onFinishButtonTap()
             }
             .store(in: &cancellables)
     }
