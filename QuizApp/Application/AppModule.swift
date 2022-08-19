@@ -150,6 +150,15 @@ class AppModule {
             .scope(.unique)
 
         container
+            .register { container in
+                SearchViewModel(
+                    quizUseCase: container.resolve(),
+                    coordinator: container.resolve(),
+                    networkService: container.resolve())
+                }
+            .scope(.unique)
+
+        container
             .register { container, args in
                 QuizDetailsViewModel(quiz: args.get(), coordinator: container.resolve())
             }
@@ -194,6 +203,7 @@ class AppModule {
             .register { container in
                 TabbedViewController(
                     homeViewController: container.resolve(),
+                    searchViewController: container.resolve(),
                     settingsViewController: container.resolve())
             }
             .scope(.unique)
@@ -207,6 +217,12 @@ class AppModule {
         container
             .register { container in
                 HomeViewController(viewModel: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container in
+                SearchViewController(viewModel: container.resolve())
             }
             .scope(.unique)
 
