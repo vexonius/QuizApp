@@ -4,7 +4,7 @@ import UIKit
 class QuizAnsweringViewController: BaseViewController {
 
     private struct CustomConstants {
-        static let progressHeaderHeight = 50
+        static let progressHeaderHeight = 44
         static let startTranslationX = 0
         static let endTranslationX = 0
         static let endTranslationY = 0

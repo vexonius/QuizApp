@@ -7,7 +7,8 @@ class ProgressView: UIView {
         static let textNumberOfLines = 0
         static let progresBarHeight = 5
         static let tileCornerRadius = 2
-        static let componentsSpacing = 8
+        static let stackViewSpacing = 8
+        static let componentsSpacing = 12
     }
 
     var progressText: String? {
@@ -86,7 +87,7 @@ extension ProgressView: ConstructViewsProtocol {
 
         stackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(progressLabel.snp.bottom).offset(DesignConstants.Insets.componentSpacing)
+            make.top.equalTo(progressLabel.snp.bottom).offset(CustomConstants.componentsSpacing)
             make.height.equalTo(CustomConstants.progresBarHeight)
             make.bottom.lessThanOrEqualToSuperview()
         }
