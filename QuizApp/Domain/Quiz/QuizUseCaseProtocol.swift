@@ -8,4 +8,6 @@ protocol QuizUseCaseProtocol {
 
     func startQuiz(with id: Int) async throws -> QuizSessionModel
 
+    func finishQuiz(with userResult: QuizResultModel) async throws -> QuizSessionResultModel
+
 }

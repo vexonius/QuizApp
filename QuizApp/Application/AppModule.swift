@@ -117,6 +117,7 @@ class AppModule {
             .scope(.graph)
     }
 
+    // swiftlint:disable:next function_body_length
     private func registerViewModels() {
         container
             .register { container in
@@ -167,7 +168,17 @@ class AppModule {
             .register { container, args in
                 QuizAnsweringViewModel(
                     quiz: args.get(),
-                    quizUseCase: container.resolve())
+                    quizUseCase: container.resolve(),
+                    coordinator: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container, args in
+                QuizResultViewModel(
+                    userResult: args.get(),
+                    quizUseCase: container.resolve(),
+                    coordinator: container.resolve())
             }
             .scope(.unique)
     }
@@ -220,6 +231,12 @@ class AppModule {
         container
             .register { container, args in
                 QuizAnsweringViewController(viewModel: container.resolve(args: args))
+            }
+            .scope(.unique)
+
+        container
+            .register { container, args in
+                QuizResultViewController(viewModel: container.resolve(args: args))
             }
             .scope(.unique)
     }

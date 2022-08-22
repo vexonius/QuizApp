@@ -22,12 +22,14 @@ class QuizAnsweringViewModel {
     private var questions: [QuizQuestionModel] = []
     private let progressFormat = "%d/%d"
 
-    private let quizUseCase: QuizUseCaseProtocol
     private let quiz: QuizModel
+    private let quizUseCase: QuizUseCaseProtocol
+    private let coordinator: QuizCoordinatorProtocol
 
-    init(quiz: QuizModel, quizUseCase: QuizUseCaseProtocol) {
-        self.quizUseCase = quizUseCase
+    init(quiz: QuizModel, quizUseCase: QuizUseCaseProtocol, coordinator: QuizCoordinatorProtocol) {
         self.quiz = quiz
+        self.quizUseCase = quizUseCase
+        self.coordinator = coordinator
 
         getQuizSession(with: quiz.id)
     }
@@ -93,7 +95,15 @@ class QuizAnsweringViewModel {
     }
 
     private func finishQuiz() {
-        // To be implemented
+        guard let session = quizSession else { return }
+
+        let numberOfCorrectQuestions = progress.filter { $0 == .correct }.count
+        let userResult = QuizResultModel(
+            sessionId: session.sessionId,
+            numberOfCorrectQuestions: numberOfCorrectQuestions,
+            totalNumberOfQuestions: quiz.numberOfQuestions)
+
+        coordinator.finishQuiz(with: userResult)
     }
 
 }
