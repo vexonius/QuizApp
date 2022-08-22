@@ -166,7 +166,7 @@ class AppModule {
         container
             .register { container, args in
                 QuizAnsweringViewModel(
-                    quizId: args.get(),
+                    quiz: args.get(),
                     quizUseCase: container.resolve())
             }
             .scope(.unique)

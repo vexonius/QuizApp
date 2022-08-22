@@ -43,6 +43,14 @@ extension QuizQuestionModel {
 
 }
 
+enum AnsweredResult {
+
+    case unanswered
+    case correct
+    case incorrect
+
+}
+
 struct QuizAnswerModel {
 
     let id: Int

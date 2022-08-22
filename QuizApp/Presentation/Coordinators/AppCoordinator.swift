@@ -37,14 +37,16 @@ class AppCoordinator: AppCoordinatorProtocol {
 
     private func styleNavigationBar() {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .clear
+        appearance.configureWithTransparentBackground()
         appearance.setBackIndicatorImage(UIImage.backArrow, transitionMaskImage: UIImage.backArrow)
         appearance.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.sourceSansPro(
                 ofSize: DesignConstants.FontSize.title.cgFloat,
                 ofWeight: .bold)!]
 
-        UINavigationBar.appearance().standardAppearance = appearance
+        navigationController.navigationBar.standardAppearance = appearance
+        navigationController.navigationBar.compactAppearance = appearance
+        navigationController.navigationBar.scrollEdgeAppearance = appearance
         navigationController.navigationBar.tintColor = .white
     }
 
@@ -62,8 +64,8 @@ extension AppCoordinator: QuizCoordinatorProtocol {
         navigationController.pushViewController(quizDetailsViewController, animated: true)
     }
 
-    func routeToQuiz(with id: Int) {
-        let quizAnsweringViewController: QuizAnsweringViewController = container.resolve(args: id)
+    func play(quiz: QuizModel) {
+        let quizAnsweringViewController: QuizAnsweringViewController = container.resolve(args: quiz)
         navigationController.pushViewController(quizAnsweringViewController, animated: true)
     }
 
