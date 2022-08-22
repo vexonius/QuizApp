@@ -22,15 +22,22 @@ class QuizResultViewModel {
         Task {
             do {
                 _ = try await quizUseCase.finishQuiz(with: userResult)
+
+                await MainActor.run {
+                    coordinator.routeToHomeScreen()
+                }
             } catch {
                 debugPrint(error)
+
+                await MainActor.run {
+                    coordinator.routeToHomeScreen()
+                }
             }
         }
     }
 
     func onFinishButtonTap() {
         postResult()
-        coordinator.routeToHomeScreen()
     }
 
 }
