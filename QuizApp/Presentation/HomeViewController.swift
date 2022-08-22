@@ -44,6 +44,7 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
 
         styleNavigationBar()
+        viewModel.switchFiltering(for: .home)
     }
 
     private func styleNavigationBar() {

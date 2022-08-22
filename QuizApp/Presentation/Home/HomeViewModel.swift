@@ -11,6 +11,9 @@ class HomeViewModel {
     @Published private(set) var filters: [CategoryFilter] = []
     @Published private(set) var filteredQuizes: [QuizModel] = []
 
+    @Published private(set) var lastSearchedTerm: String?
+    @Published private(set) var lastSelectedCategory: CategoryFilter?
+
     private var quizes: [QuizModel] = []
 
     private var categories: [CategoryFilter] {
@@ -46,15 +49,22 @@ class HomeViewModel {
             selectedCategory.category != .uncategorized
         else {
             filteredQuizes = quizes
+            lastSelectedCategory = nil
 
             return
         }
 
         filteredQuizes = quizes.filter { $0.category.rawValue == selectedCategory.title }
+        lastSelectedCategory = selectedCategory
     }
 
     func onQuizSelected(_ quiz: QuizModel) {
         coordinator.routeToQuizDetails(quiz: quiz)
+    }
+
+    func onSearchTextChanged(_ searchText: String) {
+        filteredQuizes = quizes.filter { $0.name.lowercased().contains(searchText) }
+        lastSearchedTerm = searchText
     }
 
     private func observeNetworkChanges() {
@@ -80,6 +90,19 @@ class HomeViewModel {
         isErrorPlaceholderVisible = true
     }
 
+    func switchFiltering(for mode: QuizzesFilteringMode) {
+        switch mode {
+        case .home:
+            guard let lastSelectedCategory = lastSelectedCategory else { return filteredQuizes = quizes }
+
+            onCategoryChange(for: lastSelectedCategory.index)
+        case .search:
+            guard let lastSearchedTerm = lastSearchedTerm else { return filteredQuizes = [] }
+
+            onSearchTextChanged(lastSearchedTerm)
+        }
+    }
+
     private func fetchQuizes() {
         Task {
             do {
@@ -94,5 +117,12 @@ class HomeViewModel {
             }
         }
     }
+
+}
+
+enum QuizzesFilteringMode {
+
+    case home
+    case search
 
 }
