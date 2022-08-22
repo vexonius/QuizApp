@@ -29,6 +29,7 @@ class QuizResultViewModel {
     }
 
     func onFinishButtonTap() {
+        postResult()
         coordinator.routeToHomeScreen()
     }
 
