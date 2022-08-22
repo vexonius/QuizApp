@@ -37,7 +37,7 @@ class QuizNetworkClient: QuizNetworkClientProtocol {
             requestBody: EmptyRequest())
     }
 
-    func endQuiz(for sessionId: String, with request: QuizResultRequest) async throws -> QuizSessionResultResponse {
+    func finishQuiz(for sessionId: String, with request: QuizResultRequest) async throws -> QuizSessionResultResponse {
         try await baseNetworkClient.post(
             url: QuizEndpoints.endSession(id: sessionId).path,
             params: [:],

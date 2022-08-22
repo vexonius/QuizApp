@@ -103,7 +103,7 @@ class QuizAnsweringViewModel {
             numberOfCorrectQuestions: numberOfCorrectQuestions,
             totalNumberOfQuestions: quiz.numberOfQuestions)
 
-        coordinator.end(with: userResult)
+        coordinator.finishQuiz(with: userResult)
     }
 
 }

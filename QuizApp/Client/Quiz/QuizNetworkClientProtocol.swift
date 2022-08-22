@@ -8,6 +8,6 @@ protocol QuizNetworkClientProtocol {
 
     func startQuiz(with id: Int) async throws -> QuizSessionResponse
 
-    func endQuiz(for sessionId: String, with request: QuizResultRequest) async throws -> QuizSessionResultResponse
+    func finishQuiz(for sessionId: String, with request: QuizResultRequest) async throws -> QuizSessionResultResponse
 
 }

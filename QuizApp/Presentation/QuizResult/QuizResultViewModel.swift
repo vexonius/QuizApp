@@ -4,7 +4,7 @@ class QuizResultViewModel {
 
     @Published var result: String?
 
-    private let resultFormat = "%d / %d"
+    private let resultFormat = "%d/%d"
 
     private let userResult: QuizResultModel
     private let quizUseCase: QuizUseCaseProtocol
@@ -21,7 +21,7 @@ class QuizResultViewModel {
     private func postResult() {
         Task {
             do {
-                _ = try await quizUseCase.endQuiz(with: userResult)
+                _ = try await quizUseCase.finishQuiz(with: userResult)
             } catch {
                 debugPrint(error)
             }
@@ -29,7 +29,7 @@ class QuizResultViewModel {
     }
 
     func onFinishButtonTap() {
-        coordinator.finish()
+        coordinator.routeToHomeScreen()
     }
 
 }

@@ -8,6 +8,6 @@ protocol QuizRepositoryProtocol {
 
     func startQuiz(with id: Int) async throws -> QuizSessionRepoModel
 
-    func endQuiz(for sessionId: String, with result: QuizResultRepoModel) async throws -> QuizSessionResultRepoModel
+    func finishQuiz(for sessionId: String, with result: QuizResultRepoModel) async throws -> QuizSessionResultRepoModel
 
 }

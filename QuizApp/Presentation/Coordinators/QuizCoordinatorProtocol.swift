@@ -8,8 +8,8 @@ protocol QuizCoordinatorProtocol {
 
     func play(quiz: QuizModel)
 
-    func end(with result: QuizResultModel)
+    func finishQuiz(with result: QuizResultModel)
 
-    func finish()
+    func routeToHomeScreen()
 
 }
