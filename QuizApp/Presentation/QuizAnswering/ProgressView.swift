@@ -5,6 +5,9 @@ class ProgressView: UIView {
     private struct CustomConstants {
         static let progressLabelHeight = 26
         static let textNumberOfLines = 0
+        static let progresBarHeight = 5
+        static let tileCornerRadius = 2
+        static let componentsSpacing = 8
     }
 
     var progressText: String? {
@@ -29,7 +32,7 @@ class ProgressView: UIView {
     }
 
     func update(currentIndex: Int, tiles: [AnsweredResult]) {
-        _ = stackView.arrangedSubviews.map { $0.removeFromSuperview() }
+        stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
         for (index, tile) in tiles.enumerated() {
             let view = UIView()
@@ -39,11 +42,11 @@ class ProgressView: UIView {
                 view.backgroundColor = currentIndex == index ? .white : .whiteTransparent30
             case .correct:
                 view.backgroundColor = .accentGreen
-            case .false:
+            case .incorrect:
                 view.backgroundColor = .accentRed
             }
 
-            view.layer.cornerRadius = 2
+            view.layer.cornerRadius = CustomConstants.tileCornerRadius.cgFloat
             stackView.addArrangedSubview(view)
         }
     }
@@ -69,7 +72,7 @@ extension ProgressView: ConstructViewsProtocol {
             ofSize: DesignConstants.FontSize.subtitle.cgFloat,
             ofWeight: SourceSansProWeight.bold)
 
-        stackView.spacing = 8
+        stackView.spacing = CustomConstants.componentsSpacing.cgFloat
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
@@ -84,7 +87,8 @@ extension ProgressView: ConstructViewsProtocol {
         stackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(progressLabel.snp.bottom).offset(DesignConstants.Insets.componentSpacing)
-            make.height.equalTo(5)
+            make.height.equalTo(CustomConstants.progresBarHeight)
+            make.bottom.lessThanOrEqualToSuperview()
         }
     }
 

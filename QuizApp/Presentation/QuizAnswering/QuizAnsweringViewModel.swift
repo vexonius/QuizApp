@@ -40,7 +40,7 @@ class QuizAnsweringViewModel {
         guard !progress.isEmpty else { return }
 
         isTableViewInteractionEnabled = false
-        progress[currentQuestionIndex] = answer.isCorrect ? .correct : .false
+        progress[currentQuestionIndex] = answer.isCorrect ? .correct : .incorrect
 
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.answerUpdateDelay) {
             self.currentQuestionIndex += 1

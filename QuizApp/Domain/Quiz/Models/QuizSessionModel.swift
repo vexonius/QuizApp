@@ -47,7 +47,7 @@ enum AnsweredResult {
 
     case unanswered
     case correct
-    case `false`
+    case incorrect
 
 }
 
