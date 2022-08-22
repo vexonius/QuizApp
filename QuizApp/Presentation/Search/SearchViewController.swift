@@ -5,19 +5,15 @@ import Reachability
 
 class SearchViewController: BaseViewController {
 
-    private struct CustomConstants {
-        static let segmentedControlTopInset = 8
-    }
-
     private var errorPlaceholder: ErrorPlaceholderView!
     private var quizTableView: UITableView!
     private var searchBar: SearchBarView!
     private var datasource: CombineTableViewDataSource<QuizModel>!
 
     private var cancellables = Set<AnyCancellable>()
-    private let viewModel: SearchViewModel
+    private let viewModel: HomeViewModel
 
-    init(viewModel: SearchViewModel) {
+    init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -43,12 +39,8 @@ class SearchViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        viewModel.switchFiltering(for: .search)
         styleNavigationBar()
-
-        tabBarController?.navigationItem.titleView = searchBar
-        searchBar.snp.makeConstraints { make in
-            make.size.equalToSuperview()
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,6 +51,7 @@ class SearchViewController: BaseViewController {
 
     private func styleNavigationBar() {
         tabBarController?.title = ""
+        tabBarController?.navigationItem.titleView = searchBar
     }
 
     private func createQuizTableView() {

@@ -62,7 +62,6 @@
 		F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */; };
 		F07D86512888289C000F5D99 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F07D86502888289C000F5D99 /* Resolver */; };
 		F07D8655288849FE000F5D99 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F07D8654288849FE000F5D99 /* KeychainSwift */; };
-		F0828A0828AFCD9500DC8EEE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0828A0728AFCD9500DC8EEE /* SearchViewModel.swift */; };
 		F088E82C287DAE8A00E0375D /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */; };
 		F088E830287DB34700E0375D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E82F287DB34700E0375D /* UIColor+Extensions.swift */; };
 		F088E834287DD0A500E0375D /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E833287DD0A500E0375D /* LocalizedStrings.swift */; };
@@ -197,7 +196,6 @@
 		F07D305A288ED984000592F2 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		F0809FF028884E0400142907 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
-		F0828A0728AFCD9500DC8EEE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F088E82B287DAE8A00E0375D /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		F088E82F287DB34700E0375D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F088E833287DD0A500E0375D /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
@@ -854,7 +852,6 @@
 			children = (
 				F0F4F43928AF95BA00AF3843 /* SearchBarView.swift */,
 				F0F4F43B28AFA0D100AF3843 /* SearchViewController.swift */,
-				F0828A0728AFCD9500DC8EEE /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1055,7 +1052,6 @@
 				F014C93C28ACE842006DB507 /* QuizAnsweringViewModel.swift in Sources */,
 				F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */,
 				F0E6A977287C74CA007BF1D4 /* AppDelegate.swift in Sources */,
-				F0828A0828AFCD9500DC8EEE /* SearchViewModel.swift in Sources */,
 				F09CDD2F28AB9D3D00EB2858 /* QuizSessionResponse.swift in Sources */,
 				F08D63CC2893EE23004B40E1 /* AccountRepositoryProtocol.swift in Sources */,
 				F02F01EB28AF78A20056610D /* QuizSessionResultModel.swift in Sources */,

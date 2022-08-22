@@ -2,6 +2,10 @@ import UIKit
 
 class SearchBarView: UIView {
 
+    private struct CustomConstants {
+        static let searchButtonTrailingInset = 20
+    }
+
     private(set) var inputLabel: RoundedTextInput!
     private(set) var searchButton: UIButton!
 
@@ -15,6 +19,10 @@ class SearchBarView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override var intrinsicContentSize: CGSize {
+        return UIView.layoutFittingExpandedSize
     }
 
 }
@@ -47,7 +55,7 @@ extension SearchBarView: ConstructViewsProtocol {
 
         searchButton.snp.makeConstraints { make in
             make.leading.equalTo(inputLabel.snp.trailing).offset(DesignConstants.Insets.contentInset)
-            make.trailing.equalToSuperview().inset(40)
+            make.trailing.equalToSuperview().inset(CustomConstants.searchButtonTrailingInset)
             make.top.bottom.equalToSuperview().inset(DesignConstants.Insets.contentInset)
         }
     }
