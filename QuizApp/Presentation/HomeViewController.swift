@@ -86,6 +86,18 @@ extension HomeViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
+            .$isTableViewVisible
+            .map { !$0 }
+            .assign(to: \.isHidden, on: quizTableView)
+            .store(in: &cancellables)
+
+        viewModel
+            .$areFiltersVisible
+            .map { !$0 }
+            .assign(to: \.isHidden, on: filtersSegmentedControl)
+            .store(in: &cancellables)
+
+        viewModel
             .$filters
             .sink { [weak self] categories in
                 self?.filtersSegmentedControl.update(segments: categories)

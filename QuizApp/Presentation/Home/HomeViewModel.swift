@@ -8,6 +8,9 @@ class HomeViewModel {
     @Published private(set) var errorTitle: String?
     @Published private(set) var errorDescription: String?
 
+    @Published private(set) var isTableViewVisible: Bool = false
+    @Published private(set) var areFiltersVisible: Bool = false
+
     @Published private(set) var filters: [CategoryFilter] = []
     @Published private(set) var filteredQuizes: [QuizModel] = []
 
@@ -75,9 +78,13 @@ class HomeViewModel {
 
                 switch networkState {
                 case .unavailable:
+                    self.isTableViewVisible = false
+                    self.areFiltersVisible = false
                     self.showNoNetworkError()
                 default:
                     self.isErrorPlaceholderVisible = false
+                    self.isTableViewVisible = true
+                    self.areFiltersVisible = true
                     self.fetchQuizes()
                 }
             }
