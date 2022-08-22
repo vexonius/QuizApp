@@ -140,6 +140,7 @@ extension SearchViewController: ConstructViewsProtocol {
         view.addSubview(errorPlaceholder)
 
         searchBar = SearchBarView()
+        searchBar.inputLabel.delegate = self
         createQuizTableView()
     }
 
@@ -157,6 +158,16 @@ extension SearchViewController: ConstructViewsProtocol {
             make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.contentInset)
         }
+    }
+
+}
+
+extension SearchViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
     }
 
 }
