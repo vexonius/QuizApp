@@ -148,6 +148,10 @@ extension QuizCell {
         if let url = URL(string: model.imageUrl) {
             Nuke.loadImage(with: url, into: icon)
         }
+
+        if let highlightedText = model.highlightedText {
+            titleLabel.highlight(text: highlightedText)
+        }
     }
 
 }
