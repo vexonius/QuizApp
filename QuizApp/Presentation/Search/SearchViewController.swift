@@ -111,7 +111,6 @@ extension SearchViewController: BindViewsProtocol {
         searchBar
             .inputLabel
             .textDidBeginEditing
-            .print()
             .sink { textView in
                 guard let textView = textView as? RoundedTextInput else { return }
 
@@ -122,11 +121,23 @@ extension SearchViewController: BindViewsProtocol {
         searchBar
             .inputLabel
             .textDidEndEditing
-            .print()
             .sink { textView in
                 guard let textView = textView as? RoundedTextInput else { return }
 
                 textView.styleForOutOfFocus()
+            }
+            .store(in: &cancellables)
+
+        searchBar
+            .searchButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                guard
+                    let self = self,
+                    let searchedText = self.searchBar.inputLabel.text
+                else { return }
+
+                self.viewModel.onSearchTextChanged(searchedText)
             }
             .store(in: &cancellables)
     }
