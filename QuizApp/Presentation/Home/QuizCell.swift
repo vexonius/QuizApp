@@ -137,7 +137,7 @@ extension QuizCell: ConstructViewsProtocol {
 
 extension QuizCell {
 
-    func bind(with model: QuizModel) {
+    func bind(with model: QuizCellModel) {
         titleLabel.text = model.name
         summaryLabel.text = model.description
 

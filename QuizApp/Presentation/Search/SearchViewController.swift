@@ -8,7 +8,7 @@ class SearchViewController: BaseViewController {
     private var errorPlaceholder: ErrorPlaceholderView!
     private var quizTableView: UITableView!
     private var searchBar: SearchBarView!
-    private var datasource: CombineTableViewDataSource<QuizModel>!
+    private var datasource: CombineTableViewDataSource<QuizCellModel>!
 
     private var cancellables = Set<AnyCancellable>()
     private let viewModel: HomeViewModel
@@ -62,7 +62,7 @@ class SearchViewController: BaseViewController {
     }
 
     private func createQuizzesDataSource() {
-        datasource = CombineTableViewDataSource<QuizModel>(cellFactory: quizCell)
+        datasource = CombineTableViewDataSource<QuizCellModel>(cellFactory: quizCell)
         quizTableView.dataSource = datasource
     }
 
@@ -100,7 +100,7 @@ extension SearchViewController: BindViewsProtocol {
 
     func bindViews() {
         quizTableView
-            .modelSelected(QuizModel.self)
+            .modelSelected(QuizCellModel.self)
             .sink { [weak self] model in
                 self?.viewModel.onQuizSelected(model)
             }
@@ -199,7 +199,7 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController {
 
-    var quizCell: CombineTableViewDataSource<QuizModel>.CellFactory {
+    var quizCell: CombineTableViewDataSource<QuizCellModel>.CellFactory {
         { _, tableView, indexPath, model -> UITableViewCell in
             guard let cell: QuizCell = tableView.dequeueCell(for: indexPath, with: QuizCell.reuseIdentifier) else {
                 return UITableViewCell()

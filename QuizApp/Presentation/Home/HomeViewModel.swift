@@ -12,12 +12,12 @@ class HomeViewModel {
     @Published private(set) var areFiltersVisible: Bool = false
 
     @Published private(set) var filters: [CategoryFilter] = []
-    @Published private(set) var filteredQuizes: [QuizModel] = []
+    @Published private(set) var filteredQuizes: [QuizCellModel] = []
 
     @Published private(set) var lastSearchedTerm: String?
     @Published private(set) var lastSelectedCategory: CategoryFilter?
 
-    private var quizes: [QuizModel] = []
+    private var quizes: [QuizCellModel] = []
 
     private var categories: [CategoryFilter] {
         Category
@@ -61,12 +61,15 @@ class HomeViewModel {
         lastSelectedCategory = selectedCategory
     }
 
-    func onQuizSelected(_ quiz: QuizModel) {
-        coordinator.routeToQuizDetails(quiz: quiz)
+    func onQuizSelected(_ quiz: QuizCellModel) {
+        coordinator.routeToQuizDetails(quiz: quiz.toModel())
     }
 
     func onSearchTextChanged(_ searchText: String) {
-        filteredQuizes = quizes.filter { $0.name.lowercased().contains(searchText) }
+        filteredQuizes = quizes
+            .filter { $0.name.lowercased().contains(searchText) }
+            .map { QuizCellModel(from: $0, highlight: searchText) }
+
         lastSearchedTerm = searchText
     }
 
@@ -121,7 +124,9 @@ class HomeViewModel {
     private func fetchQuizes() {
         Task {
             do {
-                let quizes = try await quizUseCase.quizzes
+                let quizes = try await quizUseCase
+                    .quizzes
+                    .map { QuizCellModel(from: $0) }
 
                 await MainActor.run {
                     self.quizes = quizes
