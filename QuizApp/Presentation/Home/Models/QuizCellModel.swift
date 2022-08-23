@@ -1,4 +1,4 @@
-struct QuizCellModel {
+struct QuizCellModel: Equatable {
 
     let id: Int
     let name: String
@@ -18,6 +18,10 @@ struct QuizCellModel {
             imageUrl: imageUrl,
             numberOfQuestions: numberOfQuestions,
             difficulty: difficulty)
+    }
+
+    static func == (lhs: QuizCellModel, rhs: QuizCellModel) -> Bool {
+        lhs.id == rhs.id
     }
 
 }

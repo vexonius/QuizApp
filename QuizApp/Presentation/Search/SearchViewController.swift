@@ -109,6 +109,7 @@ extension SearchViewController: BindViewsProtocol {
         searchBar
             .inputLabel
             .textDidChange
+            .removeDuplicates()
             .sink { [weak self] searchedText in
                 self?.viewModel.onSearchTextChanged(searchedText)
             }

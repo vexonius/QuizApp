@@ -106,6 +106,7 @@ extension HomeViewController: BindViewsProtocol {
 
         viewModel
             .$filteredQuizes
+            .removeDuplicates()
             .receive(subscriber: quizTableView.items(datasource))
     }
 
