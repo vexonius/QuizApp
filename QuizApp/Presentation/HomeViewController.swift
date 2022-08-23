@@ -76,12 +76,7 @@ extension HomeViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$errorTitle
-            .assign(to: \.title, on: errorPlaceholder)
-            .store(in: &cancellables)
-
-        viewModel
-            .$errorDescription
+            .$errorMessage
             .assign(to: \.errorDescription, on: errorPlaceholder)
             .store(in: &cancellables)
 

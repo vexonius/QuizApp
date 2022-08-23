@@ -9,8 +9,7 @@ class HomeViewModel {
     }
 
     @Published private(set) var isErrorPlaceholderVisible: Bool = false
-    @Published private(set) var errorTitle: String?
-    @Published private(set) var errorDescription: String?
+    @Published private(set) var errorMessage: String?
 
     @Published private(set) var isTableViewVisible: Bool = false
     @Published private(set) var areFiltersVisible: Bool = false
@@ -138,8 +137,7 @@ class HomeViewModel {
     }
 
     private func showNoNetworkError() {
-        errorTitle = LocalizedStrings.networkError.localizedString
-        errorDescription = LocalizedStrings.networkErrorDescription.localizedString
+        errorMessage = LocalizedStrings.networkErrorDescription.localizedString
         isErrorPlaceholderVisible = true
     }
 
@@ -166,7 +164,7 @@ class HomeViewModel {
                     self.filters = categories
                 }
             } catch {
-                showNoNetworkError()
+                self.errorMessage = LocalizedStrings.serverErrorMessage.localizedString
             }
         }
     }
