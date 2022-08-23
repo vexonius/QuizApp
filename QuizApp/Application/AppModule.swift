@@ -183,6 +183,7 @@ class AppModule {
             .scope(.unique)
     }
 
+    // swiftlint:disable:next function_body_length
     private func registerViewControllers() {
         container
             .register { container in

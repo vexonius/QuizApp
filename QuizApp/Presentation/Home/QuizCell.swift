@@ -150,7 +150,7 @@ extension QuizCell {
         }
 
         if let highlightedText = model.highlightedText {
-            titleLabel.highlight(text: highlightedText)
+            titleLabel.highlight(target: highlightedText)
         }
     }
 

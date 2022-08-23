@@ -29,23 +29,3 @@ extension UITextField {
     }
 
 }
-
-extension UILabel {
-
-    func highlight(text: String?, color: UIColor? = .whiteTransparent30) {
-        guard
-            let fullText = self.text,
-            let target = text
-        else { return }
-
-        let attributedText = NSMutableAttributedString(string: fullText)
-        let range: NSRange = attributedText.mutableString.range(of: target, options: .caseInsensitive)
-
-        var attributes: [NSAttributedString.Key: Any] = [:]
-        attributes[.backgroundColor] = color
-        attributedText.addAttributes(attributes, range: range)
-
-        self.attributedText = attributedText
-    }
-
-}
