@@ -5,6 +5,7 @@ class QuizAnsweringViewModel {
 
     private struct Constants {
         static let answerUpdateDelay = 0.5
+        static let progressFormat = "%d/%d"
     }
 
     @Published var currentQuestionCellModels: [AnsweringCellProtocol] = []
@@ -20,9 +21,8 @@ class QuizAnsweringViewModel {
 
     private var quizSession: QuizSessionModel?
     private var questions: [QuizQuestionModel] = []
-    private let progressFormat = "%d/%d"
-
     private let quiz: QuizModel
+
     private let quizUseCase: QuizUseCaseProtocol
     private let coordinator: QuizCoordinatorProtocol
 
@@ -70,7 +70,7 @@ class QuizAnsweringViewModel {
     }
 
     private func updateProgress() {
-        progressText = String(format: progressFormat, currentQuestionNumber, quiz.numberOfQuestions)
+        progressText = String(format: Constants.progressFormat, currentQuestionNumber, quiz.numberOfQuestions)
     }
 
     private func load(session: QuizSessionModel) {

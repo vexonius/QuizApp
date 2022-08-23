@@ -58,7 +58,7 @@ class HomeViewModel {
             else {
                 await MainActor.run {
                     self.filteredQuizes = quizes
-                    lastSelectedCategory = nil
+                    self.lastSelectedCategory = nil
                 }
 
                 return
@@ -68,7 +68,7 @@ class HomeViewModel {
 
             await MainActor.run {
                 self.filteredQuizes = filteredQuizes
-                lastSelectedCategory = selectedCategoryModel
+                self.lastSelectedCategory = selectedCategoryModel
             }
         }
     }

@@ -3,6 +3,7 @@ struct QuestionCellModel: AnsweringCellProtocol {
     let cellType: QuizCellType
     let questionText: String
     let answered: Bool?
+
 }
 
 extension QuestionCellModel {
