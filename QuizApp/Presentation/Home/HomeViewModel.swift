@@ -100,11 +100,19 @@ class HomeViewModel {
     func switchFiltering(for mode: QuizzesFilteringMode) {
         switch mode {
         case .home:
-            guard let lastSelectedCategory = lastSelectedCategory else { return filteredQuizes = quizes }
+            guard let lastSelectedCategory = lastSelectedCategory else {
+                filteredQuizes = quizes
+
+                return
+            }
 
             onCategoryChange(for: lastSelectedCategory.index)
         case .search:
-            guard let lastSearchedTerm = lastSearchedTerm else { return filteredQuizes = [] }
+            guard let lastSearchedTerm = lastSearchedTerm else {
+                filteredQuizes = []
+
+                return
+            }
 
             onSearchTextChanged(lastSearchedTerm)
         }
