@@ -147,7 +147,7 @@ class AppModule {
                     coordinator: container.resolve(),
                     networkService: container.resolve())
             }
-            .scope(.unique)
+            .scope(.shared)
 
         container
             .register { container, args in
@@ -194,6 +194,7 @@ class AppModule {
             .register { container in
                 TabbedViewController(
                     homeViewController: container.resolve(),
+                    searchViewController: container.resolve(),
                     settingsViewController: container.resolve())
             }
             .scope(.unique)
@@ -207,6 +208,12 @@ class AppModule {
         container
             .register { container in
                 HomeViewController(viewModel: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container in
+                SearchViewController(viewModel: container.resolve())
             }
             .scope(.unique)
 

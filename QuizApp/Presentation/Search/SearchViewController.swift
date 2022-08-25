@@ -3,15 +3,11 @@ import UIKit
 import CombineReachability
 import Reachability
 
-class HomeViewController: BaseViewController {
+class SearchViewController: BaseViewController {
 
-    private struct CustomConstants {
-        static let segmentedControlTopInset = 8
-    }
-
-    private var filtersSegmentedControl: ClearSegmentedControll!
     private var errorPlaceholder: ErrorPlaceholderView!
     private var quizTableView: UITableView!
+    private var searchBar: SearchBarView!
     private var datasource: CombineTableViewDataSource<QuizModel>!
 
     private var cancellables = Set<AnyCancellable>()
@@ -43,19 +39,25 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        viewModel.switchFiltering(for: .search)
         styleNavigationBar()
-        viewModel.switchFiltering(for: .home)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        tabBarController?.navigationItem.titleView = nil
     }
 
     private func styleNavigationBar() {
-        tabBarController?.title = LocalizedStrings.appName.localizedString
+        tabBarController?.title = ""
+        tabBarController?.navigationItem.titleView = searchBar
     }
 
     private func createQuizTableView() {
         quizTableView = UITableView()
         quizTableView.delegate = self
         quizTableView.register(QuizCell.self, forCellReuseIdentifier: QuizCell.reuseIdentifier)
-
         view.addSubview(quizTableView)
     }
 
@@ -66,7 +68,7 @@ class HomeViewController: BaseViewController {
 
 }
 
-extension HomeViewController: BindViewsProtocol {
+extension SearchViewController: BindViewsProtocol {
 
     func bindViewModel() {
         viewModel
@@ -92,19 +94,6 @@ extension HomeViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$areFiltersVisible
-            .map { !$0 }
-            .assign(to: \.isHidden, on: filtersSegmentedControl)
-            .store(in: &cancellables)
-
-        viewModel
-            .$filters
-            .sink { [weak self] categories in
-                self?.filtersSegmentedControl.update(segments: categories)
-            }
-            .store(in: &cancellables)
-
-        viewModel
             .$filteredQuizes
             .receive(subscriber: quizTableView.items(datasource))
     }
@@ -117,31 +106,62 @@ extension HomeViewController: BindViewsProtocol {
             }
             .store(in: &cancellables)
 
-        filtersSegmentedControl
-            .publisher(for: \.selectedSegmentIndex)
-            .sink { [weak self] index in
-                self?.viewModel.onCategoryChange(for: index)
+        searchBar
+            .inputLabel
+            .textDidChange
+            .sink { [weak self] searchedText in
+                self?.viewModel.onSearchTextChanged(searchedText)
+            }
+            .store(in: &cancellables)
+
+        searchBar
+            .inputLabel
+            .textDidBeginEditing
+            .sink { textView in
+                guard let textView = textView as? RoundedTextInput else { return }
+
+                textView.styleForInFocus()
+            }
+            .store(in: &cancellables)
+
+        searchBar
+            .inputLabel
+            .textDidEndEditing
+            .sink { textView in
+                guard let textView = textView as? RoundedTextInput else { return }
+
+                textView.styleForOutOfFocus()
+            }
+            .store(in: &cancellables)
+
+        searchBar
+            .searchButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                guard
+                    let self = self,
+                    let searchedText = self.searchBar.inputLabel.text
+                else { return }
+
+                self.viewModel.onSearchTextChanged(searchedText)
             }
             .store(in: &cancellables)
     }
 
 }
 
-extension HomeViewController: ConstructViewsProtocol {
+extension SearchViewController: ConstructViewsProtocol {
 
     func createViews() {
         errorPlaceholder = ErrorPlaceholderView()
         view.addSubview(errorPlaceholder)
 
-        filtersSegmentedControl = ClearSegmentedControll()
-        view.addSubview(filtersSegmentedControl)
-
+        searchBar = SearchBarView()
+        searchBar.inputLabel.delegate = self
         createQuizTableView()
     }
 
     func styleViews() {
-        filtersSegmentedControl.selectedSegmentTintColor = .white
-
         quizTableView.backgroundColor = .clear
         quizTableView.showsVerticalScrollIndicator = false
     }
@@ -151,21 +171,25 @@ extension HomeViewController: ConstructViewsProtocol {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
 
-        filtersSegmentedControl.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.componentsInset)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(CustomConstants.segmentedControlTopInset)
-            make.height.equalTo(DesignConstants.ControlComponents.segmentedControlHeight)
-        }
-
         quizTableView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-            make.top.equalTo(filtersSegmentedControl.snp.bottom).offset(DesignConstants.Insets.componentSpacing)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.contentInset)
         }
     }
 
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension SearchViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
+    }
+
+}
+
+extension SearchViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         DesignConstants.QuizCell.height.cgFloat
@@ -173,7 +197,7 @@ extension HomeViewController: UITableViewDelegate {
 
 }
 
-extension HomeViewController {
+extension SearchViewController {
 
     var quizCell: CombineTableViewDataSource<QuizModel>.CellFactory {
         { _, tableView, indexPath, model -> UITableViewCell in

@@ -51,6 +51,12 @@ class RoundedTextInput: UITextField {
         return rightViewRect
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        layer.cornerRadius = self.bounds.height / 2.0
+    }
+
     func styleForInFocus() {
         layer.borderWidth = DesignConstants.InputComponents.borderWidth.cgFloat
     }
@@ -65,7 +71,6 @@ class RoundedTextInput: UITextField {
         textColor = .white
 
         layer.borderColor = UIColor.white.cgColor
-        layer.cornerRadius = DesignConstants.InputComponents.cornerRadius.cgFloat
         layer.cornerCurve = .continuous
 
         attributedPlaceholder = NSAttributedString(
