@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import Resolver
+import SwiftUI
 
 class AppCoordinator: AppCoordinatorProtocol {
 
