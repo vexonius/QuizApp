@@ -15,9 +15,9 @@ class HomeViewModel {
     @Published private(set) var areFiltersVisible: Bool = false
 
     @Published private(set) var filters: [CategoryFilter] = []
-    @Published private(set) var filteredQuizes: [QuizCellModel] = []
+    @Published private(set) var filteredQuizzes: [QuizCellModel] = []
 
-    private var quizes: [QuizCellModel] = []
+    private var quizzes: [QuizCellModel] = []
 
     private var categories: [CategoryFilter] {
         Category
@@ -53,16 +53,16 @@ class HomeViewModel {
                 selectedCategoryModel.category != .uncategorized
             else {
                 await MainActor.run {
-                    self.filteredQuizes = quizes
+                    self.filteredQuizzes = quizzes
                 }
 
                 return
             }
 
-            let filteredQuizes = await filterQuizes(for: selectedCategoryModel.category)
+            let filteredquizzes = await filterquizzes(for: selectedCategoryModel.category)
 
             await MainActor.run {
-                self.filteredQuizes = filteredQuizes
+                self.filteredQuizzes = filteredQuizzes
             }
         }
     }
@@ -86,7 +86,7 @@ class HomeViewModel {
                     self.isErrorPlaceholderVisible = false
                     self.isTableViewVisible = true
                     self.areFiltersVisible = true
-                    self.fetchQuizes()
+                    self.fetchquizzes()
                 }
             }
             .store(in: &cancellables)
@@ -97,20 +97,20 @@ class HomeViewModel {
         isErrorPlaceholderVisible = true
     }
 
-    private func filterQuizes(for category: Category) async -> [QuizCellModel] {
-        quizes
+    private func filterquizzes(for category: Category) async -> [QuizCellModel] {
+        quizzes
             .filter { $0.category == category }
     }
 
-    private func fetchQuizes() {
+    private func fetchquizzes() {
         Task {
             do {
-                let quizes = try await quizUseCase
+                let quizzes = try await quizUseCase
                     .quizzes
                     .map { QuizCellModel(from: $0) }
 
                 await MainActor.run {
-                    self.quizes = quizes
+                    self.quizzes = quizzes
                     self.filters = categories
                 }
             } catch {

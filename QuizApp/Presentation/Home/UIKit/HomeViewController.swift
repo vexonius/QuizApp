@@ -99,7 +99,7 @@ extension HomeViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$filteredQuizes
+            .$filteredQuizzes
             .removeDuplicates()
             .receive(subscriber: quizTableView.items(datasource))
     }

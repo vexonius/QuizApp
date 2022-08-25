@@ -88,7 +88,7 @@ extension SearchViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$filteredQuizes
+            .$filteredQuizzes
             .receive(subscriber: quizTableView.items(datasource))
     }
 
