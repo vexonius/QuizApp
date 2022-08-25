@@ -36,6 +36,7 @@ class SearchViewModel {
     func onSearchTextChanged(_ searchText: String) {
         guard searchText.count > CustomConstants.minimumSearchTextLength else {
             self.filteredQuizzes = []
+            showEmptyResultsMessage()
 
             return
         }
@@ -45,6 +46,8 @@ class SearchViewModel {
 
             await MainActor.run {
                 self.filteredQuizzes = filteredQuizzes
+                self.isErrorPlaceholderVisible = false
+                self.isTableViewVisible = true
             }
         }
     }
@@ -74,6 +77,12 @@ class SearchViewModel {
 
     private func showNoNetworkError() {
         errorMessage = LocalizedStrings.networkErrorDescription.localizedString
+        isErrorPlaceholderVisible = true
+        isTableViewVisible = false
+    }
+
+    private func showEmptyResultsMessage() {
+        errorMessage = LocalizedStrings.emptySearchResults.localizedString
         isErrorPlaceholderVisible = true
     }
 
