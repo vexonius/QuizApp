@@ -1,5 +1,6 @@
 extension AppModule: RegisterViewsProtocol {
 
+    // swiftlint:disable:next function_body_length
     func registerViews() {
         container
             .register { container in

@@ -67,7 +67,7 @@ extension AppCoordinator: QuizCoordinatorProtocol {
     }
 
     func finishQuiz(with result: QuizResultModel) {
-    
+
     }
 
 }
