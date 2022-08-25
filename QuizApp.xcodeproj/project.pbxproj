@@ -45,6 +45,7 @@
 		F02F01EB28AF78A20056610D /* QuizSessionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01EA28AF78A20056610D /* QuizSessionResultModel.swift */; };
 		F02F01EF28AF80BF0056610D /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01EE28AF80BF0056610D /* QuizResultViewModel.swift */; };
 		F02F01F128AF847E0056610D /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01F028AF847E0056610D /* QuizResultViewController.swift */; };
+		F035DE8028B7B841000A48D8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
 		F040029B28A3FA760012B2E4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = F040029A28A3FA760012B2E4 /* Nuke */; };
 		F040579E28A69D6E00A659AE /* UserRankingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040579D28A69D6E00A659AE /* UserRankingCellModel.swift */; };
 		F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */; };
@@ -306,7 +307,6 @@
 		F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllersProtocol.swift; sourceTree = "<group>"; };
 		F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+HostingViewControllerResolution.swift"; sourceTree = "<group>"; };
 		F07265C628B76FAA00A2848E /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
-		F07265C928B773E600A2848E /* QuizUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "QuizUI-Info.plist"; sourceTree = "<group>"; };
 		F07D305A288ED984000592F2 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		F0809FF028884E0400142907 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
@@ -586,7 +586,7 @@
 		F0242FAD28815B7700927148 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				F07265B728B7679F00A2848E /* Preview Content */,
+				F0E6A984287C74CB007BF1D4 /* Info.plist */,
 				F0E6A97F287C74CB007BF1D4 /* Assets.xcassets */,
 				F0E6A981287C74CB007BF1D4 /* LaunchScreen.storyboard */,
 				F088E837287EB88C00E0375D /* Fonts */,
@@ -751,13 +751,6 @@
 				F02F01F028AF847E0056610D /* QuizResultViewController.swift */,
 			);
 			path = UIKit;
-			sourceTree = "<group>";
-		};
-		F07265B728B7679F00A2848E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F07265C528B76F9600A2848E /* SwiftUI */ = {
@@ -1037,7 +1030,6 @@
 		F0E6A96A287C74CA007BF1D4 = {
 			isa = PBXGroup;
 			children = (
-				F07265C928B773E600A2848E /* QuizUI-Info.plist */,
 				F0E6A975287C74CA007BF1D4 /* QuizApp */,
 				F0E6A974287C74CA007BF1D4 /* Products */,
 				F0DA2D33288AE7D5000B8C70 /* Recovered References */,
@@ -1065,7 +1057,6 @@
 				F0242FAA28815B5B00927148 /* Presentation */,
 				F0242FAD28815B7700927148 /* Supporting files */,
 				F0513298287DA252003E8D90 /* .swiftlint.yml */,
-				F0E6A984287C74CB007BF1D4 /* Info.plist */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -1204,6 +1195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F035DE8028B7B841000A48D8 /* .swiftlint.yml in Resources */,
 				F07265B828B767C000A2848E /* Assets.xcassets in Resources */,
 				F07265CC28B775DB00A2848E /* SourceSansPro-SemiBold.ttf in Resources */,
 				F07265CA28B775DB00A2848E /* SourceSansPro-Bold.ttf in Resources */,
@@ -1505,11 +1497,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuizApp/Supporting files/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = XW6PW584W6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "QuizUI-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1536,11 +1527,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuizApp/Supporting files/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = XW6PW584W6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "QuizUI-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1610,6 +1600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "QuizApp/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1664,6 +1655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "QuizApp/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1683,7 +1675,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XW6PW584W6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuizApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1711,7 +1702,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XW6PW584W6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuizApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
