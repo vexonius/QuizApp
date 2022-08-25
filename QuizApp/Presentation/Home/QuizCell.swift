@@ -137,7 +137,7 @@ extension QuizCell: ConstructViewsProtocol {
 
 extension QuizCell {
 
-    func bind(with model: QuizModel) {
+    func bind(with model: QuizCellModel) {
         titleLabel.text = model.name
         summaryLabel.text = model.description
 
@@ -147,6 +147,10 @@ extension QuizCell {
 
         if let url = URL(string: model.imageUrl) {
             Nuke.loadImage(with: url, into: icon)
+        }
+
+        if let highlightedText = model.highlightedText {
+            titleLabel.highlight(target: highlightedText)
         }
     }
 

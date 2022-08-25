@@ -22,7 +22,7 @@ class SearchBarView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return UIView.layoutFittingExpandedSize
+        UIView.layoutFittingExpandedSize
     }
 
 }

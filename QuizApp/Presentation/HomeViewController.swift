@@ -12,7 +12,7 @@ class HomeViewController: BaseViewController {
     private var filtersSegmentedControl: ClearSegmentedControll!
     private var errorPlaceholder: ErrorPlaceholderView!
     private var quizTableView: UITableView!
-    private var datasource: CombineTableViewDataSource<QuizModel>!
+    private var datasource: CombineTableViewDataSource<QuizCellModel>!
 
     private var cancellables = Set<AnyCancellable>()
     private let viewModel: HomeViewModel
@@ -60,7 +60,7 @@ class HomeViewController: BaseViewController {
     }
 
     private func createQuizzesDataSource() {
-        datasource = CombineTableViewDataSource<QuizModel>(cellFactory: quizCell)
+        datasource = CombineTableViewDataSource<QuizCellModel>(cellFactory: quizCell)
         quizTableView.dataSource = datasource
     }
 
@@ -76,12 +76,7 @@ extension HomeViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$errorTitle
-            .assign(to: \.title, on: errorPlaceholder)
-            .store(in: &cancellables)
-
-        viewModel
-            .$errorDescription
+            .$errorMessage
             .assign(to: \.errorDescription, on: errorPlaceholder)
             .store(in: &cancellables)
 
@@ -106,12 +101,13 @@ extension HomeViewController: BindViewsProtocol {
 
         viewModel
             .$filteredQuizes
+            .removeDuplicates()
             .receive(subscriber: quizTableView.items(datasource))
     }
 
     func bindViews() {
         quizTableView
-            .modelSelected(QuizModel.self)
+            .modelSelected(QuizCellModel.self)
             .sink { [weak self] model in
                 self?.viewModel.onQuizSelected(model)
             }
@@ -175,7 +171,7 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController {
 
-    var quizCell: CombineTableViewDataSource<QuizModel>.CellFactory {
+    var quizCell: CombineTableViewDataSource<QuizCellModel>.CellFactory {
         { _, tableView, indexPath, model -> UITableViewCell in
             guard let cell: QuizCell = tableView.dequeueCell(for: indexPath, with: QuizCell.reuseIdentifier) else {
                 return UITableViewCell()

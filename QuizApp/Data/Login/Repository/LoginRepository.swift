@@ -3,10 +3,11 @@ import Foundation
 class LoginRepository: LoginRepositoryProtocol {
 
     private let networkClient: LoginNetworkClientProtocol
-    private let secureStorage = SecureStorage.shared
+    private let secureStorage: SecureStorageProtocol
 
-    init(networkClient: LoginNetworkClientProtocol) {
+    init(networkClient: LoginNetworkClientProtocol, secureStorage: SecureStorageProtocol) {
         self.networkClient = networkClient
+        self.secureStorage = secureStorage
     }
 
     func login(data: LoginRequestBodyRepoModel) async throws {

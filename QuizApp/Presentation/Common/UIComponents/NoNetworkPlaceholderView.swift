@@ -10,12 +10,6 @@ class ErrorPlaceholderView: UIView {
         static let iconSize: Float = 68
     }
 
-    var title: String? {
-        didSet {
-            titleView.text = title
-        }
-    }
-
     var errorDescription: String? {
         didSet {
             errorDescriptionView.text = errorDescription
@@ -56,6 +50,7 @@ extension ErrorPlaceholderView: ConstructViewsProtocol {
     func styleViews() {
         icon.image = UIImage.error
 
+        titleView.text = LocalizedStrings.error.localizedString
         titleView.font = UIFont.sourceSansPro(ofSize: CustomConstants.titleFontSize.cgFloat, ofWeight: .bold)
         titleView.textAlignment = .center
 

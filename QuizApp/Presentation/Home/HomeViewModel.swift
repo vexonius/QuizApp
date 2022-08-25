@@ -1,23 +1,26 @@
 import Combine
-import Reachability
 import UIKit
+import Reachability
 
 class HomeViewModel {
 
+    private struct CustomConstants {
+        static let minimumSearchTextLength = 2
+    }
+
     @Published private(set) var isErrorPlaceholderVisible: Bool = false
-    @Published private(set) var errorTitle: String?
-    @Published private(set) var errorDescription: String?
+    @Published private(set) var errorMessage: String?
 
     @Published private(set) var isTableViewVisible: Bool = false
     @Published private(set) var areFiltersVisible: Bool = false
 
     @Published private(set) var filters: [CategoryFilter] = []
-    @Published private(set) var filteredQuizes: [QuizModel] = []
+    @Published private(set) var filteredQuizes: [QuizCellModel] = []
 
     @Published private(set) var lastSearchedTerm: String?
     @Published private(set) var lastSelectedCategory: CategoryFilter?
 
-    private var quizes: [QuizModel] = []
+    private var quizes: [QuizCellModel] = []
 
     private var categories: [CategoryFilter] {
         Category
@@ -47,27 +50,69 @@ class HomeViewModel {
     }
 
     func onCategoryChange(for index: Int) {
-        guard
-            let selectedCategory = categories.first(where: { $0.index == index }),
-            selectedCategory.category != .uncategorized
-        else {
-            filteredQuizes = quizes
-            lastSelectedCategory = nil
+        Task {
+            guard
+                let selectedCategoryModel = categories.first(where: { $0.index == index }),
+                selectedCategoryModel.category != .uncategorized
+            else {
+                await MainActor.run {
+                    self.filteredQuizes = quizes
+                    self.lastSelectedCategory = nil
+                }
+
+                return
+            }
+
+            let filteredQuizes = await filterQuizes(for: selectedCategoryModel.category)
+
+            await MainActor.run {
+                self.filteredQuizes = filteredQuizes
+                self.lastSelectedCategory = selectedCategoryModel
+            }
+        }
+    }
+
+    func onQuizSelected(_ quiz: QuizCellModel) {
+        coordinator.routeToQuizDetails(quiz: quiz.toModel())
+    }
+
+    func onSearchTextChanged(_ searchText: String) {
+        guard searchText.count > CustomConstants.minimumSearchTextLength else {
+            self.filteredQuizes = []
+            lastSearchedTerm = nil
 
             return
         }
 
-        filteredQuizes = quizes.filter { $0.category.rawValue == selectedCategory.title }
-        lastSelectedCategory = selectedCategory
+        Task {
+            let filteredQuizzes = await filterQuizes(containing: searchText)
+
+            await MainActor.run {
+                self.filteredQuizes = filteredQuizzes
+                lastSearchedTerm = searchText
+            }
+        }
     }
 
-    func onQuizSelected(_ quiz: QuizModel) {
-        coordinator.routeToQuizDetails(quiz: quiz)
-    }
+    func switchFiltering(for mode: QuizzesFilteringMode) {
+        switch mode {
+        case .home:
+            guard let lastSelectedCategory = lastSelectedCategory else { 
+                filteredQuizes = quizes 
+                
+                return
+            }
 
-    func onSearchTextChanged(_ searchText: String) {
-        filteredQuizes = quizes.filter { $0.name.lowercased().contains(searchText) }
-        lastSearchedTerm = searchText
+            onCategoryChange(for: lastSelectedCategory.index)
+        case .search:
+            guard let lastSearchedTerm = lastSearchedTerm else {
+                filteredQuizes = []
+            
+                return
+            }
+
+            onSearchTextChanged(lastSearchedTerm)
+        }
     }
 
     private func observeNetworkChanges() {
@@ -92,43 +137,34 @@ class HomeViewModel {
     }
 
     private func showNoNetworkError() {
-        errorTitle = LocalizedStrings.networkError.localizedString
-        errorDescription = LocalizedStrings.networkErrorDescription.localizedString
+        errorMessage = LocalizedStrings.networkErrorDescription.localizedString
         isErrorPlaceholderVisible = true
     }
 
-    func switchFiltering(for mode: QuizzesFilteringMode) {
-        switch mode {
-        case .home:
-            guard let lastSelectedCategory = lastSelectedCategory else {
-                filteredQuizes = quizes
+    private func filterQuizes(containing text: String) async -> [QuizCellModel] {
+        quizes
+            .filter { $0.name.lowercased().contains(text) }
+            .map { QuizCellModel(from: $0, highlight: text) }
+    }
 
-                return
-            }
-
-            onCategoryChange(for: lastSelectedCategory.index)
-        case .search:
-            guard let lastSearchedTerm = lastSearchedTerm else {
-                filteredQuizes = []
-
-                return
-            }
-
-            onSearchTextChanged(lastSearchedTerm)
-        }
+    private func filterQuizes(for category: Category) async -> [QuizCellModel] {
+        quizes
+            .filter { $0.category == category }
     }
 
     private func fetchQuizes() {
         Task {
             do {
-                let quizes = try await quizUseCase.quizzes
+                let quizes = try await quizUseCase
+                    .quizzes
+                    .map { QuizCellModel(from: $0) }
 
                 await MainActor.run {
                     self.quizes = quizes
                     self.filters = categories
                 }
             } catch {
-                showNoNetworkError()
+                self.errorMessage = LocalizedStrings.serverErrorMessage.localizedString
             }
         }
     }

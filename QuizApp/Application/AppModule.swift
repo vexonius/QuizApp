@@ -69,12 +69,17 @@ class AppModule {
             .register { NetworkService() }
             .implements(NetworkServiceProtocol.self)
             .scope(.application)
+
+        container
+            .register { SecureStorage() }
+            .implements(SecureStorageProtocol.self)
+            .scope(.application)
     }
 
     private func registerRepositories() {
         container
             .register { container in
-                LoginRepository(networkClient: container.resolve())
+                LoginRepository(networkClient: container.resolve(), secureStorage: container.resolve())
             }
             .implements(LoginRepositoryProtocol.self)
             .scope(.application)
@@ -183,6 +188,7 @@ class AppModule {
             .scope(.unique)
     }
 
+    // swiftlint:disable:next function_body_length
     private func registerViewControllers() {
         container
             .register { container in

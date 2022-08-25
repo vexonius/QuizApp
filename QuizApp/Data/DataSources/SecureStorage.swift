@@ -14,8 +14,6 @@ class SecureStorage: SecureStorageProtocol {
 
     private let storage = KeychainSwift()
 
-    private init() {}
-
     func get(_ key: String) -> String? {
         storage.get(key)
     }
