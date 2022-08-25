@@ -1,8 +1,12 @@
 import Combine
-import Reachability
 import UIKit
+import Reachability
 
 class HomeViewModel {
+
+    private struct CustomConstants {
+        static let minimumSearchTextLength = 2
+    }
 
     @Published private(set) var isErrorPlaceholderVisible: Bool = false
     @Published private(set) var errorTitle: String?
@@ -47,18 +51,26 @@ class HomeViewModel {
     }
 
     func onCategoryChange(for index: Int) {
-        guard
-            let selectedCategory = categories.first(where: { $0.index == index }),
-            selectedCategory.category != .uncategorized
-        else {
-            filteredQuizes = quizes
-            lastSelectedCategory = nil
+        Task {
+            guard
+                let selectedCategoryModel = categories.first(where: { $0.index == index }),
+                selectedCategoryModel.category != .uncategorized
+            else {
+                await MainActor.run {
+                    self.filteredQuizes = quizes
+                    lastSelectedCategory = nil
+                }
 
-            return
+                return
+            }
+
+            let filteredQuizes = await filterQuizes(for: selectedCategoryModel.category)
+
+            await MainActor.run {
+                self.filteredQuizes = filteredQuizes
+                lastSelectedCategory = selectedCategoryModel
+            }
         }
-
-        filteredQuizes = quizes.filter { $0.category.rawValue == selectedCategory.title }
-        lastSelectedCategory = selectedCategory
     }
 
     func onQuizSelected(_ quiz: QuizCellModel) {
@@ -66,11 +78,42 @@ class HomeViewModel {
     }
 
     func onSearchTextChanged(_ searchText: String) {
-        filteredQuizes = quizes
-            .filter { $0.name.lowercased().contains(searchText) }
-            .map { QuizCellModel(from: $0, highlight: searchText) }
+        guard searchText.count > CustomConstants.minimumSearchTextLength else {
+            self.filteredQuizes = []
+            lastSearchedTerm = nil
 
-        lastSearchedTerm = searchText
+            return
+        }
+
+        Task {
+            let filteredQuizzes = await filterQuizes(containing: searchText)
+
+            await MainActor.run {
+                self.filteredQuizes = filteredQuizzes
+                lastSearchedTerm = searchText
+            }
+        }
+    }
+
+    func switchFiltering(for mode: QuizzesFilteringMode) {
+        switch mode {
+        case .home:
+            guard let lastSelectedCategory = lastSelectedCategory else { 
+                filteredQuizes = quizes 
+                
+                return
+            }
+
+            onCategoryChange(for: lastSelectedCategory.index)
+        case .search:
+            guard let lastSearchedTerm = lastSearchedTerm else {
+                filteredQuizes = []
+            
+                return
+            }
+
+            onSearchTextChanged(lastSearchedTerm)
+        }
     }
 
     private func observeNetworkChanges() {
@@ -100,25 +143,15 @@ class HomeViewModel {
         isErrorPlaceholderVisible = true
     }
 
-    func switchFiltering(for mode: QuizzesFilteringMode) {
-        switch mode {
-        case .home:
-            guard let lastSelectedCategory = lastSelectedCategory else {
-                filteredQuizes = quizes
+    private func filterQuizes(containing text: String) async -> [QuizCellModel] {
+        quizes
+            .filter { $0.name.lowercased().contains(text) }
+            .map { QuizCellModel(from: $0, highlight: text) }
+    }
 
-                return
-            }
-
-            onCategoryChange(for: lastSelectedCategory.index)
-        case .search:
-            guard let lastSearchedTerm = lastSearchedTerm else {
-                filteredQuizes = []
-
-                return
-            }
-
-            onSearchTextChanged(lastSearchedTerm)
-        }
+    private func filterQuizes(for category: Category) async -> [QuizCellModel] {
+        quizes
+            .filter { $0.category == category }
     }
 
     private func fetchQuizes() {
