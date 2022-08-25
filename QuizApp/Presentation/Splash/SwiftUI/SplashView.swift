@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PlaceholderView: View {
+struct SplashView: View {
 
     var body: some View {
         ZStack {
@@ -8,8 +8,7 @@ struct PlaceholderView: View {
             Text(LocalizedStrings.appName.localizedString)
                 .font(.system(size: 42, weight: .heavy))
         }
-        .navigationTitle(LocalizedStrings.appName.localizedString)
-        .ignoresSafeArea()
+        .brandStyleBackground()
     }
 
 }
@@ -17,7 +16,7 @@ struct PlaceholderView: View {
 struct PlaceholderView_Previews: PreviewProvider {
 
     static var previews: some View {
-        PlaceholderView()
+        SplashView()
     }
 
 }

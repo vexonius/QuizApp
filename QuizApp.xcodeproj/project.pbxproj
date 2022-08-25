@@ -14,6 +14,8 @@
 		F0052EBB28A28865006515AE /* QuizEndpointsParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0052EBA28A28865006515AE /* QuizEndpointsParams.swift */; };
 		F0052EBD28A28E71006515AE /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0052EBC28A28E71006515AE /* URL+Extensions.swift */; };
 		F0052EBF28A29193006515AE /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0052EBE28A29193006515AE /* URLRequest+Extensions.swift */; };
+		F007C98B28B7C1FB009C73D3 /* BaseGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F007C98728B7C0C7009C73D3 /* BaseGradientView.swift */; };
+		F007C98C28B7C20C009C73D3 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F007C98928B7C17B009C73D3 /* Color+Extensions.swift */; };
 		F012CAC328A29409007592A5 /* QuizRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAC228A29409007592A5 /* QuizRepository.swift */; };
 		F012CAC528A29504007592A5 /* QuizRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAC428A29504007592A5 /* QuizRepositoryProtocol.swift */; };
 		F012CAC828A295AB007592A5 /* QuizRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAC728A295AB007592A5 /* QuizRepoModel.swift */; };
@@ -159,7 +161,7 @@
 		F07265BE28B76C7000A2848E /* RegisterViewControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */; };
 		F07265C128B76E1F00A2848E /* AppModule+HostingViewControllerResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */; };
 		F07265C228B76E6700A2848E /* RegisterViewControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */; };
-		F07265C828B76FF300A2848E /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265C628B76FAA00A2848E /* PlaceholderView.swift */; };
+		F07265C828B76FF300A2848E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265C628B76FAA00A2848E /* SplashView.swift */; };
 		F07265CA28B775DB00A2848E /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E838287EB8A600E0375D /* SourceSansPro-Bold.ttf */; };
 		F07265CB28B775DB00A2848E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */; };
 		F07265CC28B775DB00A2848E /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */; };
@@ -259,6 +261,8 @@
 		F0052EBA28A28865006515AE /* QuizEndpointsParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEndpointsParams.swift; sourceTree = "<group>"; };
 		F0052EBC28A28E71006515AE /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		F0052EBE28A29193006515AE /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
+		F007C98728B7C0C7009C73D3 /* BaseGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGradientView.swift; sourceTree = "<group>"; };
+		F007C98928B7C17B009C73D3 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		F012CAC228A29409007592A5 /* QuizRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepository.swift; sourceTree = "<group>"; };
 		F012CAC428A29504007592A5 /* QuizRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F012CAC728A295AB007592A5 /* QuizRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepoModel.swift; sourceTree = "<group>"; };
@@ -306,7 +310,7 @@
 		F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+UIViewControllerResolution.swift"; sourceTree = "<group>"; };
 		F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllersProtocol.swift; sourceTree = "<group>"; };
 		F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+HostingViewControllerResolution.swift"; sourceTree = "<group>"; };
-		F07265C628B76FAA00A2848E /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		F07265C628B76FAA00A2848E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F07D305A288ED984000592F2 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		F0809FF028884E0400142907 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
@@ -432,6 +436,15 @@
 				F02F01E628AF781B0056610D /* QuizSessionResultResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F007C98528B7C09E009C73D3 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F007C98728B7C0C7009C73D3 /* BaseGradientView.swift */,
+				F007C98928B7C17B009C73D3 /* Color+Extensions.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		F0082B9328A2777000898984 /* Client */ = {
@@ -756,7 +769,7 @@
 		F07265C528B76F9600A2848E /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				F07265C628B76FAA00A2848E /* PlaceholderView.swift */,
+				F07265C628B76FAA00A2848E /* SplashView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -773,6 +786,7 @@
 		F088E82A287DAE2000E0375D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F007C98528B7C09E009C73D3 /* SwiftUI */,
 				F0242FAE28815BDA00927148 /* Interfaces */,
 				F0918417288038A800CB7550 /* UIComponents */,
 				F088E82E287DB31B00E0375D /* Helpers */,
@@ -1265,6 +1279,7 @@
 				F072657428B7608B00A2848E /* LoginViewModel.swift in Sources */,
 				F072655C28B7604200A2848E /* LoginRepository.swift in Sources */,
 				F072655428B7603400A2848E /* QuizRepository.swift in Sources */,
+				F007C98B28B7C1FB009C73D3 /* BaseGradientView.swift in Sources */,
 				F072654D28B7602F00A2848E /* Api.swift in Sources */,
 				F072659728B761D000A2848E /* QuizResultRequest.swift in Sources */,
 				F072654E28B7602F00A2848E /* URLSession+Extension.swift in Sources */,
@@ -1294,6 +1309,7 @@
 				F072656128B7604C00A2848E /* QuizResultModel.swift in Sources */,
 				F072656C28B7605500A2848E /* LoginUseCaseProtocol.swift in Sources */,
 				F072655728B7603900A2848E /* AccountRepository.swift in Sources */,
+				F007C98C28B7C20C009C73D3 /* Color+Extensions.swift in Sources */,
 				F072657028B7606B00A2848E /* QuizAnsweringViewModel.swift in Sources */,
 				F07265A028B7625F00A2848E /* DesignConstants.swift in Sources */,
 				F072657128B7607900A2848E /* QuizLeaderboardViewModel.swift in Sources */,
@@ -1332,7 +1348,7 @@
 				F072657628B7609500A2848E /* HomeViewModel.swift in Sources */,
 				F072659128B761C900A2848E /* LoginNetworkClient.swift in Sources */,
 				F072656528B7604C00A2848E /* QuizSessionResultModel.swift in Sources */,
-				F07265C828B76FF300A2848E /* PlaceholderView.swift in Sources */,
+				F07265C828B76FF300A2848E /* SplashView.swift in Sources */,
 				F072655128B7603400A2848E /* QuizResultRepoModel.swift in Sources */,
 				F072658C28B761B700A2848E /* UsernameUpdateRequestModel.swift in Sources */,
 				F072655228B7603400A2848E /* QuizRepoModel.swift in Sources */,
