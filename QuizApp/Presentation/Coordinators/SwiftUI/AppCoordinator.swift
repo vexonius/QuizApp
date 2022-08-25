@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import UIKit
 import Resolver
 
@@ -15,19 +16,18 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func routeToLogin() {
-        let loginViewController: LoginViewController = container.resolve()
-        navigationController.setViewControllers([loginViewController], animated: true)
+
     }
 
     func routeToHomeScreen() {
-        let tabbedViewController: TabbedViewController = container.resolve()
-        navigationController.setViewControllers([tabbedViewController], animated: true)
+
     }
 
     func setInitialScene(in window: UIWindow) {
         window.rootViewController = navigationController
-        let splashViewController: SplashViewController = container.resolve()
-        navigationController.setViewControllers([splashViewController], animated: true)
+        let rootView: PlaceholderView = container.resolve()
+        let viewcontroller = UIHostingController(rootView: rootView)
+        navigationController.setViewControllers([viewcontroller], animated: true)
         window.makeKeyAndVisible()
     }
 
@@ -55,23 +55,19 @@ class AppCoordinator: AppCoordinatorProtocol {
 extension AppCoordinator: QuizCoordinatorProtocol {
 
     func routeToLeaderBoard(for quizId: Int) {
-        let quizLeaderboardViewController: QuizLeaderboardViewController = container.resolve(args: quizId)
-        navigationController.pushViewController(quizLeaderboardViewController, animated: true)
+
     }
 
     func routeToQuizDetails(quiz: QuizModel) {
-        let quizDetailsViewController: QuizDetailsViewController = container.resolve(args: quiz)
-        navigationController.pushViewController(quizDetailsViewController, animated: true)
+
     }
 
     func play(quiz: QuizModel) {
-        let quizAnsweringViewController: QuizAnsweringViewController = container.resolve(args: quiz)
-        navigationController.pushViewController(quizAnsweringViewController, animated: true)
+
     }
 
     func finishQuiz(with result: QuizResultModel) {
-        let resultViewController: QuizResultViewController = container.resolve(args: result)
-        navigationController.pushViewController(resultViewController, animated: true)
+    
     }
 
 }

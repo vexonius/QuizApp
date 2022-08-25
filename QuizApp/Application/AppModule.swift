@@ -3,7 +3,7 @@ import Resolver
 
 class AppModule {
 
-    private let container: Resolver
+    private(set) var container: Resolver
 
     init(container: Resolver) {
         self.container = container
@@ -23,7 +23,7 @@ class AppModule {
         registerRepositories()
         registerUseCases()
         registerViewModels()
-        registerViewControllers()
+        registerViews()
     }
 
     private func registerCoordinators() {
@@ -184,72 +184,6 @@ class AppModule {
                     userResult: args.get(),
                     quizUseCase: container.resolve(),
                     coordinator: container.resolve())
-            }
-            .scope(.unique)
-    }
-
-    // swiftlint:disable:next function_body_length
-    private func registerViewControllers() {
-        container
-            .register { container in
-                SplashViewController(viewModel: container.resolve())
-            }
-            .scope(.unique)
-
-        container
-            .register { container in
-                TabbedViewController(
-                    homeViewController: container.resolve(),
-                    searchViewController: container.resolve(),
-                    settingsViewController: container.resolve())
-            }
-            .scope(.unique)
-
-        container
-            .register { container in
-                LoginViewController(viewModel: container.resolve())
-            }
-            .scope(.unique)
-
-        container
-            .register { container in
-                HomeViewController(viewModel: container.resolve())
-            }
-            .scope(.unique)
-
-        container
-            .register { container in
-                SearchViewController(viewModel: container.resolve())
-            }
-            .scope(.unique)
-
-        container
-            .register { container in
-                SettingsViewController(viewModel: container.resolve())
-            }
-            .scope(.unique)
-
-        container
-            .register { container, args in
-                QuizDetailsViewController(viewModel: container.resolve(args: args))
-            }
-            .scope(.unique)
-
-        container
-            .register { container, args in
-                QuizLeaderboardViewController(viewModel: container.resolve(args: args))
-            }
-            .scope(.unique)
-
-        container
-            .register { container, args in
-                QuizAnsweringViewController(viewModel: container.resolve(args: args))
-            }
-            .scope(.unique)
-
-        container
-            .register { container, args in
-                QuizResultViewController(viewModel: container.resolve(args: args))
             }
             .scope(.unique)
     }

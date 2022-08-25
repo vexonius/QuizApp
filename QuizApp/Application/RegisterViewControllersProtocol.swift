@@ -1,0 +1,5 @@
+protocol RegisterViewsProtocol {
+
+    func registerViews()
+
+}
