@@ -11,9 +11,9 @@ class SearchViewController: BaseViewController {
     private var datasource: CombineTableViewDataSource<QuizCellModel>!
 
     private var cancellables = Set<AnyCancellable>()
-    private let viewModel: HomeViewModel
+    private let viewModel: SearchViewModel
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -39,7 +39,6 @@ class SearchViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        viewModel.switchFiltering(for: .search)
         styleNavigationBar()
     }
 
