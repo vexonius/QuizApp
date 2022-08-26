@@ -1,16 +1,32 @@
+import Foundation
+
 class QuizRepository: QuizRepositoryProtocol {
+
+    private var timer: Timer?
+    private var task: Task<[QuizRepoModel], Error>?
+    private let timerInterval: TimeInterval = 300
 
     private let quizNetworkClient: QuizNetworkClientProtocol
 
     init(quizNetworkClient: QuizNetworkClientProtocol) {
         self.quizNetworkClient = quizNetworkClient
+
+        refreshQuizzesPeriodically()
     }
 
     var quizzes: [QuizRepoModel] {
         get async throws {
-            try await quizNetworkClient
-                .quizzes
-                .map { QuizRepoModel(from: $0) }
+            guard let task = task else {
+                task = Task {
+                    try await quizNetworkClient
+                        .quizzes
+                        .map { QuizRepoModel(from: $0) }
+                }
+
+                return try await task!.value
+            }
+
+            return try await task.value
         }
     }
 
@@ -18,6 +34,17 @@ class QuizRepository: QuizRepositoryProtocol {
         try await quizNetworkClient
             .getQuizzes(for: category)
             .map { QuizRepoModel(from: $0) }
+    }
+
+    func refreshQuizzesPeriodically() {
+        timer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true) { _ in
+            self.task = Task {
+                try await self.quizNetworkClient
+                    .quizzes
+                    .map { QuizRepoModel(from: $0) }
+            }
+        }
+        timer?.fire()
     }
 
     func getLeaderboard(for quizId: Int)  async throws -> [UserRankingRepoModel] {

@@ -59,7 +59,7 @@ class HomeViewModel {
                 return
             }
 
-            let filteredquizzes = await filterquizzes(for: selectedCategoryModel.category)
+            let filteredQuizzes = await filterquizzes(for: selectedCategoryModel.category)
 
             await MainActor.run {
                 self.filteredQuizzes = filteredQuizzes
