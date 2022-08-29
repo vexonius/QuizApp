@@ -22,13 +22,33 @@ struct LoginView: View {
                 .onChange(of: username) { newValue in
                     viewModel.onEmailChanged(username)
                 }
-            SecureField(
-                LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
-                .modifier(RoundedTextInput())
-                .padding([.horizontal], 32)
-                .onChange(of: password) { newValue in
-                    viewModel.onPasswordChanged(password)
+            ZStack(alignment: .trailing) {
+                if viewModel.isPasswordHidden {
+                    SecureField(
+                        LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
+                    .padding([.vertical], 1) // Secure field seems a tiny bit smaller, therefore you can see a glitch
+                    .modifier(RoundedTextInput())
+                    .onChange(of: password) { newValue in
+                        viewModel.onPasswordChanged(password)
+                    }
+                } else {
+                    TextField(
+                        LocalizedStrings.passwordPlaceholder.localizedString,
+                        text: $password)
+                        .modifier(RoundedTextInput())
+                        .onChange(of: username) { newValue in
+                            viewModel.onPasswordChanged(password)
+                        }
                 }
+                Button(action: {
+                        viewModel.togglePasswordVisibility()
+                    }, label: {
+                        Image(uiImage: .hideText)
+                            .frame(width: 20, height: 20, alignment: .trailing)
+                            .padding([.horizontal], 20)
+                    })
+            }
+            .padding([.horizontal], 32)
             Button(action: {
                     viewModel.login()
                 }, label: {
