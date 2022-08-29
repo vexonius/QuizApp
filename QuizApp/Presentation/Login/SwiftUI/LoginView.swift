@@ -7,22 +7,23 @@ struct LoginView: View {
 
     @State var username: String = ""
     @State var password: String = ""
+
     @FocusState var passwordInFocus: SecureFieldType?
 
     var body: some View {
-        VStack (spacing: 16) {
+        VStack (spacing: DesignConstants.Insets.componentSpacing.cgFloat) {
             Spacer()
             Text(LocalizedStrings.appName.localizedString)
-                .font(.system(size: 32, weight: .bold, design: .default))
+                .font(.system(size: DesignConstants.FontSize.heading.cgFloat, weight: .bold, design: .default))
                 .foregroundColor(Color.white)
             Spacer()
             TextField(
                 LocalizedStrings.usernamePlaceholder.localizedString,
                 text: $username)
                 .modifier(RoundedTextInput())
-                .padding([.horizontal], 32)
+                .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
                 .onChange(of: username) { newValue in
-                    viewModel.onEmailChanged(username)
+                    viewModel.onEmailChanged(newValue)
                 }
             ZStack(alignment: .trailing) {
                 if viewModel.isPasswordHidden {
@@ -32,7 +33,7 @@ struct LoginView: View {
                     .focused($passwordInFocus, equals: .secure)
                     .modifier(RoundedTextInput())
                     .onChange(of: password) { newValue in
-                        viewModel.onPasswordChanged(password)
+                        viewModel.onPasswordChanged(newValue)
                     }
                 } else {
                     TextField(
@@ -41,29 +42,36 @@ struct LoginView: View {
                         .modifier(RoundedTextInput())
                         .focused($passwordInFocus, equals: .plain)
                         .onChange(of: username) { newValue in
-                            viewModel.onPasswordChanged(password)
+                            viewModel.onPasswordChanged(newValue)
                         }
                 }
-                Button(action: {
+                Button(
+                    action: {
                         viewModel.togglePasswordVisibility()
-                    passwordInFocus = viewModel.isPasswordHidden ? .secure : .plain
-                    }, label: {
+                        passwordInFocus = viewModel.isPasswordHidden ? .secure : .plain
+                    },
+                    label: {
                         Image(uiImage: .hideText)
-                            .frame(width: 20, height: 20, alignment: .trailing)
-                            .padding([.horizontal], 20)
+                            .frame(
+                                width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
+                                height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
+                                alignment: .trailing)
+                            .padding([.horizontal], DesignConstants.InputComponents.thumbnailInset.cgFloat)
                     })
             }
-            .padding([.horizontal], 32)
-            Button(action: {
+            .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
+            Button(
+                action: {
                     viewModel.login()
-                }, label: {
+                },
+                label: {
                     Text(LocalizedStrings.loginButtonTitle.localizedString)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                         .foregroundColor(.darkerPurple)
                         .frame(maxWidth: .infinity)
                 })
                 .modifier(RoundedButton())
-                .padding([.horizontal], 32)
+                .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
                 .disabled(!viewModel.isLoginButtonEnabled)
             Spacer()
             Spacer()
