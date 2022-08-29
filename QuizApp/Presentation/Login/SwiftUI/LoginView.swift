@@ -4,8 +4,10 @@ import Resolver
 struct LoginView: View {
 
     @ObservedObject var viewModel: LoginViewModel
+
     @State var username: String = ""
     @State var password: String = ""
+    @FocusState var passwordInFocus: SecureFieldType?
 
     var body: some View {
         VStack (spacing: 16) {
@@ -27,6 +29,7 @@ struct LoginView: View {
                     SecureField(
                         LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
                     .padding([.vertical], 1) // Secure field seems a tiny bit smaller, therefore you can see a glitch
+                    .focused($passwordInFocus, equals: .secure)
                     .modifier(RoundedTextInput())
                     .onChange(of: password) { newValue in
                         viewModel.onPasswordChanged(password)
@@ -36,12 +39,14 @@ struct LoginView: View {
                         LocalizedStrings.passwordPlaceholder.localizedString,
                         text: $password)
                         .modifier(RoundedTextInput())
+                        .focused($passwordInFocus, equals: .plain)
                         .onChange(of: username) { newValue in
                             viewModel.onPasswordChanged(password)
                         }
                 }
                 Button(action: {
                         viewModel.togglePasswordVisibility()
+                    passwordInFocus = viewModel.isPasswordHidden ? .secure : .plain
                     }, label: {
                         Image(uiImage: .hideText)
                             .frame(width: 20, height: 20, alignment: .trailing)
@@ -66,5 +71,12 @@ struct LoginView: View {
         }
         .brandStyleBackground()
     }
+
+}
+
+enum SecureFieldType: Hashable {
+
+    case plain
+    case secure
 
 }
