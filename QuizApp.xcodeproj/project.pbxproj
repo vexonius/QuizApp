@@ -205,6 +205,8 @@
 		F09BB05628AD3151003353C5 /* QuestionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BB05528AD3151003353C5 /* QuestionCellModel.swift */; };
 		F09CDD2F28AB9D3D00EB2858 /* QuizSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CDD2E28AB9D3D00EB2858 /* QuizSessionResponse.swift */; };
 		F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */; };
+		F0A098D028B80ECC004F51C0 /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */; };
+		F0A098D328B819D3004F51C0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098D128B81951004F51C0 /* RoundedButton.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0ACC17C28A65C8F00C26208 /* UserRankingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */; };
 		F0ACC17E28A65E3F00C26208 /* UserRankingRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */; };
@@ -351,6 +353,8 @@
 		F09BB05528AD3151003353C5 /* QuestionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCellModel.swift; sourceTree = "<group>"; };
 		F09CDD2E28AB9D3D00EB2858 /* QuizSessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionResponse.swift; sourceTree = "<group>"; };
 		F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombineTableViewDataSource.swift; path = QuizApp/Presentation/CombineTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
+		F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
+		F0A098D128B81951004F51C0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingResponse.swift; sourceTree = "<group>"; };
 		F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingRepoModel.swift; sourceTree = "<group>"; };
@@ -445,6 +449,8 @@
 			children = (
 				F007C98728B7C0C7009C73D3 /* BaseGradientView.swift */,
 				F007C98928B7C17B009C73D3 /* Color+Extensions.swift */,
+				F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */,
+				F0A098D128B81951004F51C0 /* RoundedButton.swift */,
 				F0136EEE28B8E7CC00D8CD08 /* Font+Extensions.swift */,
 			);
 			path = SwiftUI;
@@ -1329,6 +1335,7 @@
 				F07265B328B7669200A2848E /* UIColor+Extensions.swift in Sources */,
 				F072658B28B761B700A2848E /* AccountDetailsResponse.swift in Sources */,
 				F07265B928B767FC00A2848E /* UIFont+Extensions.swift in Sources */,
+				F0A098D028B80ECC004F51C0 /* RoundedTextInput.swift in Sources */,
 				F072658F28B761B700A2848E /* AccountEndpoints.swift in Sources */,
 				F072656B28B7605100A2848E /* AccountDetailsModel.swift in Sources */,
 				F07265AD28B7656A00A2848E /* CellType.swift in Sources */,
@@ -1355,6 +1362,7 @@
 				F07265C828B76FF300A2848E /* SplashView.swift in Sources */,
 				F072655128B7603400A2848E /* QuizResultRepoModel.swift in Sources */,
 				F072658C28B761B700A2848E /* UsernameUpdateRequestModel.swift in Sources */,
+				F0A098D328B819D3004F51C0 /* RoundedButton.swift in Sources */,
 				F072655228B7603400A2848E /* QuizRepoModel.swift in Sources */,
 				F07265B628B7675800A2848E /* UIImage+Extensions.swift in Sources */,
 				F072657C28B7610900A2848E /* LocalizedStrings.swift in Sources */,
