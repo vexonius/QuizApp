@@ -207,6 +207,7 @@
 		F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */; };
 		F0A098D028B80ECC004F51C0 /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */; };
 		F0A098D328B819D3004F51C0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098D128B81951004F51C0 /* RoundedButton.swift */; };
+		F0A098D628B81DE6004F51C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098D428B81DB2004F51C0 /* LoginView.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0ACC17C28A65C8F00C26208 /* UserRankingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */; };
 		F0ACC17E28A65E3F00C26208 /* UserRankingRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */; };
@@ -355,6 +356,7 @@
 		F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombineTableViewDataSource.swift; path = QuizApp/Presentation/CombineTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
 		F0A098D128B81951004F51C0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F0A098D428B81DB2004F51C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingResponse.swift; sourceTree = "<group>"; };
 		F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingRepoModel.swift; sourceTree = "<group>"; };
@@ -786,6 +788,7 @@
 		F0749188287DABDE005A7A55 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F0B9072F28B7D42200349668 /* SwiftUI */,
 				F07265A528B764DD00A2848E /* UIKit */,
 				F0242FB128816A2500927148 /* LoginViewModel.swift */,
 			);
@@ -953,6 +956,14 @@
 				F0ACC18528A66CDD00C26208 /* QuizLeaderboardViewModel.swift */,
 			);
 			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		F0B9072F28B7D42200349668 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F0A098D428B81DB2004F51C0 /* LoginView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		F0BD397028AE55F20049A84D /* UITableView+Helpers */ = {
@@ -1305,6 +1316,7 @@
 				F07265C128B76E1F00A2848E /* AppModule+HostingViewControllerResolution.swift in Sources */,
 				F07265B228B765BF00A2848E /* QuizCellModel.swift in Sources */,
 				F07265B028B765AE00A2848E /* CategoryFilter.swift in Sources */,
+				F0A098D628B81DE6004F51C0 /* LoginView.swift in Sources */,
 				F072654828B7602F00A2848E /* URLRequest+Extensions.swift in Sources */,
 				F07265BA28B7680A00A2848E /* Primitives+Extensions.swift in Sources */,
 				F072656028B7604C00A2848E /* Difficulty.swift in Sources */,

@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class LoginViewModel {
+class LoginViewModel: ObservableObject {
 
     @Published private(set) var isUsernameInputEnabled: Bool = true
     @Published private(set) var isPasswordInputEnabled: Bool = true
@@ -23,17 +23,20 @@ class LoginViewModel {
     }
 
     func login() {
-        Task(priority: .high) {
-            toggleInputs()
+        toggleInputs()
 
+        Task(priority: .high) {
             do {
                 try await loginUseCase.login(email: email, password: password)
-                await MainActor.run { coordinator.routeToHomeScreen() }
-                toggleInputs()
-
+                await MainActor.run {
+                    coordinator.routeToHomeScreen()
+                    toggleInputs()
+                }
             } catch {
+                await MainActor.run {
                 handleLoginResponseError(error: error)
                 toggleInputs()
+                }
             }
 
         }

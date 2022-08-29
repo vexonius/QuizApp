@@ -8,6 +8,12 @@ extension AppModule: RegisterViewsProtocol {
                 SplashView(viewModel: container.resolve())
             }
             .scope(.unique)
+
+        container
+            .register { container in
+                LoginView(viewModel: container.resolve())
+            }
+            .scope(.unique)
     }
 
 }

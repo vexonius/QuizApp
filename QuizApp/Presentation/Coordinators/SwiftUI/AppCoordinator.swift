@@ -16,11 +16,13 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func routeToLogin() {
-
+        let loginView: LoginView = container.resolve()
+        let loginViewController = UIHostingController(rootView: loginView)
+        navigationController.setViewControllers([loginViewController], animated: true)
     }
 
     func routeToHomeScreen() {
-
+        routeToLogin()
     }
 
     func setInitialScene(in window: UIWindow) {
