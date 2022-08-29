@@ -16,14 +16,14 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func routeToLogin() {
-        let loginView: LoginView = container.resolve()
+        let loginView: TabbedView = container.resolve()
         let loginViewController = UIHostingController(rootView: loginView)
         navigationController.setViewControllers([loginViewController], animated: true)
     }
 
     func routeToHomeScreen() {
-        let settingsView: SettingsView = container.resolve()
-        let viewController = UIHostingController(rootView: settingsView)
+        let tabbedView: TabbedView = container.resolve()
+        let viewController = UIHostingController(rootView: tabbedView)
         navigationController.setViewControllers([viewController], animated: true)
     }
 
