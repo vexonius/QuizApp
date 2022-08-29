@@ -1,6 +1,6 @@
 import Foundation
 
-class SplashViewModel {
+class SplashViewModel: ObservableObject {
 
     private let loginUseCase: LoginUseCaseProtocol
     private let coordinator: AppCoordinatorProtocol

@@ -4,8 +4,8 @@ extension AppModule: RegisterViewsProtocol {
 
     func registerViews() {
         container
-            .register {
-                SplashView()
+            .register { container in
+                SplashView(viewModel: container.resolve())
             }
             .scope(.unique)
     }

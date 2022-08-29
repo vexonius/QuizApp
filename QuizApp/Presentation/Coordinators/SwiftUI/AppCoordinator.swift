@@ -25,8 +25,8 @@ class AppCoordinator: AppCoordinatorProtocol {
 
     func setInitialScene(in window: UIWindow) {
         window.rootViewController = navigationController
-        let rootView: SplashView = container.resolve()
-        let viewcontroller = UIHostingController(rootView: rootView)
+        let splashView: SplashView = container.resolve()
+        let viewcontroller = UIHostingController(rootView: splashView)
         navigationController.setViewControllers([viewcontroller], animated: true)
         window.makeKeyAndVisible()
     }
