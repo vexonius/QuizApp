@@ -6,7 +6,7 @@ struct QuizCellModel: Equatable {
     let category: Category
     let imageUrl: String
     let numberOfQuestions: Int
-    let difficulty: Difficulty?
+    let difficulty: Difficulty
     var highlightedText: String?
 
     func toModel() -> QuizModel {
