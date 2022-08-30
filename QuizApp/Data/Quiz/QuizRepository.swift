@@ -61,7 +61,6 @@ class QuizRepository: QuizRepositoryProtocol {
     }
 
     private func fetchedRecently() -> Bool {
-        debugPrint(abs(lastFetchedTime.timeIntervalSinceNow))
         guard abs(lastFetchedTime.timeIntervalSinceNow) > 120 else {
             return true
         }

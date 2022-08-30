@@ -8,7 +8,7 @@ class QuizAnsweringViewController: BaseViewController {
         static let startTranslationX = 0
         static let endTranslationX = 0
         static let endTranslationY = 0
-        static let cellAnimaitonDelay = 0.1
+        static let cellAnimationDelay = 0.1
         static let animationDuration = 0.3
         static let startAnimationAlpha = 0.0
         static let endAnimationAlpha = 1.0
@@ -160,7 +160,7 @@ extension QuizAnsweringViewController: UITableViewDelegate {
 
         UIView.animate(
             withDuration: CustomConstants.animationDuration,
-            delay: CustomConstants.cellAnimaitonDelay * Double(indexPath.row),
+            delay: CustomConstants.cellAnimationDelay * Double(indexPath.row),
             options: [.curveEaseInOut],
             animations: {
                 cell.transform = CGAffineTransform(
