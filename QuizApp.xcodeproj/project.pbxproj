@@ -51,6 +51,8 @@
 		F035DE8028B7B841000A48D8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
 		F040029B28A3FA760012B2E4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = F040029A28A3FA760012B2E4 /* Nuke */; };
 		F040579E28A69D6E00A659AE /* UserRankingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040579D28A69D6E00A659AE /* UserRankingCellModel.swift */; };
+		F048129E28BE36CB00C58FB2 /* DificultyIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */; };
+		F04812A028BE397200C58FB2 /* QuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F048129F28BE397200C58FB2 /* QuizItemView.swift */; };
 		F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */; };
 		F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E13362885F063001F2ABB /* URLSession+Extension.swift */; };
 		F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */; };
@@ -122,7 +124,6 @@
 		F072657F28B7619400A2848E /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F072657E28B7619400A2848E /* Resolver */; };
 		F072658128B7619800A2848E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F072658028B7619800A2848E /* KeychainSwift */; };
 		F072658328B7619D00A2848E /* CombineReachability in Frameworks */ = {isa = PBXBuildFile; productRef = F072658228B7619D00A2848E /* CombineReachability */; };
-		F072658528B761A800A2848E /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = F072658428B761A800A2848E /* Nuke */; };
 		F072658B28B761B700A2848E /* AccountDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D72893F48D004B40E1 /* AccountDetailsResponse.swift */; };
 		F072658C28B761B700A2848E /* UsernameUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D82893F48D004B40E1 /* UsernameUpdateRequestModel.swift */; };
 		F072658D28B761B700A2848E /* AccountNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D63D02893F2D2004B40E1 /* AccountNetworkClient.swift */; };
@@ -168,6 +169,8 @@
 		F07265CC28B775DB00A2848E /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
 		F078C4A928BD03FC00F7B9EE /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078C4A828BD03FC00F7B9EE /* TabView.swift */; };
+		F078C4AC28BD0AA000F7B9EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078C4AA28BD0A3000F7B9EE /* HomeView.swift */; };
+		F078C4AE28BD1CEA00F7B9EE /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = F078C4AD28BD1CEA00F7B9EE /* NukeUI */; };
 		F07D305B288ED984000592F2 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305A288ED984000592F2 /* Snackbar.swift */; };
 		F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */; };
 		F07D86512888289C000F5D99 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F07D86502888289C000F5D99 /* Resolver */; };
@@ -302,6 +305,8 @@
 		F02F01EE28AF80BF0056610D /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
 		F02F01F028AF847E0056610D /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
 		F040579D28A69D6E00A659AE /* UserRankingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingCellModel.swift; sourceTree = "<group>"; };
+		F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DificultyIndicatorView.swift; sourceTree = "<group>"; };
+		F048129F28BE397200C58FB2 /* QuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemView.swift; sourceTree = "<group>"; };
 		F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F04E13362885F063001F2ABB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseNetworkModel.swift; sourceTree = "<group>"; };
@@ -319,6 +324,7 @@
 		F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+HostingViewControllerResolution.swift"; sourceTree = "<group>"; };
 		F07265C628B76FAA00A2848E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F078C4A828BD03FC00F7B9EE /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		F078C4AA28BD0A3000F7B9EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F07D305A288ED984000592F2 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		F0809FF028884E0400142907 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
@@ -415,10 +421,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F078C4AE28BD1CEA00F7B9EE /* NukeUI in Frameworks */,
 				F072658128B7619800A2848E /* KeychainSwift in Frameworks */,
 				F072657F28B7619400A2848E /* Resolver in Frameworks */,
 				F072658328B7619D00A2848E /* CombineReachability in Frameworks */,
-				F072658528B761A800A2848E /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +810,9 @@
 			isa = PBXGroup;
 			children = (
 				F078C4A828BD03FC00F7B9EE /* TabView.swift */,
+				F078C4AA28BD0A3000F7B9EE /* HomeView.swift */,
+				F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */,
+				F048129F28BE397200C58FB2 /* QuizItemView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1171,7 +1180,7 @@
 				F072657E28B7619400A2848E /* Resolver */,
 				F072658028B7619800A2848E /* KeychainSwift */,
 				F072658228B7619D00A2848E /* CombineReachability */,
-				F072658428B761A800A2848E /* Nuke */,
+				F078C4AD28BD1CEA00F7B9EE /* NukeUI */,
 			);
 			productName = QuizUI;
 			productReference = F072653328B75FCF00A2848E /* QuizUI.app */;
@@ -1317,6 +1326,7 @@
 				F072658D28B761B700A2848E /* AccountNetworkClient.swift in Sources */,
 				F072659F28B761EF00A2848E /* String+Extensions.swift in Sources */,
 				F072659828B761D000A2848E /* UserRankingResponse.swift in Sources */,
+				F048129E28BE36CB00C58FB2 /* DificultyIndicatorView.swift in Sources */,
 				F07265B428B766AB00A2848E /* UserRankingCellModel.swift in Sources */,
 				F072657428B7608B00A2848E /* LoginViewModel.swift in Sources */,
 				F072655C28B7604200A2848E /* LoginRepository.swift in Sources */,
@@ -1337,6 +1347,7 @@
 				F07265AE28B7656D00A2848E /* AnswerCellModel.swift in Sources */,
 				F07265C128B76E1F00A2848E /* AppModule+HostingViewControllerResolution.swift in Sources */,
 				F07265B228B765BF00A2848E /* QuizCellModel.swift in Sources */,
+				F04812A028BE397200C58FB2 /* QuizItemView.swift in Sources */,
 				F07265B028B765AE00A2848E /* CategoryFilter.swift in Sources */,
 				F0A098D628B81DE6004F51C0 /* LoginView.swift in Sources */,
 				F08BE4B028BCD0BD00856268 /* SettingsView.swift in Sources */,
@@ -1393,6 +1404,7 @@
 				F072654B28B7602F00A2848E /* BaseNetworkClient.swift in Sources */,
 				F072659A28B761D000A2848E /* QuizEndpoints.swift in Sources */,
 				F072657628B7609500A2848E /* HomeViewModel.swift in Sources */,
+				F078C4AC28BD0AA000F7B9EE /* HomeView.swift in Sources */,
 				F072659128B761C900A2848E /* LoginNetworkClient.swift in Sources */,
 				F072656528B7604C00A2848E /* QuizSessionResultModel.swift in Sources */,
 				F07265C828B76FF300A2848E /* SplashView.swift in Sources */,
@@ -1822,7 +1834,7 @@
 			repositoryURL = "https://github.com/kean/Nuke";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 11.1.1;
 			};
 		};
 		F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -1880,15 +1892,15 @@
 			package = F08D37002897FE2C005FFF1F /* XCRemoteSwiftPackageReference "CombineReachability" */;
 			productName = CombineReachability;
 		};
-		F072658428B761A800A2848E /* Nuke */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
-			productName = Nuke;
-		};
 		F0749186287DAB62005A7A55 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F078C4AD28BD1CEA00F7B9EE /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 		F07D86502888289C000F5D99 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
