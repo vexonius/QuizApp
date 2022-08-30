@@ -5,17 +5,24 @@ struct DificultyIndicatorView: View {
     @State var difficulty: Difficulty
     @State var color: Color
 
+    private let itemSpacingPadding: CGFloat = 10
+    private let rectCornerRadius: CGFloat = 2
+    private let rectSize: CGFloat = 10
+    private let rectRotationAngle: CGFloat = 45
+    private let topPadding: CGFloat = 12
+    private let trailingPadding: CGFloat = 12
+
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: itemSpacingPadding) {
             ForEach(0..<Difficulty.highest.enumerated) { index in
-                RoundedRectangle(cornerRadius: 2)
+                RoundedRectangle(cornerRadius: rectCornerRadius)
                     .fill(difficulty.enumerated > index ? color : .white.opacity(0.3))
-                    .rotationEffect(Angle(degrees: 45))
-                    .frame(width: 10, height: 10, alignment: .topTrailing)
+                    .rotationEffect(Angle(degrees: rectRotationAngle))
+                    .frame(width: rectSize, height: rectSize, alignment: .topTrailing)
             }
         }
-        .padding(.top, 12)
-        .padding(.trailing, 16)
+        .padding(.top, topPadding)
+        .padding(.trailing, trailingPadding)
     }
 
 }

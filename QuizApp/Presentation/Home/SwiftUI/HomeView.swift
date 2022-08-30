@@ -11,8 +11,8 @@ struct HomeView: View {
         self.viewModel = viewModel
 
         UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().backgroundColor = UIColor(Color.clear)
-        UITableView.appearance().backgroundColor = UIColor(Color.clear)
+        UITableViewCell.appearance().backgroundColor = UIColor(.clear)
+        UITableView.appearance().backgroundColor = UIColor(.clear)
      }
 
     var body: some View {
@@ -21,7 +21,7 @@ struct HomeView: View {
                 ForEach(viewModel.filteredQuizes, id: \.id) { quiz in
                     QuizItemView(quiz: quiz)
                         .frame(maxWidth: .infinity)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
                         .listRowBackground(Color.clear)
                 }
             }

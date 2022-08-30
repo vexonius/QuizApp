@@ -5,42 +5,50 @@ struct QuizItemView: View {
 
     @State var quiz: QuizCellModel
 
+    let itemHeight: CGFloat = 144
+    let thumbnailSize: CGFloat = 104
+    let defaultPadding: CGFloat = 20
+    let titleTopPadding: CGFloat = 23
+    let summaryTopPadding: CGFloat = 4
+    let itemSpacingPadding: CGFloat = 10
+    let summaryLineLimit = 3
+
     var body: some View {
-        HStack(alignment: .center, spacing: 0) {
+        HStack(alignment: .center, spacing: .zero) {
             LazyImage(url: URL(string: quiz.imageUrl))
                 .animation(.easeIn)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .frame(width: 104, height: 104, alignment: .leading)
-                .padding(.horizontal, 20)
+                .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
+                .frame(width: thumbnailSize, height: thumbnailSize, alignment: .leading)
+                .padding(.horizontal, defaultPadding)
             ZStack(alignment: .topTrailing) {
-                VStack(spacing: 0) {
+                VStack(spacing: .zero) {
                     Text(quiz.name)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.title.cgFloat, weight: .bold))
                         .foregroundColor(.white)
-                        .lineLimit(0)
+                        .lineLimit(.zero)
                         .truncationMode(.tail)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .padding(.top, 23)
-                        .padding(.trailing, 20)
+                        .padding(.top, titleTopPadding)
+                        .padding(.trailing, defaultPadding)
                     Text(quiz.description)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.white)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
-                        .lineLimit(3)
+                        .lineLimit(summaryLineLimit)
                         .truncationMode(.tail)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .padding(.top, 4)
-                        .padding(.trailing, 16)
+                        .padding(.top, summaryTopPadding)
+                        .padding(.trailing, defaultPadding)
                 }
                 DificultyIndicatorView(difficulty: quiz.difficulty, color: quiz.category.colour)
             }
             .background(.clear)
             .frame(maxHeight: .infinity, alignment: .topTrailing)
         }
-        .frame(maxWidth: .infinity, minHeight: 144)
+        .frame(maxWidth: .infinity, minHeight: itemHeight)
         .background(.white.opacity(0.3))
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .padding([.vertical], 10)
+        .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
+        .padding([.vertical], itemSpacingPadding)
     }
 
 }
