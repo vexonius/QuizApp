@@ -9,7 +9,7 @@ class HomeViewController: BaseViewController {
         static let segmentedControlTopInset = 8
     }
 
-    private var filtersSegmentedControl: ClearSegmentedControll!
+    private var filtersSegmentedControl: ClearSegmentedControl!
     private var errorPlaceholder: ErrorPlaceholderView!
     private var quizTableView: UITableView!
     private var datasource: CombineTableViewDataSource<QuizCellModel>!
@@ -38,6 +38,8 @@ class HomeViewController: BaseViewController {
 
         bindViewModel()
         bindViews()
+
+        viewModel.observeNetworkChanges()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -128,7 +130,7 @@ extension HomeViewController: ConstructViewsProtocol {
         errorPlaceholder = ErrorPlaceholderView()
         view.addSubview(errorPlaceholder)
 
-        filtersSegmentedControl = ClearSegmentedControll()
+        filtersSegmentedControl = ClearSegmentedControl()
         view.addSubview(filtersSegmentedControl)
 
         createQuizTableView()

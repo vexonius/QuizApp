@@ -34,6 +34,8 @@ class SearchViewController: BaseViewController {
 
         bindViewModel()
         bindViews()
+
+        viewModel.observeNetworkChanges()
     }
 
     override func viewWillAppear(_ animated: Bool) {

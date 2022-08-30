@@ -42,8 +42,6 @@ class HomeViewModel {
         self.networkService = networkService
         self.coordinator = coordinator
         self.quizUseCase = quizUseCase
-
-        observeNetworkChanges()
     }
 
     func onCategoryChange(for index: Int) {
@@ -59,7 +57,7 @@ class HomeViewModel {
                 return
             }
 
-            let filteredQuizzes = await filterquizzes(for: selectedCategoryModel.category)
+            let filteredQuizzes = await filterQuizzes(for: selectedCategoryModel.category)
 
             await MainActor.run {
                 self.filteredQuizzes = filteredQuizzes
@@ -71,7 +69,7 @@ class HomeViewModel {
         coordinator.routeToQuizDetails(quiz: quiz.toModel())
     }
 
-    private func observeNetworkChanges() {
+    func observeNetworkChanges() {
         networkService
             .networkState
             .sink { [weak self] networkState in
@@ -86,7 +84,7 @@ class HomeViewModel {
                     self.isErrorPlaceholderVisible = false
                     self.isTableViewVisible = true
                     self.areFiltersVisible = true
-                    self.fetchquizzes()
+                    self.fetchQuizzes()
                 }
             }
             .store(in: &cancellables)
@@ -97,12 +95,12 @@ class HomeViewModel {
         isErrorPlaceholderVisible = true
     }
 
-    private func filterquizzes(for category: Category) async -> [QuizCellModel] {
+    private func filterQuizzes(for category: Category) async -> [QuizCellModel] {
         quizzes
             .filter { $0.category == category }
     }
 
-    private func fetchquizzes() {
+    private func fetchQuizzes() {
         Task {
             do {
                 let quizzes = try await quizUseCase
@@ -118,12 +116,5 @@ class HomeViewModel {
             }
         }
     }
-
-}
-
-enum QuizzesFilteringMode {
-
-    case home
-    case search
 
 }

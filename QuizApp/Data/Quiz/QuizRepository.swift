@@ -2,31 +2,32 @@ import Foundation
 
 class QuizRepository: QuizRepositoryProtocol {
 
-    private var timer: Timer?
-    private var task: Task<[QuizRepoModel], Error>?
-    private let timerInterval: TimeInterval = 300
+    private var lastFetchedTime: Date = Date()
 
     private let quizNetworkClient: QuizNetworkClientProtocol
 
     init(quizNetworkClient: QuizNetworkClientProtocol) {
         self.quizNetworkClient = quizNetworkClient
-
-        refreshQuizzesPeriodically()
     }
+
+    private var cachedQuizzes: [QuizRepoModel] = []
 
     var quizzes: [QuizRepoModel] {
         get async throws {
-            guard let task = task else {
-                task = Task {
-                    try await quizNetworkClient
-                        .quizzes
-                        .map { QuizRepoModel(from: $0) }
-                }
+            guard
+                !cachedQuizzes.isEmpty,
+                fetchedRecently()
+            else {
+                cachedQuizzes = try await quizNetworkClient
+                    .quizzes
+                    .map {
+                        QuizRepoModel(from: $0)
+                    }
 
-                return try await task!.value
+                return cachedQuizzes
             }
 
-            return try await task.value
+            return cachedQuizzes
         }
     }
 
@@ -34,17 +35,6 @@ class QuizRepository: QuizRepositoryProtocol {
         try await quizNetworkClient
             .getQuizzes(for: category)
             .map { QuizRepoModel(from: $0) }
-    }
-
-    func refreshQuizzesPeriodically() {
-        timer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true) { _ in
-            self.task = Task {
-                try await self.quizNetworkClient
-                    .quizzes
-                    .map { QuizRepoModel(from: $0) }
-            }
-        }
-        timer?.fire()
     }
 
     func getLeaderboard(for quizId: Int)  async throws -> [UserRankingRepoModel] {
@@ -68,6 +58,15 @@ class QuizRepository: QuizRepositoryProtocol {
             .finishQuiz(for: sessionId, with: result.toModel())
 
         return QuizSessionResultRepoModel(from: quizSessionResultResponse)
+    }
+
+    private func fetchedRecently() -> Bool {
+        debugPrint(abs(lastFetchedTime.timeIntervalSinceNow))
+        guard abs(lastFetchedTime.timeIntervalSinceNow) > 120 else {
+            return true
+        }
+
+        return false
     }
 
 }

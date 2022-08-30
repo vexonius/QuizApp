@@ -29,8 +29,6 @@ class SearchViewModel {
         self.networkService = networkService
         self.coordinator = coordinator
         self.quizUseCase = quizUseCase
-
-        observeNetworkChanges()
     }
 
     func onSearchTextChanged(_ searchText: String) {
@@ -56,7 +54,7 @@ class SearchViewModel {
         coordinator.routeToQuizDetails(quiz: quiz.toModel())
     }
 
-    private func observeNetworkChanges() {
+    func observeNetworkChanges() {
         networkService
             .networkState
             .sink { [weak self] networkState in
