@@ -2,7 +2,7 @@ import Combine
 import UIKit
 import Reachability
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
 
     private struct CustomConstants {
         static let minimumSearchTextLength = 2
@@ -162,9 +162,12 @@ class HomeViewModel {
                 await MainActor.run {
                     self.quizes = quizes
                     self.filters = categories
+                    self.switchFiltering(for: .home)
                 }
             } catch {
-                self.errorMessage = LocalizedStrings.serverErrorMessage.localizedString
+                await MainActor.run {
+                    self.errorMessage = LocalizedStrings.serverErrorMessage.localizedString
+                }
             }
         }
     }
