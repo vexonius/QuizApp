@@ -8,7 +8,7 @@ class QuizNetworkClient: QuizNetworkClientProtocol {
 
     var quizzes: [QuizResponse] {
         get async throws {
-            return try await baseNetworkClient.get(
+            try await baseNetworkClient.get(
                 url: QuizEndpoints.quizzes.path,
                 params: [:],
                 headers: [HeaderField.contentType.key: HeaderValue.defaultContentType.value])
