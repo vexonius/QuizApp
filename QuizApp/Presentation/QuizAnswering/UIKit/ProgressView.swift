@@ -5,7 +5,7 @@ class ProgressView: UIView {
     private struct CustomConstants {
         static let progressLabelHeight = 26
         static let textNumberOfLines = 0
-        static let progresBarHeight = 5
+        static let progressBarHeight = 5
         static let tileCornerRadius = 2
         static let stackViewSpacing = 8
         static let componentsSpacing = 12
@@ -88,7 +88,7 @@ extension ProgressView: ConstructViewsProtocol {
         stackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(progressLabel.snp.bottom).offset(CustomConstants.componentsSpacing)
-            make.height.equalTo(CustomConstants.progresBarHeight)
+            make.height.equalTo(CustomConstants.progressBarHeight)
             make.bottom.lessThanOrEqualToSuperview()
         }
     }
