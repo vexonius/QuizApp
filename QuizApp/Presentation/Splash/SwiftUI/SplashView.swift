@@ -8,6 +8,9 @@ struct SplashView: View {
     var body: some View {
         EmptyView()
             .brandStyleBackground()
+            .onAppear {
+                viewModel.validateExistingToken()
+            }
     }
 
 }

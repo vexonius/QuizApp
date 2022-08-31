@@ -7,5 +7,6 @@ extension Color {
     static let accentRed = Color("quiz-red")
     static let accentYellow = Color("quiz-yellow")
     static let accentBlue = Color("quiz-blue")
+    static let white30 = Color.white.opacity(0.3)
 
 }
