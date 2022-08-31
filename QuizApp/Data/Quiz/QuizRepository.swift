@@ -14,7 +14,7 @@ class QuizRepository: QuizRepositoryProtocol {
     private var cachedQuizzes: [QuizRepoModel] = []
 
     private var didFetchRecently: Bool {
-        abs(lastFetchedTime.timeIntervalSinceNow) > minFetchInterval ? false : true
+        abs(lastFetchedTime.timeIntervalSinceNow) <= minFetchInterval
     }
 
     var quizzes: [QuizRepoModel] {
