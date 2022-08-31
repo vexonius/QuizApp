@@ -3,6 +3,7 @@ import Foundation
 class QuizRepository: QuizRepositoryProtocol {
 
     private var lastFetchedTime: Date = Date()
+    private var minFetchInterval = 120.0
 
     private let quizNetworkClient: QuizNetworkClientProtocol
 
@@ -12,11 +13,15 @@ class QuizRepository: QuizRepositoryProtocol {
 
     private var cachedQuizzes: [QuizRepoModel] = []
 
+    private var didFetchRecently: Bool {
+        abs(lastFetchedTime.timeIntervalSinceNow) > minFetchInterval ? false : true
+    }
+
     var quizzes: [QuizRepoModel] {
         get async throws {
             guard
                 !cachedQuizzes.isEmpty,
-                fetchedRecently()
+                didFetchRecently
             else {
                 cachedQuizzes = try await quizNetworkClient
                     .quizzes
@@ -58,14 +63,6 @@ class QuizRepository: QuizRepositoryProtocol {
             .finishQuiz(for: sessionId, with: result.toModel())
 
         return QuizSessionResultRepoModel(from: quizSessionResultResponse)
-    }
-
-    private func fetchedRecently() -> Bool {
-        guard abs(lastFetchedTime.timeIntervalSinceNow) > 120 else {
-            return true
-        }
-
-        return false
     }
 
 }
