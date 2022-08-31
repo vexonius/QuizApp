@@ -1,6 +1,6 @@
 import Foundation
-import SwiftUI
 import UIKit
+import SwiftUI
 import Resolver
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -22,14 +22,14 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func routeToHomeScreen() {
-        routeToLogin()
+
     }
 
     func setInitialScene(in window: UIWindow) {
         window.rootViewController = navigationController
         let splashView: SplashView = container.resolve()
-        let viewcontroller = UIHostingController(rootView: splashView)
-        navigationController.setViewControllers([viewcontroller], animated: true)
+        let viewController = UIHostingController(rootView: splashView)
+        navigationController.setViewControllers([viewController], animated: true)
         window.makeKeyAndVisible()
     }
 

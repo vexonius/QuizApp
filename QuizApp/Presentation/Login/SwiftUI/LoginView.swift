@@ -15,30 +15,27 @@ struct LoginView: View {
             Spacer()
             Text(LocalizedStrings.appName.localizedString)
                 .font(.system(size: DesignConstants.FontSize.heading.cgFloat, weight: .bold, design: .default))
-                .foregroundColor(Color.white)
+                .foregroundColor(.white)
             Spacer()
             TextField(
                 LocalizedStrings.usernamePlaceholder.localizedString,
                 text: $username)
                 .modifier(RoundedTextInput())
-                .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
+                .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
                 .onChange(of: username) { newValue in
                     viewModel.onEmailChanged(newValue)
                 }
             ZStack(alignment: .trailing) {
                 if viewModel.isPasswordHidden {
-                    SecureField(
-                        LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
-                    .padding([.vertical], 1) // Secure field seems a tiny bit smaller, therefore you can see a glitch
-                    .focused($passwordInFocus, equals: .secure)
-                    .modifier(RoundedTextInput())
-                    .onChange(of: password) { newValue in
-                        viewModel.onPasswordChanged(newValue)
-                    }
+                    SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
+                        .padding(.vertical, 1) // Secure field seems a tiny bit smaller, therefore you can see a glitch
+                        .focused($passwordInFocus, equals: .secure)
+                        .modifier(RoundedTextInput())
+                        .onChange(of: password) { newValue in
+                            viewModel.onPasswordChanged(newValue)
+                        }
                 } else {
-                    TextField(
-                        LocalizedStrings.passwordPlaceholder.localizedString,
-                        text: $password)
+                    TextField(LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
                         .modifier(RoundedTextInput())
                         .focused($passwordInFocus, equals: .plain)
                         .onChange(of: username) { newValue in
@@ -56,10 +53,10 @@ struct LoginView: View {
                                 width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
                                 height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
                                 alignment: .trailing)
-                            .padding([.horizontal], DesignConstants.InputComponents.thumbnailInset.cgFloat)
+                            .padding(.horizontal, DesignConstants.InputComponents.thumbnailInset.cgFloat)
                     })
             }
-            .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
+            .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
             Button(
                 action: {
                     viewModel.login()
@@ -71,7 +68,7 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity)
                 })
                 .modifier(RoundedButton())
-                .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
+                .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
                 .disabled(!viewModel.isLoginButtonEnabled)
             Spacer()
             Spacer()

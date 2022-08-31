@@ -34,8 +34,8 @@ class LoginViewModel: ObservableObject {
                 }
             } catch {
                 await MainActor.run {
-                handleLoginResponseError(error: error)
-                toggleInputs()
+                    handleLoginResponseError(error: error)
+                    toggleInputs()
                 }
             }
 
