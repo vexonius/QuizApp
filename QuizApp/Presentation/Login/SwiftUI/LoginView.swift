@@ -25,8 +25,8 @@ struct LoginView: View {
                 SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
                     .isTextObuscated($isPasswordHidden, text: $password)
                     .modifier(RoundedTextInput())
-                    .onChange(of: password) { newValue in
-                        viewModel.onPasswordChanged(newValue)
+                    .onChange(of: password) { password in
+                        viewModel.onPasswordChanged(password)
                     }
                 Button(
                     action: {
@@ -52,6 +52,7 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity)
                 })
                 .modifier(RoundedButton())
+                .opacity(viewModel.isLoginButtonEnabled ? 1.0 : 0.6)
                 .disabled(!viewModel.isLoginButtonEnabled)
             Spacer()
             Spacer()

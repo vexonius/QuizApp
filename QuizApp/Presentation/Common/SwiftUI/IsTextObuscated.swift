@@ -19,8 +19,8 @@ struct IsTextObuscated: ViewModifier {
                     .focused($fieldInFocus, equals: .plain)
             }
         }
-        .onChange(of: isTextHidden) { newValue in
-            fieldInFocus = isTextHidden ? .secure : .plain
+        .onChange(of: isTextHidden) { isHidden in
+            fieldInFocus = isHidden ? .secure : .plain
         }
     }
 
