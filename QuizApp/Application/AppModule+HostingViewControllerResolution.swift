@@ -5,7 +5,7 @@ extension AppModule: RegisterViewsProtocol {
     func registerViews() {
         container
             .register {
-                PlaceholderView()
+                SplashView()
             }
             .scope(.unique)
     }
