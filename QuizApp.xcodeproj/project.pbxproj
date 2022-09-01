@@ -172,7 +172,6 @@
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
 		F078C4A928BD03FC00F7B9EE /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078C4A828BD03FC00F7B9EE /* TabView.swift */; };
 		F078C4AC28BD0AA000F7B9EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078C4AA28BD0A3000F7B9EE /* HomeView.swift */; };
-		F078C4AE28BD1CEA00F7B9EE /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = F078C4AD28BD1CEA00F7B9EE /* NukeUI */; };
 		F07D305B288ED984000592F2 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305A288ED984000592F2 /* Snackbar.swift */; };
 		F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */; };
 		F07D86512888289C000F5D99 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F07D86502888289C000F5D99 /* Resolver */; };
@@ -224,6 +223,7 @@
 		F0ACC18628A66CDD00C26208 /* QuizLeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC18528A66CDD00C26208 /* QuizLeaderboardViewModel.swift */; };
 		F0ACC18A28A67C2400C26208 /* LeaderboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC18928A67C2400C26208 /* LeaderboardHeaderView.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
+		F0B5855328BF4DD1008BECF6 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F007C98928B7C17B009C73D3 /* Color+Extensions.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
 		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
 		F0BD396F28AE4E010049A84D /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD396E28AE4E010049A84D /* CellType.swift */; };
@@ -425,7 +425,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F078C4AE28BD1CEA00F7B9EE /* NukeUI in Frameworks */,
 				F072658128B7619800A2848E /* KeychainSwift in Frameworks */,
 				F072657F28B7619400A2848E /* Resolver in Frameworks */,
 				F072658328B7619D00A2848E /* CombineReachability in Frameworks */,
@@ -1186,7 +1185,6 @@
 				F072657E28B7619400A2848E /* Resolver */,
 				F072658028B7619800A2848E /* KeychainSwift */,
 				F072658228B7619D00A2848E /* CombineReachability */,
-				F078C4AD28BD1CEA00F7B9EE /* NukeUI */,
 			);
 			productName = QuizUI;
 			productReference = F072653328B75FCF00A2848E /* QuizUI.app */;
@@ -1505,6 +1503,7 @@
 				F0ACC17C28A65C8F00C26208 /* UserRankingResponse.swift in Sources */,
 				F0990A6A28897E6D00F72B44 /* LoginUseCaseProtocol.swift in Sources */,
 				F0052EB928A285B9006515AE /* QuizNetworkClient.swift in Sources */,
+				F0B5855328BF4DD1008BECF6 /* Color+Extensions.swift in Sources */,
 				F0E61B5028A3C14A004410DB /* Category+Extension.swift in Sources */,
 				F014C93E28AD27C0006DB507 /* AnswerCellModel.swift in Sources */,
 				F0EFA21128ABBF75005D84E6 /* QuizSessionRepoModel.swift in Sources */,
@@ -1842,7 +1841,7 @@
 			repositoryURL = "https://github.com/kean/Nuke";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 11.1.1;
+				minimumVersion = 9.0.0;
 			};
 		};
 		F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -1904,11 +1903,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F0749185287DAB62005A7A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		F078C4AD28BD1CEA00F7B9EE /* NukeUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F040029928A3FA760012B2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
-			productName = NukeUI;
 		};
 		F07D86502888289C000F5D99 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;

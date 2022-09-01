@@ -1,5 +1,4 @@
 import SwiftUI
-import NukeUI
 
 struct HomeView: View {
 
@@ -17,13 +16,11 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
-            List {
-                ForEach(viewModel.filteredQuizes, id: \.id) { quiz in
-                    QuizItemView(quiz: quiz)
-                        .frame(maxWidth: .infinity)
-                        .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
-                        .listRowBackground(Color.clear)
-                }
+            List(viewModel.filteredQuizes, id: \.id) { quiz in
+                QuizItemView(quiz: quiz)
+                    .frame(maxWidth: .infinity)
+                    .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                    .listRowBackground(Color.clear)
             }
         }
         .brandStyleBackground()

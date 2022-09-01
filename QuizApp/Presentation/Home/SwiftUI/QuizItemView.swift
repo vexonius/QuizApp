@@ -1,5 +1,4 @@
 import SwiftUI
-import NukeUI
 
 struct QuizItemView: View {
 
@@ -15,10 +14,18 @@ struct QuizItemView: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: .zero) {
-            LazyImage(url: URL(string: quiz.imageUrl))
-                .animation(.easeIn)
+            AsyncImage(
+                url: URL(string: quiz.imageUrl),
+                content: { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                },
+                placeholder: {
+                    Color.white.opacity(0.3)
+                })
+                .frame(width: thumbnailSize, height: thumbnailSize, alignment: .center)
                 .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
-                .frame(width: thumbnailSize, height: thumbnailSize, alignment: .leading)
                 .padding(.horizontal, defaultPadding)
             ZStack(alignment: .topTrailing) {
                 VStack(spacing: .zero) {
@@ -48,7 +55,7 @@ struct QuizItemView: View {
         .frame(maxWidth: .infinity, minHeight: itemHeight)
         .background(.white.opacity(0.3))
         .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
-        .padding([.vertical], itemSpacingPadding)
+        .padding(.vertical, itemSpacingPadding)
     }
 
 }
