@@ -5,15 +5,15 @@ import Reachability
 
 class SearchViewController: BaseViewController {
 
-    private var errorPlaceholder: ErrorPlaceholderView!
+    private var errorMessage: UILabel!
     private var quizTableView: UITableView!
     private var searchBar: SearchBarView!
     private var datasource: CombineTableViewDataSource<QuizCellModel>!
 
     private var cancellables = Set<AnyCancellable>()
-    private let viewModel: HomeViewModel
+    private let viewModel: SearchViewModel
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -34,12 +34,13 @@ class SearchViewController: BaseViewController {
 
         bindViewModel()
         bindViews()
+
+        viewModel.observeNetworkChanges()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        viewModel.switchFiltering(for: .search)
         styleNavigationBar()
     }
 
@@ -74,12 +75,12 @@ extension SearchViewController: BindViewsProtocol {
         viewModel
             .$isErrorPlaceholderVisible
             .map { !$0 }
-            .assign(to: \.isHidden, on: errorPlaceholder)
+            .assign(to: \.isHidden, on: errorMessage)
             .store(in: &cancellables)
 
         viewModel
             .$errorMessage
-            .assign(to: \.errorDescription, on: errorPlaceholder)
+            .assign(to: \.text, on: errorMessage)
             .store(in: &cancellables)
 
         viewModel
@@ -89,7 +90,7 @@ extension SearchViewController: BindViewsProtocol {
             .store(in: &cancellables)
 
         viewModel
-            .$filteredQuizes
+            .$filteredQuizzes
             .receive(subscriber: quizTableView.items(datasource))
     }
 
@@ -149,8 +150,8 @@ extension SearchViewController: BindViewsProtocol {
 extension SearchViewController: ConstructViewsProtocol {
 
     func createViews() {
-        errorPlaceholder = ErrorPlaceholderView()
-        view.addSubview(errorPlaceholder)
+        errorMessage = UILabel()
+        view.addSubview(errorMessage)
 
         searchBar = SearchBarView()
         searchBar.inputLabel.delegate = self
@@ -160,11 +161,18 @@ extension SearchViewController: ConstructViewsProtocol {
     func styleViews() {
         quizTableView.backgroundColor = .clear
         quizTableView.showsVerticalScrollIndicator = false
+
+        errorMessage.textAlignment = .center
+        errorMessage.textColor = .white
+        errorMessage.numberOfLines = .max
+        errorMessage.font = .sourceSansPro(
+            ofSize: DesignConstants.FontSize.subtitle.cgFloat,
+            ofWeight: SourceSansProWeight.regular)
     }
 
     func defineLayoutForViews() {
-        errorPlaceholder.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+        errorMessage.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(DesignConstants.Insets.componentsInset)
         }
 
         quizTableView.snp.makeConstraints { make in
