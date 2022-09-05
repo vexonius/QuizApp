@@ -23,6 +23,9 @@ struct HomeView: View {
         VStack(spacing: .zero) {
             CategoriesSegmentedControlView(items: viewModel.filters, selectedIndex: $selected)
                 .frame(maxHeight: segmentedControlHeight, alignment: .center)
+                .onChange(of: selected) { index in
+                    viewModel.onCategoryChange(for: index)
+                }
 
             List {
                 if viewModel.filteredQuizes.isEmpty {
