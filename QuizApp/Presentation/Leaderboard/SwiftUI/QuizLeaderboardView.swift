@@ -4,53 +4,56 @@ struct QuizLeaderboardView: View {
 
     @ObservedObject var viewModel: QuizLeaderboardViewModel
 
+    private let itemHeight: CGFloat = 60
+    private let numberOfPlaceholderItems = 10
+
     init(viewModel: QuizLeaderboardViewModel) {
         self.viewModel = viewModel
 
         UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = UIColor(.clear)
         UITableView.appearance().backgroundColor = UIColor(.clear)
+        UITableViewCell.appearance().separatorInset = .zero
     }
 
     var body: some View {
         VStack {
             HStack {
                 Text(LocalizedStrings.player.localizedString)
-                    .font(.sourceSansPro(size: 16, weight: .semibold))
+                    .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                     .frame(alignment: .trailing)
                 Spacer()
                 Text(LocalizedStrings.points.localizedString)
-                    .font(.sourceSansPro(size: 16, weight: .semibold))
+                    .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                     .frame(alignment: .leading)
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, DesignConstants.Padding.medium)
             List {
                 if viewModel.userRankings.isEmpty {
-                    ForEach(0..<10) { _ in
-                        RoundedRectangle(cornerRadius: 20)
+                    ForEach(0..<numberOfPlaceholderItems) { _ in
+                        RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
                             .fill(Color.white30)
-                            .padding(.vertical, 8)
-                            .frame(maxWidth: .infinity, maxHeight: 60)
+                            .frame(maxWidth: .infinity, maxHeight: itemHeight)
                             .listRowBackground(Color.clear)
                             .listRowInsets(
                                 EdgeInsets(
                                     top: .zero,
-                                    leading: 16,
+                                    leading: DesignConstants.Padding.medium,
                                     bottom: .zero,
-                                    trailing: 16))
+                                    trailing: DesignConstants.Padding.medium))
+                            .padding(.vertical, DesignConstants.Padding.base)
                     }
                 } else {
                     ForEach(viewModel.userRankings, id: \.position) { item in
                         makeRankItem(with: item)
                             .listRowBackground(Color.clear)
                             .listRowSeparatorTint(.white, edges: .bottom)
-                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                             .listRowInsets(
                                 EdgeInsets(
                                     top: .zero,
-                                    leading: 16,
+                                    leading: DesignConstants.Padding.medium,
                                     bottom: .zero,
-                                    trailing: 16))
+                                    trailing: DesignConstants.Padding.medium))
                     }
                 }
             }
@@ -77,7 +80,7 @@ struct QuizLeaderboardView: View {
                 .lineLimit(.zero)
                 .frame(alignment: .trailing)
         }
-        .frame(height: 60)
+        .frame(height: itemHeight)
     }
 
 }
