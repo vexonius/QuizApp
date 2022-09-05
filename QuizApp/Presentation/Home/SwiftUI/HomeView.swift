@@ -50,6 +50,9 @@ struct HomeView: View {
                                     leading: horizontalListPadding,
                                     bottom: .zero,
                                     trailing: horizontalListPadding))
+                            .onTapGesture {
+                                viewModel.onQuizSelected(quiz)
+                            }
                     }
                 }
             }
