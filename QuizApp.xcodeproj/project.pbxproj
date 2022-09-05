@@ -226,6 +226,7 @@
 		F0ACC18A28A67C2400C26208 /* LeaderboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC18928A67C2400C26208 /* LeaderboardHeaderView.swift */; };
 		F0B028CB289280000024DBFD /* PopGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B028CA289280000024DBFD /* PopGradient.swift */; };
 		F0B5855328BF4DD1008BECF6 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F007C98928B7C17B009C73D3 /* Color+Extensions.swift */; };
+		F0B6FB9728C5FC200089652C /* CategoriesSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6FB9628C5FC200089652C /* CategoriesSegmentedControlView.swift */; };
 		F0BB5385289BB7D8003A0E3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5384289BB7D8003A0E3B /* NetworkService.swift */; };
 		F0BB5387289BB808003A0E3B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */; };
 		F0BD396F28AE4E010049A84D /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD396E28AE4E010049A84D /* CellType.swift */; };
@@ -384,6 +385,7 @@
 		F0ACC18528A66CDD00C26208 /* QuizLeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLeaderboardViewModel.swift; sourceTree = "<group>"; };
 		F0ACC18928A67C2400C26208 /* LeaderboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHeaderView.swift; sourceTree = "<group>"; };
 		F0B028CA289280000024DBFD /* PopGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopGradient.swift; sourceTree = "<group>"; };
+		F0B6FB9628C5FC200089652C /* CategoriesSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSegmentedControlView.swift; sourceTree = "<group>"; };
 		F0BB5384289BB7D8003A0E3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F0BB5386289BB808003A0E3B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		F0BD396E28AE4E010049A84D /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
@@ -821,6 +823,7 @@
 			children = (
 				F078C4A828BD03FC00F7B9EE /* TabView.swift */,
 				F078C4AA28BD0A3000F7B9EE /* HomeView.swift */,
+				F0B6FB9628C5FC200089652C /* CategoriesSegmentedControlView.swift */,
 				F03D323528C0A0D500884534 /* QuizItemPlaceholderView.swift */,
 				F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */,
 				F048129F28BE397200C58FB2 /* QuizItemView.swift */,
@@ -1401,6 +1404,7 @@
 				F072657328B7608400A2848E /* SettingsViewModel.swift in Sources */,
 				F078C4A928BD03FC00F7B9EE /* TabView.swift in Sources */,
 				F072654C28B7602F00A2848E /* BaseNetworkClientProtocol.swift in Sources */,
+				F0B6FB9728C5FC200089652C /* CategoriesSegmentedControlView.swift in Sources */,
 				F072656628B7604C00A2848E /* Category.swift in Sources */,
 				F072657228B7607F00A2848E /* QuizDetailsViewModel.swift in Sources */,
 				F03D323428C0A00100884534 /* ScrollViewBackgroundModifier.swift in Sources */,
