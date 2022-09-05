@@ -1,6 +1,6 @@
 import Combine
 
-class QuizLeaderboardViewModel {
+class QuizLeaderboardViewModel: ObservableObject {
 
     @Published var userRankings: [UserRankingCellModel] = []
 

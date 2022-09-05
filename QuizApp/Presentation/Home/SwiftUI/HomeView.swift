@@ -4,7 +4,6 @@ struct HomeView: View {
 
     @ObservedObject private(set) var viewModel: HomeViewModel
 
-    @State var selectedCategory: Int?
     @State private var selected: Int = 0
 
     private let numberOfPlaceholderItems = 4
@@ -36,7 +35,8 @@ struct HomeView: View {
                                 EdgeInsets(
                                     top: .zero,
                                     leading: horizontalListPadding,
-                                    bottom: .zero, trailing:
+                                    bottom: .zero,
+                                    trailing:
                                         horizontalListPadding))
                     }
                 } else {

@@ -40,6 +40,11 @@ extension AppModule: RegisterViewsProtocol {
             QuizDetailsView(viewModel: container.resolve(args: args))
         }
         .scope(.unique)
+
+        container.register { container, args in
+            QuizLeaderboardView(viewModel: container.resolve(args: args))
+        }
+        .scope(.unique)
     }
 
 }
