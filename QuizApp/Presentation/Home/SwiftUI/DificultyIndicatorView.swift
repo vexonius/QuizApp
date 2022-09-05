@@ -16,7 +16,7 @@ struct DificultyIndicatorView: View {
         HStack(spacing: itemSpacingPadding) {
             ForEach(0..<Difficulty.highest.enumerated) { index in
                 RoundedRectangle(cornerRadius: rectCornerRadius)
-                    .fill(difficulty.enumerated > index ? color : .white.opacity(0.3))
+                    .fill(difficulty.enumerated > index ? color : .white30)
                     .rotationEffect(Angle(degrees: rectRotationAngle))
                     .frame(width: rectSize, height: rectSize, alignment: .topTrailing)
             }

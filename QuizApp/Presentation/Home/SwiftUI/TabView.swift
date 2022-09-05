@@ -28,7 +28,6 @@ struct TabbedView: View {
                         .font(.sourceSansPro(size: tabItemFontSize, weight: .regular))
                         .foregroundColor(.darkerPurple)
                 }
-                .navigationBarTitle(LocalizedStrings.appName.localizedString)
             SettingsView(viewModel: settingsViewModel)
                 .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                 .tabItem {
@@ -40,6 +39,7 @@ struct TabbedView: View {
                 }
         }
         .accentColor(.lightPurple)
+        .navigationBarTitle(LocalizedStrings.appName.localizedString)
     }
 
 }

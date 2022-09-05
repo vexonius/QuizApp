@@ -9,7 +9,7 @@ struct QuizItemView: View {
     let defaultPadding: CGFloat = 20
     let titleTopPadding: CGFloat = 23
     let summaryTopPadding: CGFloat = 4
-    let itemSpacingPadding: CGFloat = 10
+    let itemSpacingPadding: CGFloat = 6
     let summaryLineLimit = 3
 
     var body: some View {
@@ -22,7 +22,7 @@ struct QuizItemView: View {
                         .aspectRatio(contentMode: .fill)
                 },
                 placeholder: {
-                    Color.white.opacity(0.3)
+                    Color.white30
                 })
                 .frame(width: thumbnailSize, height: thumbnailSize, alignment: .center)
                 .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
@@ -53,7 +53,7 @@ struct QuizItemView: View {
             .frame(maxHeight: .infinity, alignment: .topTrailing)
         }
         .frame(maxWidth: .infinity, minHeight: itemHeight)
-        .background(.white.opacity(0.3))
+        .background(Color.white30)
         .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
         .padding(.vertical, itemSpacingPadding)
     }
@@ -72,8 +72,6 @@ struct QuizItemView_Previews: PreviewProvider {
                 imageUrl: "https://ca.slack-edge.com/T02JLE4BC-U02CX203Y9M-89c9ad54b4bd-192",
                 numberOfQuestions: 5,
                 difficulty: .hard))
-            .brandStyleBackground()
-
     }
 
 }

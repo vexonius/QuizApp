@@ -51,6 +51,8 @@
 		F02F01EF28AF80BF0056610D /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01EE28AF80BF0056610D /* QuizResultViewModel.swift */; };
 		F02F01F128AF847E0056610D /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01F028AF847E0056610D /* QuizResultViewController.swift */; };
 		F035DE8028B7B841000A48D8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
+		F03D323428C0A00100884534 /* ScrollViewBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D323228C09FFD00884534 /* ScrollViewBackgroundModifier.swift */; };
+		F03D323628C0A0D500884534 /* QuizItemPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D323528C0A0D500884534 /* QuizItemPlaceholderView.swift */; };
 		F040029B28A3FA760012B2E4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = F040029A28A3FA760012B2E4 /* Nuke */; };
 		F040579E28A69D6E00A659AE /* UserRankingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040579D28A69D6E00A659AE /* UserRankingCellModel.swift */; };
 		F048129E28BE36CB00C58FB2 /* DificultyIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */; };
@@ -308,6 +310,8 @@
 		F02F01EA28AF78A20056610D /* QuizSessionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionResultModel.swift; sourceTree = "<group>"; };
 		F02F01EE28AF80BF0056610D /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
 		F02F01F028AF847E0056610D /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
+		F03D323228C09FFD00884534 /* ScrollViewBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewBackgroundModifier.swift; sourceTree = "<group>"; };
+		F03D323528C0A0D500884534 /* QuizItemPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemPlaceholderView.swift; sourceTree = "<group>"; };
 		F040579D28A69D6E00A659AE /* UserRankingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingCellModel.swift; sourceTree = "<group>"; };
 		F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DificultyIndicatorView.swift; sourceTree = "<group>"; };
 		F048129F28BE397200C58FB2 /* QuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemView.swift; sourceTree = "<group>"; };
@@ -469,6 +473,7 @@
 				F0136EEE28B8E7CC00D8CD08 /* Font+Extensions.swift */,
 				F00B6A1C28BF885F00E6AB67 /* IsTextObuscated.swift */,
 				F00B6A1E28BF9E8A00E6AB67 /* SecureField+Extensions.swift */,
+				F03D323228C09FFD00884534 /* ScrollViewBackgroundModifier.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -816,6 +821,7 @@
 			children = (
 				F078C4A828BD03FC00F7B9EE /* TabView.swift */,
 				F078C4AA28BD0A3000F7B9EE /* HomeView.swift */,
+				F03D323528C0A0D500884534 /* QuizItemPlaceholderView.swift */,
 				F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */,
 				F048129F28BE397200C58FB2 /* QuizItemView.swift */,
 			);
@@ -1389,6 +1395,7 @@
 				F07265B928B767FC00A2848E /* UIFont+Extensions.swift in Sources */,
 				F0A098D028B80ECC004F51C0 /* RoundedTextInput.swift in Sources */,
 				F072658F28B761B700A2848E /* AccountEndpoints.swift in Sources */,
+				F03D323628C0A0D500884534 /* QuizItemPlaceholderView.swift in Sources */,
 				F072656B28B7605100A2848E /* AccountDetailsModel.swift in Sources */,
 				F07265AD28B7656A00A2848E /* CellType.swift in Sources */,
 				F072657328B7608400A2848E /* SettingsViewModel.swift in Sources */,
@@ -1396,6 +1403,7 @@
 				F072654C28B7602F00A2848E /* BaseNetworkClientProtocol.swift in Sources */,
 				F072656628B7604C00A2848E /* Category.swift in Sources */,
 				F072657228B7607F00A2848E /* QuizDetailsViewModel.swift in Sources */,
+				F03D323428C0A00100884534 /* ScrollViewBackgroundModifier.swift in Sources */,
 				F0FD6B6128B78A710092AB26 /* AppCoordinator.swift in Sources */,
 				F072654128B7601C00A2848E /* SceneDelegate.swift in Sources */,
 				F072655928B7603900A2848E /* AccountDetailsRepoModel.swift in Sources */,
