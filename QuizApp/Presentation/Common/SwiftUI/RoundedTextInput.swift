@@ -6,6 +6,8 @@ struct RoundedTextInput: ViewModifier {
     private let verticalPadding: CGFloat = 14
     private let horizontalPadding: CGFloat = 24
 
+    @FocusState var focused: Bool
+
     func body(content: Content) -> some View {
         content
             .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
@@ -15,6 +17,13 @@ struct RoundedTextInput: ViewModifier {
             .padding(.horizontal, horizontalPadding)
             .background(Color.white30)
             .cornerRadius(.infinity)
+            .focused($focused, equals: true)
+            .overlay {
+                if focused {
+                    Capsule(style: .continuous)
+                        .stroke(.white, style: StrokeStyle(lineWidth: 1.2))
+                }
+            }
     }
 
 }
