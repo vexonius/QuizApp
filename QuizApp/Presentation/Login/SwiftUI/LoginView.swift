@@ -3,8 +3,6 @@ import Resolver
 
 struct LoginView: View {
 
-    @State var username: String = ""
-    @State var password: String = ""
     @State var isPasswordHidden: Bool = true
 
     @ObservedObject var viewModel: LoginViewModel
@@ -16,17 +14,17 @@ struct LoginView: View {
                 .font(.system(size: DesignConstants.FontSize.heading.cgFloat, weight: .bold, design: .default))
                 .foregroundColor(.white)
             Spacer()
-            TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $username)
+            TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $viewModel.email)
                 .modifier(RoundedTextInput())
-                .onChange(of: username) { username in
-                    viewModel.onEmailChanged(username)
+                .onReceive(viewModel.$email) { username in
+                    viewModel.validateInputs()
                 }
             ZStack(alignment: .trailing) {
-                SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
-                    .isTextObuscated($isPasswordHidden, text: $password)
+                SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $viewModel.password)
+                    .isTextObuscated($isPasswordHidden, text: $viewModel.password)
                     .modifier(RoundedTextInput())
-                    .onChange(of: password) { password in
-                        viewModel.onPasswordChanged(password)
+                    .onReceive(viewModel.$password) { password in
+                        viewModel.validateInputs()
                     }
                 Button(
                     action: {
