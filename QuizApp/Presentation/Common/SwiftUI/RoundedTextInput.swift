@@ -5,6 +5,7 @@ struct RoundedTextInput: ViewModifier {
 
     private let verticalPadding: CGFloat = 14
     private let horizontalPadding: CGFloat = 24
+    private let strokeWidth: CGFloat = 1.2
 
     @FocusState var focused: Bool
 
@@ -21,7 +22,7 @@ struct RoundedTextInput: ViewModifier {
             .overlay {
                 if focused {
                     Capsule(style: .continuous)
-                        .stroke(.white, style: StrokeStyle(lineWidth: 1.2))
+                        .stroke(.white, style: StrokeStyle(lineWidth: strokeWidth))
                 }
             }
     }
