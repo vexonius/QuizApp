@@ -16,29 +16,10 @@ struct LoginView: View {
             Spacer()
             TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $viewModel.email)
                 .modifier(RoundedTextInput())
-                .onReceive(viewModel.$email) { username in
+                .onReceive(viewModel.$email) { _ in
                     viewModel.validateInputs()
                 }
-            ZStack(alignment: .trailing) {
-                SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $viewModel.password)
-                    .isTextObuscated($isPasswordHidden, text: $viewModel.password)
-                    .modifier(RoundedTextInput())
-                    .onReceive(viewModel.$password) { password in
-                        viewModel.validateInputs()
-                    }
-                Button(
-                    action: {
-                        viewModel.togglePasswordVisibility()
-                    },
-                    label: {
-                        Image(uiImage: .hideText)
-                            .frame(
-                                width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
-                                height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
-                                alignment: .trailing)
-                            .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
-                    })
-            }
+            toggableSecureFieldButton
             Button(
                 action: {
                     viewModel.login()
@@ -60,6 +41,33 @@ struct LoginView: View {
         .brandStyleBackground()
         .onReceive(viewModel.$isPasswordHidden) { isPasswordHidden in
             self.isPasswordHidden = isPasswordHidden
+        }
+    }
+
+}
+
+extension LoginView {
+
+    var toggableSecureFieldButton: some View {
+        ZStack(alignment: .trailing) {
+            SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $viewModel.password)
+                .isTextObuscated($isPasswordHidden, text: $viewModel.password)
+                .modifier(RoundedTextInput())
+                .onReceive(viewModel.$password) { _ in
+                    viewModel.validateInputs()
+                }
+            Button(
+                action: {
+                    viewModel.togglePasswordVisibility()
+                },
+                label: {
+                    Image(uiImage: .hideText)
+                        .frame(
+                            width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
+                            height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
+                            alignment: .trailing)
+                        .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
+                })
         }
     }
 
