@@ -15,7 +15,7 @@ struct SettingsView: View {
             Text(LocalizedStrings.usernamePlaceholder.localizedString.uppercased())
                 .font(.sourceSansPro(size: DesignConstants.FontSize.paragraph.cgFloat, weight: .regular))
                 .foregroundColor(.white)
-                .padding([.top], usernameLabelTopOffset)
+                .padding(.top, usernameLabelTopOffset)
             TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $username)
                 .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .bold))
                 .foregroundColor(.white)
@@ -35,7 +35,7 @@ struct SettingsView: View {
                 })
                 .modifier(RoundedButton())
         }
-        .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
+        .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
         .padding(.bottom, DesignConstants.Insets.componentsInset.cgFloat)
         .brandStyleBackground()
         .onReceive(viewModel.$currentUsername) { username in

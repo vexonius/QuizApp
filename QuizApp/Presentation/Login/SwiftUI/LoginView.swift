@@ -11,7 +11,7 @@ struct LoginView: View {
     @FocusState var passwordInFocus: SecureFieldType?
 
     var body: some View {
-        VStack (spacing: DesignConstants.Insets.componentSpacing.cgFloat) {
+        VStack(spacing: DesignConstants.Insets.componentSpacing.cgFloat) {
             Spacer()
             Text(LocalizedStrings.appName.localizedString)
                 .font(.system(size: DesignConstants.FontSize.heading.cgFloat, weight: .bold, design: .default))
@@ -29,7 +29,7 @@ struct LoginView: View {
                 if viewModel.isPasswordHidden {
                     SecureField(
                         LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
-                    .padding([.vertical], 1) // Secure field seems a tiny bit smaller, therefore you can see a glitch
+                    .padding(.vertical, 1) // Secure field seems a tiny bit smaller, therefore you can see a glitch
                     .focused($passwordInFocus, equals: .secure)
                     .modifier(RoundedTextInput())
                     .onChange(of: password) { newValue in
@@ -56,7 +56,7 @@ struct LoginView: View {
                                 width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
                                 height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
                                 alignment: .trailing)
-                            .padding([.horizontal], DesignConstants.InputComponents.thumbnailInset.cgFloat)
+                            .padding(.horizontal, DesignConstants.InputComponents.thumbnailInset.cgFloat)
                     })
             }
             .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
@@ -71,7 +71,7 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity)
                 })
                 .modifier(RoundedButton())
-                .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
+                .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
                 .disabled(!viewModel.isLoginButtonEnabled)
             Spacer()
             Spacer()
