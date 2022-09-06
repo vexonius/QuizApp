@@ -11,6 +11,8 @@ struct TabbedView: View {
         self.settingsViewModel = settingsViewModel
 
         UITabBar.appearance().backgroundColor = .white
+        UITabBar.appearance().barTintColor = .white
+        UITabBar.appearance().isTranslucent = false
     }
 
     var body: some View {
