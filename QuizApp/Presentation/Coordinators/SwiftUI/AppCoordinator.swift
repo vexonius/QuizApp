@@ -16,7 +16,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func routeToLogin() {
-        let loginView: TabbedView = container.resolve()
+        let loginView: LoginView = container.resolve()
         let loginViewController = UIHostingController(rootView: loginView)
         navigationController.setViewControllers([loginViewController], animated: true)
     }
