@@ -2,37 +2,24 @@ import Combine
 import UIKit
 import Reachability
 
-class HomeViewModel {
+class SearchViewModel {
 
     private struct CustomConstants {
         static let minimumSearchTextLength = 2
     }
 
-    @Published private(set) var isErrorPlaceholderVisible: Bool = false
     @Published private(set) var errorMessage: String?
+    @Published private(set) var isErrorPlaceholderVisible: Bool = false
 
     @Published private(set) var isTableViewVisible: Bool = false
-    @Published private(set) var areFiltersVisible: Bool = false
-
-    @Published private(set) var filters: [CategoryFilter] = []
     @Published private(set) var filteredQuizzes: [QuizCellModel] = []
 
     private var quizzes: [QuizCellModel] = []
-
-    private var categories: [CategoryFilter] {
-        Category
-            .allCases
-            .enumerated()
-            .map { (index, category) in
-                CategoryFilter(index: index, title: category.named, category: category, tint: category.color)
-            }
-    }
+    private var cancellables = Set<AnyCancellable>()
 
     private let coordinator: QuizCoordinatorProtocol
     private let networkService: NetworkServiceProtocol
     private let quizUseCase: QuizUseCaseProtocol
-
-    private var cancellables = Set<AnyCancellable>()
 
     init(
         quizUseCase: QuizUseCaseProtocol,
@@ -44,23 +31,21 @@ class HomeViewModel {
         self.quizUseCase = quizUseCase
     }
 
-    func onCategoryChange(for index: Int) {
+    func onSearchTextChanged(_ searchText: String) {
+        guard searchText.count > CustomConstants.minimumSearchTextLength else {
+            self.filteredQuizzes = []
+            showEmptyResultsMessage()
+
+            return
+        }
+
         Task {
-            guard
-                let selectedCategoryModel = categories.first(where: { $0.index == index }),
-                selectedCategoryModel.category != .uncategorized
-            else {
-                await MainActor.run {
-                    self.filteredQuizzes = quizzes
-                }
-
-                return
-            }
-
-            let filteredQuizzes = await filterQuizzes(for: selectedCategoryModel.category)
+            let filteredQuizzes = await filterQuizzes(containing: searchText)
 
             await MainActor.run {
                 self.filteredQuizzes = filteredQuizzes
+                self.isErrorPlaceholderVisible = false
+                self.isTableViewVisible = true
             }
         }
     }
@@ -78,12 +63,10 @@ class HomeViewModel {
                 switch networkState {
                 case .unavailable:
                     self.isTableViewVisible = false
-                    self.areFiltersVisible = false
                     self.showNoNetworkError()
                 default:
                     self.isErrorPlaceholderVisible = false
                     self.isTableViewVisible = true
-                    self.areFiltersVisible = true
                     self.fetchQuizzes()
                 }
             }
@@ -93,11 +76,18 @@ class HomeViewModel {
     private func showNoNetworkError() {
         errorMessage = LocalizedStrings.networkErrorDescription.localizedString
         isErrorPlaceholderVisible = true
+        isTableViewVisible = false
     }
 
-    private func filterQuizzes(for category: Category) async -> [QuizCellModel] {
+    private func showEmptyResultsMessage() {
+        errorMessage = LocalizedStrings.emptySearchResults.localizedString
+        isErrorPlaceholderVisible = true
+    }
+
+    private func filterQuizzes(containing text: String) async -> [QuizCellModel] {
         quizzes
-            .filter { $0.category == category }
+            .filter { $0.name.lowercased().contains(text) }
+            .map { QuizCellModel(from: $0, highlight: text) }
     }
 
     private func fetchQuizzes() {
@@ -109,7 +99,6 @@ class HomeViewModel {
 
                 await MainActor.run {
                     self.quizzes = quizzes
-                    self.filters = categories
                 }
             } catch {
                 self.errorMessage = LocalizedStrings.serverErrorMessage.localizedString

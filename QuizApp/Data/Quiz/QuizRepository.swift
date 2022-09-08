@@ -1,4 +1,9 @@
+import Foundation
+
 class QuizRepository: QuizRepositoryProtocol {
+
+    private var lastFetchedTime: Date = Date()
+    private var minFetchInterval = 120.0
 
     private let quizNetworkClient: QuizNetworkClientProtocol
 
@@ -6,11 +11,28 @@ class QuizRepository: QuizRepositoryProtocol {
         self.quizNetworkClient = quizNetworkClient
     }
 
+    private var cachedQuizzes: [QuizRepoModel] = []
+
+    private var didFetchRecently: Bool {
+        abs(lastFetchedTime.timeIntervalSinceNow) <= minFetchInterval
+    }
+
     var quizzes: [QuizRepoModel] {
         get async throws {
-            try await quizNetworkClient
-                .quizzes
-                .map { QuizRepoModel(from: $0) }
+            guard
+                !cachedQuizzes.isEmpty,
+                didFetchRecently
+            else {
+                cachedQuizzes = try await quizNetworkClient
+                    .quizzes
+                    .map {
+                        QuizRepoModel(from: $0)
+                    }
+
+                return cachedQuizzes
+            }
+
+            return cachedQuizzes
         }
     }
 

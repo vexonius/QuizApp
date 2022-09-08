@@ -12,8 +12,8 @@ class LoginViewModel: ObservableObject {
     private let loginUseCase: LoginUseCaseProtocol
     private let coordinator: AppCoordinatorProtocol
 
-    private var email: String = ""
-    private var password: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
 
     init(loginUseCase: LoginUseCaseProtocol, coordinator: AppCoordinatorProtocol) {
         self.loginUseCase = loginUseCase
@@ -34,8 +34,8 @@ class LoginViewModel: ObservableObject {
                 }
             } catch {
                 await MainActor.run {
-                handleLoginResponseError(error: error)
-                toggleInputs()
+                    handleLoginResponseError(error: error)
+                    toggleInputs()
                 }
             }
 
@@ -46,17 +46,7 @@ class LoginViewModel: ObservableObject {
         isPasswordHidden.toggle()
     }
 
-    func onEmailChanged(_ email: String) {
-        self.email = email
-        validateInputs()
-    }
-
-    func onPasswordChanged(_ password: String) {
-        self.password = password
-        validateInputs()
-    }
-
-    private func validateInputs() {
+    func validateInputs() {
         isLoginButtonEnabled = !email.isEmpty && email.isValid && !password.isEmpty
     }
 
