@@ -19,14 +19,10 @@ struct SettingsView: View {
             TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $username)
                 .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .bold))
                 .foregroundColor(.white)
-                .onSubmit {
-                    viewModel.nameOnChange(username)
-                }
+                .onSubmit { viewModel.nameOnChange(username) }
             Spacer()
             Button(
-                action: {
-                    viewModel.logout()
-                },
+                action: viewModel.logout,
                 label: {
                     Text(LocalizedStrings.logoutButtonTitle.localizedString)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
