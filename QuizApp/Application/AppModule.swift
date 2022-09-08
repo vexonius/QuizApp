@@ -155,6 +155,15 @@ class AppModule {
             .scope(.shared)
 
         container
+            .register { container in
+                SearchViewModel(
+                    quizUseCase: container.resolve(),
+                    coordinator: container.resolve(),
+                    networkService: container.resolve())
+            }
+            .scope(.shared)
+
+        container
             .register { container, args in
                 QuizDetailsViewModel(quiz: args.get(), coordinator: container.resolve())
             }

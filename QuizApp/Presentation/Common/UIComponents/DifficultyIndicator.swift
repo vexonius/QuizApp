@@ -5,7 +5,7 @@ class DifficultyIndicator: UIView {
     struct CustomConstants {
         static let numberOfRectangles = 3
         static let defaultSpacing = 4
-        static let rotationAmoutDegrees = 90.0
+        static let rotationAmountDegrees = 90.0
         static let totalDegrees = 360.0
         static let xRotation = 0.0
         static let yRotation = 0.0
@@ -65,7 +65,7 @@ class DifficultyIndicator: UIView {
     }
 
     private func transform(rectangle: CAShapeLayer, translateX: Double) {
-        let degrees = CustomConstants.rotationAmoutDegrees
+        let degrees = CustomConstants.rotationAmountDegrees
         let radians = CGFloat(degrees * Double.pi / CustomConstants.totalDegrees)
         rectangle.transform = CATransform3DConcat(
             CATransform3DMakeRotation(
