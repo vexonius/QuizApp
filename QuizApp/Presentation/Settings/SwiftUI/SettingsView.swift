@@ -31,8 +31,7 @@ struct SettingsView: View {
                 })
                 .modifier(RoundedButton())
         }
-        .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
-        .padding(.bottom, DesignConstants.Insets.componentsInset.cgFloat)
+        .padding(.all, DesignConstants.Insets.componentsInset.cgFloat)
         .brandStyleBackground()
         .onReceive(viewModel.$currentUsername) { username in
             guard let username = username else { return }
