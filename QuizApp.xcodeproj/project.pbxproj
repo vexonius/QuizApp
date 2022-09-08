@@ -25,6 +25,8 @@
 		F012CACD28A29953007592A5 /* QuizUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CACC28A29953007592A5 /* QuizUseCaseProtocol.swift */; };
 		F012CACF28A2999A007592A5 /* QuizUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CACE28A2999A007592A5 /* QuizUseCase.swift */; };
 		F012CAD128A2CC68007592A5 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAD028A2CC68007592A5 /* Sequence+Extensions.swift */; };
+		F0131C3E28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */; };
+		F0131C3F28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */; };
 		F0136EF028B8ECD100D8CD08 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0136EEE28B8E7CC00D8CD08 /* Font+Extensions.swift */; };
 		F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0138171287F154A001A0C2E /* Primitives+Extensions.swift */; };
 		F014C93028ACE06E006DB507 /* QuizSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */; };
@@ -281,6 +283,7 @@
 		F012CACC28A29953007592A5 /* QuizUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUseCaseProtocol.swift; sourceTree = "<group>"; };
 		F012CACE28A2999A007592A5 /* QuizUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUseCase.swift; sourceTree = "<group>"; };
 		F012CAD028A2CC68007592A5 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Style.swift"; sourceTree = "<group>"; };
 		F0136EEE28B8E7CC00D8CD08 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		F0138171287F154A001A0C2E /* Primitives+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Primitives+Extensions.swift"; sourceTree = "<group>"; };
 		F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSessionModel.swift; sourceTree = "<group>"; };
@@ -823,6 +826,7 @@
 			children = (
 				F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */,
 				F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */,
+				F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */,
 				F0D9202D28858054004EC4F3 /* AppModule.swift */,
 				F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */,
 				F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */,
@@ -1327,6 +1331,7 @@
 				F072659328B761C900A2848E /* LoginEndpoints.swift in Sources */,
 				F072658E28B761B700A2848E /* AccountNetworkClientProtocol.swift in Sources */,
 				F07265AE28B7656D00A2848E /* AnswerCellModel.swift in Sources */,
+				F0131C3F28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */,
 				F07265C128B76E1F00A2848E /* AppModule+HostingViewControllerResolution.swift in Sources */,
 				F07265B228B765BF00A2848E /* QuizCellModel.swift in Sources */,
 				F07265B028B765AE00A2848E /* CategoryFilter.swift in Sources */,
@@ -1448,6 +1453,7 @@
 				F0BD7CC828A516BF00E8526D /* QuizDetailsViewController.swift in Sources */,
 				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
 				F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */,
+				F0131C3E28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */,
 				F014C93328ACE19D006DB507 /* AnswerCell.swift in Sources */,
 				F0052EB528A27ED1006515AE /* QuizResponse.swift in Sources */,
 				F02F01E528AF765B0056610D /* QuizResultRequest.swift in Sources */,
