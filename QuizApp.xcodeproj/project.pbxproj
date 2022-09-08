@@ -39,6 +39,7 @@
 		F015E1F12885973400BC7AE4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F02885973400BC7AE4 /* LoginUseCase.swift */; };
 		F015E1F42885983600BC7AE4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015E1F32885983600BC7AE4 /* LoginRepository.swift */; };
 		F0167D66289AB29E0016A58E /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0167D65289AB29E0016A58E /* Difficulty.swift */; };
+		F018BB6028C8A24A0040A6E4 /* QuizAnsweringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F018BB5F28C8A24A0040A6E4 /* QuizAnsweringView.swift */; };
 		F020B7D7289971C400C9C3CA /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020B7D6289971C400C9C3CA /* QuizCell.swift */; };
 		F0242FB028815C6100927148 /* BindViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FAF28815C6100927148 /* BindViewsProtocol.swift */; };
 		F0242FB228816A2500927148 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0242FB128816A2500927148 /* LoginViewModel.swift */; };
@@ -310,6 +311,7 @@
 		F015E1F02885973400BC7AE4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		F015E1F32885983600BC7AE4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		F0167D65289AB29E0016A58E /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		F018BB5F28C8A24A0040A6E4 /* QuizAnsweringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnsweringView.swift; sourceTree = "<group>"; };
 		F020B7D6289971C400C9C3CA /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
 		F0242FAF28815C6100927148 /* BindViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindViewsProtocol.swift; sourceTree = "<group>"; };
 		F0242FB128816A2500927148 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -1459,6 +1461,7 @@
 				F05A618428C63E69000049AB /* QuizDetailsView.swift in Sources */,
 				F0A098D028B80ECC004F51C0 /* RoundedTextInput.swift in Sources */,
 				F072658F28B761B700A2848E /* AccountEndpoints.swift in Sources */,
+				F018BB6028C8A24A0040A6E4 /* QuizAnsweringView.swift in Sources */,
 				F03D323628C0A0D500884534 /* QuizItemPlaceholderView.swift in Sources */,
 				F072656B28B7605100A2848E /* AccountDetailsModel.swift in Sources */,
 				F07265AD28B7656A00A2848E /* CellType.swift in Sources */,
