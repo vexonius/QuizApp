@@ -64,6 +64,7 @@
 		F04812A028BE397200C58FB2 /* QuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F048129F28BE397200C58FB2 /* QuizItemView.swift */; };
 		F045FE3528B8A9DF00A8B57C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7101028B7CAD700AE1B83 /* SearchViewModel.swift */; };
 		F04AD4D82892BE7000F378C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */; };
+		F04D3CAA28C9DD0500682359 /* ProgressHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D3CA928C9DD0500682359 /* ProgressHeader.swift */; };
 		F04E13372885F063001F2ABB /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E13362885F063001F2ABB /* URLSession+Extension.swift */; };
 		F04E133C288694A5001F2ABB /* LoginResponseNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */; };
 		F0513299287DA252003E8D90 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
@@ -329,6 +330,7 @@
 		F048129D28BE36CB00C58FB2 /* DificultyIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DificultyIndicatorView.swift; sourceTree = "<group>"; };
 		F048129F28BE397200C58FB2 /* QuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizItemView.swift; sourceTree = "<group>"; };
 		F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F04D3CA928C9DD0500682359 /* ProgressHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHeader.swift; sourceTree = "<group>"; };
 		F04E13362885F063001F2ABB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		F04E133B288694A5001F2ABB /* LoginResponseNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseNetworkModel.swift; sourceTree = "<group>"; };
 		F0513298287DA252003E8D90 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -604,6 +606,14 @@
 				F0432A8E28C8D4B20048E226 /* AnsweredResult+Identifiable.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F018BB5E28C8A23D0040A6E4 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F04D3CA928C9DD0500682359 /* ProgressHeader.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		F0242FAA28815B5B00927148 /* Presentation */ = {
@@ -1447,6 +1457,7 @@
 				F072657328B7608400A2848E /* SettingsViewModel.swift in Sources */,
 				F078C4A928BD03FC00F7B9EE /* TabView.swift in Sources */,
 				F072654C28B7602F00A2848E /* BaseNetworkClientProtocol.swift in Sources */,
+				F04D3CAA28C9DD0500682359 /* ProgressHeader.swift in Sources */,
 				F0B6FB9728C5FC200089652C /* CategoriesSegmentedControlView.swift in Sources */,
 				F072656628B7604C00A2848E /* Category.swift in Sources */,
 				F072657228B7607F00A2848E /* QuizDetailsViewModel.swift in Sources */,
