@@ -147,7 +147,7 @@ class BaseNetworkClient: BaseNetworkClientProtocol {
         case 401:
             throw ClientError.unauthorized
         case 403:
-            throw ClientError.forbiden
+            throw ClientError.forbidden
         case 404:
             throw ClientError.notFound
         case 402, 405..<500:

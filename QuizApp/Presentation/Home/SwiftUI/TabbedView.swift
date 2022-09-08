@@ -12,9 +12,7 @@ struct TabbedView: View {
         self.settingsViewModel = settingsViewModel
         self.homeViewModel = homeViewModel
 
-        UITabBar.appearance().backgroundColor = .white
-        UITabBar.appearance().barTintColor = .white
-        UITabBar.appearance().isTranslucent = false
+        styleTabBar()
     }
 
     var body: some View {
@@ -29,7 +27,6 @@ struct TabbedView: View {
                         .foregroundColor(.darkerPurple)
                 }
             SettingsView(viewModel: settingsViewModel)
-                .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                 .tabItem {
                     Image(uiImage: .settings)
                         .foregroundColor(.darkerPurple)
@@ -40,6 +37,12 @@ struct TabbedView: View {
         }
         .accentColor(.lightPurple)
         .navigationBarTitle(LocalizedStrings.appName.localizedString)
+    }
+
+    private func styleTabBar() {
+        UITabBar.appearance().backgroundColor = .white
+        UITabBar.appearance().barTintColor = .white
+        UITabBar.appearance().isTranslucent = false
     }
 
 }

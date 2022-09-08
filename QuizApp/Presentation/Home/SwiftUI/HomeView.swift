@@ -19,14 +19,14 @@ struct HomeView: View {
     var body: some View {
         VStack {
             List {
-                if viewModel.filteredQuizes.isEmpty {
+                if viewModel.filteredQuizzes.isEmpty {
                     ForEach(0..<numberOfPlaceholderItems) { _ in
                         QuizItemPlaceholderView()
                             .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
                             .listRowBackground(Color.clear)
                     }
                 } else {
-                    ForEach(viewModel.filteredQuizes, id: \.id) { quiz in
+                    ForEach(viewModel.filteredQuizzes, id: \.id) { quiz in
                         QuizItemView(quiz: quiz)
                             .frame(maxWidth: .infinity)
                             .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))

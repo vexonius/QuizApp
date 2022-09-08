@@ -1,16 +1,16 @@
 import SwiftUI
 
-struct IsTextObuscated: ViewModifier {
+struct TextObfuscationModifier: ViewModifier {
 
-    @Binding var isTextHidden: Bool
     @Binding var text: String
+    @Binding var isTextObfuscated: Bool
     @FocusState var fieldInFocus: SecureFieldType?
 
     private let secureFieldPadding: CGFloat = 1
 
     func body(content: Content) -> some View {
         ZStack {
-            if isTextHidden {
+            if isTextObfuscated {
                 content
                     .padding(.vertical, secureFieldPadding)
                     .focused($fieldInFocus, equals: .secure)
@@ -19,7 +19,7 @@ struct IsTextObuscated: ViewModifier {
                     .focused($fieldInFocus, equals: .plain)
             }
         }
-        .onChange(of: isTextHidden) { isHidden in
+        .onChange(of: isTextObfuscated) { isHidden in
             fieldInFocus = isHidden ? .secure : .plain
         }
     }

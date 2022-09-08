@@ -1,6 +1,6 @@
 import UIKit
 
-class ClearSegmentedControll: UISegmentedControl {
+class ClearSegmentedControl: UISegmentedControl {
 
     private struct CustomConstants {
         static let backgroundTintImageHeight = 32
