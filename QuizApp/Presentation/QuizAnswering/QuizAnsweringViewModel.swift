@@ -1,14 +1,14 @@
 import Combine
 import Foundation
 
-class QuizAnsweringViewModel {
+class QuizAnsweringViewModel: ObservableObject {
 
     private struct Constants {
         static let answerUpdateDelay = 0.5
         static let progressFormat = "%d/%d"
     }
 
-    @Published var currentQuestionCellModels: [AnsweringCellProtocol] = []
+    @Published var currentQuestionCellModels: [QuizCellType] = []
     @Published var isTableViewInteractionEnabled: Bool = true
     @Published var correctAnswerIndex: IndexPath?
     @Published var currentQuestionIndex: Int = 0
@@ -51,7 +51,7 @@ class QuizAnsweringViewModel {
     }
 
     private func prepareCurrentAnswerModels() {
-        var models: [AnsweringCellProtocol] = []
+        var models: [QuizCellType] = []
 
         guard !questions.isEmpty else {
             finishQuiz()
@@ -61,8 +61,8 @@ class QuizAnsweringViewModel {
 
         let question = questions.removeFirst()
 
-        models.append(QuestionCellModel(from: question))
-        models.append(contentsOf: question.answers.map { AnswerCellModel(from: $0) })
+        models.append(.question(QuestionCellModel(from: question)))
+        models.append(contentsOf: question.answers.map { .answer(AnswerCellModel(from: $0)) })
 
         currentQuestionCellModels = models
         isTableViewInteractionEnabled = true

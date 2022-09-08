@@ -1,6 +1,5 @@
-struct AnswerCellModel: AnsweringCellProtocol {
+struct AnswerCellModel: Equatable, Hashable {
 
-    let cellType: QuizCellType
     let answerText: String
     let isCorrect: Bool
 
@@ -9,7 +8,7 @@ struct AnswerCellModel: AnsweringCellProtocol {
 extension AnswerCellModel {
 
     init(from model: QuizAnswerModel) {
-        self.init(cellType: .answer, answerText: model.answer, isCorrect: model.isCorrect)
+        self.init(answerText: model.answer, isCorrect: model.isCorrect)
     }
 
 }

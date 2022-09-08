@@ -16,7 +16,7 @@ class QuizAnsweringViewController: BaseViewController {
 
     private var tableView: UITableView!
     private var progressView: ProgressView!
-    private var datasource: CombineTableViewDataSource<AnsweringCellProtocol>!
+    private var datasource: CombineTableViewDataSource<QuizCellType>!
 
     private let viewModel: QuizAnsweringViewModel
     private var cancellables: Set<AnyCancellable> = []
@@ -50,7 +50,7 @@ class QuizAnsweringViewController: BaseViewController {
     }
 
     private func createDataSource() {
-        datasource = CombineTableViewDataSource<AnsweringCellProtocol>(cellFactory: cellConfig)
+        datasource = CombineTableViewDataSource<QuizCellType>(cellFactory: cellConfig)
         tableView.dataSource = datasource
     }
 
@@ -87,8 +87,14 @@ extension QuizAnsweringViewController: BindViewsProtocol {
 
     func bindViews() {
         tableView
-            .modelSelected(AnsweringCellProtocol.self)
-            .compactMap { $0 as? AnswerCellModel }
+            .modelSelected(QuizCellType.self)
+            .compactMap {
+                if case .answer(let model) = $0 {
+                    return model
+                }
+
+                return nil
+            }
             .sink { [weak self] answer in
                 self?.viewModel.onAnswerGuessed(answer)
             }
@@ -174,16 +180,14 @@ extension QuizAnsweringViewController: UITableViewDelegate {
 
 extension QuizAnsweringViewController {
 
-    var cellConfig: CombineTableViewDataSource<AnsweringCellProtocol>.CellFactory {
-        { _, tableView, indexPath, model -> UITableViewCell in
-            switch model.cellType {
-            case .answer:
+    var cellConfig: CombineTableViewDataSource<QuizCellType>.CellFactory {
+        { _, tableView, indexPath, cellType -> UITableViewCell in
+            switch cellType {
+            case let .answer(model):
                 let customCell: AnswerCell? = tableView.dequeueCell(for: indexPath, with: AnswerCell.reuseIdentifier)
-                let model: AnswerCellModel? = model as? AnswerCellModel
 
                 guard
-                    let customCell = customCell,
-                    let model = model
+                    let customCell = customCell
                 else {
                     return UITableViewCell()
                 }
@@ -195,14 +199,12 @@ extension QuizAnsweringViewController {
                 customCell.bind(with: model)
 
                 return customCell
-            case .question:
+            case let .question(model):
                 let customCell: QuestionCell? = tableView
                     .dequeueCell(for: indexPath, with: QuestionCell.reuseIdentifier)
-                let model: QuestionCellModel? = model as? QuestionCellModel
 
                 guard
-                    let customCell = customCell,
-                    let model = model
+                    let customCell = customCell
                 else {
                     return UITableViewCell()
                 }
