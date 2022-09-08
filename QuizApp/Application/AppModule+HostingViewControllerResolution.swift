@@ -36,15 +36,23 @@ extension AppModule: RegisterViewsProtocol {
             }
             .scope(.unique)
 
-        container.register { container, args in
-            QuizDetailsView(viewModel: container.resolve(args: args))
+        container
+            .register { container, args in
+                QuizDetailsView(viewModel: container.resolve(args: args))
         }
-        .scope(.unique)
+            .scope(.unique)
 
-        container.register { container, args in
-            QuizLeaderboardView(viewModel: container.resolve(args: args))
-        }
-        .scope(.unique)
+        container
+            .register { container, args in
+                QuizLeaderboardView(viewModel: container.resolve(args: args))
+            }
+            .scope(.unique)
+
+        container
+            .register { container, args in
+                QuizAnsweringView(viewModel: container.resolve(args: args))
+            }
+            .scope(.unique)
     }
 
 }
