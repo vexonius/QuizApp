@@ -16,23 +16,19 @@ struct LoginView: View {
             Spacer()
             TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $viewModel.email)
                 .modifier(RoundedTextInput())
-                .onReceive(viewModel.$email) { _ in
-                    viewModel.validateInputs()
-                }
+                .onReceive(viewModel.$email, perform: validateInputs)
             toggableSecureFieldButton
             Button(
-                action: {
-                    viewModel.login()
-                },
+                action: viewModel.login,
                 label: {
                     Text(LocalizedStrings.loginButtonTitle.localizedString)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                         .foregroundColor(.darkerPurple)
                         .frame(maxWidth: .infinity)
                 })
-                .modifier(RoundedButton())
-                .opacity(viewModel.isLoginButtonEnabled ? 1.0 : 0.6)
-                .disabled(!viewModel.isLoginButtonEnabled)
+            .modifier(RoundedButton())
+            .opacity(viewModel.isLoginButtonEnabled ? 1.0 : 0.6)
+            .disabled(!viewModel.isLoginButtonEnabled)
             Spacer()
             Spacer()
             Spacer()
@@ -51,24 +47,24 @@ extension LoginView {
     var toggableSecureFieldButton: some View {
         ZStack(alignment: .trailing) {
             SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $viewModel.password)
-                .isTextObuscated($isPasswordHidden, text: $viewModel.password)
+                .obfuscateText($viewModel.password, isTextObfuscated: $isPasswordHidden)
                 .modifier(RoundedTextInput())
-                .onReceive(viewModel.$password) { _ in
-                    viewModel.validateInputs()
-                }
+                .onReceive(viewModel.$password, perform: validateInputs)
             Button(
-                action: {
-                    viewModel.togglePasswordVisibility()
-                },
+                action: viewModel.togglePasswordVisibility,
                 label: {
                     Image(uiImage: .hideText)
                         .frame(
                             width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
                             height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
                             alignment: .trailing)
-                        .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
+                        .padding(.horizontal, DesignConstants.InputComponents.thumbnailInset.cgFloat)
                 })
         }
+    }
+
+    func validateInputs(_: (Published<String>.Publisher.Output)) -> Void {
+        viewModel.validateInputs()
     }
 
 }
