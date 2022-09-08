@@ -110,7 +110,7 @@ class HomeViewModel: ObservableObject {
                 await MainActor.run {
                     self.quizzes = quizzes
                     self.filters = categories
-                    self.switchFiltering(for: .home)
+                    self.filteredQuizzes = quizzes
                 }
             } catch {
                 await MainActor.run {

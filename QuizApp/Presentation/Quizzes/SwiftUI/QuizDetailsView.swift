@@ -45,12 +45,12 @@ struct QuizDetailsView: View {
                         })
                     .frame(maxWidth: proxy.size.width - 88, maxHeight: proxy.size.height * 0.4, alignment: .center)
                     .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
-                    Button(action: {
-
-                    }, label: {
-                        Text(LocalizedStrings.startQuizTitle.localizedString)
-                            .font(.sourceSansPro(size: 18, weight: .semibold))
-                            .frame(maxWidth: .infinity)
+                    Button(
+                        action:viewModel.onStartQuizButtonTap,
+                        label: {
+                            Text(LocalizedStrings.startQuizTitle.localizedString)
+                                .font(.sourceSansPro(size: 18, weight: .semibold))
+                                .frame(maxWidth: .infinity)
                     })
                     .modifier(RoundedButton())
                 }

@@ -27,7 +27,7 @@ struct HomeView: View {
                 }
 
             List {
-                if viewModel.filteredQuizes.isEmpty {
+                if viewModel.filteredQuizzes.isEmpty {
                     ForEach(0..<numberOfPlaceholderItems) { _ in
                         QuizItemPlaceholderView()
                             .listRowBackground(Color.clear)
@@ -40,7 +40,7 @@ struct HomeView: View {
                                         horizontalListPadding))
                     }
                 } else {
-                    ForEach(viewModel.filteredQuizes, id: \.id) { quiz in
+                    ForEach(viewModel.filteredQuizzes, id: \.id) { quiz in
                         QuizItemView(quiz: quiz)
                             .frame(maxWidth: .infinity)
                             .listRowBackground(Color.clear)
@@ -58,6 +58,7 @@ struct HomeView: View {
             }
             .listStyle(PlainListStyle())
             .modifier(ScrollViewBackgroundModifier())
+            .onAppear(perform: viewModel.observeNetworkChanges)
         }
         .brandStyleBackground()
     }
