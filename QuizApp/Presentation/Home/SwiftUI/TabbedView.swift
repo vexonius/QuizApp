@@ -18,7 +18,6 @@ struct TabbedView: View {
     var body: some View {
         TabView {
             HomeView(viewModel: homeViewModel)
-                .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                 .tabItem {
                     Image(uiImage: .quiz)
                         .foregroundColor(.darkerPurple)

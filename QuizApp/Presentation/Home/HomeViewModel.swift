@@ -109,6 +109,7 @@ class HomeViewModel: ObservableObject {
 
                 await MainActor.run {
                     self.quizzes = quizzes
+                    self.filteredQuizzes = quizzes
                     self.filters = categories
                 }
             } catch {
