@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class LoginViewModel {
+class LoginViewModel: ObservableObject {
 
     @Published private(set) var isUsernameInputEnabled: Bool = true
     @Published private(set) var isPasswordInputEnabled: Bool = true
@@ -12,8 +12,8 @@ class LoginViewModel {
     private let loginUseCase: LoginUseCaseProtocol
     private let coordinator: AppCoordinatorProtocol
 
-    private var email: String = ""
-    private var password: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
 
     init(loginUseCase: LoginUseCaseProtocol, coordinator: AppCoordinatorProtocol) {
         self.loginUseCase = loginUseCase
@@ -23,17 +23,20 @@ class LoginViewModel {
     }
 
     func login() {
-        Task(priority: .high) {
-            toggleInputs()
+        toggleInputs()
 
+        Task(priority: .high) {
             do {
                 try await loginUseCase.login(email: email, password: password)
-                await MainActor.run { coordinator.routeToHomeScreen() }
-                toggleInputs()
-
+                await MainActor.run {
+                    coordinator.routeToHomeScreen()
+                    toggleInputs()
+                }
             } catch {
-                handleLoginResponseError(error: error)
-                toggleInputs()
+                await MainActor.run {
+                    handleLoginResponseError(error: error)
+                    toggleInputs()
+                }
             }
 
         }
@@ -43,17 +46,7 @@ class LoginViewModel {
         isPasswordHidden.toggle()
     }
 
-    func onEmailChanged(_ email: String) {
-        self.email = email
-        validateInputs()
-    }
-
-    func onPasswordChanged(_ password: String) {
-        self.password = password
-        validateInputs()
-    }
-
-    private func validateInputs() {
+    func validateInputs() {
         isLoginButtonEnabled = !email.isEmpty && email.isValid && !password.isEmpty
     }
 

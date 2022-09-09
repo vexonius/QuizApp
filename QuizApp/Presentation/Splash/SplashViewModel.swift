@@ -1,6 +1,6 @@
 import Foundation
 
-class SplashViewModel {
+class SplashViewModel: ObservableObject {
 
     private let loginUseCase: LoginUseCaseProtocol
     private let coordinator: AppCoordinatorProtocol
@@ -8,11 +8,9 @@ class SplashViewModel {
     init(loginUseCase: LoginUseCaseProtocol, coordinator: AppCoordinatorProtocol) {
         self.loginUseCase = loginUseCase
         self.coordinator = coordinator
-
-        validateExistingToken()
     }
 
-    private func validateExistingToken() {
+    func validateExistingToken() {
         Task {
             do {
                 try await loginUseCase.validateToken()

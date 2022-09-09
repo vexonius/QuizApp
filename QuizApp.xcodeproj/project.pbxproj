@@ -16,6 +16,8 @@
 		F0052EBF28A29193006515AE /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0052EBE28A29193006515AE /* URLRequest+Extensions.swift */; };
 		F007C98B28B7C1FB009C73D3 /* BaseGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F007C98728B7C0C7009C73D3 /* BaseGradientView.swift */; };
 		F007C98C28B7C20C009C73D3 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F007C98928B7C17B009C73D3 /* Color+Extensions.swift */; };
+		F00B6A1D28BF885F00E6AB67 /* IsTextObuscated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B6A1C28BF885F00E6AB67 /* IsTextObuscated.swift */; };
+		F00B6A1F28BF9E8A00E6AB67 /* SecureField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B6A1E28BF9E8A00E6AB67 /* SecureField+Extensions.swift */; };
 		F012CAC328A29409007592A5 /* QuizRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAC228A29409007592A5 /* QuizRepository.swift */; };
 		F012CAC528A29504007592A5 /* QuizRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAC428A29504007592A5 /* QuizRepositoryProtocol.swift */; };
 		F012CAC828A295AB007592A5 /* QuizRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAC728A295AB007592A5 /* QuizRepoModel.swift */; };
@@ -23,6 +25,9 @@
 		F012CACD28A29953007592A5 /* QuizUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CACC28A29953007592A5 /* QuizUseCaseProtocol.swift */; };
 		F012CACF28A2999A007592A5 /* QuizUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CACE28A2999A007592A5 /* QuizUseCase.swift */; };
 		F012CAD128A2CC68007592A5 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012CAD028A2CC68007592A5 /* Sequence+Extensions.swift */; };
+		F0131C3E28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */; };
+		F0131C3F28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */; };
+		F0136EF028B8ECD100D8CD08 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0136EEE28B8E7CC00D8CD08 /* Font+Extensions.swift */; };
 		F0138172287F154A001A0C2E /* Primitives+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0138171287F154A001A0C2E /* Primitives+Extensions.swift */; };
 		F014C93028ACE06E006DB507 /* QuizSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */; };
 		F014C93328ACE19D006DB507 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014C93228ACE19D006DB507 /* AnswerCell.swift */; };
@@ -47,6 +52,7 @@
 		F02F01EB28AF78A20056610D /* QuizSessionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01EA28AF78A20056610D /* QuizSessionResultModel.swift */; };
 		F02F01EF28AF80BF0056610D /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01EE28AF80BF0056610D /* QuizResultViewModel.swift */; };
 		F02F01F128AF847E0056610D /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02F01F028AF847E0056610D /* QuizResultViewController.swift */; };
+		F0338F4F28C7557A002F0444 /* LoginViewModel+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0338F4E28C7557A002F0444 /* LoginViewModel+UIKit.swift */; };
 		F035DE8028B7B841000A48D8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F0513298287DA252003E8D90 /* .swiftlint.yml */; };
 		F040029B28A3FA760012B2E4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = F040029A28A3FA760012B2E4 /* Nuke */; };
 		F040579E28A69D6E00A659AE /* UserRankingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040579D28A69D6E00A659AE /* UserRankingCellModel.swift */; };
@@ -168,6 +174,7 @@
 		F07265CB28B775DB00A2848E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */; };
 		F07265CC28B775DB00A2848E /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */; };
 		F0749187287DAB62005A7A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0749186287DAB62005A7A55 /* SnapKit */; };
+		F078C4A928BD03FC00F7B9EE /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F078C4A828BD03FC00F7B9EE /* TabbedView.swift */; };
 		F07D305B288ED984000592F2 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305A288ED984000592F2 /* Snackbar.swift */; };
 		F07D305D288FD8F3000592F2 /* AppCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */; };
 		F07D86512888289C000F5D99 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = F07D86502888289C000F5D99 /* Resolver */; };
@@ -183,6 +190,7 @@
 		F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E840287EC1DD00E0375D /* RoundedTextInput.swift */; };
 		F088E846287EF72500E0375D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E845287EF72500E0375D /* UIImage+Extensions.swift */; };
 		F088E849287EFCCA00E0375D /* DesignConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E848287EFCCA00E0375D /* DesignConstants.swift */; };
+		F08BE4B028BCD0BD00856268 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE4AF28BCD0BD00856268 /* SettingsView.swift */; };
 		F08D37022897FE2C005FFF1F /* CombineReachability in Frameworks */ = {isa = PBXBuildFile; productRef = F08D37012897FE2C005FFF1F /* CombineReachability */; };
 		F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */; };
 		F08D3706289813C0005FFF1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D3705289813C0005FFF1F /* HomeViewModel.swift */; };
@@ -206,6 +214,9 @@
 		F09BB05628AD3151003353C5 /* QuestionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BB05528AD3151003353C5 /* QuestionCellModel.swift */; };
 		F09CDD2F28AB9D3D00EB2858 /* QuizSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CDD2E28AB9D3D00EB2858 /* QuizSessionResponse.swift */; };
 		F0A08B8A28A4FD6A00508FCA /* CombineTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */; };
+		F0A098D028B80ECC004F51C0 /* RoundedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */; };
+		F0A098D328B819D3004F51C0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098D128B81951004F51C0 /* RoundedButton.swift */; };
+		F0A098D628B81DE6004F51C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A098D428B81DB2004F51C0 /* LoginView.swift */; };
 		F0A70877288041D20077A678 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A70876288041D20077A678 /* RoundedButton.swift */; };
 		F0ACC17C28A65C8F00C26208 /* UserRankingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */; };
 		F0ACC17E28A65E3F00C26208 /* UserRankingRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */; };
@@ -265,6 +276,8 @@
 		F0052EBE28A29193006515AE /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		F007C98728B7C0C7009C73D3 /* BaseGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGradientView.swift; sourceTree = "<group>"; };
 		F007C98928B7C17B009C73D3 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		F00B6A1C28BF885F00E6AB67 /* IsTextObuscated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsTextObuscated.swift; sourceTree = "<group>"; };
+		F00B6A1E28BF9E8A00E6AB67 /* SecureField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecureField+Extensions.swift"; sourceTree = "<group>"; };
 		F012CAC228A29409007592A5 /* QuizRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepository.swift; sourceTree = "<group>"; };
 		F012CAC428A29504007592A5 /* QuizRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepositoryProtocol.swift; sourceTree = "<group>"; };
 		F012CAC728A295AB007592A5 /* QuizRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRepoModel.swift; sourceTree = "<group>"; };
@@ -272,6 +285,8 @@
 		F012CACC28A29953007592A5 /* QuizUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUseCaseProtocol.swift; sourceTree = "<group>"; };
 		F012CACE28A2999A007592A5 /* QuizUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUseCase.swift; sourceTree = "<group>"; };
 		F012CAD028A2CC68007592A5 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Style.swift"; sourceTree = "<group>"; };
+		F0136EEE28B8E7CC00D8CD08 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		F0138171287F154A001A0C2E /* Primitives+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Primitives+Extensions.swift"; sourceTree = "<group>"; };
 		F014C92F28ACE06E006DB507 /* QuizSessionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSessionModel.swift; sourceTree = "<group>"; };
 		F014C93228ACE19D006DB507 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
@@ -296,6 +311,7 @@
 		F02F01EA28AF78A20056610D /* QuizSessionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionResultModel.swift; sourceTree = "<group>"; };
 		F02F01EE28AF80BF0056610D /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
 		F02F01F028AF847E0056610D /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
+		F0338F4E28C7557A002F0444 /* LoginViewModel+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+UIKit.swift"; sourceTree = "<group>"; };
 		F040579D28A69D6E00A659AE /* UserRankingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingCellModel.swift; sourceTree = "<group>"; };
 		F04AD4D72892BE7000F378C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F04E13362885F063001F2ABB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
@@ -313,6 +329,7 @@
 		F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllersProtocol.swift; sourceTree = "<group>"; };
 		F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+HostingViewControllerResolution.swift"; sourceTree = "<group>"; };
 		F07265C628B76FAA00A2848E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		F078C4A828BD03FC00F7B9EE /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 		F07D305A288ED984000592F2 /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		F07D305C288FD8F3000592F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		F0809FF028884E0400142907 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
@@ -327,6 +344,7 @@
 		F088E840287EC1DD00E0375D /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
 		F088E845287EF72500E0375D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F088E848287EFCCA00E0375D /* DesignConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConstants.swift; sourceTree = "<group>"; };
+		F08BE4AF28BCD0BD00856268 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F08D37032898025E005FFF1F /* NoNetworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkPlaceholderView.swift; sourceTree = "<group>"; };
 		F08D3705289813C0005FFF1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -351,6 +369,9 @@
 		F09BB05528AD3151003353C5 /* QuestionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCellModel.swift; sourceTree = "<group>"; };
 		F09CDD2E28AB9D3D00EB2858 /* QuizSessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionResponse.swift; sourceTree = "<group>"; };
 		F0A08B8928A4FD6A00508FCA /* CombineTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombineTableViewDataSource.swift; path = QuizApp/Presentation/CombineTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
+		F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextInput.swift; sourceTree = "<group>"; };
+		F0A098D128B81951004F51C0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F0A098D428B81DB2004F51C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F0A70876288041D20077A678 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F0ACC17B28A65C8F00C26208 /* UserRankingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingResponse.swift; sourceTree = "<group>"; };
 		F0ACC17D28A65E3F00C26208 /* UserRankingRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankingRepoModel.swift; sourceTree = "<group>"; };
@@ -446,6 +467,11 @@
 			children = (
 				F007C98728B7C0C7009C73D3 /* BaseGradientView.swift */,
 				F007C98928B7C17B009C73D3 /* Color+Extensions.swift */,
+				F0A098CE28B80EBA004F51C0 /* RoundedTextInput.swift */,
+				F0A098D128B81951004F51C0 /* RoundedButton.swift */,
+				F0136EEE28B8E7CC00D8CD08 /* Font+Extensions.swift */,
+				F00B6A1C28BF885F00E6AB67 /* IsTextObuscated.swift */,
+				F00B6A1E28BF9E8A00E6AB67 /* SecureField+Extensions.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -640,6 +666,7 @@
 		F04AD4D62892BE5F00F378C2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				F08BE4AE28BCD0A700856268 /* SwiftUI */,
 				F07265A728B764EE00A2848E /* UIKit */,
 				F08D63BB2893DBB4004B40E1 /* SettingsViewModel.swift */,
 			);
@@ -780,10 +807,20 @@
 		F0749188287DABDE005A7A55 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F0B9072F28B7D42200349668 /* SwiftUI */,
 				F07265A528B764DD00A2848E /* UIKit */,
 				F0242FB128816A2500927148 /* LoginViewModel.swift */,
+				F0338F4E28C7557A002F0444 /* LoginViewModel+UIKit.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F078C4A728BD03DF00F7B9EE /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F078C4A828BD03FC00F7B9EE /* TabbedView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		F088E82A287DAE2000E0375D /* Common */ = {
@@ -802,6 +839,7 @@
 			children = (
 				F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */,
 				F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */,
+				F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */,
 				F0D9202D28858054004EC4F3 /* AppModule.swift */,
 				F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */,
 				F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */,
@@ -838,6 +876,14 @@
 				F088E83A287EB8A700E0375D /* SourceSansPro-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F08BE4AE28BCD0A700856268 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F08BE4AF28BCD0BD00856268 /* SettingsView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		F08D63BD2893E4E8004B40E1 /* Account */ = {
@@ -922,6 +968,7 @@
 		F095F8A82891A670007DEC4A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F078C4A728BD03DF00F7B9EE /* SwiftUI */,
 				F07265A228B7649400A2848E /* UIKit */,
 				F0C6387928A2626D00354374 /* Models */,
 				F08D3705289813C0005FFF1F /* HomeViewModel.swift */,
@@ -947,6 +994,14 @@
 				F0ACC18528A66CDD00C26208 /* QuizLeaderboardViewModel.swift */,
 			);
 			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		F0B9072F28B7D42200349668 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F0A098D428B81DB2004F51C0 /* LoginView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		F0BD397028AE55F20049A84D /* UITableView+Helpers */ = {
@@ -1298,9 +1353,13 @@
 				F072659328B761C900A2848E /* LoginEndpoints.swift in Sources */,
 				F072658E28B761B700A2848E /* AccountNetworkClientProtocol.swift in Sources */,
 				F07265AE28B7656D00A2848E /* AnswerCellModel.swift in Sources */,
+				F0131C3F28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */,
 				F07265C128B76E1F00A2848E /* AppModule+HostingViewControllerResolution.swift in Sources */,
 				F07265B228B765BF00A2848E /* QuizCellModel.swift in Sources */,
 				F07265B028B765AE00A2848E /* CategoryFilter.swift in Sources */,
+				F00B6A1F28BF9E8A00E6AB67 /* SecureField+Extensions.swift in Sources */,
+				F0A098D628B81DE6004F51C0 /* LoginView.swift in Sources */,
+				F08BE4B028BCD0BD00856268 /* SettingsView.swift in Sources */,
 				F072654828B7602F00A2848E /* URLRequest+Extensions.swift in Sources */,
 				F07265BA28B7680A00A2848E /* Primitives+Extensions.swift in Sources */,
 				F072656028B7604C00A2848E /* Difficulty.swift in Sources */,
@@ -1319,21 +1378,25 @@
 				F07265A028B7625F00A2848E /* DesignConstants.swift in Sources */,
 				F072657128B7607900A2848E /* QuizLeaderboardViewModel.swift in Sources */,
 				F07265AF28B7657000A2848E /* QuestionCellModel.swift in Sources */,
+				F00B6A1D28BF885F00E6AB67 /* IsTextObuscated.swift in Sources */,
 				F072659E28B761D000A2848E /* QuizResponse.swift in Sources */,
 				F072654728B7602A00A2848E /* HeaderConstants.swift in Sources */,
 				F072655528B7603400A2848E /* QuizRepositoryProtocol.swift in Sources */,
 				F072656D28B7605500A2848E /* LoginUseCase.swift in Sources */,
 				F072655028B7603400A2848E /* UserRankingRepoModel.swift in Sources */,
+				F0136EF028B8ECD100D8CD08 /* Font+Extensions.swift in Sources */,
 				F072654428B7602100A2848E /* NetworkService.swift in Sources */,
 				F072656828B7604C00A2848E /* QuizUseCase.swift in Sources */,
 				F072659528B761D000A2848E /* QuizSessionResponse.swift in Sources */,
 				F07265B328B7669200A2848E /* UIColor+Extensions.swift in Sources */,
 				F072658B28B761B700A2848E /* AccountDetailsResponse.swift in Sources */,
 				F07265B928B767FC00A2848E /* UIFont+Extensions.swift in Sources */,
+				F0A098D028B80ECC004F51C0 /* RoundedTextInput.swift in Sources */,
 				F072658F28B761B700A2848E /* AccountEndpoints.swift in Sources */,
 				F072656B28B7605100A2848E /* AccountDetailsModel.swift in Sources */,
 				F07265AD28B7656A00A2848E /* CellType.swift in Sources */,
 				F072657328B7608400A2848E /* SettingsViewModel.swift in Sources */,
+				F078C4A928BD03FC00F7B9EE /* TabbedView.swift in Sources */,
 				F072654C28B7602F00A2848E /* BaseNetworkClientProtocol.swift in Sources */,
 				F072656628B7604C00A2848E /* Category.swift in Sources */,
 				F072657228B7607F00A2848E /* QuizDetailsViewModel.swift in Sources */,
@@ -1356,6 +1419,7 @@
 				F07265C828B76FF300A2848E /* SplashView.swift in Sources */,
 				F072655128B7603400A2848E /* QuizResultRepoModel.swift in Sources */,
 				F072658C28B761B700A2848E /* UsernameUpdateRequestModel.swift in Sources */,
+				F0A098D328B819D3004F51C0 /* RoundedButton.swift in Sources */,
 				F072655228B7603400A2848E /* QuizRepoModel.swift in Sources */,
 				F07265B628B7675800A2848E /* UIImage+Extensions.swift in Sources */,
 				F072657C28B7610900A2848E /* LocalizedStrings.swift in Sources */,
@@ -1413,6 +1477,7 @@
 				F0BD7CC828A516BF00E8526D /* QuizDetailsViewController.swift in Sources */,
 				F0E45045288975C200685E09 /* BaseNetworkClientProtocol.swift in Sources */,
 				F095F8AB2891A72F007DEC4A /* SplashViewModel.swift in Sources */,
+				F0131C3E28CA0B5300F068CD /* SceneDelegate+Style.swift in Sources */,
 				F014C93328ACE19D006DB507 /* AnswerCell.swift in Sources */,
 				F0052EB528A27ED1006515AE /* QuizResponse.swift in Sources */,
 				F02F01E528AF765B0056610D /* QuizResultRequest.swift in Sources */,
@@ -1464,6 +1529,7 @@
 				F02F01E128AF75CC0056610D /* QuizResultModel.swift in Sources */,
 				F0ACC18A28A67C2400C26208 /* LeaderboardHeaderView.swift in Sources */,
 				F0C1A3AA289283A5000AF917 /* TabbedViewController.swift in Sources */,
+				F0338F4F28C7557A002F0444 /* LoginViewModel+UIKit.swift in Sources */,
 				F040579E28A69D6E00A659AE /* UserRankingCellModel.swift in Sources */,
 				F08D63BF2893E4F4004B40E1 /* AccountUseCase.swift in Sources */,
 				F088E841287EC1DD00E0375D /* RoundedTextInput.swift in Sources */,

@@ -11,7 +11,7 @@ struct DesignConstants {
         static let inputComponentEditRectLeftInset: Float = 21
         static let inputComponentEditRectBottomInset: Float = 10
         static let thumbnailRightInset: Float = 18
-        static let componentSpacing: Float = 18
+        static let componentSpacing: Float = 16
         static let contentInset: Float = 20
         static let textSpacing: Float = 8
     }
@@ -23,6 +23,7 @@ struct DesignConstants {
         static let noBorder = 0
         static let thumbnailWidth = 20
         static let thumbnailHeight = 20
+        static let thumbnailInset = 20
         static let thumbnailPadding = 44
     }
 

@@ -23,6 +23,8 @@ class SplashViewController: BaseViewController {
         createViews()
         styleViews()
         defineLayoutForViews()
+
+        viewModel.validateExistingToken()
     }
 
 }

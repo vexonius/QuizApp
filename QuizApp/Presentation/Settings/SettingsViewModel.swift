@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingsViewModel {
+class SettingsViewModel: ObservableObject {
 
     @Published private(set) var currentUsername: String? = ""
     @Published private(set) var errorMessage: String?
@@ -25,7 +25,9 @@ class SettingsViewModel {
         Task {
             do {
                 let userInfo = try await accountUseCase.accountDetails
-                currentUsername = userInfo.name
+                await MainActor.run {
+                    currentUsername = userInfo.name
+                }
             } catch {
                 debugPrint(error)
             }
@@ -36,7 +38,9 @@ class SettingsViewModel {
         Task {
             do {
                 let accountDetails = try await accountUseCase.update(name: name)
-                currentUsername = accountDetails.name
+                await MainActor.run {
+                    currentUsername = accountDetails.name
+                }
             } catch {
                 errorMessage = LocalizedStrings.serverErrorMessage.localizedString
             }

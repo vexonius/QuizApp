@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let appModule = appModule
         else { return }
 
+        setPreferredAppUserIntefaceStyle()
         appModule.initRouter(in: window)
     }
 
