@@ -8,12 +8,6 @@ struct HomeView: View {
 
     private let numberOfPlaceholderItems = 4
 
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
-
-        styleList()
-    }
-
     var body: some View {
         List {
             ForEach(viewModel.filteredQuizzes, id: \.id) { quiz in
@@ -28,12 +22,6 @@ struct HomeView: View {
         .modifier(ScrollViewBackgroundModifier())
         .brandStyleBackground()
         .onAppear(perform: viewModel.observeNetworkChanges)
-    }
-
-    private func styleList() {
-        UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().backgroundColor = UIColor(.clear)
-        UITableView.appearance().backgroundColor = UIColor(.clear)
     }
 
 }
