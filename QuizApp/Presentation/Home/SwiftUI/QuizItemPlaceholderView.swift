@@ -42,11 +42,9 @@ struct QuizItemPlaceholderView: View {
     struct QuizItemPlaceholderView_Previews: PreviewProvider {
 
         static var previews: some View {
-            VStack {
-                QuizItemPlaceholderView()
-                    .brandStyleBackground()
-            }
+            QuizItemPlaceholderView()
         }
 
     }
+
 }

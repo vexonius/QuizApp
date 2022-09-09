@@ -47,7 +47,7 @@ struct QuizItemView: View {
                         .padding(.top, summaryTopPadding)
                         .padding(.trailing, defaultPadding)
                 }
-                DificultyIndicatorView(difficulty: quiz.difficulty, color: quiz.category.colour)
+                DificultyIndicatorView(difficulty: quiz.difficulty, color: quiz.category.color)
             }
             .background(.clear)
             .frame(maxHeight: .infinity, alignment: .topTrailing)
