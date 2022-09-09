@@ -17,24 +17,21 @@ struct CategoriesSegmentedControlView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .center) {
                         Spacer()
-                        ForEach(items, id: \.index) { category in
-                            Text(category.title.capitalized)
+                        ForEach(items, id: \.index) { filter in
+                            Text(filter.title.capitalized)
                                 .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .bold))
-                                .foregroundColor(
-                                    selectedIndex == category.index ?
-                                        Color(uiColor: category.tint) :
-                                        .white30)
+                                .foregroundColor(selectedIndex == filter.index ? filter.category.color : .white30)
                                 .padding(.horizontal, horizontalPadding)
                                 .padding(.vertical, verticalPadding)
                                 .matchedGeometryEffect(
-                                    id: category.index,
+                                    id: filter.index,
                                     in: capsuleAnimation,
                                     isSource: true
                                 )
                                 .onTapGesture {
                                     withAnimation(.spring(response: springAnimationDuration)) {
-                                        selectedIndex = category.index
-                                        proxy.scrollTo(category.index)
+                                        selectedIndex = filter.index
+                                        proxy.scrollTo(filter.index)
                                     }
                                 }
                         }
