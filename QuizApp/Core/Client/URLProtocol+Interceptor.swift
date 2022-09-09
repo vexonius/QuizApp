@@ -32,7 +32,7 @@ class Interceptor: URLProtocol {
         if newRequest.value(forHTTPHeaderField: HeaderField.authorization.key) == nil {
             if let token: String = SecureStorage.shared.get(SecureStorageKey.accessToken) {
                 newRequest.setValue(
-                    String(format: Api.JWTtokenFormat, token), forHTTPHeaderField: HeaderField.authorization.key)
+                    String(format: Api.JWTTokenFormat, token), forHTTPHeaderField: HeaderField.authorization.key)
             }
         }
 

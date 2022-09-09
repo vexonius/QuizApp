@@ -4,7 +4,7 @@ struct Api {
 
     static let baseURL = "https://five-ios-quiz-app.herokuapp.com/api/"
     static let currentApiVersion = "v1"
-    static let JWTtokenFormat = "Bearer %@"
+    static let JWTTokenFormat = "Bearer %@"
 
     static var apiPath: String {
         baseURL + currentApiVersion

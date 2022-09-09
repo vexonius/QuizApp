@@ -1,6 +1,6 @@
 import UIKit
 
-class ClearSegmentedControll: UISegmentedControl {
+class ClearSegmentedControl: UISegmentedControl {
 
     private struct CustomConstants {
         static let backgroundTintImageHeight = 32
@@ -42,7 +42,7 @@ class ClearSegmentedControll: UISegmentedControl {
             guard !models.isEmpty else { return }
 
             setTitleTextAttributes([
-                .foregroundColor: models[selectedSegmentIndex].category.color,
+                .foregroundColor: models[selectedSegmentIndex].category.uiColor,
                 NSAttributedString.Key.font: UIFont.sourceSansPro(
                     ofSize: DesignConstants.FontSize.subtitle.cgFloat,
                     ofWeight: .bold)!

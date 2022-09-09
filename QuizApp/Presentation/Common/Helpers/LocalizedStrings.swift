@@ -27,6 +27,7 @@ enum LocalizedStrings: String {
     case finishQuiz = "Finish Quiz"
     case typeHere = "Type here"
     case search = "Search"
+    case emptySearchResults = "There are no results for searched term 😣"
 
     var localizedString: String {
         self.rawValue
