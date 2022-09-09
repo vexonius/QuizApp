@@ -5,10 +5,6 @@ class BaseViewController: UIViewController {
 
     private var backgroundLayer = PopGradient()
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -8,6 +8,7 @@ struct QuizItemPlaceholderView: View {
     let textSpacing: CGFloat = 8
     let horizontalSpacing: CGFloat = 8
     let itemSpacingPadding: CGFloat = 6
+    let horizontalPadding: CGFloat = 16
     let itemVericalOffset: CGFloat = 10
     let summaryHeight: CGFloat = 16
 
@@ -35,6 +36,7 @@ struct QuizItemPlaceholderView: View {
         .cornerRadius(DesignConstants.Decorator.cornerSize.cgFloat)
         .frame(maxWidth: .infinity)
         .padding(.vertical, itemSpacingPadding)
+        .padding(.horizontal, horizontalPadding)
     }
 
     struct QuizItemPlaceholderView_Previews: PreviewProvider {
@@ -42,6 +44,7 @@ struct QuizItemPlaceholderView: View {
         static var previews: some View {
             VStack {
                 QuizItemPlaceholderView()
+                    .brandStyleBackground()
             }
         }
 

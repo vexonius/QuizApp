@@ -2,8 +2,8 @@ import SwiftUI
 
 extension SecureField {
 
-    func isTextObuscated(_ value: Binding<Bool>, text: Binding<String>) -> some View {
-        self.modifier(IsTextObuscated(isTextHidden: value, text: text))
+    func obfuscateText(_ text: Binding<String>, isTextObfuscated: Binding<Bool>) -> some View {
+        self.modifier(TextObfuscationModifier( text: text, isTextObfuscated: isTextObfuscated))
     }
 
 }

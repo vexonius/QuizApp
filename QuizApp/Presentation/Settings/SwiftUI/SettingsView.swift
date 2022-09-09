@@ -15,18 +15,14 @@ struct SettingsView: View {
             Text(LocalizedStrings.usernamePlaceholder.localizedString.uppercased())
                 .font(.sourceSansPro(size: DesignConstants.FontSize.paragraph.cgFloat, weight: .regular))
                 .foregroundColor(.white)
-                .padding([.top], usernameLabelTopOffset)
+                .padding(.top, usernameLabelTopOffset)
             TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $username)
                 .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .bold))
                 .foregroundColor(.white)
-                .onSubmit {
-                    viewModel.nameOnChange(username)
-                }
+                .onSubmit { viewModel.nameOnChange(username) }
             Spacer()
             Button(
-                action: {
-                    viewModel.logout()
-                },
+                action: viewModel.logout,
                 label: {
                     Text(LocalizedStrings.logoutButtonTitle.localizedString)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
@@ -35,8 +31,7 @@ struct SettingsView: View {
                 })
                 .modifier(RoundedButton())
         }
-        .padding([.horizontal], DesignConstants.Insets.componentsInset.cgFloat)
-        .padding(.bottom, DesignConstants.Insets.componentsInset.cgFloat)
+        .padding(.all, DesignConstants.Insets.componentsInset.cgFloat)
         .brandStyleBackground()
         .onReceive(viewModel.$currentUsername) { username in
             guard let username = username else { return }

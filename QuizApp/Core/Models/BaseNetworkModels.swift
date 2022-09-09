@@ -27,7 +27,7 @@ enum NetworkResponseStatus: Int {
     case ok = 200
     case badRequest = 400
     case unauthorized = 401
-    case forbiden = 403
+    case forbidden = 403
     case notFound = 404
     case serverError = 500
 
@@ -37,7 +37,7 @@ enum ClientError: Error {
 
     case badRequest
     case unauthorized
-    case forbiden
+    case forbidden
     case notFound
     case serverError
     case unknown

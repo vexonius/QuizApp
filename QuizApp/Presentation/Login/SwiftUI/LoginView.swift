@@ -3,8 +3,6 @@ import Resolver
 
 struct LoginView: View {
 
-    @State var username: String = ""
-    @State var password: String = ""
     @State var isPasswordHidden: Bool = true
 
     @ObservedObject var viewModel: LoginViewModel
@@ -16,44 +14,21 @@ struct LoginView: View {
                 .font(.system(size: DesignConstants.FontSize.heading.cgFloat, weight: .bold, design: .default))
                 .foregroundColor(.white)
             Spacer()
-            TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $username)
+            TextField(LocalizedStrings.usernamePlaceholder.localizedString, text: $viewModel.email)
                 .modifier(RoundedTextInput())
-                .onChange(of: username) { username in
-                    viewModel.onEmailChanged(username)
-                }
-            ZStack(alignment: .trailing) {
-                SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $password)
-                    .isTextObuscated($isPasswordHidden, text: $password)
-                    .modifier(RoundedTextInput())
-                    .onChange(of: password) { password in
-                        viewModel.onPasswordChanged(password)
-                    }
-                Button(
-                    action: {
-                        viewModel.togglePasswordVisibility()
-                    },
-                    label: {
-                        Image(uiImage: .hideText)
-                            .frame(
-                                width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
-                                height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
-                                alignment: .trailing)
-                            .padding(.horizontal, DesignConstants.Insets.componentsInset.cgFloat)
-                    })
-            }
+                .onReceive(viewModel.$email, perform: validateInputs)
+            toggableSecureFieldButton
             Button(
-                action: {
-                    viewModel.login()
-                },
+                action: viewModel.login,
                 label: {
                     Text(LocalizedStrings.loginButtonTitle.localizedString)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
                         .foregroundColor(.darkerPurple)
                         .frame(maxWidth: .infinity)
                 })
-                .modifier(RoundedButton())
-                .opacity(viewModel.isLoginButtonEnabled ? 1.0 : 0.6)
-                .disabled(!viewModel.isLoginButtonEnabled)
+            .modifier(RoundedButton())
+            .opacity(viewModel.isLoginButtonEnabled ? 1.0 : 0.6)
+            .disabled(!viewModel.isLoginButtonEnabled)
             Spacer()
             Spacer()
             Spacer()
@@ -63,6 +38,33 @@ struct LoginView: View {
         .onReceive(viewModel.$isPasswordHidden) { isPasswordHidden in
             self.isPasswordHidden = isPasswordHidden
         }
+    }
+
+}
+
+extension LoginView {
+
+    var toggableSecureFieldButton: some View {
+        ZStack(alignment: .trailing) {
+            SecureField(LocalizedStrings.passwordPlaceholder.localizedString, text: $viewModel.password)
+                .obfuscateText($viewModel.password, isTextObfuscated: $isPasswordHidden)
+                .modifier(RoundedTextInput())
+                .onReceive(viewModel.$password, perform: validateInputs)
+            Button(
+                action: viewModel.togglePasswordVisibility,
+                label: {
+                    Image(uiImage: .hideText)
+                        .frame(
+                            width: DesignConstants.InputComponents.thumbnailWidth.cgFloat,
+                            height: DesignConstants.InputComponents.thumbnailHeight.cgFloat,
+                            alignment: .trailing)
+                        .padding(.horizontal, DesignConstants.InputComponents.thumbnailInset.cgFloat)
+                })
+        }
+    }
+
+    private func validateInputs(_: (Published<String>.Publisher.Output)) -> Void {
+        viewModel.validateInputs()
     }
 
 }

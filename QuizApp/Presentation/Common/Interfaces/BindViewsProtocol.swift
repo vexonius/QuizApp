@@ -2,7 +2,7 @@ import Foundation
 
 protocol BindViewsProtocol {
 
-     func bindViews()
+    func bindViews()
 
     func bindViewModel()
 
