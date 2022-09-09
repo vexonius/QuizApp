@@ -14,6 +14,18 @@ extension AppModule: RegisterViewsProtocol {
                 LoginView(viewModel: container.resolve())
             }
             .scope(.unique)
+
+        container
+            .register { container in
+                SettingsView(viewModel: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container in
+                TabbedView(settingsViewModel: container.resolve())
+            }
+            .scope(.unique)
     }
 
 }

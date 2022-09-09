@@ -22,7 +22,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
 
     func routeToHomeScreen() {
-
+        let tabbedView: TabbedView = container.resolve()
+        let viewController = UIHostingController(rootView: tabbedView)
+        navigationController.setViewControllers([viewController], animated: true)
     }
 
     func setInitialScene(in window: UIWindow) {
