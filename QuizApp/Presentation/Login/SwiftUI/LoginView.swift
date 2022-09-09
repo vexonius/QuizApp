@@ -63,7 +63,7 @@ extension LoginView {
         }
     }
 
-    func validateInputs(_: (Published<String>.Publisher.Output)) -> Void {
+    private func validateInputs(_: (Published<String>.Publisher.Output)) -> Void {
         viewModel.validateInputs()
     }
 
