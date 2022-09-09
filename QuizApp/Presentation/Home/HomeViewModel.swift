@@ -24,7 +24,7 @@ class HomeViewModel: ObservableObject {
             .allCases
             .enumerated()
             .map { (index, category) in
-                CategoryFilter(index: index, title: category.named, category: category, tint: category.color)
+                CategoryFilter(index: index, title: category.named, category: category)
             }
     }
 

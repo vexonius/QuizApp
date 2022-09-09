@@ -42,7 +42,7 @@ class ClearSegmentedControl: UISegmentedControl {
             guard !models.isEmpty else { return }
 
             setTitleTextAttributes([
-                .foregroundColor: models[selectedSegmentIndex].category.color,
+                .foregroundColor: models[selectedSegmentIndex].category.uiColor,
                 NSAttributedString.Key.font: UIFont.sourceSansPro(
                     ofSize: DesignConstants.FontSize.subtitle.cgFloat,
                     ofWeight: .bold)!
