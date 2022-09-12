@@ -23,9 +23,7 @@ struct HomeView: View {
                         .listRowBackground(Color.clear)
                         .transition(.opacity)
                         .padding(.horizontal, DesignConstants.Padding.medium)
-                        .onTapGesture {
-                            viewModel.onQuizSelected(quiz)
-                        }
+                        .onTapGesture { viewModel.onQuizSelected(quiz) }
                 }
             }
             .emptyListPlaceholder(view: AnyView(QuizItemPlaceholderView()), visible: viewModel.filteredQuizzes.isEmpty)

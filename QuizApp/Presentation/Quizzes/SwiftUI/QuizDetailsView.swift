@@ -17,7 +17,7 @@ struct QuizDetailsView: View {
                     .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .semibold))
                     .underline(true, color: .white)
                     .padding(.trailing, DesignConstants.Padding.large)
-                    .frame(maxWidth: calculateWidth(), alignment: .trailing)
+                    .frame(maxWidth: calculateWidth, alignment: .trailing)
                     .onTapGesture(perform: viewModel.onLeaderBoardLabelTap)
                 VStack(alignment: .center, spacing: DesignConstants.Padding.medium) {
                     Text(viewModel.quiz.name)
@@ -58,7 +58,7 @@ struct QuizDetailsView: View {
                         })
                     .modifier(RoundedButton())
                 }
-                .frame(maxWidth: calculateWidth())
+                .frame(maxWidth: calculateWidth)
                 .padding(.all, DesignConstants.Padding.medium)
                 .background {
                     backgroundRect
@@ -75,12 +75,8 @@ struct QuizDetailsView: View {
 
 extension QuizDetailsView {
 
-    func calculateWidth() -> CGFloat {
-        if horizontalSizeClass == .regular {
-            return .infinity
-        }
-
-        return maxHorizontalWidth
+    var calculateWidth: CGFloat {
+        horizontalSizeClass == .regular ? .infinity : maxHorizontalWidth
     }
 
     private var backgroundRect: some View {
