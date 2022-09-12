@@ -2,7 +2,7 @@ import UIKit
 
 extension UILabel {
 
-    func highlight(target text: String, with color: UIColor? = .whiteTransparent30) {
+    func highlight(target text: String, with color: UIColor? = .white30) {
         guard let labelText = self.text else { return }
 
         let attributedText = NSMutableAttributedString(string: labelText)

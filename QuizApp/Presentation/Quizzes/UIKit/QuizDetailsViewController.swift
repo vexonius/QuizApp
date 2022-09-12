@@ -154,7 +154,7 @@ extension QuizDetailsViewController: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        containerView.backgroundColor = .whiteTransparent30
+        containerView.backgroundColor = .white30
         containerView.layer.cornerRadius = DesignConstants.Decorator.cornerSize.cgFloat
 
         leaderBoardLabel.textAlignment = .right
