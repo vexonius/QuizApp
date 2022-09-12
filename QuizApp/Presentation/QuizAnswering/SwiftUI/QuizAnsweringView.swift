@@ -16,7 +16,10 @@ struct QuizAnsweringView: View {
 
     var body: some View {
         VStack {
-            ProgressHeader(progressText: $viewModel.progressText, progressTiles: $viewModel.progress)
+            ProgressHeader(
+                progressText: viewModel.progressText,
+                progressTiles: viewModel.progress,
+                currentIndex: viewModel.currentQuestionIndex)
             List {
                 ForEach(viewModel.currentQuestionCellModels) { item in
                     switch item {
@@ -46,6 +49,7 @@ struct QuizAnsweringView: View {
         .modifier(ScrollViewBackgroundModifier())
         .onReceive(viewModel.$currentQuestionCellModels) { _ in
             answered = false
+            selected = []
         }
         .brandStyleBackground()
         .navigationTitle(LocalizedStrings.appName.localizedString)
@@ -63,7 +67,7 @@ extension QuizAnsweringView {
             return makeAnswerBackgroundView()
         }
 
-        let color = answer.isCorrect ? Color(uiColor: .accentGreen) : Color(uiColor: .accentRed)
+        let color = answer.isCorrect ? Color.accentGreen : Color.accentRed
 
         return makeAnswerBackgroundView(with: color)
     }
