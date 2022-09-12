@@ -7,13 +7,6 @@ struct QuizAnsweringView: View {
     @State private var answered: Bool = false
     @State private var selected: Set<AnswerCellModel?> = []
 
-    init(answered: Bool = false, viewModel: QuizAnsweringViewModel) {
-        self.answered = answered
-        self.viewModel = viewModel
-
-        styleList()
-    }
-
     var body: some View {
         VStack {
             ProgressHeader(
@@ -77,13 +70,6 @@ extension QuizAnsweringView {
             .fill(color)
             .padding(.horizontal, DesignConstants.Padding.medium)
             .padding(.vertical, DesignConstants.Padding.base)
-    }
-
-    private func styleList() {
-        UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().backgroundColor = UIColor(.clear)
-        UITableView.appearance().backgroundColor = UIColor(.clear)
-        UITableViewCell.appearance().separatorInset = .zero
     }
 
 }
