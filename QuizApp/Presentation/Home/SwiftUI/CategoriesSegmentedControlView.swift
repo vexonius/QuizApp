@@ -7,8 +7,6 @@ struct CategoriesSegmentedControlView: View {
     @Binding var selectedIndex: Int
     @Namespace var capsuleAnimation
 
-    private let horizontalPadding: CGFloat = 16
-    private let verticalPadding: CGFloat = 8
     private let springAnimationDuration = 0.4
 
     var body: some View {
@@ -21,8 +19,8 @@ struct CategoriesSegmentedControlView: View {
                             Text(filter.title.capitalized)
                                 .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .bold))
                                 .foregroundColor(selectedIndex == filter.index ? filter.category.color : .white30)
-                                .padding(.horizontal, horizontalPadding)
-                                .padding(.vertical, verticalPadding)
+                                .padding(.horizontal, DesignConstants.Padding.medium)
+                                .padding(.vertical, DesignConstants.Padding.base)
                                 .matchedGeometryEffect(
                                     id: filter.index,
                                     in: capsuleAnimation,
@@ -39,7 +37,7 @@ struct CategoriesSegmentedControlView: View {
                     }
                     .frame(minWidth: geometry.size.width)
                 }
-                .padding(verticalPadding)
+                .padding(DesignConstants.Padding.base)
                 .background {
                     if !items.isEmpty {
                         RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)

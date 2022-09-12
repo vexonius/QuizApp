@@ -6,7 +6,6 @@ struct HomeView: View {
 
     @State private var selectedCategory: Int = 0
 
-    private let horizontalListPadding: CGFloat = 16
     private let segmentedControlHeight: CGFloat = 60
 
     var body: some View {
@@ -23,7 +22,7 @@ struct HomeView: View {
                         .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
                         .listRowBackground(Color.clear)
                         .transition(.opacity)
-                        .padding(.horizontal, horizontalListPadding)
+                        .padding(.horizontal, DesignConstants.Padding.medium)
                         .onTapGesture {
                             viewModel.onQuizSelected(quiz)
                         }
