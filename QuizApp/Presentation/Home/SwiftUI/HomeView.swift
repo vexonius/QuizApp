@@ -4,63 +4,35 @@ struct HomeView: View {
 
     @ObservedObject private(set) var viewModel: HomeViewModel
 
-    @State private var selected: Int = 0
+    @State private var selectedCategory: Int = 0
 
-    private let numberOfPlaceholderItems = 4
-    private let horizontalListPadding: CGFloat = 16
     private let segmentedControlHeight: CGFloat = 60
-
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
-
-        UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().backgroundColor = UIColor(.clear)
-        UITableView.appearance().backgroundColor = UIColor(.clear)
-    }
 
     var body: some View {
         VStack(spacing: .zero) {
-            CategoriesSegmentedControlView(items: viewModel.filters, selectedIndex: $selected)
+            CategoriesSegmentedControlView(items: viewModel.filters, selectedIndex: $selectedCategory)
                 .frame(maxHeight: segmentedControlHeight, alignment: .center)
-                .onChange(of: selected) { index in
+                .onChange(of: selectedCategory) { index in
                     viewModel.onCategoryChange(for: index)
                 }
-
             List {
-                if viewModel.filteredQuizzes.isEmpty {
-                    ForEach(0..<numberOfPlaceholderItems) { _ in
-                        QuizItemPlaceholderView()
-                            .listRowBackground(Color.clear)
-                            .listRowInsets(
-                                EdgeInsets(
-                                    top: .zero,
-                                    leading: horizontalListPadding,
-                                    bottom: .zero,
-                                    trailing:
-                                        horizontalListPadding))
-                    }
-                } else {
-                    ForEach(viewModel.filteredQuizzes, id: \.id) { quiz in
-                        QuizItemView(quiz: quiz)
-                            .frame(maxWidth: .infinity)
-                            .listRowBackground(Color.clear)
-                            .listRowInsets(
-                                EdgeInsets(
-                                    top: .zero,
-                                    leading: horizontalListPadding,
-                                    bottom: .zero,
-                                    trailing: horizontalListPadding))
-                            .onTapGesture {
-                                viewModel.onQuizSelected(quiz)
-                            }
-                    }
+                ForEach(viewModel.filteredQuizzes, id: \.id) { quiz in
+                    QuizItemView(quiz: quiz)
+                        .frame(maxWidth: .infinity)
+                        .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+                        .listRowBackground(Color.clear)
+                        .transition(.opacity)
+                        .padding(.horizontal, DesignConstants.Padding.medium)
+                        .onTapGesture { viewModel.onQuizSelected(quiz) }
                 }
             }
-            .listStyle(PlainListStyle())
+            .emptyListPlaceholder(view: AnyView(QuizItemPlaceholderView()), visible: viewModel.filteredQuizzes.isEmpty)
+            .listStyle(.plain)
             .modifier(ScrollViewBackgroundModifier())
             .onAppear(perform: viewModel.observeNetworkChanges)
         }
         .brandStyleBackground()
+        .onAppear(perform: viewModel.observeNetworkChanges)
     }
 
 }

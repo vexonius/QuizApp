@@ -39,7 +39,7 @@ extension AppModule: RegisterViewsProtocol {
         container
             .register { container, args in
                 QuizDetailsView(viewModel: container.resolve(args: args))
-        }
+            }
             .scope(.unique)
 
         container

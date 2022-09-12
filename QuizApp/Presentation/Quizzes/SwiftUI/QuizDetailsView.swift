@@ -5,18 +5,21 @@ struct QuizDetailsView: View {
     @ObservedObject var viewModel: QuizDetailsViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
 
+    private let descriptionLineLimit = 3
+    private let maxHorizontalWidth: CGFloat = 400
+    private let coverPadding: CGFloat = 88
+    private let maxHeightPercentage = 0.4
+
     var body: some View {
         GeometryReader { proxy in
             VStack {
                 Text(LocalizedStrings.leaderboard.localizedString)
                     .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .semibold))
                     .underline(true, color: .white)
-                    .padding(.trailing, 32)
-                    .frame(maxWidth: calculateWidth(), alignment: .trailing)
-                    .onTapGesture {
-                        viewModel.onLeaderBoardLabelTap()
-                    }
-                VStack(alignment: .center, spacing: 16) {
+                    .padding(.trailing, DesignConstants.Padding.large)
+                    .frame(maxWidth: calculateWidth, alignment: .trailing)
+                    .onTapGesture(perform: viewModel.onLeaderBoardLabelTap)
+                VStack(alignment: .center, spacing: DesignConstants.Padding.medium) {
                     Text(viewModel.quiz.name)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.title.cgFloat, weight: .bold))
                         .foregroundColor(.white)
@@ -24,15 +27,15 @@ struct QuizDetailsView: View {
                         .multilineTextAlignment(.center)
                         .truncationMode(.tail)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, DesignConstants.Padding.large)
                     Text(viewModel.quiz.description)
                         .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .semibold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .lineLimit(3)
+                        .lineLimit(descriptionLineLimit)
                         .truncationMode(.tail)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, DesignConstants.Padding.large)
                     AsyncImage(
                         url: URL(string: viewModel.quiz.imageUrl),
                         content: { image in
@@ -43,24 +46,24 @@ struct QuizDetailsView: View {
                         placeholder: {
                             Color.white30
                         })
-                    .frame(maxWidth: proxy.size.width - 88, maxHeight: proxy.size.height * 0.4, alignment: .center)
+                    .frame(
+                        maxWidth: proxy.size.width - coverPadding,
+                        maxHeight: proxy.size.height * maxHeightPercentage,
+                        alignment: .center)
                     .clipShape(RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat))
                     Button(
-                        action:viewModel.onStartQuizButtonTap,
+                        action: viewModel.onStartQuizButtonTap,
                         label: {
-                            Text(LocalizedStrings.startQuizTitle.localizedString)
-                                .font(.sourceSansPro(size: 18, weight: .semibold))
-                                .frame(maxWidth: .infinity)
-                    })
+                            buttonLabel
+                        })
                     .modifier(RoundedButton())
                 }
-                .frame(maxWidth: calculateWidth())
-                .padding(.all, 16)
+                .frame(maxWidth: calculateWidth)
+                .padding(.all, DesignConstants.Padding.medium)
                 .background {
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white30)
+                    backgroundRect
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, DesignConstants.Padding.medium)
             }
             .frame(width: proxy.size.width, height: proxy.size.height)
         }
@@ -68,12 +71,23 @@ struct QuizDetailsView: View {
         .navigationTitle(LocalizedStrings.appName.localizedString)
     }
 
-    func calculateWidth() -> CGFloat {
-        if horizontalSizeClass == .regular {
-            return CGFloat(240)
-        }
+}
 
-        return 400.cgFloat
+extension QuizDetailsView {
+
+    var calculateWidth: CGFloat {
+        horizontalSizeClass == .regular ? .infinity : maxHorizontalWidth
+    }
+
+    private var backgroundRect: some View {
+        RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
+            .fill(Color.white30)
+    }
+
+    private var buttonLabel: some View {
+        Text(LocalizedStrings.startQuizTitle.localizedString)
+            .font(.sourceSansPro(size: DesignConstants.FontSize.regular.cgFloat, weight: .semibold))
+            .frame(maxWidth: .infinity)
     }
 
 }

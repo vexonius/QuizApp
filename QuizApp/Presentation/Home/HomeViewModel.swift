@@ -24,7 +24,7 @@ class HomeViewModel: ObservableObject {
             .allCases
             .enumerated()
             .map { (index, category) in
-                CategoryFilter(index: index, title: category.named, category: category, tint: category.color)
+                CategoryFilter(index: index, title: category.named, category: category)
             }
     }
 
@@ -109,8 +109,8 @@ class HomeViewModel: ObservableObject {
 
                 await MainActor.run {
                     self.quizzes = quizzes
-                    self.filters = categories
                     self.filteredQuizzes = quizzes
+                    self.filters = categories
                 }
             } catch {
                 await MainActor.run {

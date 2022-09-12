@@ -5,16 +5,7 @@ struct QuizLeaderboardView: View {
     @ObservedObject var viewModel: QuizLeaderboardViewModel
 
     private let itemHeight: CGFloat = 60
-    private let numberOfPlaceholderItems = 10
-
-    init(viewModel: QuizLeaderboardViewModel) {
-        self.viewModel = viewModel
-
-        UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().backgroundColor = UIColor(.clear)
-        UITableView.appearance().backgroundColor = UIColor(.clear)
-        UITableViewCell.appearance().separatorInset = .zero
-    }
+    private let numberOfPlaceholderItems = 20
 
     var body: some View {
         VStack {
@@ -29,40 +20,32 @@ struct QuizLeaderboardView: View {
             }
             .padding(.horizontal, DesignConstants.Padding.medium)
             List {
-                if viewModel.userRankings.isEmpty {
-                    ForEach(0..<numberOfPlaceholderItems) { _ in
-                        RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
-                            .fill(Color.white30)
-                            .frame(maxWidth: .infinity, maxHeight: itemHeight)
-                            .listRowBackground(Color.clear)
-                            .listRowInsets(
-                                EdgeInsets(
-                                    top: .zero,
-                                    leading: DesignConstants.Padding.medium,
-                                    bottom: .zero,
-                                    trailing: DesignConstants.Padding.medium))
-                            .padding(.vertical, DesignConstants.Padding.base)
-                    }
-                } else {
-                    ForEach(viewModel.userRankings, id: \.position) { item in
-                        makeRankItem(with: item)
-                            .listRowBackground(Color.clear)
-                            .listRowSeparatorTint(.white, edges: .bottom)
-                            .listRowInsets(
-                                EdgeInsets(
-                                    top: .zero,
-                                    leading: DesignConstants.Padding.medium,
-                                    bottom: .zero,
-                                    trailing: DesignConstants.Padding.medium))
-                    }
+                ForEach(viewModel.userRankings, id: \.position) { item in
+                    makeRankItem(with: item)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparatorTint(.white, edges: .bottom)
+                        .listRowInsets(
+                            EdgeInsets(
+                                top: .zero,
+                                leading: DesignConstants.Padding.medium,
+                                bottom: .zero,
+                                trailing: DesignConstants.Padding.medium))
                 }
             }
+            .emptyListPlaceholder(
+                view: AnyView(emptyRankingView),
+                visible: viewModel.userRankings.isEmpty,
+                numberOfItems: numberOfPlaceholderItems)
             .listStyle(PlainListStyle())
             .modifier(ScrollViewBackgroundModifier())
         }
         .brandStyleBackground()
         .navigationTitle(LocalizedStrings.appName.localizedString)
     }
+
+}
+
+extension QuizLeaderboardView {
 
     @ViewBuilder
     private func makeRankItem(with model: UserRankingCellModel) -> some View {
@@ -81,6 +64,20 @@ struct QuizLeaderboardView: View {
                 .frame(alignment: .trailing)
         }
         .frame(height: itemHeight)
+    }
+
+    private var emptyRankingView: some View {
+        RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
+            .fill(Color.white30)
+            .frame(maxWidth: .infinity, maxHeight: itemHeight)
+            .listRowBackground(Color.clear)
+            .listRowInsets(
+                EdgeInsets(
+                    top: .zero,
+                    leading: DesignConstants.Padding.medium,
+                    bottom: .zero,
+                    trailing: DesignConstants.Padding.medium))
+            .padding(.vertical, DesignConstants.Padding.base)
     }
 
 }

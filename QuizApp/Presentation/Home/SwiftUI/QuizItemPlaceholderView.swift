@@ -6,13 +6,12 @@ struct QuizItemPlaceholderView: View {
     let defaultPadding: CGFloat = 20
     let titleHeight: CGFloat = 24
     let textSpacing: CGFloat = 8
-    let horizontalSpacing: CGFloat = 8
     let itemSpacingPadding: CGFloat = 6
     let itemVericalOffset: CGFloat = 10
     let summaryHeight: CGFloat = 16
 
     var body: some View {
-        HStack(alignment: .top, spacing: horizontalSpacing) {
+        HStack(alignment: .top, spacing: DesignConstants.Padding.base) {
             RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
                 .foregroundColor(.white30)
                 .frame(width: thumbnailSize, height: thumbnailSize, alignment: .topLeading)
@@ -35,15 +34,15 @@ struct QuizItemPlaceholderView: View {
         .cornerRadius(DesignConstants.Decorator.cornerSize.cgFloat)
         .frame(maxWidth: .infinity)
         .padding(.vertical, itemSpacingPadding)
+        .padding(.horizontal, DesignConstants.Padding.medium)
     }
 
     struct QuizItemPlaceholderView_Previews: PreviewProvider {
 
         static var previews: some View {
-            VStack {
-                QuizItemPlaceholderView()
-            }
+            QuizItemPlaceholderView()
         }
 
     }
+
 }
