@@ -89,11 +89,11 @@ extension QuizAnsweringViewController: BindViewsProtocol {
         tableView
             .modelSelected(QuizCellType.self)
             .compactMap {
-                if case .answer(let model) = $0 {
-                    return model
+                guard case .answer(let model) = $0 else {
+                    return nil
                 }
 
-                return nil
+                return model
             }
             .sink { [weak self] answer in
                 self?.viewModel.onAnswerGuessed(answer)
