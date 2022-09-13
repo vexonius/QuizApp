@@ -18,16 +18,7 @@ struct CategoriesSegmentedControlView: View {
                     HStack(alignment: .center) {
                         Spacer()
                         ForEach(items, id: \.index) { filter in
-                            Text(filter.title.capitalized)
-                                .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .bold))
-                                .foregroundColor(selectedIndex == filter.index ? filter.category.color : .white30)
-                                .padding(.horizontal, horizontalPadding)
-                                .padding(.vertical, verticalPadding)
-                                .matchedGeometryEffect(
-                                    id: filter.index,
-                                    in: capsuleAnimation,
-                                    isSource: true
-                                )
+                            makeItemView(for: filter)
                                 .onTapGesture {
                                     withAnimation(.spring(response: springAnimationDuration)) {
                                         selectedIndex = filter.index
@@ -42,17 +33,39 @@ struct CategoriesSegmentedControlView: View {
                 .padding(verticalPadding)
                 .background {
                     if !items.isEmpty {
-                        RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
-                            .fill(Color.white30)
-                            .matchedGeometryEffect(
-                                id: selectedIndex,
-                                in: capsuleAnimation,
-                                isSource: false
-                            )
+                        itemBackgroundView
                     }
                 }
             }
         }
+    }
+
+}
+
+extension CategoriesSegmentedControlView {
+
+    @ViewBuilder
+    private func makeItemView(for filter: CategoryFilter) -> some View {
+        Text(filter.title.capitalized)
+            .font(.sourceSansPro(size: DesignConstants.FontSize.subtitle.cgFloat, weight: .bold))
+            .foregroundColor(selectedIndex == filter.index ? filter.category.color : .white30)
+            .padding(.horizontal, horizontalPadding)
+            .padding(.vertical, verticalPadding)
+            .matchedGeometryEffect(
+                id: filter.index,
+                in: capsuleAnimation,
+                isSource: true
+            )
+    }
+
+    private var itemBackgroundView: some View {
+        RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
+            .fill(Color.white30)
+            .matchedGeometryEffect(
+                id: selectedIndex,
+                in: capsuleAnimation,
+                isSource: false
+            )
     }
 
 }
