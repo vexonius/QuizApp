@@ -26,7 +26,6 @@ struct QuizItemPlaceholderView: View {
                 RoundedRectangle(cornerRadius: DesignConstants.Decorator.cornerSize.cgFloat)
                     .foregroundColor(.white30)
                     .frame(maxWidth: .infinity, maxHeight: summaryHeight, alignment: .topLeading)
-
             }
             .offset(x: .zero, y: itemVericalOffset)
         }
