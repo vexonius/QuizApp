@@ -23,7 +23,16 @@ extension AppModule: RegisterViewsProtocol {
 
         container
             .register { container in
-                TabbedView(settingsViewModel: container.resolve())
+                HomeView(viewModel: container.resolve())
+            }
+            .scope(.unique)
+
+        container
+            .register { container in
+                TabbedView(
+                    settingsViewModel: container.resolve(),
+                    homeViewModel: container.resolve()
+                )
             }
             .scope(.unique)
     }

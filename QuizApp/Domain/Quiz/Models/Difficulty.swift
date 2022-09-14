@@ -15,4 +15,8 @@ enum Difficulty: String {
         }
     }
 
+    static var highest: Difficulty {
+        .hard
+    }
+
 }

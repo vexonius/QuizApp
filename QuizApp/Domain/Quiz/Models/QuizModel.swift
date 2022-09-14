@@ -6,7 +6,7 @@ struct QuizModel {
     let category: Category
     let imageUrl: String
     let numberOfQuestions: Int
-    let difficulty: Difficulty?
+    let difficulty: Difficulty
 
 }
 
@@ -20,7 +20,7 @@ extension QuizModel {
             category: Category(rawValue: model.category) ?? .uncategorized,
             imageUrl: model.imageUrl,
             numberOfQuestions: model.numberOfQuestions,
-            difficulty: Difficulty(rawValue: model.difficulty))
+            difficulty: Difficulty(rawValue: model.difficulty) ?? .easy)
     }
 
 }

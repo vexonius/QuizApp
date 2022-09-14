@@ -140,10 +140,7 @@ extension QuizCell {
     func bind(with model: QuizCellModel) {
         titleLabel.text = model.name
         summaryLabel.text = model.description
-
-        if let difficulty = model.difficulty {
-            difficultyIndicator.update(difficulty: difficulty, accentColor: model.category.color)
-        }
+        difficultyIndicator.update(difficulty: model.difficulty, accentColor: model.category.uiColor)
 
         if let url = URL(string: model.imageUrl) {
             Nuke.loadImage(with: url, into: icon)

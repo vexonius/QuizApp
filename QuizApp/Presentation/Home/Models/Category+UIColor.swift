@@ -2,7 +2,7 @@ import UIKit
 
 extension Category {
 
-    var color: UIColor {
+    var uiColor: UIColor {
         switch self {
         case .sport:
             return .accentYellow
@@ -10,15 +10,6 @@ extension Category {
             return .accentBlue
         default:
             return .white
-        }
-    }
-
-    var named: String {
-        switch self {
-        case .uncategorized:
-            return LocalizedStrings.all.localizedString
-        default:
-            return self.rawValue
         }
     }
 

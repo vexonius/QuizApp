@@ -2,7 +2,7 @@ import Combine
 import UIKit
 import Reachability
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
 
     private struct CustomConstants {
         static let minimumSearchTextLength = 2
@@ -24,7 +24,7 @@ class HomeViewModel {
             .allCases
             .enumerated()
             .map { (index, category) in
-                CategoryFilter(index: index, title: category.named, category: category, tint: category.color)
+                CategoryFilter(index: index, title: category.named, category: category)
             }
     }
 
@@ -109,10 +109,13 @@ class HomeViewModel {
 
                 await MainActor.run {
                     self.quizzes = quizzes
+                    self.filteredQuizzes = quizzes
                     self.filters = categories
                 }
             } catch {
-                self.errorMessage = LocalizedStrings.serverErrorMessage.localizedString
+                await MainActor.run {
+                    self.errorMessage = LocalizedStrings.serverErrorMessage.localizedString
+                }
             }
         }
     }

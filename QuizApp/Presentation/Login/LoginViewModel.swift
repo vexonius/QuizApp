@@ -38,7 +38,6 @@ class LoginViewModel: ObservableObject {
                     toggleInputs()
                 }
             }
-
         }
     }
 
