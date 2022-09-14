@@ -59,19 +59,27 @@ class AppCoordinator: AppCoordinatorProtocol {
 extension AppCoordinator: QuizCoordinatorProtocol {
 
     func routeToLeaderBoard(for quizId: Int) {
-
+        let quizLeaderboardView: QuizLeaderboardView = container.resolve(args: quizId)
+        let quizLeaderboardViewController = UIHostingController(rootView: quizLeaderboardView)
+        navigationController.pushViewController(quizLeaderboardViewController, animated: true)
     }
 
     func routeToQuizDetails(quiz: QuizModel) {
-
+        let quizDetailsView: QuizDetailsView = container.resolve(args: quiz)
+        let quizDetailsViewController = UIHostingController(rootView: quizDetailsView)
+        navigationController.pushViewController(quizDetailsViewController, animated: true)
     }
 
     func play(quiz: QuizModel) {
-
+        let quizAnsweringView: QuizAnsweringView = container.resolve(args: quiz)
+        let quizAnsweringViewController = UIHostingController(rootView: quizAnsweringView)
+        navigationController.pushViewController(quizAnsweringViewController, animated: true)
     }
 
     func finishQuiz(with result: QuizResultModel) {
-
+        let quizResultView: QuizResultView = container.resolve(args: result)
+        let viewController = UIHostingController(rootView: quizResultView)
+        navigationController.pushViewController(viewController, animated: true)
     }
 
 }

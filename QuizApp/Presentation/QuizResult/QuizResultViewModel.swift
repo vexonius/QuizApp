@@ -1,6 +1,6 @@
 import Combine
 
-class QuizResultViewModel {
+class QuizResultViewModel: ObservableObject {
 
     @Published var result: String?
 

@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 struct DesignConstants {
 
@@ -50,6 +51,12 @@ struct DesignConstants {
 
     struct QuizCell {
         static let height = 154
+    }
+
+    struct Padding {
+        static let base: CGFloat = 8
+        static let medium: CGFloat = 16
+        static let large: CGFloat = 32
     }
 
 }

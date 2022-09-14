@@ -8,8 +8,8 @@ extension SceneDelegate {
 
     func setUITableViewCellStyle() {
         UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().backgroundColor = UIColor(.clear)
-        UITableView.appearance().backgroundColor = UIColor(.clear)
+        UITableViewCell.appearance().backgroundColor = UIColor.clear
+        UITableView.appearance().backgroundColor = UIColor.clear
     }
 
 }

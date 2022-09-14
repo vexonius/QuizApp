@@ -7,8 +7,6 @@ struct CategoriesSegmentedControlView: View {
     @Binding var selectedIndex: Int
     @Namespace var capsuleAnimation
 
-    private let horizontalPadding: CGFloat = 16
-    private let verticalPadding: CGFloat = 8
     private let springAnimationDuration = 0.4
 
     var body: some View {
@@ -30,7 +28,7 @@ struct CategoriesSegmentedControlView: View {
                     }
                     .frame(minWidth: geometry.size.width)
                 }
-                .padding(verticalPadding)
+                .padding(DesignConstants.Padding.base)
                 .background {
                     if !items.isEmpty {
                         itemBackgroundView

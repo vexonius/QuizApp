@@ -40,7 +40,7 @@ class ProgressView: UIView {
 
             switch tile {
             case .unanswered:
-                view.backgroundColor = currentIndex == index ? .white : .whiteTransparent30
+                view.backgroundColor = currentIndex == index ? .white : .white30
             case .correct:
                 view.backgroundColor = .accentGreen
             case .incorrect:
