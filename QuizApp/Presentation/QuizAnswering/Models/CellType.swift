@@ -1,6 +1,6 @@
 enum QuizCellType {
 
-    case question
-    case answer
+    case question(QuestionCellModel)
+    case answer(AnswerCellModel)
 
 }

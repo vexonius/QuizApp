@@ -26,7 +26,7 @@ class ClearSegmentedControl: UISegmentedControl {
     override var tintColor: UIColor? {
         didSet {
             setTitleTextAttributes([
-                .foregroundColor: tintColor ?? UIColor.whiteTransparent30,
+                .foregroundColor: tintColor ?? UIColor.white30,
                 NSAttributedString.Key.font: UIFont.sourceSansPro(
                     ofSize: DesignConstants.FontSize.subtitle.cgFloat,
                     ofWeight: .semibold)!
@@ -76,7 +76,7 @@ class ClearSegmentedControl: UISegmentedControl {
         setDividerImage(tintColorImage, forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
 
         setTitleTextAttributes([
-            .foregroundColor: UIColor.whiteTransparent30,
+            .foregroundColor: UIColor.white30,
             NSAttributedString.Key.font: UIFont.sourceSansPro(
                 ofSize: DesignConstants.FontSize.subtitle.cgFloat,
                 ofWeight: .bold)!

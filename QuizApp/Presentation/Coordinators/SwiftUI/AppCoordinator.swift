@@ -71,11 +71,15 @@ extension AppCoordinator: QuizCoordinatorProtocol {
     }
 
     func play(quiz: QuizModel) {
-
+        let quizAnsweringView: QuizAnsweringView = container.resolve(args: quiz)
+        let quizAnsweringViewController = UIHostingController(rootView: quizAnsweringView)
+        navigationController.pushViewController(quizAnsweringViewController, animated: true)
     }
 
     func finishQuiz(with result: QuizResultModel) {
-
+        let quizResultView: QuizResultView = container.resolve(args: result)
+        let viewController = UIHostingController(rootView: quizResultView)
+        navigationController.pushViewController(viewController, animated: true)
     }
 
 }

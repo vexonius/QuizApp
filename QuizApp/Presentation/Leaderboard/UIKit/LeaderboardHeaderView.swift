@@ -31,7 +31,7 @@ extension LeaderboardHeaderView: ConstructViewsProtocol {
 
     func styleViews() {
         playerLabel.textAlignment = .left
-        playerLabel.textColor = .whiteTransparent30
+        playerLabel.textColor = .white30
         playerLabel.lineBreakMode = .byTruncatingTail
         playerLabel.font = .sourceSansPro(
             ofSize: DesignConstants.FontSize.regular.cgFloat,
@@ -39,7 +39,7 @@ extension LeaderboardHeaderView: ConstructViewsProtocol {
         playerLabel.text = LocalizedStrings.player.localizedString
 
         pointsLabel.textAlignment = .right
-        pointsLabel.textColor = .whiteTransparent30
+        pointsLabel.textColor = .white30
         pointsLabel.lineBreakMode = .byTruncatingTail
         pointsLabel.font = .sourceSansPro(
             ofSize: DesignConstants.FontSize.regular.cgFloat,

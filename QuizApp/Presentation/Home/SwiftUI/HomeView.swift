@@ -29,6 +29,7 @@ struct HomeView: View {
             .emptyListPlaceholder(view: AnyView(QuizItemPlaceholderView()), visible: viewModel.filteredQuizzes.isEmpty)
             .listStyle(.plain)
             .modifier(ScrollViewBackgroundModifier())
+            .onAppear(perform: viewModel.observeNetworkChanges)
         }
         .brandStyleBackground()
         .onAppear(perform: viewModel.observeNetworkChanges)
