@@ -3,6 +3,7 @@ import UIKit
 class DifficultyIndicator: UIView {
 
     struct CustomConstants {
+
         static let numberOfRectangles = 3
         static let defaultSpacing = 4
         static let rotationAmountDegrees = 90.0
@@ -16,6 +17,7 @@ class DifficultyIndicator: UIView {
         static let rectDiagonal = 15.0
         static let indicatorTransparency = 0.3
         static let cornerRadius = 2
+
     }
 
     private var difficulty: Difficulty

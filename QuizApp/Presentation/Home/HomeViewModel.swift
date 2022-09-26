@@ -5,7 +5,9 @@ import Reachability
 class HomeViewModel: ObservableObject {
 
     private struct CustomConstants {
+
         static let minimumSearchTextLength = 2
+
     }
 
     @Published private(set) var isErrorPlaceholderVisible: Bool = false

@@ -5,7 +5,9 @@ class QuestionCell: UITableViewCell {
     static let reuseIdentifier = String(describing: QuestionCell.self)
 
     private struct CustomConstants {
+
         static let textNumberOfLines = 0
+
     }
 
     private var containerView: UIView!

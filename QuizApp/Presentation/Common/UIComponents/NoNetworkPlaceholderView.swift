@@ -4,10 +4,12 @@ import UIKit
 class ErrorPlaceholderView: UIView {
 
     private struct CustomConstants {
+
         static let titleFontSize: Float = 28
         static let descriptionFontSize: Float = 16
         static let descriptionNumberOfLines = 0
         static let iconSize: Float = 68
+
     }
 
     var errorDescription: String? {

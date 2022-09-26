@@ -3,12 +3,14 @@ import UIKit
 class ProgressView: UIView {
 
     private struct CustomConstants {
+
         static let progressLabelHeight = 26
         static let textNumberOfLines = 0
         static let progressBarHeight = 5
         static let tileCornerRadius = 2
         static let stackViewSpacing = 8
         static let componentsSpacing = 12
+
     }
 
     var progressText: String? {

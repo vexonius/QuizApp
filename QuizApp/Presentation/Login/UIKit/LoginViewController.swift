@@ -16,6 +16,7 @@ class LoginViewController: BaseViewController {
     private var componentsContainerView: UIView!
 
     private struct CustomConstants {
+
         static let logoLabelTopOffset = 76
         static let usernameInputOffset = 144.0
         static let usernameInputLandscapeOffset = 30.0
@@ -23,6 +24,7 @@ class LoginViewController: BaseViewController {
 
         static let buttonDisabledOpacity = 0.6
         static let buttonEnabledOpacity = 1.0
+
     }
 
     init(viewModel: LoginViewModel) {

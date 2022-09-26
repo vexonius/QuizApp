@@ -5,6 +5,7 @@ import SnapKit
 class Snackbar: UIView {
 
     private struct CustomConstants {
+
         static let fontSize: CGFloat = 18
         static let numberOfLines = 0
         static let regularComponentHeight = 100
@@ -19,6 +20,7 @@ class Snackbar: UIView {
         static let messageOffset = 8
         static let alphaValueTransparent = 0.0
         static let alphaValueVisible = 1.0
+
     }
 
     private lazy var messageLabel: UILabel = {

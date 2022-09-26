@@ -4,13 +4,17 @@ import UIKit
 class RoundedTextInput: UITextField {
 
     enum RoundedTextInputType {
+
         case username
         case password
         case `default`
+
     }
 
     private enum RoundedTextInputAttributes: String {
+
         case placeholderText = "placeholder text"
+
     }
 
     private var type: RoundedTextInputType = .default

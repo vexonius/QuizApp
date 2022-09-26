@@ -6,7 +6,9 @@ import Reachability
 class HomeViewController: BaseViewController {
 
     private struct CustomConstants {
+
         static let segmentedControlTopInset = 8
+
     }
 
     private var filtersSegmentedControl: ClearSegmentedControl!

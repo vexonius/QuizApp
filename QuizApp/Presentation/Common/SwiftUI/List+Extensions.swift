@@ -10,7 +10,7 @@ struct EmptyListPlaceholderViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         if visible {
             List {
-                ForEach(0..<4) { index in
+                ForEach(0..<numberOfItems) { _ in
                     view
                         .listRowInsets(EdgeInsets(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
                         .listRowBackground(Color.clear)

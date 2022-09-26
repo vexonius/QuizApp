@@ -5,6 +5,7 @@ import Nuke
 class QuizDetailsViewController: BaseViewController {
 
     private struct CustomConstants {
+
         static let preferredContainerVerticalHeight = 600
         static let containerVerticalInset = 40
         static let preferredContainerHorizontalWidth = 400
@@ -12,6 +13,7 @@ class QuizDetailsViewController: BaseViewController {
         static let leaderOffset = 10
         static let maxSubtitleLabelHeight = 80
         static let subtitleNumberOfLines = 80
+
     }
 
     private var containerView: UIView!
@@ -79,6 +81,7 @@ class QuizDetailsViewController: BaseViewController {
         title = LocalizedStrings.appName.localizedString
         navigationItem.backButtonTitle = ""
     }
+
 }
 
 extension QuizDetailsViewController: BindViewsProtocol {

@@ -168,9 +168,9 @@
 		F07265B928B767FC00A2848E /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E835287EB2D700E0375D /* UIFont+Extensions.swift */; };
 		F07265BA28B7680A00A2848E /* Primitives+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0138171287F154A001A0C2E /* Primitives+Extensions.swift */; };
 		F07265BC28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */; };
-		F07265BE28B76C7000A2848E /* RegisterViewControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */; };
+		F07265BE28B76C7000A2848E /* RegisterViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */; };
 		F07265C128B76E1F00A2848E /* AppModule+HostingViewControllerResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */; };
-		F07265C228B76E6700A2848E /* RegisterViewControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */; };
+		F07265C228B76E6700A2848E /* RegisterViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */; };
 		F07265C828B76FF300A2848E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265C628B76FAA00A2848E /* SplashView.swift */; };
 		F07265CA28B775DB00A2848E /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E838287EB8A600E0375D /* SourceSansPro-Bold.ttf */; };
 		F07265CB28B775DB00A2848E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */; };
@@ -337,7 +337,7 @@
 		F07148BC28B3BE20004E7591 /* QuizCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCellModel.swift; sourceTree = "<group>"; };
 		F072653328B75FCF00A2848E /* QuizUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+UIViewControllerResolution.swift"; sourceTree = "<group>"; };
-		F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllersProtocol.swift; sourceTree = "<group>"; };
+		F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewsProtocol.swift; sourceTree = "<group>"; };
 		F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+HostingViewControllerResolution.swift"; sourceTree = "<group>"; };
 		F07265C628B76FAA00A2848E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F078C4A828BD03FC00F7B9EE /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
@@ -860,7 +860,7 @@
 				F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */,
 				F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */,
 				F0D9202D28858054004EC4F3 /* AppModule.swift */,
-				F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */,
+				F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */,
 				F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */,
 				F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */,
 			);
@@ -1198,6 +1198,7 @@
 				F072652F28B75FCF00A2848E /* Sources */,
 				F072653028B75FCF00A2848E /* Frameworks */,
 				F072653128B75FCF00A2848E /* Resources */,
+				F01532B028D488F80078BEDE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1311,6 +1312,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		F01532B028D488F80078BEDE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Users/tinoemer/Documents/projects/SwiftLint/.build/arm64-apple-macosx/release/swiftlint lint --no-cache\n";
+		};
 		F051329A287DA286003E8D90 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -1327,7 +1346,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "/Users/tinoemer/Documents/projects/SwiftLint/.build/arm64-apple-macosx/release/swiftlint lint --no-cache\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1349,7 +1368,7 @@
 				F072654228B7601C00A2848E /* AppDelegate.swift in Sources */,
 				F072656328B7604C00A2848E /* QuizModel.swift in Sources */,
 				F072657728B760A000A2848E /* QuizCoordinatorProtocol.swift in Sources */,
-				F07265C228B76E6700A2848E /* RegisterViewControllersProtocol.swift in Sources */,
+				F07265C228B76E6700A2848E /* RegisterViewsProtocol.swift in Sources */,
 				F072654328B7601C00A2848E /* AppModule.swift in Sources */,
 				F072658D28B761B700A2848E /* AccountNetworkClient.swift in Sources */,
 				F072659F28B761EF00A2848E /* String+Extensions.swift in Sources */,
@@ -1486,7 +1505,7 @@
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
 				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
 				F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */,
-				F07265BE28B76C7000A2848E /* RegisterViewControllersProtocol.swift in Sources */,
+				F07265BE28B76C7000A2848E /* RegisterViewsProtocol.swift in Sources */,
 				F014C93528ACE203006DB507 /* QuestionCell.swift in Sources */,
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,

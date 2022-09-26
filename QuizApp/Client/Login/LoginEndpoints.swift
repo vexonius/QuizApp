@@ -7,7 +7,7 @@ enum LoginEndpoints: String {
 
     var path: URL {
         switch self {
-        default :
+        default:
             return Api.apiURL.appendingPathComponent(self.rawValue)
         }
     }

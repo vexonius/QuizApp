@@ -4,8 +4,10 @@ import UIKit
 class QuizLeaderboardViewController: BaseViewController {
 
     private struct CustomConstants {
+
         static let rankingCellHeight = 64
         static let headerHeight = 48
+
     }
 
     private var rankedTableView: UITableView!

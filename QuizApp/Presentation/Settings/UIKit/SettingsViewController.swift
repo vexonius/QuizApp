@@ -5,10 +5,12 @@ import SnapKit
 class SettingsViewController: BaseViewController {
 
     private struct CustomConstants {
+
         static let insetTop = 20
         static let inputFieldInset = 4
         static let inputFieldFontSize = 20
         static let inputFieldLabelFontSize = 12
+
     }
 
     private let viewModel: SettingsViewModel
