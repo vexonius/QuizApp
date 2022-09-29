@@ -1232,7 +1232,6 @@
 				F0E6A96F287C74CA007BF1D4 /* Sources */,
 				F0E6A970287C74CA007BF1D4 /* Frameworks */,
 				F0E6A971287C74CA007BF1D4 /* Resources */,
-				F051329A287DA286003E8D90 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1325,24 +1324,6 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		F01532B028D488F80078BEDE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/Users/tinoemer/Documents/projects/SwiftLint/.build/arm64-apple-macosx/release/swiftlint lint --no-cache\n";
-		};
-		F051329A287DA286003E8D90 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
