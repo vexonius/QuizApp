@@ -1232,6 +1232,7 @@
 				F0E6A96F287C74CA007BF1D4 /* Sources */,
 				F0E6A970287C74CA007BF1D4 /* Frameworks */,
 				F0E6A971287C74CA007BF1D4 /* Resources */,
+				F06552C928E71D4800EFC5D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1340,6 +1341,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/Users/tinoemer/Documents/projects/SwiftLint/.build/arm64-apple-macosx/release/swiftlint lint --no-cache\n";
+		};
+		F06552C928E71D4800EFC5D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  five-swiftlint lint --strict\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
