@@ -2,7 +2,7 @@
 
 brew tap vexonius/five-swiftlint
 brew install five-swiftlint
-five-swiftlint lint --strict
+opt/homebrew/bin/five-swiftlint lint --strict
 result=$?
 if [ "$result" = "2" ] || [ "$result" = "3" ]
 then
