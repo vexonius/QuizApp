@@ -6,6 +6,7 @@ class QuizCell: UITableViewCell {
     static let reuseIdentifier = String(describing: QuizCell.self)
 
     private struct CustomConstants {
+
         static let cornerRadius = 20
         static let textNumberOfLines = 0
         static let iconSize = 104
@@ -17,6 +18,7 @@ class QuizCell: UITableViewCell {
         static let difficultyIndicatorTrailingInset = 18
         static let difficultyIndicatorTopOffset = 12
         static let difficultyIndicatorWidth = 48
+
     }
 
     private var containerView: UIView!

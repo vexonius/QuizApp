@@ -5,10 +5,12 @@ class AnswerCell: UITableViewCell {
     static let reuseIdentifier = String(describing: AnswerCell.self)
 
     private struct CustomConstants {
+
         static let textNumberOfLines = 0
         static let cellTopInset = 16
         static let cellBottomInset = 20
         static let cellSpacing = 8
+
     }
 
     private var containerView: UIView!

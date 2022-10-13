@@ -3,7 +3,9 @@ import UIKit
 class SearchBarView: UIView {
 
     private struct CustomConstants {
+
         static let searchButtonTrailingInset = 20
+
     }
 
     private(set) var inputLabel: RoundedTextInput!

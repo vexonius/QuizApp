@@ -3,10 +3,12 @@ import UIKit
 class ClearSegmentedControl: UISegmentedControl {
 
     private struct CustomConstants {
+
         static let backgroundTintImageHeight = 32
         static let backgroundTintImageWidth = 1
         static let defaultSelectedIndex = 0
         static let selectedSegmentIndexKey = "selectedSegmentIndex"
+
     }
 
     private var models: [CategoryFilter] = []

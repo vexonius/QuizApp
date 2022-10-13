@@ -27,8 +27,8 @@ struct TextObfuscationModifier: ViewModifier {
 }
 
 enum SecureFieldType: Hashable {
-    
+
     case plain
     case secure
-    
+
 }

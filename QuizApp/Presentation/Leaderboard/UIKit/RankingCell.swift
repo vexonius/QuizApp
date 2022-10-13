@@ -5,7 +5,9 @@ class RankingCell: UITableViewCell {
     static let reuseIdentifier = String(describing: RankingCell.self)
 
     private struct CustomConstants {
+
         static let textNumberOfLines = 0
+
     }
 
     private var containerView: UIView!

@@ -5,7 +5,9 @@ import Reachability
 class SearchViewModel {
 
     private struct CustomConstants {
+
         static let minimumSearchTextLength = 2
+
     }
 
     @Published private(set) var errorMessage: String?

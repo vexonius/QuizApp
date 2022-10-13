@@ -4,8 +4,10 @@ import Foundation
 class QuizAnsweringViewModel {
 
     private struct Constants {
+
         static let answerUpdateDelay = 0.5
         static let progressFormat = "%d/%d"
+
     }
 
     @Published var currentQuestionCellModels: [AnsweringCellProtocol] = []

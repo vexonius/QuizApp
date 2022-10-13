@@ -4,6 +4,7 @@ import UIKit
 class QuizAnsweringViewController: BaseViewController {
 
     private struct CustomConstants {
+
         static let progressHeaderHeight = 44
         static let startTranslationX = 0
         static let endTranslationX = 0
@@ -12,6 +13,7 @@ class QuizAnsweringViewController: BaseViewController {
         static let animationDuration = 0.3
         static let startAnimationAlpha = 0.0
         static let endAnimationAlpha = 1.0
+
     }
 
     private var tableView: UITableView!

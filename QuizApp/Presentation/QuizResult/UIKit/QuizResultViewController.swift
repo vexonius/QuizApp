@@ -4,8 +4,10 @@ import UIKit
 class QuizResultViewController: BaseViewController {
 
     private struct CustomConstants {
+
         static let resultLabelFontSize = 88
         static let centerYOffset = -60
+
     }
 
     private var resultLabel: UILabel!

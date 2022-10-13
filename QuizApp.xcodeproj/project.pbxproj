@@ -73,6 +73,7 @@
 		F069A7492886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */; };
 		F069A74C2887FA6300F8DB81 /* HeaderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */; };
 		F07148BD28B3BE20004E7591 /* QuizCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07148BC28B3BE20004E7591 /* QuizCellModel.swift */; };
+		F071CF2828E5DC5200B4A912 /* ci_pre_xcodebuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F071CF2728E5DC5200B4A912 /* ci_pre_xcodebuild.sh */; };
 		F072654128B7601C00A2848E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */; };
 		F072654228B7601C00A2848E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */; };
 		F072654328B7601C00A2848E /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9202D28858054004EC4F3 /* AppModule.swift */; };
@@ -168,9 +169,9 @@
 		F07265B928B767FC00A2848E /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F088E835287EB2D700E0375D /* UIFont+Extensions.swift */; };
 		F07265BA28B7680A00A2848E /* Primitives+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0138171287F154A001A0C2E /* Primitives+Extensions.swift */; };
 		F07265BC28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */; };
-		F07265BE28B76C7000A2848E /* RegisterViewControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */; };
+		F07265BE28B76C7000A2848E /* RegisterViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */; };
 		F07265C128B76E1F00A2848E /* AppModule+HostingViewControllerResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */; };
-		F07265C228B76E6700A2848E /* RegisterViewControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */; };
+		F07265C228B76E6700A2848E /* RegisterViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */; };
 		F07265C828B76FF300A2848E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07265C628B76FAA00A2848E /* SplashView.swift */; };
 		F07265CA28B775DB00A2848E /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E838287EB8A600E0375D /* SourceSansPro-Bold.ttf */; };
 		F07265CB28B775DB00A2848E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F088E839287EB8A700E0375D /* SourceSansPro-Regular.ttf */; };
@@ -335,9 +336,10 @@
 		F069A7482886F80300F8DB81 /* LoginRequestBodyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBodyNetworkModel.swift; sourceTree = "<group>"; };
 		F069A74B2887FA6300F8DB81 /* HeaderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderConstants.swift; sourceTree = "<group>"; };
 		F07148BC28B3BE20004E7591 /* QuizCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCellModel.swift; sourceTree = "<group>"; };
+		F071CF2728E5DC5200B4A912 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		F072653328B75FCF00A2848E /* QuizUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+UIViewControllerResolution.swift"; sourceTree = "<group>"; };
-		F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllersProtocol.swift; sourceTree = "<group>"; };
+		F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewsProtocol.swift; sourceTree = "<group>"; };
 		F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModule+HostingViewControllerResolution.swift"; sourceTree = "<group>"; };
 		F07265C628B76FAA00A2848E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F078C4A828BD03FC00F7B9EE /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
@@ -414,7 +416,7 @@
 		F0E450482889794D00685E09 /* LoginEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoints.swift; sourceTree = "<group>"; };
 		F0E61B4D28A3C101004410DB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F0E61B4F28A3C14A004410DB /* Category+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+UIColor.swift"; sourceTree = "<group>"; };
-		F0E6A973287C74CA007BF1D4 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E6A973287C74CA007BF1D4 /* QuizzyAppie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzyAppie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E6A976287C74CA007BF1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F0E6A97A287C74CA007BF1D4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -707,6 +709,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F071CF2628E5DC0900B4A912 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				F071CF2728E5DC5200B4A912 /* ci_pre_xcodebuild.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		F072652E28B75F4C00A2848E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,7 +870,7 @@
 				F0E6A978287C74CA007BF1D4 /* SceneDelegate.swift */,
 				F0131C3D28CA0B5300F068CD /* SceneDelegate+Style.swift */,
 				F0D9202D28858054004EC4F3 /* AppModule.swift */,
-				F07265BD28B76C7000A2848E /* RegisterViewControllersProtocol.swift */,
+				F07265BD28B76C7000A2848E /* RegisterViewsProtocol.swift */,
 				F07265BB28B76C2200A2848E /* AppModule+UIViewControllerResolution.swift */,
 				F07265BF28B76E1500A2848E /* AppModule+HostingViewControllerResolution.swift */,
 			);
@@ -1122,6 +1132,7 @@
 		F0E6A96A287C74CA007BF1D4 = {
 			isa = PBXGroup;
 			children = (
+				F071CF2628E5DC0900B4A912 /* ci_scripts */,
 				F0E6A975287C74CA007BF1D4 /* QuizApp */,
 				F0E6A974287C74CA007BF1D4 /* Products */,
 				F0DA2D33288AE7D5000B8C70 /* Recovered References */,
@@ -1132,7 +1143,7 @@
 		F0E6A974287C74CA007BF1D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0E6A973287C74CA007BF1D4 /* QuizApp.app */,
+				F0E6A973287C74CA007BF1D4 /* QuizzyAppie.app */,
 				F072653328B75FCF00A2848E /* QuizUI.app */,
 			);
 			name = Products;
@@ -1198,6 +1209,7 @@
 				F072652F28B75FCF00A2848E /* Sources */,
 				F072653028B75FCF00A2848E /* Frameworks */,
 				F072653128B75FCF00A2848E /* Resources */,
+				F01532B028D488F80078BEDE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1213,20 +1225,20 @@
 			productReference = F072653328B75FCF00A2848E /* QuizUI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F0E6A972287C74CA007BF1D4 /* QuizApp */ = {
+		F0E6A972287C74CA007BF1D4 /* QuizzyAppie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0E6A987287C74CB007BF1D4 /* Build configuration list for PBXNativeTarget "QuizApp" */;
+			buildConfigurationList = F0E6A987287C74CB007BF1D4 /* Build configuration list for PBXNativeTarget "QuizzyAppie" */;
 			buildPhases = (
 				F0E6A96F287C74CA007BF1D4 /* Sources */,
 				F0E6A970287C74CA007BF1D4 /* Frameworks */,
 				F0E6A971287C74CA007BF1D4 /* Resources */,
-				F051329A287DA286003E8D90 /* ShellScript */,
+				F06552C928E71D4800EFC5D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = QuizApp;
+			name = QuizzyAppie;
 			packageProductDependencies = (
 				F0749186287DAB62005A7A55 /* SnapKit */,
 				F07D86502888289C000F5D99 /* Resolver */,
@@ -1235,7 +1247,7 @@
 				F040029A28A3FA760012B2E4 /* Nuke */,
 			);
 			productName = QuizApp;
-			productReference = F0E6A973287C74CA007BF1D4 /* QuizApp.app */;
+			productReference = F0E6A973287C74CA007BF1D4 /* QuizzyAppie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1276,7 +1288,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F0E6A972287C74CA007BF1D4 /* QuizApp */,
+				F0E6A972287C74CA007BF1D4 /* QuizzyAppie */,
 				F072653228B75FCF00A2848E /* QuizUI */,
 			);
 		};
@@ -1302,6 +1314,7 @@
 				F088E83C287EB8A700E0375D /* SourceSansPro-Regular.ttf in Resources */,
 				F0513299287DA252003E8D90 /* .swiftlint.yml in Resources */,
 				F0E6A983287C74CB007BF1D4 /* LaunchScreen.storyboard in Resources */,
+				F071CF2828E5DC5200B4A912 /* ci_pre_xcodebuild.sh in Resources */,
 				F088E83D287EB8A700E0375D /* SourceSansPro-SemiBold.ttf in Resources */,
 				F0E6A980287C74CB007BF1D4 /* Assets.xcassets in Resources */,
 				F088E83B287EB8A700E0375D /* SourceSansPro-Bold.ttf in Resources */,
@@ -1311,7 +1324,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F051329A287DA286003E8D90 /* ShellScript */ = {
+		F01532B028D488F80078BEDE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -1327,7 +1340,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "/Users/tinoemer/Documents/projects/SwiftLint/.build/arm64-apple-macosx/release/swiftlint lint --no-cache\n";
+		};
+		F06552C928E71D4800EFC5D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  five-swiftlint lint --strict\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1349,7 +1379,7 @@
 				F072654228B7601C00A2848E /* AppDelegate.swift in Sources */,
 				F072656328B7604C00A2848E /* QuizModel.swift in Sources */,
 				F072657728B760A000A2848E /* QuizCoordinatorProtocol.swift in Sources */,
-				F07265C228B76E6700A2848E /* RegisterViewControllersProtocol.swift in Sources */,
+				F07265C228B76E6700A2848E /* RegisterViewsProtocol.swift in Sources */,
 				F072654328B7601C00A2848E /* AppModule.swift in Sources */,
 				F072658D28B761B700A2848E /* AccountNetworkClient.swift in Sources */,
 				F072659F28B761EF00A2848E /* String+Extensions.swift in Sources */,
@@ -1486,7 +1516,7 @@
 				F0B028CB289280000024DBFD /* PopGradient.swift in Sources */,
 				F0EA481F2886DCF30042BD52 /* URLProtocol+Interceptor.swift in Sources */,
 				F08D37042898025E005FFF1F /* NoNetworkPlaceholderView.swift in Sources */,
-				F07265BE28B76C7000A2848E /* RegisterViewControllersProtocol.swift in Sources */,
+				F07265BE28B76C7000A2848E /* RegisterViewsProtocol.swift in Sources */,
 				F014C93528ACE203006DB507 /* QuestionCell.swift in Sources */,
 				F069A7462886F38700F8DB81 /* LoginResponseRepoModel.swift in Sources */,
 				F0E6A97B287C74CA007BF1D4 /* LoginViewController.swift in Sources */,
@@ -1788,10 +1818,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XW6PW584W6;
+				DEVELOPMENT_TEAM = 37NP6KPC8R;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = QuizzyAppie;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1800,7 +1833,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = agency.five.tino.QuizApp;
+				PRODUCT_BUNDLE_IDENTIFIER = agency.five.xctest.QuizzyAppie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1815,10 +1848,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XW6PW584W6;
+				DEVELOPMENT_TEAM = 37NP6KPC8R;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = QuizzyAppie;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1827,7 +1863,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = agency.five.tino.QuizApp;
+				PRODUCT_BUNDLE_IDENTIFIER = agency.five.xctest.QuizzyAppie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1856,7 +1892,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0E6A987287C74CB007BF1D4 /* Build configuration list for PBXNativeTarget "QuizApp" */ = {
+		F0E6A987287C74CB007BF1D4 /* Build configuration list for PBXNativeTarget "QuizzyAppie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0E6A988287C74CB007BF1D4 /* Debug */,

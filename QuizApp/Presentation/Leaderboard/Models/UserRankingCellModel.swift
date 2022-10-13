@@ -14,4 +14,5 @@ extension UserRankingCellModel {
             name: model.name,
             points: model.points.string)
     }
+
 }
